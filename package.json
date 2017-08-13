@@ -1,0 +1,23 @@
+{
+  "name": "study-project",
+  "version": "1.0.0",
+  "description": "learning coding",
+  "main": "/public/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass --include-path scss source/scss/main.scss public/css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ulyanovanv/studyProject.git"
+  },
+  "author": "Anastasiia Rubinchik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ulyanovanv/studyProject/issues"
+  },
+  "homepage": "https://github.com/ulyanovanv/studyProject#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.3"
+  }
+}
