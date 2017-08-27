@@ -16,6 +16,10 @@ $app->get('/', function () use ($app) {
 
 $app->get('/to-do-app', 'Controllers\\ToDoController::index');
 
+$app->get('/cv', function () use ($app) {
+    return $app['twig']->render('cv/index.html.twig', array());
+});
+
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;
