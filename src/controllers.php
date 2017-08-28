@@ -15,6 +15,14 @@ $app->get('/', function () use ($app) {
 
 
 $app->get('/to-do-app', 'Controllers\\ToDoController::index');
+$app->get('/to-do-app-load', function () use ($app) {
+    return json_encode(['data' => [
+        ['value' => 'buy stuff', 'isDone' => false],
+        ['value' => 'eat stuff', 'isDone' => true],
+        ['value' => 'go to sleep', 'isDone' => false],
+    ]]);
+    return "{'data':[{'value': 'buy stuff', 'isDone': false},{'value': 'eat lunch', 'isDone': true}, {'value': 'go sleep', 'isDone':false}]}";
+});
 
 $app->get('/cv', function () use ($app) {
     return $app['twig']->render('cv/index.html.twig', array());
