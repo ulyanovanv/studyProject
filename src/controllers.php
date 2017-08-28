@@ -16,13 +16,19 @@ $app->get('/', function () use ($app) {
 
 $app->get('/to-do-app', 'Controllers\\ToDoController::index');
 $app->get('/to-do-app-load', function () use ($app) {
-    return json_encode(['data' => [
+    $session = $app['session']->get('todo');
+    return !empty($session) ? json_encode($session) : json_encode(['data' => [
         ['value' => 'buy stuff', 'isDone' => false],
         ['value' => 'eat stuff', 'isDone' => true],
         ['value' => 'go to sleep', 'isDone' => false],
     ]]);
-    return "{'data':[{'value': 'buy stuff', 'isDone': false},{'value': 'eat lunch', 'isDone': true}, {'value': 'go sleep', 'isDone':false}]}";
 });
+$app->post('/to-do-app-save', function () use ($app) {
+    $app['session']->set('todo', $_REQUEST['data']);
+//    $_SESSION['todo'] = $_REQUEST['data'];
+    return json_encode($_REQUEST);
+});
+
 
 $app->get('/cv', function () use ($app) {
     return $app['twig']->render('cv/index.html.twig', array());

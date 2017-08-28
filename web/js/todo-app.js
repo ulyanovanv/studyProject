@@ -6,7 +6,7 @@ function Count(){
     var listLength = $("li").length;
     $("#number_of_lis>span").text(listLength);
 }
-Count();
+
 
 
 $(document).ready(function(){   //fadeIn lis
@@ -61,12 +61,7 @@ $(function(){  //form work in footer
         }
         var textTo = textToSend.val();
         var newLi = $("<li>"+textTo+"</li>");
-        var x = Math.floor(Math.random()*2);
-        if (x===1) {
-            newLi.addClass('hot');
-        } else {
-            newLi.addClass('orange');
-        }
+        randomListElementClass(newLi);
         $("ul").append(newLi);
         newLi.on('click', handleLiClick);
 
@@ -94,19 +89,43 @@ $(function(){
 })
 
 
+function randomListElementClass(el) {
+    var x = Math.floor(Math.random()*2);
+    if (x===1) {
+        el.addClass('hot');
+    } else {
+        el.addClass('orange');
+    }
+}
+
+
+
+
 console.log("ToDo !!!");
 
 $(function(){
     $.ajax('/to-do-app-load', {}).done(function(oooop){
-        var content = "";
+        //var content = "";
         var obj = JSON.parse(oooop).data;
+        var container = $("#spisok ul");
+        container.html('');
         for (var x = 0; x < obj.length; x++) {
-            content = content + "<p>" + obj[x].value + " " + obj[x].isDone + "</p>";
+            var el = $("<li>" + obj[x].value + " " + obj[x].isDone + "</li>");
+
+            console.log(obj[x].isDone);
+            if (obj[x].isDone === 'true') {
+                randomListElementClass(el);
+            } else {
+                el.addClass("grey");
+            }
+            el.on('click', handleLiClick);
+            container.append(el);
         }
-        document.getElementById("jsonN").innerHTML=content;
-        $("#jsonN").html(content);
+        Count();
     })
 
-    $.ajax('/url', {method: 'POST', data:{dfgd:sefsef, awdawd:[]}})
+    //$.ajax('/url', {method: 'POST', data:{dfgd:sefsef, awdawd:[]}})
 
 });
+
+//$.post('/to-do-app-save', {data:{data:[{value:'honey', isDone:true}, {value:'sausge', isDone:false},  {value:'milk', isDone:true}, {value:'milk', isDone:false} ]}});
