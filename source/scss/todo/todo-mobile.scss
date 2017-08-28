@@ -1,0 +1,38 @@
+@media screen and (min-width:490px){
+  #button_to_submit {
+    margin-left: 100px;
+  }
+}
+@media screen and (max-width:489px) and (min-width: 340px) {
+  #main_div {
+    width: 300px;
+  }
+
+}
+@media screen and (max-width:339px) {
+  #main_div {
+    width: 100%;
+  }
+  #buy {
+    font-size: 0.8rem;
+  }
+  #number_of_lis{
+    line-height: 28px;
+    span {
+      font-size: 0.8rem;
+      margin-right: 10px;
+    }
+  }
+  #form_to_add {
+    display: none;
+  }
+  #item_description {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  body {
+    min-width:250px;
+  }
+}

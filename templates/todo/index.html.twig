@@ -4,15 +4,37 @@
     TODO APP
 {% endblock %}
 
-{% block additionalLinks %}
-    <link href="http://ilfate.net" />
-{% endblock %}
-
 
 {% block content %}
-    <h1>TODO APP</h1>
 
+    <div id="main_div">
+        <div id="header_r">
+            <div id="first_line"><div>ListKing</div></div>
+            <div id="second_line">
+                <div id="buy">Buy groceries</div>
+                <div id="number_of_lis"><span></span></div>
+            </div>
+        </div>
+        <div id="spisok">
+            <ul>
+                <li class="hot"><em>fresh</em> figs</li>
+                <li class="hot">pine nuts</li>
+                <li class="hot">honey</li>
+                <li class="orange">balsamic vinegar</li>
+            </ul>
+        </div>
+        <div id="footer">
+            <div id="button_to_add">
+                <button type="button" id="new_item">New Item</button>
+            </div>
+            <form id="form_to_add">
+                <input type="text" placeholder="item description" id="item_description"/>
+                <input type="submit" value="ADD" id="button_to_submit"/>
+                </form>
+        </div>
+    </div>
+    <div id="total_summa">Total Sum is</div>
 
-    {{ include('todo/button.html.twig') }}
+    {#{{ include('todo/button.html.twig') }}#}
 {% endblock %}
 
