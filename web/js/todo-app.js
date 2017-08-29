@@ -99,33 +99,64 @@ function randomListElementClass(el) {
 }
 
 
-
-
-console.log("ToDo !!!");
-
-$(function(){
-    $.ajax('/to-do-app-load', {}).done(function(oooop){
-        //var content = "";
-        var obj = JSON.parse(oooop).data;
-        var container = $("#spisok ul");
-        container.html('');
-        for (var x = 0; x < obj.length; x++) {
-            var el = $("<li>" + obj[x].value + " " + obj[x].isDone + "</li>");
-
-            console.log(obj[x].isDone);
-            if (obj[x].isDone === 'true') {
-                randomListElementClass(el);
-            } else {
-                el.addClass("grey");
-            }
-            el.on('click', handleLiClick);
-            container.append(el);
-        }
-        Count();
-    })
-
-    //$.ajax('/url', {method: 'POST', data:{dfgd:sefsef, awdawd:[]}})
-
-});
+//$(function(){
+//    $.ajax('/to-do-app-load', {}).done(function(oooop){
+//        //var content = "";
+//        var obj = JSON.parse(oooop).data;
+//        var container = $("#spisok ul");
+//        container.html('');
+//        for (var x = 0; x < obj.length; x++) {
+//            var el = $("<li>" + obj[x].value + " " + obj[x].isDone + "</li>");
+//
+//            console.log(obj[x].isDone);
+//            if (obj[x].isDone === 'true') {
+//                randomListElementClass(el);
+//            } else {
+//                el.addClass("grey");
+//            }
+//            el.on('click', handleLiClick);
+//            container.append(el);
+//        }
+//        Count();
+//    })
+//    //$.ajax('/url', {method: 'POST', data:{dfgd:sefsef, awdawd:[]}})
+//});
 
 //$.post('/to-do-app-save', {data:{data:[{value:'honey', isDone:true}, {value:'sausge', isDone:false},  {value:'milk', isDone:true}, {value:'milk', isDone:false} ]}});
+
+$(function(){
+    $.ajax({
+        type: "GET",
+        url: '/to-do-app-load',
+        timeout: 100,
+        beforeSend: function(){
+            $("#spisok ul").append("<div id='wait'> wait a moment</div>");
+        },
+        complete: function() {
+            $("#spisok ul").remove("#wait");
+        },
+        success: function(data) {
+            var obj = JSON.parse(data).data;
+            var container = $("#spisok ul");
+            container.html('');
+            for (var x = 0; x < obj.length; x++) {
+                var el = $("<li>" + obj[x].value + " " + obj[x].isDone + "</li>");
+
+                console.log(obj[x].isDone);
+                if (obj[x].isDone === 'true') {
+                    randomListElementClass(el);
+                } else {
+                    el.addClass("grey");
+                }
+                el.on('click', handleLiClick);
+                container.append(el);
+            }
+            Count();
+        },
+        error: function() {
+            $("#spisok ul").append("<span> not success, try again</span>");
+        }
+
+    })
+    //$.ajax('/url', {method: 'POST', data:{dfgd:sefsef, awdawd:[]}})
+});
