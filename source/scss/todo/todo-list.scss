@@ -1,32 +1,34 @@
 #spisok {}
-ul {
-  display: block;
-  list-style-type: none;
-  padding: 0px;
-  li {
-    text-align: left;
-    padding: 5px 20px;
-    font-size: 1.2rem;
-    //opacity: 0.0;
+body.todo {
+  ul {
+    display: block;
+    list-style-type: none;
+    padding: 0px;
+    li {
+      text-align: left;
+      padding: 5px 20px;
+      font-size: 1.2rem;
+      //opacity: 0.0;
+    }
   }
-}
-.hot {
-  background-color:#d7666b;
-  border-top: 1px solid #e99295;
-  border-bottom: 1px solid #914141;
-}
-.orange {
-  background-color:#ec8b68;
-  border-top: 1px solid #fe9772;
-  border-bottom: 1px solid #9f593f;
-}
-.grey {
-  background-color: #617280;
-  background-image: url(https://image.flaticon.com/icons/png/128/61/61391.png);
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size:contain;
-  width:auto;
-  border-bottom: 1px solid #949ca3;
-  border-top: 1px solid #4a4e52;
+  .hot {
+    background-color:#d7666b;
+    border-top: 1px solid #e99295;
+    border-bottom: 1px solid #914141;
+  }
+  .orange {
+    background-color:#ec8b68;
+    border-top: 1px solid #fe9772;
+    border-bottom: 1px solid #9f593f;
+  }
+  .grey {
+    background-color: #617280;
+    background-image: url(https://image.flaticon.com/icons/png/128/61/61391.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size:contain;
+    width:auto;
+    border-bottom: 1px solid #949ca3;
+    border-top: 1px solid #4a4e52;
+  }
 }

@@ -4,6 +4,9 @@
     TODO APP
 {% endblock %}
 
+{% block bodyClass %}
+    todo
+{% endblock %}
 
 {% block content %}
 
@@ -36,5 +39,9 @@
     <div id="total_summa">Total Sum is</div>
 
     {#{{ include('todo/button.html.twig') }}#}
+{% endblock %}
+
+{% block jsDifferent %}
+    <script src="{{ asset('js/todo-app.js') }}" ></script>
 {% endblock %}
 

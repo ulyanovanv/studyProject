@@ -18,19 +18,22 @@ $(document).ready(function(){   //fadeIn lis
         $(this).delay(index*500).fadeIn(time);
     })
 })
-function handleLiClick(){
+function handleLiClick(event){
     var removeLi = $(this);
+    console.log(event.target);
     if (removeLi.hasClass("grey")) {
         removeLi.animate({paddingLeft:"+=240px",
             opacity: 0.0},500,function(){
             removeLi.remove();
             Count();
 
+
         });
     } else {
         removeLi.attr("class","grey");
         removeLi.detach();
         $("ul").append(removeLi);
+
     }
 };
 $(document).ready(function(){  //class change
@@ -64,7 +67,6 @@ $(function(){  //form work in footer
         randomListElementClass(newLi);
         $("ul").append(newLi);
         newLi.on('click', handleLiClick);
-
         formNew.hide();
         $("#button_to_add").show();
         textToSend.val('');

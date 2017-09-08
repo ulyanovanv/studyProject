@@ -1,0 +1,56 @@
+{% extends "layouts/layout.html.twig" %}
+
+{% block title %}
+    Lesson third
+{% endblock %}
+
+{% block bodyClass %}
+    lesson-third
+{% endblock %}
+
+{% block jsDifferent %}
+    <script src="{{ asset('js/lesson-third.js') }}" ></script>
+{% endblock %}
+
+{% block content %}
+
+    <div id="game">
+        <div id="central">
+            <div id="start">
+                <button type="button" id="start">Start</button>
+                <p id="explanation">Начиная с "1" нажимайте на числа до тех пор, пока не дойдете до последнего.</p>
+            </div>
+            <div id="follow">
+                <div id="time">
+                    Времени осталось:<span></span>
+                </div>
+                <div id="game-table">
+                    <div class="row">
+                        <div class="element" id="c1"></div>
+                        <div class="element" id="c2"></div>
+                        <div class="element" id="c3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="element" id="c4"></div>
+                        <div class="element" id="c5"></div>
+                        <div class="element" id="c6"></div>
+                    </div>
+                    <div class="row">
+                        <div class="element" id="c7"></div>
+                        <div class="element" id="c8"></div>
+                        <div class="element" id="c9"></div>
+                    </div>
+                </div>
+                <div id="create-new-game">
+                    <button type="button">Start new game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+
+

@@ -1,4 +1,4 @@
-body {
+body.todo {
   background-color: Black;
   color: White;
   text-shadow: 2px 2px 1px Black;
@@ -47,26 +47,26 @@ body {
   padding: 2px;
   vertical-align: bottom; }
 
-ul {
+body.todo ul {
   display: block;
   list-style-type: none;
   padding: 0px; }
-  ul li {
+  body.todo ul li {
     text-align: left;
     padding: 5px 20px;
     font-size: 1.2rem; }
 
-.hot {
+body.todo .hot {
   background-color: #d7666b;
   border-top: 1px solid #e99295;
   border-bottom: 1px solid #914141; }
 
-.orange {
+body.todo .orange {
   background-color: #ec8b68;
   border-top: 1px solid #fe9772;
   border-bottom: 1px solid #9f593f; }
 
-.grey {
+body.todo .grey {
   background-color: #617280;
   background-image: url(https://image.flaticon.com/icons/png/128/61/61391.png);
   background-repeat: no-repeat;
@@ -76,10 +76,10 @@ ul {
   border-bottom: 1px solid #949ca3;
   border-top: 1px solid #4a4e52; }
 
-#button_to_add {
+body.todo #button_to_add {
   text-align: right; }
 
-#new_item {
+body.todo #new_item {
   background-color: #d7666b;
   border-radius: 5px;
   border: 1px outset Grey;
@@ -88,11 +88,11 @@ ul {
   margin-right: 15px;
   font-size: 1.1rem; }
 
-#form_to_add {
+body.todo #form_to_add {
   padding-bottom: 20px;
   display: none; }
 
-#item_description {
+body.todo #item_description {
   background-color: #617280;
   border-radius: 5px;
   color: Black;
@@ -100,10 +100,10 @@ ul {
   height: 25px;
   outline: none; }
 
-#item_description::-webkit-input-placeholder {
+body.todo #item_description::-webkit-input-placeholder {
   color: #24384a; }
 
-#button_to_submit {
+body.todo #button_to_submit {
   font-size: 1rem;
   text-align: right;
   background-color: #d7666b;
@@ -111,11 +111,11 @@ ul {
   border: 1px outset Grey;
   height: 30px;
   font-size: 1.1rem; }
-  #button_to_submit:hover {
+  body.todo #button_to_submit:hover {
     background-color: Black;
     color: White; }
 
-#total_summa {
+body.todo #total_summa {
   position: fixed;
   bottom: 40px;
   right: -100px;
@@ -126,28 +126,64 @@ ul {
   white-space: no-wrap; }
 
 @media screen and (min-width: 490px) {
-  #button_to_submit {
+  body.todo #button_to_submit {
     margin-left: 100px; } }
 
 @media screen and (max-width: 489px) and (min-width: 340px) {
-  #main_div {
+  body.todo #main_div {
     width: 300px; } }
 
 @media screen and (max-width: 339px) {
-  #main_div {
+  body.todo #main_div {
     width: 100%; }
-  #buy {
+  body.todo #buy {
     font-size: 0.8rem; }
-  #number_of_lis {
+  body.todo #number_of_lis {
     line-height: 28px; }
-    #number_of_lis span {
+    body.todo #number_of_lis span {
       font-size: 0.8rem;
       margin-right: 10px; }
-  #form_to_add {
+  body.todo #form_to_add {
     display: none; }
-  #item_description {
+  body.todo #item_description {
     width: 50%; } }
 
 @media screen and (max-width: 250px) {
-  body {
+  body.todo {
     min-width: 250px; } }
+
+body.lesson-third #game {
+  width: 800px;
+  margin: auto; }
+
+body.lesson-third #central {
+  text-align: center;
+  border: 1px dashed black;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box; }
+
+body.lesson-third #start #explanation {
+  margin: 5px; }
+
+body.lesson-third #follow {
+  display: none; }
+
+body.lesson-third #game-table {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  body.lesson-third #game-table .row {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    line-height: 60px; }
+    body.lesson-third #game-table .row .element {
+      width: 60px;
+      height: 60px;
+      border: 1px solid Black;
+      font-size: 3em;
+      user-select: none; }
+
+body.lesson-third .red {
+  background: red; }

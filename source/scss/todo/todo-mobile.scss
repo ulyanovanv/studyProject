@@ -1,3 +1,4 @@
+body.todo {
 @media screen and (min-width:490px){
   #button_to_submit {
     margin-left: 100px;
@@ -30,9 +31,10 @@
     width: 50%;
   }
 }
+}
 
 @media screen and (max-width: 250px) {
-  body {
+  body.todo {
     min-width:250px;
   }
 }

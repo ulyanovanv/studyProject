@@ -8,11 +8,12 @@
 
 
     </head>
-    <body>
+    <body class="{% block bodyClass %}{% endblock %}">
         {% block content %}{% endblock %}
 
         <script src="{{ asset('js/vendor/jquery.min.js') }}" ></script>
         <script src="{{ asset('js/main.js') }}" ></script>
-        <script src="{{ asset('js/todo-app.js') }}" ></script>
+        {% block jsDifferent %}{% endblock %}
+
     </body>
 </html>
