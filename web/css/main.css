@@ -187,3 +187,8 @@ body.lesson-third #game-table {
 
 body.lesson-third .red {
   background: red; }
+
+body.lesson-forth #new-el {
+  height: 30px;
+  width: 30px;
+  background-color: Yellow; }

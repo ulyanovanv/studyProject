@@ -37,6 +37,9 @@ $app->get('/cv', function () use ($app) {
 $app->get('/lesson3', function () use ($app) {
     return $app['twig']->render('lesson3/index.html.twig', array());
 });
+$app->get('/lesson4', function () use ($app) {
+    return $app['twig']->render('lesson4/index.html.twig', array());
+});
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
