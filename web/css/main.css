@@ -188,5 +188,56 @@ body.lesson-third #game-table {
 body.lesson-third .red {
   background: red; }
 
-body.main-in-numbers #new-el {
-  background-color: darkred; }
+body.main-in-numbers {
+  font-size: 16px; }
+  body.main-in-numbers .red {
+    background-color: darkred; }
+  body.main-in-numbers #main-div {
+    width: 1524px;
+    height: 738px;
+    background-color: lightgoldenrodyellow;
+    position: absolute;
+    top: -5px;
+    left: -5px; }
+  body.main-in-numbers #centre {
+    width: 96%;
+    height: 92%;
+    text-align: center;
+    margin: 30px;
+    box-shadow: 0 0 15px 5px #FFFFFF;
+    box-sizing: inherit; }
+  body.main-in-numbers #first #beginning-button {
+    margin-top: 20px; }
+  body.main-in-numbers #second {
+    display: none; }
+    body.main-in-numbers #second #time-left {
+      padding-top: 20px; }
+    body.main-in-numbers #second #centralization {
+      display: flex;
+      justify-content: center; }
+    body.main-in-numbers #second #game-board {
+      margin-bottom: 20px;
+      border: 1px solid Black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: max-content;
+      border-radius: 5px;
+      background-color: #FFF; }
+      body.main-in-numbers #second #game-board .row {
+        display: flex;
+        flex-flow: row; }
+      body.main-in-numbers #second #game-board .cell {
+        height: 60px;
+        width: 60px;
+        font-size: 2rem;
+        border: 1px solid Black;
+        margin: 3px;
+        text-align: center;
+        border-radius: 5px;
+        line-height: 60px; }
+      body.main-in-numbers #second #game-board .initial-color {
+        background-color: lightgoldenrodyellow; }
+  @media only screen and (max-width: 1530px) {
+    body.main-in-numbers #main-div {
+      width: 1200px; } }

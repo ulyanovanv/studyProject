@@ -1,4 +1,85 @@
 body.main-in-numbers {
-  #new-el {  background-color: darkred;
+
+  .red {
+    background-color: darkred;
+  }
+
+  font-size: 16px;
+
+   #main-div {
+     width: 1524px;
+     height: 738px;
+     background-color: lightgoldenrodyellow;
+     position:absolute;
+     top:-5px;
+     left:-5px;
+   }
+    #centre {
+      width: 96%;
+      height: 92%;
+      text-align: center;
+      margin: 30px ;
+      box-shadow: 0 0 15px 5px #FFFFFF;
+      box-sizing: inherit;
+    }
+
+   #first {
+
+
+     #beginning-button{
+       margin-top: 20px;
+     }
+     #instruction {}
+   }
+
+   #second{
+     display: none;
+
+     #time-left {
+       padding-top: 20px;
+       #seconds{}
+     }
+     #centralization {
+       display: flex;
+       justify-content: center;
+     }
+     #game-board {
+       margin-bottom: 20px;
+       border: 1px solid Black;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       width: max-content;
+       border-radius: 5px;
+       background-color: #FFF;
+       .row {
+         display: flex;
+         flex-flow: row;
+       }
+         .cell {
+           height: 60px;
+           width: 60px;
+           font-size: 2rem;
+           border: 1px solid Black;
+           margin: 3px;
+           text-align: center;
+           border-radius: 5px;
+           line-height: 60px;
+
+         }
+         .initial-color {
+           background-color: lightgoldenrodyellow;
+         }
+     }
+     #new-game {}
+   }
+
+
+  @media only screen and (max-width: 1530px) {
+    #main-div {
+      width: 1200px;
+    }
+
+
   }
 }

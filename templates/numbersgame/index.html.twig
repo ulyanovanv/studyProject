@@ -13,6 +13,40 @@ Little numbers game
 {% endblock %}
 
 {% block content %}
-<div id="new-el">new level</div>
+<div id="main-div">
+    <div id="centre">
+        <div id="first">
+            <button type="button" id="beginning-button">Начать</button>
+            <p id="instruction"> Начиная с "1" нажимайте на числа до тех пор, пока не дойдете до последнего. Время ограниченно до ...., если не успеете, то проиграете.</p>
+        </div>
+        <div id="second">
+            <p id="time-left">
+                Времени осталось:<span id="seconds">10</span>
+            </p>
+            <div id="centralization">
+                <div id="game-board">
+                    <div class="row">
+                        <div class="cell initial-color" id="c1"></div>
+                        <div class="cell initial-color" id="c2"></div>
+                        <div class="cell initial-color" id="c3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell initial-color" id="c4"></div>
+                        <div class="cell initial-color" id="c5"></div>
+                        <div class="cell initial-color" id="c6"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell initial-color" id="c7"></div>
+                        <div class="cell initial-color" id="c8"></div>
+                        <div class="cell initial-color" id="c9"></div>
+                    </div>
+                </div>
+            </div>
+            <input type="button" name="new-game" value="Начать занаво" id="new-game"/>
+
+        </div>
+
+    </div>
+</div>
 
 {% endblock %}
