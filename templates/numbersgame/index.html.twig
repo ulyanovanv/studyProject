@@ -1,0 +1,18 @@
+{% extends "layouts/layout.html.twig" %}
+
+{% block title %}
+Little numbers game
+{% endblock %}
+
+{% block bodyClass %}
+    main-in-numbers
+{% endblock %}
+
+{% block jsDifferent %}
+    <script src="{{ asset('js/numbers-game.js') }}" ></script>
+{% endblock %}
+
+{% block content %}
+<div id="new-el">new level</div>
+
+{% endblock %}

@@ -41,6 +41,10 @@ $app->get('/lesson4', function () use ($app) {
     return $app['twig']->render('lesson4/index.html.twig', array());
 });
 
+$app->get('/numbersgame', function () use ($app) {
+    return $app['twig']->render('numbersgame/index.html.twig', array());
+});
+
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;
