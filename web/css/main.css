@@ -189,21 +189,17 @@ body.lesson-third .red {
   background: red; }
 
 body.main-in-numbers {
-  font-size: 16px; }
+  font-size: 16px;
+  margin: 0px; }
   body.main-in-numbers .red {
     background-color: darkred; }
   body.main-in-numbers #main-div {
-    width: 1524px;
     height: 738px;
     background-color: lightgoldenrodyellow;
-    position: absolute;
-    top: -5px;
-    left: -5px; }
+    padding: 30px; }
   body.main-in-numbers #centre {
-    width: 96%;
-    height: 92%;
+    height: 100%;
     text-align: center;
-    margin: 30px;
     box-shadow: 0 0 15px 5px #FFFFFF;
     box-sizing: inherit; }
   body.main-in-numbers #first #beginning-button {
@@ -235,7 +231,10 @@ body.main-in-numbers {
         margin: 3px;
         text-align: center;
         border-radius: 5px;
-        line-height: 60px; }
+        line-height: 60px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none; }
       body.main-in-numbers #second #game-board .initial-color {
         background-color: lightgoldenrodyellow; }
   @media only screen and (max-width: 1530px) {
