@@ -1,0 +1,99 @@
+body.calender {
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
+  height: 734px;
+//  width: 1518px;
+  margin: 0px;
+  padding: 30px;
+  background-image: linear-gradient( #7FFFD4 , #FFD700), linear-gradient( #000 50%, #FFF 50%), linear-gradient(90deg,  #000 50%, #FFF 50% ),
+  URL("http://images.all-free-download.com/images/graphiclarge/linen_fabric_background_04_hd_picture_169825.jpg");
+  background-blend-mode:  screen, difference, exclusion;
+  background-repeat: repeat;
+  background-size: 100% 100%, 100px 100px, 100px 100px;
+
+
+  @mixin flexbox($direction,$jc,$ai) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $jc;
+    align-items: $ai;
+  }
+
+
+  #center {
+    text-align: -webkit-center;
+    margin-top: 270px;
+  }
+
+  #calender-view {
+    text-align: center;
+    border: 1px solid Black;
+    width: 217px;
+    background-color: #FFF;
+//    @include flexbox(column,center,center);
+  }
+
+  #first-line{
+    @include flexbox(row,space-between,center);
+    height: 45px;
+    #global-date{
+      padding-left: 10px;
+
+      #left-side{
+        font-size: 1.1rem;
+        #year{}
+        #month{}
+      }
+    }
+    #rifles{
+     padding-right: 8px;
+     @include flexbox(row,space-between,center);
+     width: 50px;
+      #to-left{
+        padding: 4px 10px 4px 4px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      #to-right{
+        padding: 4px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  #second-line{
+    @include flexbox(row,space-around,center);
+    background-color: #b9d4eb;
+    border-top: 1px solid #4a5c6b;
+    border-bottom: 1px solid #4a5c6b;
+    line-height: 20px;
+    .weekday{
+      width: 31px;
+      box-sizing: border-box;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  #third-line{
+    @include flexbox(row,flex-start,center);
+    flex-wrap: wrap;
+
+    .day{
+      width: 31px;
+      padding: 2px;
+      box-sizing: border-box;
+      padding-left: 2px;
+      font-size: 1.1rem;
+      &:hover {
+        color: #FFF;
+        background-color: #000;
+        cursor: pointer;
+      }
+    }
+  }
+}

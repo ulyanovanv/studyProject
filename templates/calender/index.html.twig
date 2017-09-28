@@ -1,0 +1,71 @@
+{% extends "layouts/layout.html.twig" %}
+
+{% block title %}
+    small calender
+{% endblock %}
+
+{% block additionalLinks %}
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+{% endblock %}
+
+{% block bodyClass %}
+    calender
+{% endblock %}
+
+{% block content %}
+    <div id="center">
+        <div id="calender-view">
+            <div id="first-line">
+                <div id="global-date">
+                    <p id="left-side">
+                        <span id="year">2017</span>
+                        <span id="month">September</span>
+                    </p>
+                </div>
+                <div id="rifles">
+                    <div id="to-left">
+                        <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                    </div>
+                    <div id="to-right">
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="second-line">
+                <div class="weekday">Mo</div>
+                <div class="weekday">Tu</div>
+                <div class="weekday">We</div>
+                <div class="weekday">Th</div>
+                <div class="weekday">Fr</div>
+                <div class="weekday">Sa</div>
+                <div class="weekday">Su</div>
+            </div>
+            <div id="third-line">
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day">3</div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+                <div class="day">6</div>
+                <div class="day">7</div>
+                <div class="day">8</div>
+                <div class="day">9</div>
+                <div class="day">10</div>
+                <div class="day">11</div>
+                <div class="day">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+                <div class="day">15</div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block jsDifferent %}
+    <script src="https://use.fontawesome.com/2f3047ef18.js"></script>    <!--where can i find the adress?-->
+    <script src="{{ asset('js/calender.js') }}" ></script>
+
+{% endblock %}
+
+

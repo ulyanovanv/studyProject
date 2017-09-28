@@ -240,3 +240,77 @@ body.main-in-numbers {
   @media only screen and (max-width: 1530px) {
     body.main-in-numbers #main-div {
       width: 1200px; } }
+
+body.calender {
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
+  height: 734px;
+  margin: 0px;
+  padding: 30px;
+  background-image: linear-gradient(#7FFFD4, #FFD700), linear-gradient(#000 50%, #FFF 50%), linear-gradient(90deg, #000 50%, #FFF 50%), URL("http://images.all-free-download.com/images/graphiclarge/linen_fabric_background_04_hd_picture_169825.jpg");
+  background-blend-mode: screen, difference, exclusion;
+  background-repeat: repeat;
+  background-size: 100% 100%, 100px 100px, 100px 100px; }
+  body.calender #center {
+    text-align: -webkit-center;
+    margin-top: 270px; }
+  body.calender #calender-view {
+    text-align: center;
+    border: 1px solid Black;
+    width: 217px;
+    background-color: #FFF; }
+  body.calender #first-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px; }
+    body.calender #first-line #global-date {
+      padding-left: 10px; }
+      body.calender #first-line #global-date #left-side {
+        font-size: 1.1rem; }
+    body.calender #first-line #rifles {
+      padding-right: 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 50px; }
+      body.calender #first-line #rifles #to-left {
+        padding: 4px 10px 4px 4px; }
+        body.calender #first-line #rifles #to-left:hover {
+          cursor: pointer; }
+      body.calender #first-line #rifles #to-right {
+        padding: 4px; }
+        body.calender #first-line #rifles #to-right:hover {
+          cursor: pointer; }
+  body.calender #second-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #b9d4eb;
+    border-top: 1px solid #4a5c6b;
+    border-bottom: 1px solid #4a5c6b;
+    line-height: 20px; }
+    body.calender #second-line .weekday {
+      width: 31px;
+      box-sizing: border-box; }
+      body.calender #second-line .weekday:hover {
+        cursor: pointer; }
+  body.calender #third-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap; }
+    body.calender #third-line .day {
+      width: 31px;
+      padding: 2px;
+      box-sizing: border-box;
+      padding-left: 2px;
+      font-size: 1.1rem; }
+      body.calender #third-line .day:hover {
+        color: #FFF;
+        background-color: #000;
+        cursor: pointer; }
