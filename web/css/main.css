@@ -254,6 +254,9 @@ body.calender {
   body.calender .blue {
     color: #0077cc;
     opacity: 0.7; }
+  body.calender .current-date {
+    color: #FFFFFF;
+    background-color: #000000; }
   body.calender #center {
     text-align: -webkit-center;
     margin-top: 270px; }
