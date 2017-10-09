@@ -14,7 +14,11 @@ $app->get('/', function () use ($app) {
 ->bind('homepage');
 
 
+$app->post('/user', 'Controllers\\UserController::store');
+$app->get('/user', 'Controllers\\UserController::index');
+
 $app->get('/to-do-app', 'Controllers\\ToDoController::index');
+
 $app->get('/to-do-app-load', function () use ($app) {
     $session = $app['session']->get('todo');
     return !empty($session) ? json_encode($session) : json_encode(['data' => [
