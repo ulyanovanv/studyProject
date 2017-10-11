@@ -320,3 +320,19 @@ body.calender {
         color: #FFF;
         background-color: #000;
         cursor: pointer; }
+
+body.form-nice {
+  font-size: 18px;
+  background-image: url("https://tinybop.com/img/apps/skyscrapers/investigate.gif"), linear-gradient(to right, #fc7216 0%, #c0c0c0 100%);
+  background-blend-mode: overlay; }
+  body.form-nice form {
+    width: 45%; }
+  body.form-nice fieldset {
+    border: 8px solid Black;
+    border-radius: 10px; }
+  body.form-nice label, body.form-nice input {
+    font-size: 0.9rem;
+    margin: 3px 0 3px 0; }
+  body.form-nice #submit {
+    float: right;
+    margin-right: 20px; }

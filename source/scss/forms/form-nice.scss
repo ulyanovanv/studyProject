@@ -1,0 +1,23 @@
+body.form-nice {
+
+    font-size: 18px;
+    background-image: url('https://tinybop.com/img/apps/skyscrapers/investigate.gif'), linear-gradient(to right, #fc7216 0%, #c0c0c0 100%);
+    background-blend-mode: overlay;
+
+  form {
+    width: 45%;
+  }
+  fieldset {
+    border: 8px solid Black;
+    border-radius: 10px;
+  }
+  label, input {
+    font-size: 0.9rem;
+    margin: 3px 0 3px 0;
+  }
+  #submit{
+    float: right;
+    margin-right: 20px;
+  }
+
+}

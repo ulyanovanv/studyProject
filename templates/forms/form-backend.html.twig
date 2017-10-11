@@ -1,0 +1,54 @@
+{% extends "layouts/layout.html.twig" %}
+
+{% block title %}
+    Forms with Back End
+{% endblock %}
+
+{% block additionalLinks %}{% endblock %}
+
+{% block bodyClass %}
+    form-nice
+{% endblock %}
+
+{% block content %}
+
+    <form method="POST" name="registration" action="/user">
+        <fieldset>
+            <legend>Form for registration</legend>
+            <label id="label-name" for='name'>Name</label>
+            <input name='name' type='text'/>
+            <label for='surname'>Surname</label>
+            <input name='surname' type='text'/></br>
+            <label for='gender'> Gender</label>
+            <select name='gender'>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Trans</option>
+            </select>
+            <label for='age'> Age</label>
+            <select name='age'>
+                <option>18-30</option>
+                <option>31-50</option>
+                <option>51-100</option>
+            </select></br>
+            <label for='phonenumber'>Phonenumber</label>
+            <input name='phonenumber' type='tel' placeholder='+7 915 123 00 00'/></br>
+            <label for='email'>E-mail address</label>
+            <input name='email' type='email' placeholder='nastya@visit.com'/></br>
+
+            <label for='password'>New password</label>
+            <input name='password' type='password' /></br>
+            <label for'repeatPassword'>Repeat password</label>
+            <input name='repeatPassword' type='password' />
+            <input id='submit' value='Send' type='submit' /></br>
+        </fieldset>
+    </form>
+
+
+
+
+{% endblock %}
+
+{% block jsDifferent %}
+    <script src="{{ asset('js/form-nice.js') }}" ></script>
+{% endblock %}
