@@ -86,7 +86,8 @@ body.todo #new_item {
   height: 30px;
   margin-bottom: 10px;
   margin-right: 15px;
-  font-size: 1.1rem; }
+  font-size: 1.1rem;
+  margin-top: 10px; }
 
 body.todo #form_to_add {
   padding-bottom: 20px;
@@ -98,7 +99,8 @@ body.todo #item_description {
   color: Black;
   font-size: 1.1rem;
   height: 25px;
-  outline: none; }
+  outline: none;
+  margin-top: 10px; }
 
 body.todo #item_description::-webkit-input-placeholder {
   color: #24384a; }
@@ -110,7 +112,8 @@ body.todo #button_to_submit {
   border-radius: 5px;
   border: 1px outset Grey;
   height: 30px;
-  font-size: 1.1rem; }
+  font-size: 1.1rem;
+  margin-top: 10px; }
   body.todo #button_to_submit:hover {
     background-color: Black;
     color: White; }
@@ -152,45 +155,43 @@ body.todo #total_summa {
   body.todo {
     min-width: 250px; } }
 
-body.lesson-third #game {
-  width: 800px;
-  margin: auto; }
-
-body.lesson-third #central {
-  text-align: center;
-  border: 1px dashed black;
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box; }
-
-body.lesson-third #start #explanation {
-  margin: 5px; }
-
-body.lesson-third #follow {
-  display: none; }
-
-body.lesson-third #game-table {
-  margin-top: 20px;
-  margin-bottom: 20px; }
-  body.lesson-third #game-table .row {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-    line-height: 60px; }
-    body.lesson-third #game-table .row .element {
-      width: 60px;
-      height: 60px;
-      border: 1px solid Black;
-      font-size: 3em;
-      user-select: none; }
-
-body.lesson-third .red {
-  background: red; }
+body.lesson-third {
+  margin-top: 8px; }
+  body.lesson-third #game {
+    width: 800px;
+    margin: auto; }
+  body.lesson-third #central {
+    text-align: center;
+    border: 1px dashed black;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box; }
+  body.lesson-third #start #explanation {
+    margin: 5px; }
+  body.lesson-third #follow {
+    display: none; }
+  body.lesson-third #game-table {
+    margin-top: 20px;
+    margin-bottom: 20px; }
+    body.lesson-third #game-table .row {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+      line-height: 60px; }
+      body.lesson-third #game-table .row .element {
+        width: 60px;
+        height: 60px;
+        border: 1px solid Black;
+        font-size: 3em;
+        user-select: none; }
+  body.lesson-third .red {
+    background: red; }
 
 body.main-in-numbers {
-  font-size: 16px;
-  margin: 0px; }
+  font-size: 16px; }
+  body.main-in-numbers p {
+    margin: 16px 0; }
   body.main-in-numbers .red {
     background-color: darkred; }
   body.main-in-numbers #main-div {
@@ -314,12 +315,44 @@ body.calender {
       width: 31px;
       padding: 2px;
       box-sizing: border-box;
-      padding-left: 2px;
-      font-size: 1.1rem; }
+      font-size: 1.1rem;
+      line-height: 1.4; }
       body.calender #third-line .day:hover {
         color: #FFF;
         background-color: #000;
         cursor: pointer; }
+
+html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul,
+ol, li, dl, dt, dd, form, a, fieldset, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none; }
+
+body {
+  line-height: 1;
+  margin: 8px;
+  padding: 0;
+  border: 0;
+  outline: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  padding: 0.5em 0;
+  margin: 0 10px; }
+
+ul, ol {
+  list-style: none; }
+
+img {
+  border: 0; }
+
+a {
+  color: black;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
 
 body.form-nice {
   font-size: 18px;
@@ -329,10 +362,13 @@ body.form-nice {
     width: 45%; }
   body.form-nice fieldset {
     border: 8px solid Black;
-    border-radius: 10px; }
+    border-radius: 10px;
+    padding: 6.3px 13.5px 11.25px 13.5px; }
   body.form-nice label, body.form-nice input {
-    font-size: 0.9rem;
-    margin: 3px 0 3px 0; }
+    font-size: 0.95rem;
+    margin: 4px 0 4px 0; }
+  body.form-nice select {
+    height: 22.8px; }
   body.form-nice #submit {
     float: right;
     margin-right: 20px; }

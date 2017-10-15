@@ -10,10 +10,14 @@ body.form-nice {
   fieldset {
     border: 8px solid Black;
     border-radius: 10px;
+    padding: 6.3px 13.5px 11.25px 13.5px;
   }
   label, input {
-    font-size: 0.9rem;
-    margin: 3px 0 3px 0;
+    font-size: 0.95rem;
+    margin: 4px 0 4px 0;
+  }
+  select {
+    height: 22.8px;
   }
   #submit{
     float: right;

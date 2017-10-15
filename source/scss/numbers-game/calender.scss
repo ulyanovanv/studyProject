@@ -12,6 +12,7 @@ body.calender {
   background-size: 100% 100%, 100px 100px, 100px 100px;
 
 
+
   @mixin flexbox($direction,$jc,$ai) {
     display: flex;
     flex-direction: $direction;
@@ -97,8 +98,8 @@ body.calender {
       width: 31px;
       padding: 2px;
       box-sizing: border-box;
-      padding-left: 2px;
       font-size: 1.1rem;
+      line-height: 1.4;
       &:hover {
         color: #FFF;
         background-color: #000;
