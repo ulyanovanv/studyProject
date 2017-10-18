@@ -393,10 +393,15 @@ body.c13 {
     body.c13 .container .columnn {
       height: 500px;
       width: 250px;
-      background-color: #f8584a;
+      background: repeating-linear-gradient(#ff0048 2%, #ff4a4a 3%, #ff0048 5%);
       border: 15px solid #FFFFFF;
       padding: 10px;
       margin: 30px; }
+      body.c13 .container .columnn .block {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch; }
   body.c13 #first-colomn #header {
     background-image: url("http://javascriptbook.com/code/c13/img/logo.png");
     padding: 235px 20px 0 20px;
@@ -416,7 +421,6 @@ body.c13 {
     body.c13 .label .required {
       color: #78052d; }
   body.c13 .inputs {
-    margin-bottom: 20px;
     height: 30px;
     font-size: 1.1rem;
     margin-top: 5px;
@@ -426,6 +430,9 @@ body.c13 {
     body.c13 .inputs:focus {
       outline: 0;
       outline-offset: 0; }
+  body.c13 .message {
+    margin-bottom: 20px;
+    font-size: 0.85rem; }
   body.c13 #second-colomn {
     display: flex;
     flex-direction: column;

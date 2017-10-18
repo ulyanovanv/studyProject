@@ -12,7 +12,7 @@
 
 {% block content %}
 
-    <form method="POST" name="registration">
+    <form method="POST" name="registration" novalidate>
         <div class="container">
             <div id="first-colomn" class="columnn">
                 <header id="header">Become a member </header>
@@ -22,59 +22,75 @@
             <div id="second-colomn" class="columnn">
 
                 <h2 class="headings"> Settings  </h2>
-                <label for="name" class="label">
-                    Name:
-                    <span class="required">*</span>
-                </label>
-                <input class="inputs" id="name" name="name" type="text" maxlength=30 placeholder="Enter your name" autocomplete="name" required/>
+                <div class="block">
+                    <label for="name" class="label">
+                        Name:
+                        <span class="required">*</span>
+                    </label>
+                    <input class="inputs" id="name" name="name" type="text" maxlength=30 placeholder="Enter your name" autocomplete="name" required/>
+                </div>
 
-                <label for="email"  class="label">
-                    Email:
-                    <span class="required">*</span>
-                </label>
-                <input class="inputs"  id="email" name="email" type="email" placeholder="email@example.com" required/>
+                <div class="block">
+                    <label for="email"  class="label">
+                        Email:
+                        <span class="required">*</span>
+                    </label>
+                    <input class="inputs"  id="email" name="email" type="email" placeholder="email@example.com" required/>
+                </div>
 
-                <label for="password"  class="label">
-                    Password
-                    <span class="required">*</span>
-                </label>
-                <input class="inputs"  id="password" name="password" type="password" maxlength=30 autocomplete="off" required/>
 
-                <label for="confpassword"  class="label">
-                    Confirm password
-                    <span class="required">*</span>
-                </label>
-                <input class="inputs"  id="confpassword" name="confpassword" type="password" maxlength=30 autocomplete="off" required/>
+                <div class="block">
+                    <label for="password"  class="label">
+                        Password
+                        <span class="required">*</span>
+                    </label>
+                    <input class="inputs"  id="password" name="password" type="password" maxlength=30 autocomplete="off" required/>
+                </div>
+
+                <div class="block">
+                    <label for="confpassword"  class="label">
+                        Confirm password
+                        <span class="required">*</span>
+                    </label>
+                    <input class="inputs"  id="confpassword" name="confpassword" type="password" maxlength=30 autocomplete="off" required/>
+                </div>
 
             </div>
 
             <div id="third-colomn" class="columnn">
 
                 <h2 class="headings"> Profile </h2>
-                <label for="birthday" class="label">
-                    Birthday:
-                    <span class="required">*</span>
-                </label>
-                <input class="inputs" id="birthday" name="birthday" type="date" placeholder="yyyy-mm-dd" required/>
 
-                <div class="show-when-small">
-                    <label for="smallers" class="label" id="wrap">
+                <div class="block">
+                    <label for="birthday" class="label">
+                        Birthday:
                         <span class="required">*</span>
-                        You need a parent's permission to join. Tick here if your child can join:
                     </label>
-                    <input class="inputs" id="smallers" name="smallers" type="checkbox" required/>
+                    <input class="inputs" id="birthday" name="birthday" type="date" placeholder="yyyy-mm-dd" required/>
                 </div>
 
-                <label for="short-story" class="label">
-                    Short Bio (max 140 characters):
-                </label>
-                <textarea class="inputs" id="short-story" name="short-story" maxlength=140></textarea>
-                <span class="symbols-left"></span>
-
-                <div id="final">
-                    <input class="final-button" id="reset" name="reset" value="Reset" type="reset"/>
-                    <input class="final-button"  id="submit" name="submit" value="Register" type="submit"/>
+                <div class="block">
+                    <div class="show-when-small">
+                        <label for="smallers" class="label" id="wrap">
+                            <span class="required">*</span>
+                            You need a parent's permission to join. Tick here if your child can join:
+                        </label>
+                        <input class="inputs" id="smallers" name="smallers" type="checkbox"/>
+                    </div>
                 </div>
+
+                <div class="block">
+                    <label for="short-story" class="label">
+                        Short Bio (max 140 characters):
+                    </label>
+                    <textarea class="inputs" id="short-story" name="short-story" maxlength=140></textarea>
+                    <span class="symbols-left"></span>
+                </div>
+
+                    <div id="final">
+                        <input class="final-button" id="reset" name="reset" value="Reset" type="reset"/>
+                        <input class="final-button"  id="submit" name="submit" value="Register" type="submit"/>
+                    </div>
 
             </div>
         </div>
