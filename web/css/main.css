@@ -372,3 +372,90 @@ body.form-nice {
   body.form-nice #submit {
     float: right;
     margin-right: 20px; }
+
+body.c13 {
+  font-size: 16px;
+  color: #FFF;
+  line-height: 1.2rem;
+  background-image: url("http://www.parhlo.com/wp-content/uploads/2016/01/1.-Naran-Kaghan-Waterfalls.jpg"), radial-gradient(#78052d, #d7666b);
+  background-repeat: no-repeat;
+  background-blend-mode: color-burn;
+  height: 750px;
+  margin: 0;
+  box-shadow: inset 0px 21px 73px black; }
+  body.c13 .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 750px; }
+    body.c13 .container .columnn {
+      height: 500px;
+      width: 250px;
+      background-color: #f8584a;
+      border: 15px solid #FFFFFF;
+      padding: 10px;
+      margin: 30px; }
+  body.c13 #first-colomn #header {
+    background-image: url("http://javascriptbook.com/code/c13/img/logo.png");
+    padding: 235px 20px 0 20px;
+    background-repeat: no-repeat;
+    background-position: top;
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 1.5rem; }
+  body.c13 #first-colomn #text {
+    padding: 0 20px;
+    margin-top: 10px; }
+  body.c13 .headings {
+    font-size: 2rem;
+    font-weight: normal; }
+  body.c13 .label {
+    font-size: 1.2rem; }
+    body.c13 .label .required {
+      color: #78052d; }
+  body.c13 .inputs {
+    margin-bottom: 20px;
+    height: 30px;
+    font-size: 1.1rem;
+    margin-top: 5px;
+    text-indent: 2px;
+    box-shadow: inset 0 2px 2px black;
+    border: none; }
+    body.c13 .inputs:focus {
+      outline: 0;
+      outline-offset: 0; }
+  body.c13 #second-colomn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch; }
+  body.c13 #third-colomn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch; }
+    body.c13 #third-colomn .show-when-small {
+      display: none; }
+      body.c13 #third-colomn .show-when-small #smallers {
+        height: 12px;
+        box-shadow: none; }
+    body.c13 #third-colomn #short-story {
+      height: 100px;
+      margin-bottom: 5px; }
+      body.c13 #third-colomn #short-story .symbols-left {
+        font-size: 0.95rem; }
+    body.c13 #third-colomn #final {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 15px; }
+      body.c13 #third-colomn #final .final-button {
+        background-color: #000000;
+        height: 36px;
+        width: 97px;
+        font-size: 1.15rem;
+        color: #FFF;
+        border-radius: 7px;
+        border: none; }
