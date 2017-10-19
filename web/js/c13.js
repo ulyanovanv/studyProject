@@ -6,23 +6,43 @@
     var form = document.forms[0];
     var elements = form.elements;
     var valid = {};
+    var reset = elements.reset;
 
     for (var i=0; i<7; i++){
         var parent = $(elements[i]).parent();
         var span = $("<span></span>");
         span.addClass("message");
         parent.append(span);
-
         var Key = elements[i].name;
         var valued = "true";
         valid[Key] = valued;
     }
 
+    var typesCheck = {
+        email: function(){
+            var check =  /^[a-zA-Z0-9\.\+\-]+@[a-zA-Z]+\.[a-zA-Z]+/;
+        },
+        password: function(){
+            var check = /\d+/;
+        },
+        date: function(){
+            var check = /(\d{,4})-(\d{1,2}\)-(\d{1,2})/;
+        }
+    };
 
+
+    // reset button function
+    reset.onclick = function(){
+        var spans = $("span.message");
+        for (var i=0; i<7; i++){
+           $(spans[i]).text("");
+        }
+    }
+    // submit button function
     form.onsubmit = function(event){
         universalRequired();
         universalTypes();
-        console.log($("#birthday").val());
+//        console.log($("#birthday").val());
         sendForm(event);
     }
 
@@ -49,27 +69,40 @@
             console.log(valid);
     }
     function universalTypes(){
-        for (var i = 0; i<elements.length; i++){
-            if (elements[i].type === "email"){
+        try {
+            for (var i = 0; i<elements.length; i++){
+                if (elements[i].type === "email"){
 
-                var el = $(elements[i]);
-                var span = el.next();
-                var check =  /^[a-zA-Z0-9\.\+\-]+@[a-zA-Z]+\.[a-zA-Z]+/;
-                if (check.test(el.val()) === false){
-                    el.data('error',"incorrent email");
-                    span.text(el.data('error'));
-                    valid[elements[i].name] = "false";
-                } else {
-                    valid[elements[i].name] = "true";
+                    var el = $(elements[i]);
+                    var span = el.next();
+                    console.log(span);
+                    var check =  /^[a-zA-Z0-9\.\+\-]+@[a-zA-Z]+\.[a-zA-Z]+/;
+                    if (check.test(el.val())){
+                        valid[elements[i].name] = "true";
+                        span.text("");
+
+                    } else {
+                        el.data('error2',"incorrent email");
+                        span.text(el.data('error2'));   //??
+                        valid[elements[i].name] = "false";
+                    }
                 }
             }
+            console.log(valid);
+        } catch(error) {
+            console.log(error);
         }
     }
 
+
+
+
+
+    //check the whole form
     function sendForm(event){
         try {
-            for (var keyp in valid){
-                if (valid[keyp] === "false") {
+            for (var key in valid){
+                if (valid[key] === "false") {
                     event.preventDefault();
                     console.log("problem");
 //                    alert("check the accuracy of data")

@@ -3,9 +3,10 @@ body.c13 {
   color: #FFF;
   line-height: 1.2rem;
   background-image: url("http://www.parhlo.com/wp-content/uploads/2016/01/1.-Naran-Kaghan-Waterfalls.jpg"), radial-gradient(#78052d, #d7666b) ;
-  background-repeat: no-repeat;
+  background-repeat: inherit;
   background-blend-mode: color-burn;
   height: 750px;
+  width: 100%;
   margin: 0;
   box-shadow: inset 0px 21px 73px black;
 
@@ -23,9 +24,11 @@ body.c13 {
     align-items: center;
     height: 750px;
     .columnn {
-      height: 500px;
+      height: 501px;
       width: 250px;
-      background: repeating-linear-gradient(#ff0048 2%, #ff4a4a 3%, #ff0048 5%);
+      background-blend-mode: color;
+      background-image: repeating-linear-gradient(to right, #ff0048 5%, #ff4a4a 7%, #ff0048 10%),repeating-linear-gradient(#ff0048 2%, #ff4a4a 3%, #ff0048 5%);
+//      background: repeating-linear-gradient(#ff0048 2%, #ff4a4a 3%, #ff0048 5%);
       border: 15px solid #FFFFFF;
       padding: 10px;
       margin: 30px;
@@ -117,6 +120,10 @@ body.c13 {
         color: #FFF;
         border-radius: 7px;
         border: none;
+        &:focus {
+          outline: 0;
+          outline-offset: 0;
+        }
       }
     }
 
