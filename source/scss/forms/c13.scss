@@ -86,7 +86,19 @@ body.c13 {
 
   #second-colomn {
     @include flex;
+    .cross {
+      background-image: url("http://javascriptbook.com/code/c13/img/cross.png");
+      background-repeat: no-repeat;
+      background-position: center right;
+    }
+    .check-mark{
+      background-image: url("http://javascriptbook.com/code/c13/img/tick.png");
+      background-repeat: no-repeat;
+      background-position: center right;
+    }
   }
+
+
   #third-colomn {
     @include flex;
 
@@ -129,3 +141,6 @@ body.c13 {
 
   }
 }
+
+//<i class="fa fa-times" aria-hidden="true"></i>
+//<i class="fa fa-check" aria-hidden="true"></i>

@@ -19,15 +19,12 @@
     }
 
     var typesCheck = {
-        email: function(){
-            var check =  /^[a-zA-Z0-9\.\+\-]+@[a-zA-Z]+\.[a-zA-Z]+/;
-        },
-        password: function(){
-            var check = /\d+/;
-        },
-        date: function(){
-            var check = /(\d{,4})-(\d{1,2}\)-(\d{1,2})/;
-        }
+        email:      {check : "^[a-zA-Z0-9\.\+\-]+@[a-zA-Z]+\.[a-zA-Z]+",
+                    message: "incorrect email"  },
+        password:   {check: "\\d+",
+                    message: "incorrect password"},
+        date:       { check : "^(\\d{1,4})-(\\d{1,2})-(\\d{1,2})$",
+                    message: "incorrect date"}
     };
 
 
@@ -38,11 +35,12 @@
            $(spans[i]).text("");
         }
     }
+
     // submit button function
     form.onsubmit = function(event){
         universalRequired();
         universalTypes();
-//        console.log($("#birthday").val());
+        console.log($("#birthday").val());
         sendForm(event);
     }
 
@@ -66,41 +64,116 @@
 
                 }
             }
-            console.log(valid);
     }
     function universalTypes(){
         try {
             for (var i = 0; i<elements.length; i++){
-                if (elements[i].type === "email"){
-
-                    var el = $(elements[i]);
-                    var span = el.next();
-                    console.log(span);
-                    var check =  /^[a-zA-Z0-9\.\+\-]+@[a-zA-Z]+\.[a-zA-Z]+/;
-                    if (check.test(el.val())){
-                        valid[elements[i].name] = "true";
-                        span.text("");
-
-                    } else {
-                        el.data('error2',"incorrent email");
-                        span.text(el.data('error2'));   //??
-                        valid[elements[i].name] = "false";
-                    }
+                var typpie;
+                var typeOfInput = elements[i].type;
+                switch(typeOfInput){
+                    case "email":
+                        typpie = typesCheck.email;
+                        break;
+                    case "password":
+                        typpie = typesCheck.password;
+                        break;
+                    case "date":
+                        typpie = typesCheck.date;
+                        break;
+                    default:
+                        continue;
+                }
+                var el = $(elements[i]);
+                var span = el.next();
+                var check = new RegExp(typpie.check);
+//                console.log(check);
+                if (check.test(el.val()) === false){
+                    el.data('error2',typpie.message);
+                    span.text(el.data('error2'));   //??
+                    valid[el.name] = "false";
+                } else {
+                    valid[el.name] = "true";
+                    span.text("");
                 }
             }
-            console.log(valid);
         } catch(error) {
             console.log(error);
         }
     }
 
+    //passwords
+    $(elements.password).on("focus",function(){
+        $(this).removeClass("cross","check-mark");
+    });
+    $(elements.confpassword).on("focus",function(){
+        $(this).removeClass("cross","check-mark");
+    });
+
+
+
+    $(elements.password).on("blur",function(){
+        checkingPasswords();
+    });
+    $(elements.confpassword).on("blur",function(){
+        checkingPasswords();
+    })
+
+//
+
+    function checkingPasswords(){
+        var password = $(elements.password);
+        var span1 = password.next();
+        var confpassword = $(elements.confpassword);
+        var span2 = confpassword.next();
+        var passwordValue = password.val();
+        var confpasswordValue = confpassword.val();
+        if (passwordValue<2 &&  confpasswordValue<2){
+            alert("your password too short");
+            valid[elements.password.name] = "false";
+            valid[elements.confpassword.name] = "false";
+            return;
+        }
+        if(passwordValue === confpasswordValue) {
+            password.addClass("check-mark");
+            confpassword.addClass("check-mark");
+            password.removeClass("cross");
+            confpassword.removeClass("cross");
+            span1.text("");
+            span2.text("");
+            valid[elements.password.name] = "true";
+            valid[elements.confpassword.name] = "true";
+//            console.log(valid);
+        } else {
+            password.addClass("cross");
+            confpassword.addClass("cross");
+            password.removeClass("check-mark");
+            confpassword.removeClass("check-mark");
+            password.data("error3","passwords do not match");
+            span1.text(password.data("error3"));
+            span2.text(password.data("error3"));
+            valid[elements.password.name] = "false";
+            valid[elements.confpassword.name] = "false";
+//            console.log(valid);
+        }
+
+    }
+
+
+
+//    elements.password.oninput = function(event){
+//        var passwordValue = event.target;
+//        console.log(passwordValue);
+//    }
 
 
 
 
-    //check the whole form
+
     function sendForm(event){
         try {
+            console.log(valid);
+            checkingPasswords();
+            console.log(valid);
             for (var key in valid){
                 if (valid[key] === "false") {
                     event.preventDefault();
@@ -109,10 +182,12 @@
                     break;
                 }
             }
-        } catch(error){
+        }catch(error){
             console.log(error);
         }
+
     }
+
 
 }())
 

@@ -440,6 +440,14 @@ body.c13 {
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch; }
+    body.c13 #second-colomn .cross {
+      background-image: url("http://javascriptbook.com/code/c13/img/cross.png");
+      background-repeat: no-repeat;
+      background-position: center right; }
+    body.c13 #second-colomn .check-mark {
+      background-image: url("http://javascriptbook.com/code/c13/img/tick.png");
+      background-repeat: no-repeat;
+      background-position: center right; }
   body.c13 #third-colomn {
     display: flex;
     flex-direction: column;
