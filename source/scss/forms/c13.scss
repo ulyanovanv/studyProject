@@ -10,12 +10,24 @@ body.c13 {
   margin: 0;
   box-shadow: inset 0px 21px 73px black;
 
+
+
+}
+
   @mixin flex {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
   }
+  .red {
+    color: black;
+    font-size: 1.2rem;
+  }
+
+
+
+
   .container {
     display: flex;
     flex-direction: row;
@@ -112,12 +124,13 @@ body.c13 {
       }
     }
 
-    #short-story {
+    #shortstory {
       height: 100px;
       margin-bottom: 5px;
       .symbols-left {
         font-size: 0.95rem;
       }
+
     }
     #final {
       display: flex;
@@ -140,7 +153,26 @@ body.c13 {
     }
 
   }
-}
 
-//<i class="fa fa-times" aria-hidden="true"></i>
-//<i class="fa fa-check" aria-hidden="true"></i>
+@media screen and (max-width: 1070px){
+  .container {
+    flex-wrap: nowrap;
+    .columnn {
+      margin: 0px;
+    }
+  }
+
+}
+@media screen and (max-width: 920px){
+  .container {
+    flex-direction: column;
+    height: auto;
+    flex-wrap: wrap;
+    .columnn {
+      margin: 2px;
+      width: 300px;
+    }
+
+  }
+
+}

@@ -101,6 +101,10 @@
         }
     }
 
+
+
+
+
     //passwords
     $(elements.password).on("focus",function(){
         $(this).removeClass("cross","check-mark");
@@ -157,6 +161,30 @@
         }
 
     }
+
+    //textarea short-story
+    $(elements.shortstory).on("input keypress",function(event){
+        var max = 140;
+        var valueLength = event.target.value.length;
+        var leftSymbols = max-valueLength;
+        $(".symbols-left").text(leftSymbols);
+        var localSpanMessage = $(event.target).siblings('.message');
+        if (leftSymbols<1){
+            localSpanMessage.text("no symbols left");
+            elements.shortstory.disabled = true;
+            setTimeout(function() { elements.shortstory.disabled = false; }, 1000);
+        } else if (leftSymbols<11){
+            localSpanMessage.text("left few symbols");
+            $(".symbols-left").addClass("red");
+        } else {
+            localSpanMessage.text("");
+            $(".symbols-left").removeClass("red");
+        }
+//        console.log(leftSymbols);
+    })
+
+
+
 
 
 

@@ -384,98 +384,126 @@ body.c13 {
   width: 100%;
   margin: 0;
   box-shadow: inset 0px 21px 73px black; }
-  body.c13 .container {
+
+.red {
+  color: black;
+  font-size: 1.2rem; }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 750px; }
+  .container .columnn {
+    height: 501px;
+    width: 250px;
+    background-blend-mode: color;
+    background-image: repeating-linear-gradient(to right, #ff0048 5%, #ff4a4a 7%, #ff0048 10%), repeating-linear-gradient(#ff0048 2%, #ff4a4a 3%, #ff0048 5%);
+    border: 15px solid #FFFFFF;
+    padding: 10px;
+    margin: 30px; }
+    .container .columnn .block {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch; }
+
+#first-colomn #header {
+  background-image: url("http://javascriptbook.com/code/c13/img/logo.png");
+  padding: 235px 20px 0 20px;
+  background-repeat: no-repeat;
+  background-position: top;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 1.5rem; }
+
+#first-colomn #text {
+  padding: 0 20px;
+  margin-top: 10px; }
+
+.headings {
+  font-size: 2rem;
+  font-weight: normal; }
+
+.label {
+  font-size: 1.2rem; }
+  .label .required {
+    color: #78052d; }
+
+.inputs {
+  height: 30px;
+  font-size: 1.1rem;
+  margin-top: 5px;
+  text-indent: 2px;
+  box-shadow: inset 0 2px 2px black;
+  border: none; }
+  .inputs:focus {
+    outline: 0;
+    outline-offset: 0; }
+
+.message {
+  margin-bottom: 20px;
+  font-size: 0.85rem; }
+
+#second-colomn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch; }
+  #second-colomn .cross {
+    background-image: url("http://javascriptbook.com/code/c13/img/cross.png");
+    background-repeat: no-repeat;
+    background-position: center right; }
+  #second-colomn .check-mark {
+    background-image: url("http://javascriptbook.com/code/c13/img/tick.png");
+    background-repeat: no-repeat;
+    background-position: center right; }
+
+#third-colomn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch; }
+  #third-colomn .show-when-small {
+    display: none; }
+    #third-colomn .show-when-small #smallers {
+      height: 12px;
+      box-shadow: none; }
+  #third-colomn #shortstory {
+    height: 100px;
+    margin-bottom: 5px; }
+    #third-colomn #shortstory .symbols-left {
+      font-size: 0.95rem; }
+  #third-colomn #final {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    height: 750px; }
-    body.c13 .container .columnn {
-      height: 501px;
-      width: 250px;
-      background-blend-mode: color;
-      background-image: repeating-linear-gradient(to right, #ff0048 5%, #ff4a4a 7%, #ff0048 10%), repeating-linear-gradient(#ff0048 2%, #ff4a4a 3%, #ff0048 5%);
-      border: 15px solid #FFFFFF;
-      padding: 10px;
-      margin: 30px; }
-      body.c13 .container .columnn .block {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: stretch; }
-  body.c13 #first-colomn #header {
-    background-image: url("http://javascriptbook.com/code/c13/img/logo.png");
-    padding: 235px 20px 0 20px;
-    background-repeat: no-repeat;
-    background-position: top;
-    font-weight: bold;
-    font-size: 1.6rem;
-    line-height: 1.5rem; }
-  body.c13 #first-colomn #text {
-    padding: 0 20px;
-    margin-top: 10px; }
-  body.c13 .headings {
-    font-size: 2rem;
-    font-weight: normal; }
-  body.c13 .label {
-    font-size: 1.2rem; }
-    body.c13 .label .required {
-      color: #78052d; }
-  body.c13 .inputs {
-    height: 30px;
-    font-size: 1.1rem;
-    margin-top: 5px;
-    text-indent: 2px;
-    box-shadow: inset 0 2px 2px black;
-    border: none; }
-    body.c13 .inputs:focus {
-      outline: 0;
-      outline-offset: 0; }
-  body.c13 .message {
-    margin-bottom: 20px;
-    font-size: 0.85rem; }
-  body.c13 #second-colomn {
-    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px; }
+    #third-colomn #final .final-button {
+      background-color: #000000;
+      height: 36px;
+      width: 97px;
+      font-size: 1.15rem;
+      color: #FFF;
+      border-radius: 7px;
+      border: none; }
+      #third-colomn #final .final-button:focus {
+        outline: 0;
+        outline-offset: 0; }
+
+@media screen and (max-width: 1070px) {
+  .container {
+    flex-wrap: nowrap; }
+    .container .columnn {
+      margin: 0px; } }
+
+@media screen and (max-width: 920px) {
+  .container {
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch; }
-    body.c13 #second-colomn .cross {
-      background-image: url("http://javascriptbook.com/code/c13/img/cross.png");
-      background-repeat: no-repeat;
-      background-position: center right; }
-    body.c13 #second-colomn .check-mark {
-      background-image: url("http://javascriptbook.com/code/c13/img/tick.png");
-      background-repeat: no-repeat;
-      background-position: center right; }
-  body.c13 #third-colomn {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch; }
-    body.c13 #third-colomn .show-when-small {
-      display: none; }
-      body.c13 #third-colomn .show-when-small #smallers {
-        height: 12px;
-        box-shadow: none; }
-    body.c13 #third-colomn #short-story {
-      height: 100px;
-      margin-bottom: 5px; }
-      body.c13 #third-colomn #short-story .symbols-left {
-        font-size: 0.95rem; }
-    body.c13 #third-colomn #final {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      margin-top: 15px; }
-      body.c13 #third-colomn #final .final-button {
-        background-color: #000000;
-        height: 36px;
-        width: 97px;
-        font-size: 1.15rem;
-        color: #FFF;
-        border-radius: 7px;
-        border: none; }
-        body.c13 #third-colomn #final .final-button:focus {
-          outline: 0;
-          outline-offset: 0; }
+    height: auto;
+    flex-wrap: wrap; }
+    .container .columnn {
+      margin: 2px;
+      width: 300px; } }
