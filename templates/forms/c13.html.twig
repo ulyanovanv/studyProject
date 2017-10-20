@@ -12,7 +12,7 @@
 
 {% block content %}
 
-    <form method="POST" name="registration" novalidate>
+    <form method="POST" name="registration" action="/user" novalidate>
         <div class="container">
             <div id="first-colomn" class="columnn">
                 <header id="header">Become a member </header>
@@ -68,7 +68,7 @@
                         Birthday:
                         <span class="required">*</span>
                     </label>
-                    <input class="inputs" id="birthdays" name="birthdays" type="date" placeholder="yyyy-mm-dd" required/>
+                    <input class="inputs"  id="birthdays" name="birthdays" type="date" placeholder="yyyy-mm-dd" required/>
                 </div>
 
                 <div class="block">
@@ -92,10 +92,13 @@
                 <div id="final">
                     <input class="final-button" id="reset" name="reset" value="Reset" type="reset"/>
                     <input class="final-button"  id="submit" name="submit" value="Register" type="submit"/>
+                    <button  class="final-button" >Return info</button>
                 </div>
 
             </div>
+
         </div>
+
 
     </form>
 

@@ -7,6 +7,7 @@
     var elements = form.elements;
     var valid = {};
     var reset = elements.reset;
+    var birth = $(document.forms[0].elements.birthdays);
 
     for (var i=0; i<7; i++){
         var parent = $(elements[i]).parent();
@@ -21,7 +22,7 @@
     var typesCheck = {
         email:      {check : "^[a-zA-Z0-9\.\+\-]+@[a-zA-Z]+\.[a-zA-Z]+",
                     message: "incorrect email"  },
-        password:   {check: "\\d+",
+        password:   {check: "^\\d+$",
                     message: "incorrect password"},
         date:       { check : "^(\\d{1,4})-(\\d{1,2})-(\\d{1,2})$",
                     message: "incorrect date"}
@@ -35,7 +36,6 @@
            $(spans[i]).text("");
         }
     }
-
     // submit button function
     form.onsubmit = function(event){
         universalRequired();
@@ -90,20 +90,17 @@
                 if (check.test(el.val()) === false){
                     el.data('error2',typpie.message);
                     span.text(el.data('error2'));   //??
-                    valid[el.name] = "false";
+                    valid[el.attr('name')] = "false";
                 } else {
-                    valid[el.name] = "true";
+                    valid[el.attr('name')] = "true";
                     span.text("");
                 }
             }
         } catch(error) {
             console.log(error);
         }
+        console.log(valid);
     }
-
-
-
-
 
     //passwords
     $(elements.password).on("focus",function(){
@@ -113,17 +110,20 @@
         $(this).removeClass("cross","check-mark");
     });
 
-
-
     $(elements.password).on("blur",function(){
+        valid[elements.password.name] = null;
         checkingPasswords();
     });
+
     $(elements.confpassword).on("blur",function(){
+        valid[elements.password.name] = null;
         checkingPasswords();
     })
 
-//
 
+    // private check
+
+    //password check
     function checkingPasswords(){
         var password = $(elements.password);
         var span1 = password.next();
@@ -131,10 +131,13 @@
         var span2 = confpassword.next();
         var passwordValue = password.val();
         var confpasswordValue = confpassword.val();
-        if (passwordValue<2 &&  confpasswordValue<2){
+        if (passwordValue<4 &&  confpasswordValue<4){
             alert("your password too short");
             valid[elements.password.name] = "false";
             valid[elements.confpassword.name] = "false";
+            return;
+        }
+        if (valid[elements.password.name] === "false") {
             return;
         }
         if(passwordValue === confpasswordValue) {
@@ -161,15 +164,14 @@
         }
 
     }
-    var birth = $(document.forms[0].elements.birthdays);
+
     // age proof
+
     $(birth).on("change",function(){
         var dateToCompare = new Date(birth.val());// создается пользователем его дата рождения
         var dateToCompareMil = dateToCompare.getTime();
-
         checkYoonger(birth, dateToCompareMil);
     });
-
     function checkYoonger(birth, dateToCompareMil){
         try {
             var current = new Date(); //создается сегодняшняя дата
@@ -177,14 +179,8 @@
             var curMonth = current.getMonth();
             var curDate = current.getDate();
             var minAge = 18;
-
             var newOne = new Date(curYear-minAge,curMonth,curDate+1); // создается дата ровно 18 лет назад
             var newOneMil = newOne.getTime();
-                console.log(newOneMil);
-
-
-
-
             if (dateToCompareMil >= newOneMil){
                 if (elements.smallers.checked === true){
                     valid[elements.smallers.name] = "true";
@@ -193,19 +189,12 @@
                 console.log("young");
                 $(".show-when-small").show();
                 $("#smallers").attr("required","true");
-
                 valid[elements.smallers.name] = "false";
-    //            console.log(valid);
-    //            console.log(elements.smallers.name);
-                console.log(valid[elements.birthdays.name]);
                 console.log(valid);
-
             } else {
-                console.log(birth);
                 console.log("old");
                 $(".show-when-small").hide();
                 $("#smallers").removeAttr("required");
-
                 valid[elements.smallers.name] = "true";
                 console.log(valid);
             }
@@ -236,36 +225,84 @@
         } else {
             localSpanMessage.text("");
             $(".symbols-left").removeClass("red");
-
         }
-//        console.log(leftSymbols);
     })
 
-
+    function urlParam(object) {
+        var encodedString = '';
+        for (var prop in object) {
+            if (object.hasOwnProperty(prop)) {
+                if (encodedString.length > 0) {
+                    encodedString += '&';
+                }
+                encodedString += encodeURI(prop + '=' + object[prop]);
+            }
+        }
+        return encodedString;
+    }
 
     function sendForm(event){
         try {
-            console.log(valid);
             checkingPasswords();
             var dateToCompare = new Date(birth.val());// создается пользователем его дата рождения
             var dateToCompareMil = dateToCompare.getTime();
             checkYoonger(birth, dateToCompareMil);
-            console.log(valid);
             for (var key in valid){
                 if (valid[key] === "false") {
                     event.preventDefault();
-                    console.log("problem");
-//                    alert("check the accuracy of data")
-                    break;
+//                    console.log("problem");
+                    alert("check the accuracy of data")
+                    return;
                 }
             }
+            console.log(valid);
+            event.preventDefault();
+
+            //Jquery ajax method
+            var content = $(form).serialize();
+            $.ajax({
+                type: "POST",
+                url: "/user",
+                data: content,
+                timeOut: 2000,
+                success: function(){
+                    console.log("success");
+                },
+                error: function(error){
+                    console.log(error);
+                }
+            })
+
+            //pure Java Script ajax method
+//            var content = "";
+//            content += "name="+encodeURIComponent(elements.name.value); // first line to add
+//            for (var i=1;i<7;i++){
+//                var name = elements[i].name;
+//                var value = elements[i].value;
+//                content += '&'+name+'='+ encodeURIComponent(value)+','; // important symbols & and =
+//            }
+//            var xmlhttp = new XMLHttpRequest(); // Создаём объект XMLHTTP
+//            xmlhttp.open('POST', '/user', true); // Открываем асинхронное соединение
+//            xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
+//            xmlhttp.send(content); // Отправляем POST-запрос
+
+
+//            var xhr = new XMLHttpRequest();
+//            var content = "";
+//            for (var i=0; i<7; i++){
+//          content +='"' + elements[i].name + '":"' + elements[i].value + '",';
+//            }
+//            console.log(content);
+////
+////            content = content.join('&');
+////            content = urlParam(content);
+////            numbers = JSON.parse(numbers);
+//            xhr.open("POST","/user", true);
+////            xhr.setRequestHeader("Content-type", "application/x-form-urlencoded");
+//            xhr.send(content);
+
         }catch(error){
             console.log(error);
         }
-
     }
-
-
 }())
-
-

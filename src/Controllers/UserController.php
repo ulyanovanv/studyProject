@@ -30,20 +30,33 @@ class UserController
      */
     public function store(Application $app, Request $request)
     {
+//        $user = [
+//            'name' => $request->get('name'),
+//            'surname' => $request->get('surname'),
+//            'gender' => $request->get('gender'),
+//            'age' => $request->get('age'),
+//            'phonenumber' => $request->get('phonenumber'),
+//            'email' => $request->get('email'),
+//            'password' => $request->get('password'),
+//            'repeatPassword' => $request->get('repeatPassword'),
+//        ];
         $user = [
             'name' => $request->get('name'),
-            'surname' => $request->get('surname'),
-            'gender' => $request->get('gender'),
-            'age' => $request->get('age'),
-            'phonenumber' => $request->get('phonenumber'),
             'email' => $request->get('email'),
             'password' => $request->get('password'),
-            'repeatPassword' => $request->get('repeatPassword'),
+            'confpassword' => $request->get('confpassword'),
+            'birthdays' => $request->get('birthdays'),
+            'smallers' => $request->get('smallers'),
+            'shortstory' => $request->get('shortstory'),
         ];
+
+
+
+
         $errors = [];
-        if ($user['password'] !== $user['repeatPassword']) {
-            $errors[] = ['field' => 'password', 'message' => 'passwords don`t mach'];
-        }
+//        if ($user['password'] !== $user['repeatPassword']) {
+//            $errors[] = ['field' => 'password', 'message' => 'passwords don`t mach'];
+//        }
 
         if ($errors) {
             return $app->json(['status' => 'error', 'errors' => $errors]);

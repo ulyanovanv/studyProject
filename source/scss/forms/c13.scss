@@ -135,16 +135,21 @@ body.c13 {
     #final {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-evenly;
       margin-top: 15px;
       .final-button {
         background-color: #000000;
         height: 36px;
-        width: 97px;
+        width: 102px;
         font-size: 1.15rem;
         color: #FFF;
         border-radius: 7px;
         border: none;
+        margin: -10px 0px 20px 0px;
+        white-space: nowrap;
+        padding: 5px;
+
         &:focus {
           outline: 0;
           outline-offset: 0;
