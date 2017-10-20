@@ -470,7 +470,8 @@ body.c13 {
     display: none; }
     #third-colomn .show-when-small #smallers {
       height: 12px;
-      box-shadow: none; }
+      box-shadow: none;
+      margin-bottom: 15px; }
   #third-colomn #shortstory {
     height: 100px;
     margin-bottom: 5px; }

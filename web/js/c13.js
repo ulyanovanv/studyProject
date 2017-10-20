@@ -40,7 +40,7 @@
     form.onsubmit = function(event){
         universalRequired();
         universalTypes();
-        console.log($("#birthday").val());
+//        console.log($("#birthday").val());
         sendForm(event);
     }
 
@@ -161,8 +161,65 @@
         }
 
     }
+    var birth = $(document.forms[0].elements.birthdays);
+    // age proof
+    $(birth).on("change",function(){
+        var dateToCompare = new Date(birth.val());// создается пользователем его дата рождения
+        var dateToCompareMil = dateToCompare.getTime();
+
+        checkYoonger(birth, dateToCompareMil);
+    });
+
+    function checkYoonger(birth, dateToCompareMil){
+        try {
+            var current = new Date(); //создается сегодняшняя дата
+            var curYear = current.getFullYear();
+            var curMonth = current.getMonth();
+            var curDate = current.getDate();
+            var minAge = 18;
+
+            var newOne = new Date(curYear-minAge,curMonth,curDate+1); // создается дата ровно 18 лет назад
+            var newOneMil = newOne.getTime();
+                console.log(newOneMil);
+
+
+
+
+            if (dateToCompareMil >= newOneMil){
+                if (elements.smallers.checked === true){
+                    valid[elements.smallers.name] = "true";
+                    return;
+                }
+                console.log("young");
+                $(".show-when-small").show();
+                $("#smallers").attr("required","true");
+
+                valid[elements.smallers.name] = "false";
+    //            console.log(valid);
+    //            console.log(elements.smallers.name);
+                console.log(valid[elements.birthdays.name]);
+                console.log(valid);
+
+            } else {
+                console.log(birth);
+                console.log("old");
+                $(".show-when-small").hide();
+                $("#smallers").removeAttr("required");
+
+                valid[elements.smallers.name] = "true";
+                console.log(valid);
+            }
+        } catch(error){
+            console.log(error);
+        }
+    }
+
+
+
+
 
     //textarea short-story
+
     $(elements.shortstory).on("input keypress",function(event){
         var max = 140;
         var valueLength = event.target.value.length;
@@ -179,21 +236,10 @@
         } else {
             localSpanMessage.text("");
             $(".symbols-left").removeClass("red");
+
         }
 //        console.log(leftSymbols);
     })
-
-
-
-
-
-
-//    elements.password.oninput = function(event){
-//        var passwordValue = event.target;
-//        console.log(passwordValue);
-//    }
-
-
 
 
 
@@ -201,6 +247,9 @@
         try {
             console.log(valid);
             checkingPasswords();
+            var dateToCompare = new Date(birth.val());// создается пользователем его дата рождения
+            var dateToCompareMil = dateToCompare.getTime();
+            checkYoonger(birth, dateToCompareMil);
             console.log(valid);
             for (var key in valid){
                 if (valid[key] === "false") {
