@@ -11,9 +11,6 @@ body.c13 {
   box-shadow: inset 0px 21px 73px black;
 
 
-
-}
-
   @mixin flex {
     display: flex;
     flex-direction: column;
@@ -97,6 +94,7 @@ body.c13 {
 
 
   #second-colomn {
+//    width: 250px;
     @include flex;
     .cross {
       background-image: url("http://javascriptbook.com/code/c13/img/cross.png");
@@ -113,7 +111,7 @@ body.c13 {
 
   #third-colomn {
     @include flex;
-
+//    width: 250px;
     .show-when-small {
       display: none;
       #smallers {
@@ -159,25 +157,48 @@ body.c13 {
 
   }
 
-@media screen and (max-width: 1070px){
-  .container {
-    flex-wrap: nowrap;
-    .columnn {
-      margin: 0px;
+  @media screen and (min-width: 921px) and (max-width: 1070px) {
+    .container {
+      flex-wrap: nowrap;
+      .columnn {
+        margin: 0px;
+      }
     }
   }
-
-}
-@media screen and (max-width: 920px){
-  .container {
-    flex-direction: column;
-    height: auto;
-    flex-wrap: wrap;
-    .columnn {
-      margin: 2px;
-      width: 300px;
+  @media screen and (min-width: 651px) and (max-width: 920px) {
+    .container {
+      flex-direction: column;
+      height: auto;
+      flex-wrap: wrap;
+      .columnn {
+        margin: 2px;
+  //      width: 300px;
+      }
+    }
+  }
+  @media screen and (max-width:650px) {
+    .container {
+      display: grid;
+      grid-template: 1fr 1fr / 1fr 1fr;
+      .columnn {
+        margin: 0px;
+        box-sizing: border-box;
+        width: 100%;
+      }
     }
 
+    #first-colomn {
+      grid-area: 1 / 1 / span 1 / span 2;
+      justify-self: center;
+    }
+    #second-colomn {
+      grid-area: 2 / 1 / span 1 / span 1;
+      justify-self: end;
+    }
+    #third-colomn {
+      grid-area: 2 / 2 / span 1 / span 1;
+      justify-self: start;
+    }
   }
 
 }

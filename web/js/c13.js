@@ -8,6 +8,8 @@
     var valid = {};
     var reset = elements.reset;
     var birth = $(document.forms[0].elements.birthdays);
+    var returnInfoButton = elements.returnInfoButton;
+    console.log(returnInfoButton);
 
     for (var i=0; i<7; i++){
         var parent = $(elements[i]).parent();
@@ -40,9 +42,56 @@
     form.onsubmit = function(event){
         universalRequired();
         universalTypes();
-//        console.log($("#birthday").val());
         sendForm(event);
     }
+
+
+    // return info function with ajax  JQUERY
+//    returnInfoButton.onclick = function(event){
+//        event.preventDefault();
+//        $.ajax ({
+//            type: "GET",
+//            url: "/user",
+//            timeout: 2000,
+//            success: function(data){
+//                returnUsedData(data.user);
+//            },
+//            fail: function(data){
+//                console.log("error");
+//            }
+//        })
+//    }
+
+    //return info function with ajax  JS  or switch to jquery
+    returnInfoButton.onclick = function(){
+        event.preventDefault();
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function(){
+            if (xhr.status === 200){
+                var returnedContent = JSON.parse(xhr.responseText);
+                returnUsedData(returnedContent.user);
+            }
+        }
+        xhr.open("GET","/user",true);
+        xhr.send(null);
+    }
+
+    // hepler function for return form info
+    function returnUsedData(user){
+        for (var i = 0; i<7; i++){
+            var el = elements[i];
+            var elName = elements[i].name;
+            for (var key in user){
+                if (elName === key){
+                    el.value = user[key];
+                }
+            }
+        }
+    }
+
+
+
+
 
     function universalRequired(){
             for (var i = 0; i<elements.length; i++){
@@ -228,19 +277,6 @@
         }
     })
 
-    function urlParam(object) {
-        var encodedString = '';
-        for (var prop in object) {
-            if (object.hasOwnProperty(prop)) {
-                if (encodedString.length > 0) {
-                    encodedString += '&';
-                }
-                encodedString += encodeURI(prop + '=' + object[prop]);
-            }
-        }
-        return encodedString;
-    }
-
     function sendForm(event){
         try {
             checkingPasswords();
@@ -258,48 +294,35 @@
             console.log(valid);
             event.preventDefault();
 
-            //Jquery ajax method
-            var content = $(form).serialize();
-            $.ajax({
-                type: "POST",
-                url: "/user",
-                data: content,
-                timeOut: 2000,
-                success: function(){
-                    console.log("success");
-                },
-                error: function(error){
-                    console.log(error);
-                }
-            })
+////            Jquery ajax method
 
-            //pure Java Script ajax method
-//            var content = "";
-//            content += "name="+encodeURIComponent(elements.name.value); // first line to add
-//            for (var i=1;i<7;i++){
-//                var name = elements[i].name;
-//                var value = elements[i].value;
-//                content += '&'+name+'='+ encodeURIComponent(value)+','; // important symbols & and =
-//            }
-//            var xmlhttp = new XMLHttpRequest(); // Создаём объект XMLHTTP
-//            xmlhttp.open('POST', '/user', true); // Открываем асинхронное соединение
-//            xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
-//            xmlhttp.send(content); // Отправляем POST-запрос
+//            var content = $(form).serialize();
+//            $.ajax({
+//                type: "POST",
+//                url: "/user",
+//                data: content,
+//                timeOut: 2000,
+//                success: function(){
+//                    console.log("success");
+//                },
+//                error: function(error){
+//                    console.log(error);
+//                }
+//            })
 
+//            pure Java Script ajax method
+            var content = "";
+            content += "name="+encodeURIComponent(elements.name.value); // first line to add
+            for (var i=1;i<7;i++){
+                var name = elements[i].name;
+                var value = elements[i].value;
+                content += '&'+name+'='+ encodeURIComponent(value); // important symbols & and =
+            }
+            var xmlhttp = new XMLHttpRequest(); // Создаём объект XMLHTTP
+            xmlhttp.open('POST', '/user', true); // Открываем асинхронное соединение
+            xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
+            xmlhttp.send(content); // Отправляем POST-запрос
 
-//            var xhr = new XMLHttpRequest();
-//            var content = "";
-//            for (var i=0; i<7; i++){
-//          content +='"' + elements[i].name + '":"' + elements[i].value + '",';
-//            }
-//            console.log(content);
-////
-////            content = content.join('&');
-////            content = urlParam(content);
-////            numbers = JSON.parse(numbers);
-//            xhr.open("POST","/user", true);
-////            xhr.setRequestHeader("Content-type", "application/x-form-urlencoded");
-//            xhr.send(content);
 
         }catch(error){
             console.log(error);
