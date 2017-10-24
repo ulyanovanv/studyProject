@@ -9,7 +9,6 @@
     var reset = elements.reset;
     var birth = $(document.forms[0].elements.birthdays);
     var returnInfoButton = elements.returnInfoButton;
-    console.log(returnInfoButton);
 
     for (var i=0; i<7; i++){
         var parent = $(elements[i]).parent();
@@ -215,22 +214,50 @@
     }
 
     // age proof
+    var current = new Date(); //создается сегодняшняя дата
+    var curYear = current.getFullYear();
+    var curMonth = current.getMonth();
+    var curDate = current.getDate();
+
+    var maxDate = new Date(curYear,curMonth,curDate);
+    var maxYear = maxDate.getFullYear();
+    var maxMonth = maxDate.getMonth()+1;
+    if (maxMonth<10){
+        maxMonth = "0"+maxMonth;
+    }
+    var maxDatum = maxDate.getDate();
+    var maxMil = maxDate.getTime();
+
+    var max = maxYear+"-"+maxMonth+"-"+maxDatum;
+    birth.attr("max",max);
+    birth.attr("value",max);
 
     $(birth).on("change",function(){
         var dateToCompare = new Date(birth.val());// создается пользователем его дата рождения
         var dateToCompareMil = dateToCompare.getTime();
-        checkYoonger(birth, dateToCompareMil);
+        valid[elements.birthdays.name] = null;
+        checkYoonger(dateToCompareMil);
     });
-    function checkYoonger(birth, dateToCompareMil){
+
+    function checkYoonger(dateToCompareMil){
         try {
-            var current = new Date(); //создается сегодняшняя дата
-            var curYear = current.getFullYear();
-            var curMonth = current.getMonth();
-            var curDate = current.getDate();
+            if (valid[elements.birthdays.name] === "false") {
+                return;
+            }
             var minAge = 18;
             var newOne = new Date(curYear-minAge,curMonth,curDate+1); // создается дата ровно 18 лет назад
             var newOneMil = newOne.getTime();
+            var message = birth.siblings(".message");
             if (dateToCompareMil >= newOneMil){
+                if(dateToCompareMil > maxMil){
+                    valid[elements.birthdays.name] = "false";
+                    birth.data("error4","invalid date");
+                    message.text(birth.data("error4"));
+                    return;
+                }
+                else {
+                    message.text("");
+                }
                 if (elements.smallers.checked === true){
                     valid[elements.smallers.name] = "true";
                     return;
@@ -245,6 +272,7 @@
                 $(".show-when-small").hide();
                 $("#smallers").removeAttr("required");
                 valid[elements.smallers.name] = "true";
+                message.text("");
                 console.log(valid);
             }
         } catch(error){
@@ -282,7 +310,7 @@
             checkingPasswords();
             var dateToCompare = new Date(birth.val());// создается пользователем его дата рождения
             var dateToCompareMil = dateToCompare.getTime();
-            checkYoonger(birth, dateToCompareMil);
+            checkYoonger(dateToCompareMil);
             for (var key in valid){
                 if (valid[key] === "false") {
                     event.preventDefault();
