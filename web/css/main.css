@@ -390,9 +390,9 @@ body.c13 {
   body.c13 .container {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    flex-wrap: nowrap;
     height: 750px; }
     body.c13 .container .columnn {
       height: 501px;
@@ -443,14 +443,13 @@ body.c13 {
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch; }
+    body.c13 #second-colomn .cross, body.c13 #second-colomn .check-mark {
+      background-repeat: no-repeat;
+      background-position: center right; }
     body.c13 #second-colomn .cross {
-      background-image: url("http://javascriptbook.com/code/c13/img/cross.png");
-      background-repeat: no-repeat;
-      background-position: center right; }
+      background-image: url("http://javascriptbook.com/code/c13/img/cross.png"); }
     body.c13 #second-colomn .check-mark {
-      background-image: url("http://javascriptbook.com/code/c13/img/tick.png");
-      background-repeat: no-repeat;
-      background-position: center right; }
+      background-image: url("http://javascriptbook.com/code/c13/img/tick.png"); }
   body.c13 #third-colomn {
     display: flex;
     flex-direction: column;
@@ -470,8 +469,9 @@ body.c13 {
     body.c13 #third-colomn #final {
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
       justify-content: space-evenly;
+      align-items: stretch;
+      flex-wrap: wrap;
       margin-top: 15px; }
       body.c13 #third-colomn #final .final-button {
         background-color: #000000;

@@ -5,9 +5,8 @@
 (function(){
     var form = document.forms[0];
     var elements = form.elements;
-    var valid = {};
-    var reset = elements.reset;
     var birth = $(document.forms[0].elements.birthdays);
+    var valid = {};  //create an object for checking the accurance of the form information, if some inaccurance - false, else - true
     var returnInfoButton = elements.returnInfoButton;
 
     for (var i=0; i<7; i++){
@@ -16,12 +15,12 @@
         span.addClass("message");
         parent.append(span);
         var Key = elements[i].name;
-        var valued = "true";
-        valid[Key] = valued;
+        var valued = true;
+        valid[Key] = valued;   /// autocomplete for object
     }
 
     var typesCheck = {
-        email:      {check : "^[a-zA-Z0-9\.\+\-]+@[a-zA-Z]+\.[a-zA-Z]+",
+        email:      {check : "^[a-zA-Z0-9\.\+\-]+@[a-zA-Z]+\.[a-zA-Z]+",  //!!without / /  as we have to create RegExp later, and the propgramm stand /  / for us
                     message: "incorrect email"  },
         password:   {check: "^\\d+$",
                     message: "incorrect password"},
@@ -30,20 +29,22 @@
     };
 
 
-    // reset button function
-    reset.onclick = function(){
-        var spans = $("span.message");
-        for (var i=0; i<7; i++){
-           $(spans[i]).text("");
-        }
-    }
     // submit button function
     form.onsubmit = function(event){
-        universalRequired();
-        universalTypes();
+        // 
+        universalRequired(); // U,check for inputs that have reqiured attr to be filled
+        universalTypes();  // U, check for input type, its correspondence to the info data throug RegExp in typesCheck
         sendForm(event);
     }
 
+    // reset button function
+    var reset = elements.reset;
+    reset.onclick = function(){
+        var spans = $("span.message");
+        for (var i=0; i<7; i++){
+            $(spans[i]).text("");
+        }
+    }
 
     // return info function with ajax  JQUERY
 //    returnInfoButton.onclick = function(event){
@@ -89,27 +90,20 @@
     }
 
 
-
-
-
     function universalRequired(){
             for (var i = 0; i<elements.length; i++){
                 if (elements[i].hasAttribute("required")){  // elements[i].required - also possible
                     var input = $(elements[i]);
                     var par = input.parent();
                     var span = par.children('.message');
-//                    console.log(input.val());
-    //                console.log(parent.children());
-                    if (input.val()){
-//                        input.removeData( "error" );
+                    if (input.val()){  //it means there is any text at least
                         span.text("");
-                        valid[elements[i].name] = "true";
+                        valid[elements[i].name] = true;
                     }  else {
                         input.data('error',"Please, write the info");
                         span.text(input.data("error"));
-                        valid[elements[i].name] = "false";
+                        valid[elements[i].name] = false;
                     }
-
                 }
             }
     }
@@ -120,7 +114,7 @@
                 var typeOfInput = elements[i].type;
                 switch(typeOfInput){
                     case "email":
-                        typpie = typesCheck.email;
+                        typpie = typesCheck.email; // find the correpondent type in object typesCheck
                         break;
                     case "password":
                         typpie = typesCheck.password;
@@ -132,25 +126,25 @@
                         continue;
                 }
                 var el = $(elements[i]);
-                var span = el.next();
-                var check = new RegExp(typpie.check);
-//                console.log(check);
-                if (check.test(el.val()) === false){
+                var span = el.next();   // not good
+                var check = new RegExp(typpie.check); // here we create RegExp
+                if (check.test(el.val()) === false){  // we check the entered info
                     el.data('error2',typpie.message);
                     span.text(el.data('error2'));   //??
-                    valid[el.attr('name')] = "false";
+                    valid[el.attr('name')] = false;
                 } else {
-                    valid[el.attr('name')] = "true";
+                    valid[el.attr('name')] = true;
                     span.text("");
                 }
             }
         } catch(error) {
             console.log(error);
         }
-        console.log(valid);
+//        console.log(valid);
     }
 
     //passwords
+    //when in focus, remove icons
     $(elements.password).on("focus",function(){
         $(this).removeClass("cross","check-mark");
     });
@@ -181,11 +175,11 @@
         var confpasswordValue = confpassword.val();
         if (passwordValue<4 &&  confpasswordValue<4){
             alert("your password too short");
-            valid[elements.password.name] = "false";
-            valid[elements.confpassword.name] = "false";
+            valid[elements.password.name] = false;
+            valid[elements.confpassword.name] = false;
             return;
         }
-        if (valid[elements.password.name] === "false") {
+        if (valid[elements.password.name] === false) {  // if already dring first 2 universal check was false, than no sense to check on
             return;
         }
         if(passwordValue === confpasswordValue) {
@@ -195,8 +189,8 @@
             confpassword.removeClass("cross");
             span1.text("");
             span2.text("");
-            valid[elements.password.name] = "true";
-            valid[elements.confpassword.name] = "true";
+            valid[elements.password.name] = true;
+            valid[elements.confpassword.name] = true;
 //            console.log(valid);
         } else {
             password.addClass("cross");
@@ -206,8 +200,8 @@
             password.data("error3","passwords do not match");
             span1.text(password.data("error3"));
             span2.text(password.data("error3"));
-            valid[elements.password.name] = "false";
-            valid[elements.confpassword.name] = "false";
+            valid[elements.password.name] = false;
+            valid[elements.confpassword.name] = false;
 //            console.log(valid);
         }
 
@@ -219,14 +213,14 @@
     var curMonth = current.getMonth();
     var curDate = current.getDate();
 
-    var maxDate = new Date(curYear,curMonth,curDate);
-    var maxYear = maxDate.getFullYear();
+    var maxDate = new Date(curYear,curMonth,curDate); // создаем дату, за которую нельзя заходить, то есть за сегодняшнюю, объекты дат необходимо пересоздавать
+    var maxYear = maxDate.getFullYear(); // чтобы записать в maxvalue сегодняшнуюю дату
     var maxMonth = maxDate.getMonth()+1;
     if (maxMonth<10){
-        maxMonth = "0"+maxMonth;
+        maxMonth = "0"+maxMonth; // for value we need 1-12 instead of 0-11
     }
     var maxDatum = maxDate.getDate();
-    var maxMil = maxDate.getTime();
+    var maxMil = maxDate.getTime(); //transfer to miliseconds since 1970.01.01
 
     var max = maxYear+"-"+maxMonth+"-"+maxDatum;
     birth.attr("max",max);
@@ -236,12 +230,12 @@
         var dateToCompare = new Date(birth.val());// создается пользователем его дата рождения
         var dateToCompareMil = dateToCompare.getTime();
         valid[elements.birthdays.name] = null;
-        checkYoonger(dateToCompareMil);
+        checkYoonger(dateToCompareMil); // transfer milliseconds from birth date
     });
 
     function checkYoonger(dateToCompareMil){
         try {
-            if (valid[elements.birthdays.name] === "false") {
+            if (valid[elements.birthdays.name] === false) {  // if already false after universal checks, no sense to check
                 return;
             }
             var minAge = 18;
@@ -249,8 +243,8 @@
             var newOneMil = newOne.getTime();
             var message = birth.siblings(".message");
             if (dateToCompareMil >= newOneMil){
-                if(dateToCompareMil > maxMil){
-                    valid[elements.birthdays.name] = "false";
+                if(dateToCompareMil > maxMil){  // if it is already future -> return
+                    valid[elements.birthdays.name] = false;
                     birth.data("error4","invalid date");
                     message.text(birth.data("error4"));
                     return;
@@ -259,21 +253,21 @@
                     message.text("");
                 }
                 if (elements.smallers.checked === true){
-                    valid[elements.smallers.name] = "true";
+                    valid[elements.smallers.name] = true;
                     return;
                 }
-                console.log("young");
-                $(".show-when-small").show();
-                $("#smallers").attr("required","true");
-                valid[elements.smallers.name] = "false";
-                console.log(valid);
+//                console.log("young");
+                $(".show-when-small").show(); //??
+                $("#smallers").attr("required",true);
+                valid[elements.smallers.name] = false;
+//                console.log(valid);
             } else {
-                console.log("old");
+//                console.log("old");
                 $(".show-when-small").hide();
                 $("#smallers").removeAttr("required");
-                valid[elements.smallers.name] = "true";
+                valid[elements.smallers.name] = true;
                 message.text("");
-                console.log(valid);
+//                console.log(valid);
             }
         } catch(error){
             console.log(error);
@@ -294,7 +288,7 @@
         var localSpanMessage = $(event.target).siblings('.message');
         if (leftSymbols<1){
             localSpanMessage.text("no symbols left");
-            elements.shortstory.disabled = true;
+            elements.shortstory.disabled = true; //we block the input for 1 sec, after that if we try again to write first block for 1 sec than disblock
             setTimeout(function() { elements.shortstory.disabled = false; }, 1000);
         } else if (leftSymbols<11){
             localSpanMessage.text("left few symbols");
@@ -312,7 +306,7 @@
             var dateToCompareMil = dateToCompare.getTime();
             checkYoonger(dateToCompareMil);
             for (var key in valid){
-                if (valid[key] === "false") {
+                if (valid[key] === false) {
                     event.preventDefault();
 //                    console.log("problem");
                     alert("check the accuracy of data")
