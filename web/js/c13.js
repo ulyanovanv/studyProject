@@ -6,18 +6,18 @@
     var form = document.forms[0];
     var elements = form.elements;
     var birth = $(document.forms[0].elements.birthdays);
-    var valid = {};  //create an object for checking the accurance of the form information, if some inaccurance - false, else - true
+//    var valid = {};  //create an object for checking the accurance of the form information, if some inaccurance - false, else - true
     var returnInfoButton = elements.returnInfoButton;
 
-    for (var i=0; i<7; i++){
-        var parent = $(elements[i]).parent();
-        var span = $("<span></span>");
-        span.addClass("message");
-        parent.append(span);
-        var Key = elements[i].name;
-        var valued = true;
-        valid[Key] = valued;   /// autocomplete for object
-    }
+//    for (var i=0; i<7; i++){
+//        var parent = $(elements[i]).parent();
+//        var span = $("<span></span>");
+//        span.addClass("message");
+//        parent.append(span);
+//        var Key = elements[i].name;
+//        var valued = true;
+//        valid[Key] = valued;   /// autocomplete for object
+//    }
 
     var typesCheck = {
         email:      {check : "^[a-zA-Z0-9\.\+\-]+@[a-zA-Z]+\.[a-zA-Z]+",  //!!without / /  as we have to create RegExp later, and the propgramm stand /  / for us
@@ -28,13 +28,26 @@
                     message: "incorrect date"}
     };
 
+    var mistakesMessage = ["Please, write the info","your password too short", "passwords do not match", "date cannot surpass current date", "parent's agreement is required"];
+    console.log(mistakesMessage[1]);
+
 
     // submit button function
     form.onsubmit = function(event){
-        // 
-        universalRequired(); // U,check for inputs that have reqiured attr to be filled
-        universalTypes();  // U, check for input type, its correspondence to the info data throug RegExp in typesCheck
-        sendForm(event);
+        event.preventDefault();
+
+        var valid = {}; // create an object to check the status of check for each element - true or false
+
+        universalRequired(valid); // U,check for inputs that have reqiured attr to be filled
+
+        universalTypes(valid);  // U, check for input type, its correspondence to the info data throug RegExp in typesCheck
+
+        checkingPasswords(valid);
+
+        checkYoonger(getBirthdayTimestamp(), valid);
+
+        console.log(valid);
+        sendForm(event,valid);
     }
 
     // reset button function
@@ -90,7 +103,7 @@
     }
 
 
-    function universalRequired(){
+    function universalRequired(valid){
             for (var i = 0; i<elements.length; i++){
                 if (elements[i].hasAttribute("required")){  // elements[i].required - also possible
                     var input = $(elements[i]);
@@ -100,14 +113,14 @@
                         span.text("");
                         valid[elements[i].name] = true;
                     }  else {
-                        input.data('error',"Please, write the info");
-                        span.text(input.data("error"));
+                        span.text(mistakesMessage[0]);
                         valid[elements[i].name] = false;
                     }
                 }
             }
+
     }
-    function universalTypes(){
+    function universalTypes(valid) {
         try {
             for (var i = 0; i<elements.length; i++){
                 var typpie;
@@ -123,14 +136,16 @@
                         typpie = typesCheck.date;
                         break;
                     default:
-                        continue;
+                        continue; // for this element the condition interupted, we continue with following element
                 }
                 var el = $(elements[i]);
                 var span = el.next();   // not good
                 var check = new RegExp(typpie.check); // here we create RegExp
+                if ( valid[elements[i].name] === false){
+                    continue;
+                }
                 if (check.test(el.val()) === false){  // we check the entered info
-                    el.data('error2',typpie.message);
-                    span.text(el.data('error2'));   //??
+                    span.text(typpie.message);
                     valid[el.attr('name')] = false;
                 } else {
                     valid[el.attr('name')] = true;
@@ -153,33 +168,34 @@
     });
 
     $(elements.password).on("blur",function(){
-        valid[elements.password.name] = null;
-        checkingPasswords();
+        var valid = {};
+        checkingPasswords(valid);
     });
 
     $(elements.confpassword).on("blur",function(){
-        valid[elements.password.name] = null;
-        checkingPasswords();
+        var valid = {};
+        checkingPasswords(valid);
     })
 
 
     // private check
 
     //password check
-    function checkingPasswords(){
+    function checkingPasswords(valid){
         var password = $(elements.password);
         var span1 = password.next();
         var confpassword = $(elements.confpassword);
         var span2 = confpassword.next();
         var passwordValue = password.val();
         var confpasswordValue = confpassword.val();
-        if (passwordValue<4 &&  confpasswordValue<4){
-            alert("your password too short");
-            valid[elements.password.name] = false;
-            valid[elements.confpassword.name] = false;
+        if (valid[elements.password.name] === false || valid[elements.confpassword.name] === false){ // if already dring first 2 universal check was false, than no sense to check on
             return;
         }
-        if (valid[elements.password.name] === false) {  // if already dring first 2 universal check was false, than no sense to check on
+        if (passwordValue.length<4 &&  confpasswordValue.length<4){
+            span1.text(mistakesMessage[1]);
+            span2.text(mistakesMessage[1]);
+            valid[elements.password.name] = false;
+            valid[elements.confpassword.name] = false;
             return;
         }
         if(passwordValue === confpasswordValue) {
@@ -197,9 +213,8 @@
             confpassword.addClass("cross");
             password.removeClass("check-mark");
             confpassword.removeClass("check-mark");
-            password.data("error3","passwords do not match");
-            span1.text(password.data("error3"));
-            span2.text(password.data("error3"));
+            span1.text(mistakesMessage[2]);
+            span2.text(mistakesMessage[2]);
             valid[elements.password.name] = false;
             valid[elements.confpassword.name] = false;
 //            console.log(valid);
@@ -227,13 +242,16 @@
     birth.attr("value",max);
 
     $(birth).on("change",function(){
-        var dateToCompare = new Date(birth.val());// создается пользователем его дата рождения
-        var dateToCompareMil = dateToCompare.getTime();
-        valid[elements.birthdays.name] = null;
-        checkYoonger(dateToCompareMil); // transfer milliseconds from birth date
-    });
+        var valid = {};
 
-    function checkYoonger(dateToCompareMil){
+        checkYoonger(getBirthdayTimestamp(), valid); // transfer milliseconds from birth date
+    });
+    function getBirthdayTimestamp(){
+        var dateToCompare = new Date(birth.val());// создается пользователем его дата рождения
+        return dateToCompare.getTime();
+    }
+
+    function checkYoonger(dateToCompareMil, valid){
         try {
             if (valid[elements.birthdays.name] === false) {  // if already false after universal checks, no sense to check
                 return;
@@ -242,11 +260,11 @@
             var newOne = new Date(curYear-minAge,curMonth,curDate+1); // создается дата ровно 18 лет назад
             var newOneMil = newOne.getTime();
             var message = birth.siblings(".message");
+
             if (dateToCompareMil >= newOneMil){
                 if(dateToCompareMil > maxMil){  // if it is already future -> return
                     valid[elements.birthdays.name] = false;
-                    birth.data("error4","invalid date");
-                    message.text(birth.data("error4"));
+                    message.text(mistakesMessage[3]);
                     return;
                 }
                 else {
@@ -255,27 +273,27 @@
                 if (elements.smallers.checked === true){
                     valid[elements.smallers.name] = true;
                     return;
-                }
-//                console.log("young");
+                } else {
                 $(".show-when-small").show(); //??
                 $("#smallers").attr("required",true);
                 valid[elements.smallers.name] = false;
-//                console.log(valid);
+                message.text(mistakesMessage[4]);
+                }
             } else {
-//                console.log("old");
                 $(".show-when-small").hide();
                 $("#smallers").removeAttr("required");
                 valid[elements.smallers.name] = true;
                 message.text("");
-//                console.log(valid);
             }
         } catch(error){
             console.log(error);
         }
     }
 
-
-
+    $(elements.smallers).on("change", function(){
+        var message = birth.siblings(".message");
+        message.toggle();
+    })
 
 
     //textarea short-story
@@ -299,22 +317,18 @@
         }
     })
 
-    function sendForm(event){
+    function sendForm(event,valid){
         try {
-            checkingPasswords();
-            var dateToCompare = new Date(birth.val());// создается пользователем его дата рождения
-            var dateToCompareMil = dateToCompare.getTime();
-            checkYoonger(dateToCompareMil);
+//            var dateToCompare = new Date(birth.val());// создается пользователем его дата рождения
+//            var dateToCompareMil = dateToCompare.getTime();
             for (var key in valid){
                 if (valid[key] === false) {
-                    event.preventDefault();
 //                    console.log("problem");
-                    alert("check the accuracy of data")
+                    alert("check the accuracy of data");
                     return;
                 }
             }
             console.log(valid);
-            event.preventDefault();
 
 ////            Jquery ajax method
 
