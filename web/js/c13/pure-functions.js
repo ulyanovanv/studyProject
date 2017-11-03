@@ -1,6 +1,7 @@
 /**
  * Created by Anastasiia on 11/2/17.
  */
+//universal for required el
 function universalRequired(valid,elements, mistakesMessage){
     for (var i = 0; i<elements.length; i++){
         if (elements[i].hasAttribute("required")){  // elements[i].required - also possible
@@ -17,8 +18,9 @@ function universalRequired(valid,elements, mistakesMessage){
         }
     }
     return valid;
-
 }
+
+//universal for types of inputs' values
 function universalTypes(valid,elements, typesCheck) {
     try {
         for (var i = 0; i<elements.length; i++){
@@ -58,7 +60,7 @@ function universalTypes(valid,elements, typesCheck) {
 //        console.log(valid);
 }
 
-
+//private checks
 //password check
 function checkingPasswords(valid,elements,mistakesMessage){
     var password = $(elements.password);
@@ -99,9 +101,9 @@ function checkingPasswords(valid,elements,mistakesMessage){
 //            console.log(valid);
     }
     return valid;
-
 }
 
+//birthday check
 function checkYoonger(dateToCompareMil, valid, elements, mistakesMessage, birth){
     try {
         console.log(elements);
@@ -159,9 +161,86 @@ function checkYoonger(dateToCompareMil, valid, elements, mistakesMessage, birth)
     return valid;
 }
 
-
-
 function getBirthdayTimestamp(birth){
     var dateToCompare = new Date(birth.val());// создается пользователем его дата рождения
     return dateToCompare.getTime();
+}
+
+
+//POST // use any method
+
+function sendForm(event,valid, elements, form){
+    try {
+        for (var key in valid){
+            if (valid[key] === false) {
+                alert("check the accuracy of data");
+                return;
+            }
+        }
+        console.log(valid);
+        //   Jquery ajax method
+
+//        var content = $(form).serialize();
+//        $.ajax({
+//            type:"POST",
+//            url:"/user",
+//            data: content,
+//            timeout: 2000,
+//            beforeSend: function(){},
+//            success: function(){
+//                console.log("success");
+//            },
+//            error: function(error){
+//                console.log(error);
+//            }
+
+        // Jquery post method
+
+        var content = $(form).serialize();
+        console.log(content);
+        $.post("/user",content).done(function(){
+            console.log("done");
+        }).fail(function(){
+            console.log("fail");
+        }).always(function(){
+            console.log("always");
+        });
+
+//            pure Java Script ajax method
+
+//        var xhr = new XMLHttpRequest();
+//        var content = "";
+//        content += "name=" + elements.name.value;
+//        for (var i=0; i<7; i++){
+//            var name = elements[i].name;
+//            var value = elements[i].value;
+//            content += "&" + name + "=" + value;
+//        }
+//        xhr.open("POST","/user", true);
+//        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+//        xhr.send(content);
+
+    }catch(error){
+        console.log(error);
+    }
+}
+
+
+//GET
+
+// hepler function for return form info
+function transferReceivedData(infa, elements){
+    for(var i=0; i<7; i++){
+        var el = elements[i];
+        var elName = elements[i].name;
+
+        for (var keyy in infa){
+            console.log(elName);
+            console.log(keyy);
+            if (elName === keyy) {
+                el.value = infa[keyy];
+            }
+        }
+        console.log(el.value);
+    }
 }

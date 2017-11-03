@@ -7,7 +7,7 @@
     var elements = form.elements;
     var birth = $(document.forms[0].elements.birthdays);
 //    var valid = {};  //create an object for checking the accurance of the form information, if some inaccurance - false, else - true
-    var returnInfoButton = elements.returnInfoButton;
+
 
     var typesCheck = {
         email:      {check : "^[a-zA-Z0-9\.\+\-]+@[a-zA-Z]+\.[a-zA-Z]+",  //!!without / /  as we have to create RegExp later, and the propgramm stand /  / for us
@@ -37,7 +37,7 @@
         valid = checkYoonger(getBirthdayTimestamp(birth), valid, elements, mistakesMessage, birth);
 
         console.log(valid);
-        sendForm(event,valid);
+        sendForm(event,valid, elements, form);
     }
 
     // reset button function
@@ -49,48 +49,49 @@
         }
     }
 
+    var returnInfoButton = elements.returnInfoButton;
+
     // return info function with ajax  JQUERY
 //    returnInfoButton.onclick = function(event){
 //        event.preventDefault();
-//        $.ajax ({
-//            type: "GET",
-//            url: "/user",
-//            timeout: 2000,
+//        $.ajax({
+//            type:"GET",
+//            url:"/user",
+////            data: -
 //            success: function(data){
-//                returnUsedData(data.user);
+//                transferReceivedData(data.user, elements); //in pure-func file
 //            },
-//            fail: function(data){
-//                console.log("error");
+//            error: function(error){
+//                console.log(error);
 //            }
 //        })
 //    }
 
-    //return info function with ajax  JS  or switch to jquery
-    returnInfoButton.onclick = function(){
+
+    //return info with AJAX Method Jquery
+//    returnInfoButton.onclick = function(event){
+//        event.preventDefault();
+//        var xhr = new XMLHttpRequest();
+//        xhr.onload = function(){
+//            if (xhr.status === 200){
+//                var returnedContent = JSON.parse(xhr.responseText);
+//                transferReceivedData(returnedContent.user, elements); // .user - in object search
+//            }
+//        }
+//        xhr.open("GET","/user",true);
+//        xhr.send(null);
+//    }
+
+    //return info with GET  Method Jquery
+    returnInfoButton.onclick = function(event){
         event.preventDefault();
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function(){
-            if (xhr.status === 200){
-                var returnedContent = JSON.parse(xhr.responseText);
-                returnUsedData(returnedContent.user);
-            }
-        }
-        xhr.open("GET","/user",true);
-        xhr.send(null);
+        $.getJSON("/user").done(function(data){
+            transferReceivedData(data.user, elements);
+        }).fail(function(){
+            console.log("fail");
+        })
     }
 
-    // hepler function for return form info
-    function returnUsedData(user){
-        for (var i = 0; i<7; i++){
-            var el = elements[i];
-            var elName = elements[i].name;
-            for (var key in user){
-                if (elName === key){
-                    el.value = user[key];
-                }
-            }
-        }
-    }
 
 
     //passwords
@@ -164,48 +165,5 @@
         }
     })
 
-    function sendForm(event,valid){
-        try {
-            for (var key in valid){
-                if (valid[key] === false) {
-                    alert("check the accuracy of data");
-                    return;
-                }
-            }
-            console.log(valid);
 
-////            Jquery ajax method
-
-//            var content = $(form).serialize();
-//            $.ajax({
-//                type: "POST",
-//                url: "/user",
-//                data: content,
-//                timeOut: 2000,
-//                success: function(){
-//                    console.log("success");
-//                },
-//                error: function(error){
-//                    console.log(error);
-//                }
-//            })
-
-//            pure Java Script ajax method
-            var content = "";
-            content += "name="+encodeURIComponent(elements.name.value); // first line to add
-            for (var i=1;i<7;i++){
-                var name = elements[i].name;
-                var value = elements[i].value;
-                content += '&'+name+'='+ encodeURIComponent(value); // important symbols & and =
-            }
-            var xmlhttp = new XMLHttpRequest(); // Создаём объект XMLHTTP
-            xmlhttp.open('POST', '/user', true); // Открываем асинхронное соединение
-            xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
-            xmlhttp.send(content); // Отправляем POST-запрос
-
-
-        }catch(error){
-            console.log(error);
-        }
-    }
 }())
