@@ -106,7 +106,6 @@ function checkingPasswords(valid,elements,mistakesMessage){
 //birthday check
 function checkYoonger(dateToCompareMil, valid, elements, mistakesMessage, birth){
     try {
-        console.log(elements);
         if (valid[elements.birthdays.name] === false) {  // if already false after universal checks, no sense to check
             return valid;
         }
@@ -119,17 +118,12 @@ function checkYoonger(dateToCompareMil, valid, elements, mistakesMessage, birth)
         var newOne = new Date(curYear-minAge,curMonth,curDate+1); // создается дата ровно 18 лет назад
         var newOneMil = newOne.getTime();
         var message = birth.siblings(".message");
-        var maxDate = new Date(curYear,curMonth,curDate); // создаем дату, за которую нельзя заходить, то есть за сегодняшнюю, объекты дат необходимо пересоздавать
-        var maxYear = maxDate.getFullYear(); // чтобы записать в maxvalue сегодняшнуюю дату
-        var maxMonth = maxDate.getMonth()+1;
+
+        var maxMonth = curMonth+1;
         if (maxMonth<10){
             maxMonth = "0"+maxMonth; // for value we need 1-12 instead of 0-11
         }
-        var maxDatum = maxDate.getDate();
-        var maxMil = maxDate.getTime(); //transfer to miliseconds since 1970.01.01
-
-        var max = maxYear+"-"+maxMonth+"-"+maxDatum;
-
+        var maxMil = current.getTime(); //transfer to miliseconds since 1970.01.01
 
         if (dateToCompareMil >= newOneMil){
             if(dateToCompareMil > maxMil){  // if it is already future -> return
@@ -177,7 +171,6 @@ function sendForm(event,valid, elements, form){
                 return;
             }
         }
-        console.log(valid);
         //   Jquery ajax method
 
 //        var content = $(form).serialize();
@@ -235,12 +228,9 @@ function transferReceivedData(infa, elements){
         var elName = elements[i].name;
 
         for (var keyy in infa){
-            console.log(elName);
-            console.log(keyy);
             if (elName === keyy) {
                 el.value = infa[keyy];
             }
         }
-        console.log(el.value);
     }
 }

@@ -120,15 +120,13 @@
     var curYear = current.getFullYear();
     var curMonth = current.getMonth();
     var curDate = current.getDate();
-    var maxDate = new Date(curYear,curMonth,curDate); // создаем дату, за которую нельзя заходить, то есть за сегодняшнюю, объекты дат необходимо пересоздавать
-    var maxYear = maxDate.getFullYear(); // чтобы записать в maxvalue сегодняшнуюю дату
-    var maxMonth = maxDate.getMonth()+1;
+
+    var maxMonth = curMonth+1;
     if (maxMonth<10){
         maxMonth = "0"+maxMonth; // for value we need 1-12 instead of 0-11
     }
-    var maxDatum = maxDate.getDate();
-    var maxMil = maxDate.getTime(); //transfer to miliseconds since 1970.01.01
-    var max = maxYear+"-"+maxMonth+"-"+maxDatum;
+
+    var max = curYear+"-"+maxMonth+"-"+curDate;
     birth.attr("max",max);
     birth.attr("value",max);
 
