@@ -11,9 +11,9 @@
     <body class="{% block bodyClass %}{% endblock %}">
         {% block content %}{% endblock %}
 
-        <script src="{{ asset('js/vendor/jquery.min.js') }}" ></script>
-        <script src="{{ asset('js/vendor/modernizr-custom.js') }}"></script>
-        <script src="{{ asset('js/main.js') }}" ></script>
+        {#<script src="{{ asset('js/vendor/jquery.min.js') }}" ></script>#}
+        {#<script src="{{ asset('js/vendor/modernizr-custom.js') }}"></script>#}
+        <script src="{{ asset('js/bundle.js') }}" ></script>
 
         {% block jsDifferent %}{% endblock %}
 

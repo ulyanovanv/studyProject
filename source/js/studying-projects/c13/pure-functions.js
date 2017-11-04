@@ -1,8 +1,11 @@
 /**
  * Created by Anastasiia on 11/2/17.
  */
+
+import $ from '../../vendor/jquery.min.js';
+
 //universal for required el
-function universalRequired(valid,elements, mistakesMessage){
+export function universalRequired(valid,elements, mistakesMessage){
     for (var i = 0; i<elements.length; i++){
         if (elements[i].hasAttribute("required")){  // elements[i].required - also possible
             var input = $(elements[i]);
@@ -21,7 +24,7 @@ function universalRequired(valid,elements, mistakesMessage){
 }
 
 //universal for types of inputs' values
-function universalTypes(valid,elements, typesCheck) {
+export function universalTypes(valid,elements, typesCheck) {
     try {
         for (var i = 0; i<elements.length; i++){
             var typpie;
@@ -62,7 +65,7 @@ function universalTypes(valid,elements, typesCheck) {
 
 //private checks
 //password check
-function checkingPasswords(valid,elements,mistakesMessage){
+export function checkingPasswords(valid,elements,mistakesMessage){
     var password = $(elements.password);
     var span1 = password.next();
     var confpassword = $(elements.confpassword);
@@ -104,7 +107,7 @@ function checkingPasswords(valid,elements,mistakesMessage){
 }
 
 //birthday check
-function checkYoonger(dateToCompareMil, valid, elements, mistakesMessage, birth){
+export function checkYoonger(dateToCompareMil, valid, elements, mistakesMessage, birth){
     try {
         if (valid[elements.birthdays.name] === false) {  // if already false after universal checks, no sense to check
             return valid;
@@ -155,7 +158,7 @@ function checkYoonger(dateToCompareMil, valid, elements, mistakesMessage, birth)
     return valid;
 }
 
-function getBirthdayTimestamp(birth){
+export function getBirthdayTimestamp(birth){
     var dateToCompare = new Date(birth.val());// создается пользователем его дата рождения
     return dateToCompare.getTime();
 }
@@ -163,7 +166,7 @@ function getBirthdayTimestamp(birth){
 
 //POST // use any method
 
-function sendForm(event,valid, elements, form){
+export function sendForm(event,valid, elements, form){
     try {
         for (var key in valid){
             if (valid[key] === false) {
@@ -222,7 +225,7 @@ function sendForm(event,valid, elements, form){
 //GET
 
 // hepler function for return form info
-function transferReceivedData(infa, elements){
+export function transferReceivedData(infa, elements){
     for(var i=0; i<7; i++){
         var el = elements[i];
         var elName = elements[i].name;

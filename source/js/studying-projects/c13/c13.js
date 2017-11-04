@@ -1,6 +1,11 @@
 /**
  * Created by Anastasiia on 10/17/17.
  */
+import $ from '../../vendor/jquery.min.js';
+import * as functions from './pure-functions.js';
+
+const {universalRequired, universalTypes, checkingPasswords, checkYoonger, getBirthdayTimestamp, sendForm, transferReceivedData} = functions;
+
 
 (function(){
     var form = document.forms[0];

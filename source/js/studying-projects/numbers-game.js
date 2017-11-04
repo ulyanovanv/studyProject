@@ -2,6 +2,8 @@
  * Created by Anastasiia on 9/26/17.
  */
 
+var $ = require("../vendor/jquery.min.js");
+
 $(document).ready(function(){
    $("#beginning-button").on("click",function(){
        $("#first").hide();
