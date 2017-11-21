@@ -1,0 +1,34 @@
+ <svg id="postcard" height="400px" width="800px" preserveAspectRation="xMidYMid">
+    <defs>
+      <pattern id="romb"  x="8" y="8" patternUnits="userSpaceOnUse" height="56" width="56" >
+        <rect height="40" width="40"  x="20" y="-20"  fill="none" stroke="
+url('#gradient')" stroke-width="5" transform="rotate(45)"/>
+      </pattern>
+      
+      <linearGradient id="gradient" x1="0" y1="0" x2="50%" y2="50%" spreadMethod="reflect">
+        <stop offset="0%" stop-color="#dfd287" stop-opacity="0.6"/>
+        <stop offset="25%" stop-color="#ec8b68" stop-opacity="0.8"/>
+        <stop offset="50%" stop-color="#d7666b" stop-opacity="0.9"/>
+      </linearGradient>
+      
+      <radialGradient id="grey-layout"  cx='50%' cy='50%' r='110%' spreadMethod="pad">
+        <stop offset="40%" stop-color="#FFF" />
+        <stop offset="100%" stop-color="#999" />
+      </radialGradient>
+      
+      
+     
+<!--       <path id="path" x="100" y="200"  width="800" height="400" d="M3.858,58.607 c16.784-5.985,33.921-10.518,51.695-12.99c50.522-7.028,101.982,0.51,151.892,8.283c17.83,2.777,35.632,5.711,53.437,8.628 c51.69,8.469,103.241,11.438,155.3,3.794c53.714-7.887,106.383-20.968,159.374-32.228c11.166-2.373,27.644-7.155,39.231-4.449" /> -->
+      
+ 
+
+    </defs>
+    <g>
+      <rect height="400px" width="800px" x="0" y="0" fill="url('#grey-layout')"/>
+      <rect height="400px" width="800px" x="0" y="0" fill="url('#romb')"/>
+    
+   
+    
+   </g>
+    
+  </svg>

@@ -1,0 +1,59 @@
+@media screen and (min-width:60rem) {
+ body {
+  margin: 0px 100px;
+  border-left: 4px solid #f9f9f9;
+  border-right: 4px solid #f9f9f9;
+  padding: 1rem 2rem;
+ }
+
+  .IntroWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px;
+
+  }
+  .IntroText {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    padding: 0 10px 10px 0;
+
+  }
+  .MoneyShotImg {
+
+    max-height: 650px;
+    min-width: 350px;
+
+  }
+  .Ingredients {
+    border: 2px #ec8b68 solid;
+    border-radius: 2px;
+    background-color:#dfd287;
+    float: right;
+    margin: 0 12px;
+
+    padding: 0 10px 0 20px;
+
+
+  }
+  .Ingredients ul {
+    padding: 20px 5px 5px 5px;
+
+  }
+  .Ingredients li {
+    list-style-type: disc;
+    line-height: 1.1;
+
+  }
+  .HowToMake {
+    padding-left: 20px;
+
+
+  }
+  .HowToMake li {
+    font-size: 1.4rem;
+    list-style-type: decimal;
+    line-height: 1.2;
+
+  }
+}

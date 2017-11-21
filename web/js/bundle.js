@@ -2054,6 +2054,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js__);
 
+//var $ = require("./vendor/jquery.min.js");
 
 /**
  * Created by Anastasya on 13.08.17.
@@ -2063,7 +2064,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //        $(this).animate({width:"+=100px"},1000);
 //    })
 //})
-//var $ = require("./vendor/jquery.min.js");
+
 let body = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()("body");
 
 if (body.hasClass("calender")) {
@@ -2076,6 +2077,10 @@ if (body.hasClass("main-in-numbers")) {
 
 if (body.hasClass("c13")) {
     __webpack_require__(5);
+}
+
+if (body.hasClass("mobile")) {
+    __webpack_require__(7);
 }
 
 /***/ }),
@@ -2785,6 +2790,27 @@ function transferReceivedData(infa, elements) {
         }
     }
 }
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js__);
+/**
+ * Created by Anastasiia on 11/21/17.
+ */
+//var $ = require("../vendor/jquery.min.js");
+
+
+var button = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()("#button_to_submit");
+console.log(button);
+button.on("click", function (event) {
+  event.preventDefault();
+  event.target.animate({ width: "500px" }, 2000);
+});
 
 /***/ })
 /******/ ]);

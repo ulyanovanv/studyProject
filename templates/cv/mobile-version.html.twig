@@ -1,0 +1,60 @@
+{% extends "layouts/layout.html.twig" %}
+
+{% block title %}
+    mobile-version
+{% endblock %}
+
+{% block bodyClass %}
+    mobile
+{% endblock %}
+
+{% block content %}
+
+    <head>
+        <meta name='viewport' content='width=device-width,initial-scale=1.0'/>
+    </head>
+    <body class='basic-rules'>
+        <div class='background'>
+            <svg class='background__phon' viewBox='0 320 180 320' preserveAspectRation='slice' >
+                <defs>
+                    <radialGradient id='gradient-grey' r='60%' fx='50%' fy='50%' spreadMethod='reflect'>
+                        <stop offset='0%' stop-color='#e5e5e5' />
+                        <stop offset='50%' stop-color='#e5e5e5'  />
+                        <stop offset='75%' stop-color='#FFF' />
+                        <stop offset='100%' stop-color='#FFF' />
+                    </radialGradient>
+                </defs>
+                <rect height='640' width='360' fill='url("#gradient-grey")'/>
+            </svg>
+
+            <svg class='background__white-circle'>
+                <ellipse rx='70%' ry='60%' cx='100%' cy='0%' fill='#FFF'/>
+            </svg>
+
+            <!--       <svg class='background__shadow-under-menu-button' >
+                    <defs>
+                      <radialGradient id='menu-shadow' r='50%' fx='50%' fy='50%' >
+                        <stop offset='5%' stop-color='#c5c5c5' />
+                        <stop offset='100%' stop-color='#FFF' />
+                      </radialGradient>
+                    </defs>
+                    <circle r='8%' cx='76%' cy='13%' fill='url("#menu-shadow")'/>
+                  </svg> -->
+
+        </div>
+
+        <div class='first-page-content'>
+
+        </div>
+
+        <div class='hidden-menu'>
+
+        </div>
+    </body>
+
+
+{% endblock %}
+
+{% block jsDifferent %}
+
+{% endblock %}

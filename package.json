@@ -5,7 +5,8 @@
   "main": "/public/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-      "sass": "node-sass --include-path scss source/scss/main.scss web/css/main.css"
+    "sass": "node-sass --include-path scss source/scss/main.scss web/css/main.css",
+    "js": "webpack"
   },
   "repository": {
     "type": "git",

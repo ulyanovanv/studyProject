@@ -1,4 +1,5 @@
 import $ from './vendor/jquery.min.js';
+//var $ = require("./vendor/jquery.min.js");
 
 /**
  * Created by Anastasya on 13.08.17.
@@ -8,7 +9,7 @@ import $ from './vendor/jquery.min.js';
 //        $(this).animate({width:"+=100px"},1000);
 //    })
 //})
-//var $ = require("./vendor/jquery.min.js");
+
 let body = $("body");
 
 
@@ -23,4 +24,9 @@ if (body.hasClass("main-in-numbers")){
 
 if (body.hasClass("c13")){
     require("./studying-projects/c13/c13.js");
+}
+
+
+if (body.hasClass("mobile")){
+    require("./studying-projects/mobile/mobile-project.js");
 }

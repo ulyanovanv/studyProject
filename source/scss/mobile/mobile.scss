@@ -1,0 +1,31 @@
+body.mobile {
+  .basic-rules {
+    height:640px;
+    width: 360px;
+    background-color: #FFF;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+  }
+
+  .background {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    .background__phon {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+    .background__white-circle {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+    .background__shadow-under-menu-button {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+  }
+}

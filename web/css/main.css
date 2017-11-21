@@ -1,160 +1,4 @@
-body.todo {
-  background-color: Black;
-  color: White;
-  text-shadow: 2px 2px 1px Black;
-  font-size: 16px; }
-
-#main_div {
-  background-color: #403c3b;
-  width: 480px;
-  margin: 20px auto 20px auto;
-  text-align: center;
-  font-family: "Open Sans", "Times New Roman", serif; }
-
-#header_r {
-  font-size: 1.7rem;
-  background-color: #403c3b; }
-
-#first_line {
-  background-image: url(https://i.pinimg.com/236x/44/17/78/441778b5f0fb528c93dda88692e714a9--cat-tattoo-black-small-cat-tattoos.jpg);
-  background-position: center bottom;
-  height: 130px;
-  width: 130px;
-  margin: 10px auto;
-  color: #403c3b;
-  font-weight: bold;
-  text-shadow: none;
-  position: relative; }
-  #first_line div {
-    position: absolute;
-    display: block;
-    bottom: 10px;
-    width: 100%; }
-
-#second_line {
-  display: inline-flex; }
-
-#buy {
-  text-transform: uppercase;
-  margin: 5px;
-  letter-spacing: 0.3rem; }
-
-#number_of_lis span {
-  background-color: White;
-  border-radius: 20px 20px;
-  font-size: 1.2rem;
-  color: Black;
-  padding: 2px;
-  vertical-align: bottom; }
-
-body.todo ul {
-  display: block;
-  list-style-type: none;
-  padding: 0px; }
-  body.todo ul li {
-    text-align: left;
-    padding: 5px 20px;
-    font-size: 1.2rem; }
-
-body.todo .hot {
-  background-color: #d7666b;
-  border-top: 1px solid #e99295;
-  border-bottom: 1px solid #914141; }
-
-body.todo .orange {
-  background-color: #ec8b68;
-  border-top: 1px solid #fe9772;
-  border-bottom: 1px solid #9f593f; }
-
-body.todo .grey {
-  background-color: #617280;
-  background-image: url(https://image.flaticon.com/icons/png/128/61/61391.png);
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: contain;
-  width: auto;
-  border-bottom: 1px solid #949ca3;
-  border-top: 1px solid #4a4e52; }
-
-body.todo #button_to_add {
-  text-align: right; }
-
-body.todo #new_item {
-  background-color: #d7666b;
-  border-radius: 5px;
-  border: 1px outset Grey;
-  height: 30px;
-  margin-bottom: 10px;
-  margin-right: 15px;
-  font-size: 1.1rem;
-  margin-top: 10px; }
-
-body.todo #form_to_add {
-  padding-bottom: 20px;
-  display: none; }
-
-body.todo #item_description {
-  background-color: #617280;
-  border-radius: 5px;
-  color: Black;
-  font-size: 1.1rem;
-  height: 25px;
-  outline: none;
-  margin-top: 10px; }
-
-body.todo #item_description::-webkit-input-placeholder {
-  color: #24384a; }
-
-body.todo #button_to_submit {
-  font-size: 1rem;
-  text-align: right;
-  background-color: #d7666b;
-  border-radius: 5px;
-  border: 1px outset Grey;
-  height: 30px;
-  font-size: 1.1rem;
-  margin-top: 10px; }
-  body.todo #button_to_submit:hover {
-    background-color: Black;
-    color: White; }
-
-body.todo #total_summa {
-  position: fixed;
-  bottom: 40px;
-  right: -100px;
-  background: linear-gradient(to top, #d7666b, #ec8b68);
-  padding: 10px;
-  border-radius: 20px;
-  box-shadow: 2px 2px 7px Yellow;
-  white-space: no-wrap; }
-
-@media screen and (min-width: 490px) {
-  body.todo #button_to_submit {
-    margin-left: 100px; } }
-
-@media screen and (max-width: 489px) and (min-width: 340px) {
-  body.todo #main_div {
-    width: 300px; } }
-
-@media screen and (max-width: 339px) {
-  body.todo #main_div {
-    width: 100%; }
-  body.todo #buy {
-    font-size: 0.8rem; }
-  body.todo #number_of_lis {
-    line-height: 28px; }
-    body.todo #number_of_lis span {
-      font-size: 0.8rem;
-      margin-right: 10px; }
-  body.todo #form_to_add {
-    display: none; }
-  body.todo #item_description {
-    width: 50%; } }
-
-@media screen and (max-width: 250px) {
-  body.todo {
-    min-width: 250px; } }
-
+@charset "UTF-8";
 body.lesson-third {
   margin-top: 8px; }
   body.lesson-third #game {
@@ -528,3 +372,81 @@ body.c13 {
         margin: 0px;
         box-sizing: border-box;
         width: 300px; } }
+
+body.ex1 * {
+  box-sizing: border-box; }
+
+body.ex1 body {
+  padding: 1rem .5rem;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  max-width: 60rem;
+  margin: 0 auto;
+  color: #333; }
+
+body.ex1 img {
+  max-width: 100%; }
+
+body.ex1 .Header {
+  text-align: center;
+  border-bottom: 8px double #f9f9f9;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem; }
+
+body.ex1 .Strap {
+  font-size: 1rem; }
+
+body.ex1 .MoneyShot {
+  position: relative; }
+
+body.ex1 .MoneyShotImg {
+  border: 6px solid #e8cfa9;
+  border-radius: 4px; }
+
+body.ex1 .LogoWrapper {
+  display: block; }
+
+body.ex1 .ImageCaption {
+  font-size: .75rem;
+  position: absolute;
+  bottom: .5rem;
+  right: 1rem; }
+
+body.ex1 .IntroText {
+  font-size: 1.8rem;
+  font-style: italic; }
+
+body.ex1 .MethodWrapper li {
+  padding: .4rem 0; }
+
+body.ex1 .MethodWrapper li:after {
+  content: "✼";
+  display: block;
+  text-align: center;
+  margin: 1rem 0 .5rem 0;
+  color: #eee; }
+
+body.mobile .basic-rules {
+  height: 640px;
+  width: 360px;
+  background-color: #FFF;
+  margin: 0;
+  padding: 0;
+  border: 1px solid black; }
+
+body.mobile .background {
+  height: 100%;
+  width: 100%;
+  position: relative; }
+  body.mobile .background .background__phon {
+    height: 100%;
+    width: 100%;
+    position: absolute; }
+  body.mobile .background .background__white-circle {
+    height: 100%;
+    width: 100%;
+    position: absolute; }
+  body.mobile .background .background__shadow-under-menu-button {
+    height: 100%;
+    width: 100%;
+    position: absolute; }
