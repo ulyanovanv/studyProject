@@ -1,0 +1,51 @@
+.hidden-menu__grey-display {
+  height: 100%;
+  width: 100%;
+  background-color: #a1a1a1;
+  z-index: 5;
+  position: absolute;
+  display: none;
+
+}
+
+.hidden-menu{
+  z-index:6;
+  position:absolute;
+  right: 1%;
+  top: 12%;
+  height: 25%;
+  width: 45%;
+  display: none;
+
+
+  &__options {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    &_items {
+      flex: 1;
+      line-height: 200%;
+      color:       #b13dbe;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5rem;
+      width: 100%;
+      background-color: White;
+      opacity: 0.9;
+      border-radius: 15px;
+      text-align: center;
+      border-left: 2px #0fb5c1 ridge;
+      border-bottom: 3px #0fb5c1 ridge;
+      border-top: 2px #7e5298 ridge;
+      border-right: 3px #076bca ridge;
+
+    }
+    #mission {}
+    #rates {}
+    #samples{}
+
+
+  }
+}

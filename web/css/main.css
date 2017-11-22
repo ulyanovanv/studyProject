@@ -477,23 +477,18 @@ body.mobile {
       grid-area: slogan;
       left: 3%;
       top: 5%;
-      display: flex;
-      flex-direction: column;
-      height: 38%; }
-      body.mobile .first-page-content__slogan_text-flex_first {
-        width: 100%;
-        position: absolute;
-        top: 25%;
-        left: 5%; }
+      height: 25%;
+      width: 94%; }
+      body.mobile .first-page-content__slogan_purple-text {
+        padding-left: 7%; }
       body.mobile .first-page-content__slogan_text {
-        display: inline-flex;
+        height: 100%;
         font-size: 2.4rem;
         font-weight: bold;
         font-family: Arial,serif; }
       body.mobile .first-page-content__slogan_under-text {
         font-size: 0.5rem;
-        margin-top: 8%;
-        padding-left: 5.7%; }
+        padding-left: 7.7%; }
     body.mobile .first-page-content__start-button {
       grid-area: button;
       height: 30%;
@@ -511,7 +506,6 @@ body.mobile {
         font-weight: bold; }
     body.mobile .first-page-content__footer {
       grid-area: footer;
-      font-size: 0.5rem;
       font-size: 0.7rem;
       align-self: end;
       bottom: 2%;
@@ -519,3 +513,60 @@ body.mobile {
       padding-right: 20%; }
       body.mobile .first-page-content__footer_link {
         color: #b13dbe; }
+  @media only screen and (orientation: landscape) {
+    body.mobile .first-page-content__header {
+      left: -12%;
+      align-self: end; }
+    body.mobile .first-page-content__menu-button {
+      height: 85%;
+      width: 18%;
+      top: 3%;
+      left: 2%; }
+    body.mobile .first-page-content__menu-button_icon {
+      top: 37%;
+      left: 35%; }
+    body.mobile .first-page-content__slogan {
+      top: -7%;
+      width: 50%; }
+    body.mobile .first-page-content__start-button {
+      height: 47%;
+      width: 27%;
+      top: -18%;
+      left: 2%; }
+    body.mobile .first-page-content__footer {
+      padding-right: 50%; } }
+  body.mobile .hidden-menu__grey-display {
+    height: 100%;
+    width: 100%;
+    background-color: #a1a1a1;
+    z-index: 5;
+    position: absolute;
+    display: none; }
+  body.mobile .hidden-menu {
+    z-index: 6;
+    position: absolute;
+    right: 1%;
+    top: 12%;
+    height: 25%;
+    width: 45%;
+    display: none; }
+    body.mobile .hidden-menu__options {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center; }
+      body.mobile .hidden-menu__options_items {
+        flex: 1;
+        line-height: 200%;
+        color: #b13dbe;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.5rem;
+        width: 100%;
+        background-color: White;
+        opacity: 0.9;
+        border-radius: 15px;
+        text-align: center;
+        border-left: 2px #0fb5c1 ridge;
+        border-bottom: 3px #0fb5c1 ridge;
+        border-top: 2px #7e5298 ridge;
+        border-right: 3px #076bca ridge; }

@@ -2805,9 +2805,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //var $ = require("../vendor/jquery.min.js");
 
 
-//var x = $(".first-page-content");
-//console.log(x);
-//x.children().css("border","1px solid Black");
+(function () {
+    var firstPageContent = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(".first-page-content");
+    var menuButton = firstPageContent.children(".first-page-content__menu-button");
+
+    var greyDisplay = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(".hidden-menu__grey-display");
+    var hiddenMenu = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(".hidden-menu");
+
+    menuButton.on("click", function () {
+        greyDisplay.css({
+            "opacity": "0",
+            "display": "block"
+        }).animate({ opacity: 0.4 });
+        hiddenMenu.css({
+            "opacity": "0",
+            "display": "block"
+        }).animate({ opacity: 1 });
+    });
+    greyDisplay.on("click", function () {
+        greyDisplay.animate({ opacity: 0 }, 1000, null, function () {
+            __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(this).css({
+                "display": "none"
+            });
+        });
+        hiddenMenu.animate({ opacity: 0 }, 1000, null, function () {
+            __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(this).css({
+                "display": "none"
+            });
+        });
+    });
+})();
 
 /***/ })
 /******/ ]);
