@@ -1,31 +1,128 @@
 body.mobile {
-  .basic-rules {
-    height:640px;
-    width: 360px;
-    background-color: #FFF;
-    margin: 0;
-    padding: 0;
-    border: 1px solid black;
+
+  //   height:640px;
+  //   width: 360px;
+  background-color: #FFF;
+  color: #000;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+
+  a {
+    text-decoration: none;
   }
 
   .background {
+   box-sizing: border-box;
+   height: 100%;
+   width: 100%;
+  //     position: relative;
+   &__phon, &__white-circle, &__shadow-under-menu-button, &__colored-right-circle, &__white-circle-upon-colored, &__bottom-partcircle {
+     height: 100%;
+     width: 100%;
+     position: absolute;
+   }
+  }
+
+  .first-page-content {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.02rem;
     height: 100%;
     width: 100%;
-    position: relative;
-    .background__phon {
-      height: 100%;
-      width: 100%;
-      position: absolute;
+    display: grid;
+    grid-template: repeat(4,1fr)/ repeat(2,1fr);
+    justify-items: center;
+    align-items: center;
+    grid-template-areas: "header menuu"
+                        "slogan slogan"
+                        "button button"
+                        "footer footer";
+
+    &_relative {
+      position: relative;
     }
-    .background__white-circle {
-      height: 100%;
-      width: 100%;
-      position: absolute;
+    &__header {
+      font-weight: bold;
+      grid-area: header;
+      top: -3%;
     }
-    .background__shadow-under-menu-button {
-      height: 100%;
-      width: 100%;
+    &__header_green-letter {
+      color: #0fb5c1;
+    }
+    &__menu-button {
+      grid-area: menuu;
+      top: -3%;
+      left: 5%;
+      border-radius: 100%;
+      box-shadow: 0px 19px 30px 7px #dbdbdb;
+      height: 31%;
+      width: 28%;
+    }
+    &__menu-button_icon {
       position: absolute;
+      top: 34%;
+      left: 33%;
+    }
+    &__slogan {
+      grid-area: slogan;
+      left: 3%;
+      top: 5%;
+      display: flex;
+      flex-direction: column;
+      height: 38%;
+
+      &_text-flex_first {
+        width: 100%;
+        position: absolute;
+        top: 25%;
+        left: 5%;
+      }
+
+      &_text {
+        display: inline-flex;
+//        width: 50%;
+        font-size: 2.4rem;
+        font-weight: bold;
+        font-family: Arial,serif;
+      }
+      &_purple-text {
+//        width: 50%;
+      }
+      &_under-text {
+        font-size: 0.5rem;
+        margin-top: 8%;
+        padding-left: 5.7%;
+      }
+    }
+    &__start-button {
+      grid-area: button;
+      height: 30%;
+      width: 70%;
+      margin: 0 auto;
+      text-align: center;
+      background: linear-gradient(45deg,#602485, #c64bd6);
+      border-radius: 50px;
+      top: -7%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &_link {
+        color: #FFF;
+        font-weight: bold;
+      }
+    }
+    &__footer{
+      grid-area: footer;
+      font-size:0.5rem;
+      font-size: 0.7rem;
+      align-self: end;
+      bottom: 2%;
+      color: #FFF;
+      padding-right: 20%;
+      &_link {
+        color:#b13dbe;
+      }
     }
   }
-}
+ }

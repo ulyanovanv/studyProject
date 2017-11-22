@@ -4,16 +4,24 @@
     mobile-version
 {% endblock %}
 
+{% block metatags %}
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'/>
+{% endblock %}
+
+{% block additionalLinks %}
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+{% endblock %}
+
 {% block bodyClass %}
     mobile
 {% endblock %}
 
+
+
+
 {% block content %}
 
-    <head>
-        <meta name='viewport' content='width=device-width,initial-scale=1.0'/>
-    </head>
-    <body class='basic-rules'>
+
         <div class='background'>
             <svg class='background__phon' viewBox='0 320 180 320' preserveAspectRation='slice' >
                 <defs>
@@ -28,33 +36,95 @@
             </svg>
 
             <svg class='background__white-circle'>
-                <ellipse rx='70%' ry='60%' cx='100%' cy='0%' fill='#FFF'/>
+                <ellipse rx='70%' ry='60%' cx='100%' cy='12%' fill='#FFF'/>
             </svg>
 
-            <!--       <svg class='background__shadow-under-menu-button' >
-                    <defs>
-                      <radialGradient id='menu-shadow' r='50%' fx='50%' fy='50%' >
-                        <stop offset='5%' stop-color='#c5c5c5' />
-                        <stop offset='100%' stop-color='#FFF' />
-                      </radialGradient>
-                    </defs>
-                    <circle r='8%' cx='76%' cy='13%' fill='url("#menu-shadow")'/>
-                  </svg> -->
+            <svg class="background__colored-right-circle">
+                <defs>
+                    <linearGradient id='colored-circle'  x1="0" y1="0" x2="10%" y2="100%" spreadMethod='pad'>
+                        <stop offset='0%' stop-color='#0fb5c1' />
+                        <stop offset='50%' stop-color='#076bca'  />
+                        <stop offset='90%' stop-color='#9578d8' />
+                    </linearGradient>
+                </defs>
+                <circle fill="url('#colored-circle')" cx="100%" cy="25%" r="10%"/>
+            </svg>
 
+
+            <svg class="background__white-circle-upon-colored">
+                <defs>
+                    <linearGradient id='white-circle'  x1="40%" y1="0" x2="0" y2="100%" spreadMethod='pad'>
+                        <stop offset='15%' stop-color='#FFF' />
+                        <stop offset='90%' stop-color='#c2c2c2'/>
+                    </linearGradient>
+                </defs>
+                <circle fill="url('#white-circle')" cx="91%" cy="24%" r="5.5%"/>
+            </svg>
+
+            <svg class="background__bottom-partcircle">
+                <defs>
+                    <radialGradient id='big-colored-part-circle' cx='50%' cy='50%' r='80%' fx="95%" fy="0%" spreadMethod='pad'>
+                        <stop offset='0%' stop-color='#003580' />
+                        <stop offset='50%' stop-color='#b13dbe'/>
+                    </radialGradient>
+                </defs>
+                <circle fill="url('#big-colored-part-circle')" cx="11%" cy="115%" r="50%"/>
+            </svg>
         </div>
 
         <div class='first-page-content'>
+            <header class="first-page-content__header  first-page-content_relative">
+                <span class="first-page-content__header_green-letter">A</span>Wallet
+            </header>
 
+            <div class="first-page-content__menu-button  first-page-content_relative">
+                <i class="first-page-content__menu-button_icon fa fa-align-justify fa-2" aria-hidden="true"></i>
+            </div>
+
+            <div class="first-page-content__slogan  first-page-content_relative">
+                <div class="first-page-content__slogan_text">
+
+                    <div class="first-page-content__slogan_text-flex_first">
+                        Future Is
+                    </div>
+                    <div class="first-page-content__slogan_text-flex">
+                        <svg class="first-page-content__slogan_purple-text" width="100%" height="125%"  >
+                            <defs>
+                                <linearGradient id="purple-text" x1="0" y1="0" x2="50%" y2="100%" spreadMethod='pad' >
+                                    <stop offset="0%" stop-color="#c495d6" />
+                                    <stop offset="100%" stop-color="#7e5298" />
+                                </linearGradient>
+                            </defs>
+                            <text x="64.5%" y="100%" fill= "url(#purple-text)">here</text>
+                        </svg>
+                    </div>
+                </div>
+                <p class="first-page-content__slogan_under-text">
+                    Freedom of action with awallet
+                </p>
+            </div>
+
+            <div class="first-page-content__start-button  first-page-content_relative">
+               <a class="first-page-content__start-button_link" href=" "> Start now</a>
+            </div>
+
+            <footer class="first-page-content__footer  first-page-content_relative">
+                Learn more about
+                <a class="first-page-content__footer_link" href="">
+                    wallet
+                    <i class="fa fa-long-arrow-right" aria-hidden="true" style="color: #FFF"></i>
+                </a>
+            </footer>
         </div>
 
         <div class='hidden-menu'>
 
         </div>
-    </body>
+
 
 
 {% endblock %}
 
 {% block jsDifferent %}
-
+    <script src="https://use.fontawesome.com/2f3047ef18.js"></script>
 {% endblock %}

@@ -2805,12 +2805,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //var $ = require("../vendor/jquery.min.js");
 
 
-var button = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()("#button_to_submit");
-console.log(button);
-button.on("click", function (event) {
-  event.preventDefault();
-  event.target.animate({ width: "500px" }, 2000);
-});
+//var x = $(".first-page-content");
+//console.log(x);
+//x.children().css("border","1px solid Black");
 
 /***/ })
 /******/ ]);

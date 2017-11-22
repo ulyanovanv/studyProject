@@ -3,6 +3,8 @@
     <head>
         <title>{% block title %}{% endblock %}</title>
 
+        {% block metatags %}{% endblock %}
+
         <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
         {% block additionalLinks %}{% endblock %}
 
