@@ -11,8 +11,8 @@
 .hidden-menu{
   z-index:6;
   position:absolute;
-  right: 1%;
-  top: 12%;
+  right: -40%;
+  top: 14%;
   height: 25%;
   width: 45%;
   display: none;
@@ -28,18 +28,19 @@
     &_items {
       flex: 1;
       line-height: 200%;
-      color:       #b13dbe;
+//      color:       #b13dbe;
+      color: #e4e4e4;
       font-family: 'Roboto', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       width: 100%;
-      background-color: White;
-      opacity: 0.9;
-      border-radius: 15px;
+      border-radius: 25px;
       text-align: center;
-      border-left: 2px #0fb5c1 ridge;
-      border-bottom: 3px #0fb5c1 ridge;
-      border-top: 2px #7e5298 ridge;
-      border-right: 3px #076bca ridge;
+      margin-bottom: 1%;
+      background: linear-gradient(10deg, #076bca -30%, #7e5298 48%, #0fb5c1 128%);
+//      border-left: 2px #0fb5c1 ridge;
+//      border-bottom: 3px #0fb5c1 ridge;
+//      border-top: 2px #7e5298 ridge;
+//      border-right: 3px #076bca ridge;
 
     }
     #mission {}

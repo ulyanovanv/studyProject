@@ -1,7 +1,6 @@
 .first-page-content {
   position: absolute;
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 0.02rem;
+
   height: 100%;
   width: 100%;
   display: grid;
@@ -21,9 +20,7 @@
     grid-area: header;
     top: -3%;
   }
-  &__header_green-letter {
-    color: #0fb5c1;
-  }
+ 
   &__menu-button {
     grid-area: menuu;
     top: -3%;

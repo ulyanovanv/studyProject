@@ -431,21 +431,27 @@ body.mobile {
   color: #000;
   font-size: 16px;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.02rem; }
   body.mobile a {
     text-decoration: none; }
+  body.mobile .green-letter {
+    color: #0fb5c1; }
+  body.mobile .first-page {
+    display: block; }
+  body.mobile .second-page {
+    display: none; }
   body.mobile .background {
     box-sizing: border-box;
     height: 100%;
     width: 100%; }
-    body.mobile .background__phon, body.mobile .background__white-circle, body.mobile .background__shadow-under-menu-button, body.mobile .background__colored-right-circle, body.mobile .background__white-circle-upon-colored, body.mobile .background__bottom-partcircle {
+    body.mobile .background__phon, body.mobile .background__white-circle, body.mobile .background__shadow-under-menu-button, body.mobile .background__colored-right-circle, body.mobile .background__white-circle-upon-colored, body.mobile .background__bottom-partcircle, body.mobile .background__grey-gradient, body.mobile .background__white-circle-second, body.mobile .background__colored-circle-second-page, body.mobile .background__colored-circle-second-page-coverage {
       height: 100%;
       width: 100%;
       position: absolute; }
   body.mobile .first-page-content {
     position: absolute;
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 0.02rem;
     height: 100%;
     width: 100%;
     display: grid;
@@ -459,8 +465,6 @@ body.mobile {
       font-weight: bold;
       grid-area: header;
       top: -3%; }
-    body.mobile .first-page-content__header_green-letter {
-      color: #0fb5c1; }
     body.mobile .first-page-content__menu-button {
       grid-area: menuu;
       top: -3%;
@@ -535,6 +539,84 @@ body.mobile {
       left: 2%; }
     body.mobile .first-page-content__footer {
       padding-right: 50%; } }
+  body.mobile .second-page-content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template: repeat(6, 1fr)/repeat(2, 1fr);
+    justify-items: center;
+    align-items: center; }
+    body.mobile .second-page-content__header {
+      grid-area: 1 / 1 / span 1/ span 1;
+      font-weight: bold; }
+    body.mobile .second-page-content__menu-button {
+      grid-area: 1 / 2 / span 1/ span 1;
+      position: relative;
+      top: 2%;
+      left: 8%;
+      border-radius: 100%;
+      box-shadow: 0px 19px 30px 7px #dbdbdb;
+      height: 48%;
+      width: 28%;
+      background-color: #FFF; }
+    body.mobile .second-page-content__menu-button_icon {
+      position: absolute;
+      top: 34%;
+      left: 33%; }
+    body.mobile .second-page-content__title {
+      grid-area: 2 / 1 / span 1/ span 2;
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: Arial,serif; }
+      body.mobile .second-page-content__title_title_purple-text {
+        padding-left: 7%; }
+    body.mobile .second-page-content__missions {
+      grid-area: 3 / 1 / span 4/ span 2;
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+      justify-content: start;
+      margin-top: -5%;
+      margin-left: -3%; }
+      body.mobile .second-page-content__missions_aim {
+        width: 75%;
+        margin: 6% auto 13% auto;
+        height: 10%; }
+      body.mobile .second-page-content__missions_icon {
+        width: 20%;
+        margin-bottom: 2%; }
+      body.mobile .second-page-content__missions_text {
+        color: #000;
+        font-size: 0.8rem;
+        line-height: 1.08rem; }
+  @media only screen and (orientation: landscape) {
+    body.mobile .second-page-content__header {
+      align-self: end;
+      justify-self: self-start;
+      padding-left: 20%; }
+    body.mobile .second-page-content__menu-button {
+      top: 5%;
+      left: 15%;
+      height: 110%;
+      width: 15%; }
+    body.mobile .second-page-content__missions {
+      flex-flow: row;
+      padding: 7% 3% 0 10%;
+      display: inline-flex;
+      justify-content: space-evenly; }
+      body.mobile .second-page-content__missions_aim {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        margin: initial;
+        height: 60%;
+        width: 28%; }
+      body.mobile .second-page-content__missions_white-box {
+        display: flex;
+        justify-content: center; }
+      body.mobile .second-page-content__missions_icon {
+        height: 30%; } }
   body.mobile .hidden-menu__grey-display {
     height: 100%;
     width: 100%;
@@ -545,8 +627,8 @@ body.mobile {
   body.mobile .hidden-menu {
     z-index: 6;
     position: absolute;
-    right: 1%;
-    top: 12%;
+    right: -40%;
+    top: 14%;
     height: 25%;
     width: 45%;
     display: none; }
@@ -558,15 +640,11 @@ body.mobile {
       body.mobile .hidden-menu__options_items {
         flex: 1;
         line-height: 200%;
-        color: #b13dbe;
+        color: #e4e4e4;
         font-family: 'Roboto', sans-serif;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         width: 100%;
-        background-color: White;
-        opacity: 0.9;
-        border-radius: 15px;
+        border-radius: 25px;
         text-align: center;
-        border-left: 2px #0fb5c1 ridge;
-        border-bottom: 3px #0fb5c1 ridge;
-        border-top: 2px #7e5298 ridge;
-        border-right: 3px #076bca ridge; }
+        margin-bottom: 1%;
+        background: linear-gradient(10deg, #076bca -30%, #7e5298 48%, #0fb5c1 128%); }

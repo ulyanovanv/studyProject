@@ -1,0 +1,120 @@
+.second-page-content {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template: repeat(6,1fr)/ repeat(2,1fr);
+  justify-items: center;
+  align-items: center;
+
+  &__header {
+    grid-area: 1 / 1 / span 1/ span 1;
+    font-weight: bold;  //repetation
+  }
+  &__menu-button {
+    grid-area: 1 / 2 / span 1/ span 1;
+    position: relative;
+    top: 2%;
+    left: 8%;
+    border-radius: 100%;
+    box-shadow: 0px 19px 30px 7px #dbdbdb;
+    height: 48%;
+    width: 28%;  //repetation
+    background-color: #FFF;
+  }
+  &__menu-button_icon {
+    position: absolute;
+    top: 34%;
+    left: 33%;
+  }
+  &__title {
+    grid-area: 2 / 1 / span 1/ span 2;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: Arial,serif;
+    &_title_purple-text {
+      padding-left: 7%;
+    }
+  }
+  &__missions {
+    grid-area: 3 / 1 / span 4/ span 2;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    justify-content: start;
+    margin-top: -5%;
+    margin-left: -3%;
+    &_aim {
+      width: 75%;
+      margin: 6% auto 13% auto;
+      height: 10%;
+    }
+    &_white-box {
+//      height: 30px;
+//      width: 100%;
+//      background-color: White;
+//      opacity: 0.5;
+    }
+    &_icon {
+      width: 20%;
+      margin-bottom: 2%;
+    }
+    &_text {
+      color: #000;
+      font-size: 0.8rem;
+      line-height: 1.08rem;
+    }
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  .second-page-content {
+
+    &__header {
+      align-self: end;
+      justify-self: self-start;
+      padding-left: 20%;
+    }
+    &__menu-button {
+      top: 5%;
+      left: 15%;
+      height: 110%;
+      width: 15%;
+    }
+    &__title {
+
+      &_title_purple-text {
+
+      }
+    }
+    &__missions {
+      flex-flow: row;
+      padding: 7% 3% 0 10%;
+      display: inline-flex;
+      justify-content: space-evenly;
+
+      &_aim {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        margin: initial;
+        height: 60%;
+        width: 28%;
+//        border: 5% solid transparent;
+
+      }
+      &_white-box {
+        display: flex;
+        justify-content: center;
+
+      }
+      &_icon {
+        height: 30%;
+
+      }
+      &_text {
+
+      }
+    }
+  }
+}

@@ -2806,13 +2806,64 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 (function () {
-    var firstPageContent = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(".first-page-content");
-    var menuButton = firstPageContent.children(".first-page-content__menu-button");
+    var firstPage = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(".first-page");
+    var secondPage = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(".second-page");
 
     var greyDisplay = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(".hidden-menu__grey-display");
     var hiddenMenu = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(".hidden-menu");
 
-    menuButton.on("click", function () {
+    var missions = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()("#mission");
+    var mainPage = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()("#main-page");
+
+    var firstPageContent = firstPage.children(".first-page-content");
+    var firstPageMenuButton = firstPageContent.children(".first-page-content__menu-button");
+    var startButton = firstPageContent.children(".first-page-content__start-button");
+    var footerLink = firstPageContent.children(".first-page-content__footer");
+
+    var secondPageContent = secondPage.children(".second-page-content");
+    var secondPageMenuButton = secondPageContent.children(".second-page-content__menu-button");
+
+    firstPageMenuButton.on("click", function () {
+        HiddenMenuAppering();
+        missions.css({ "display": "block" });
+        mainPage.css({ "display": "none" });
+    });
+
+    secondPageMenuButton.on("click", function () {
+        HiddenMenuAppering();
+        missions.css({ "display": "none" });
+        mainPage.css({ "display": "block" });
+    });
+
+    startButton.on("click", TurnToSecondPage);
+
+    footerLink.on("click", TurnToSecondPage);
+
+    greyDisplay.on("click", GreyDisplayAppering);
+
+    missions.on("click", function () {
+        TurnToSecondPage();
+        GreyDisplayAppering();
+    });
+
+    mainPage.on("click", function () {
+        TurnToFirstPage();
+        GreyDisplayAppering();
+    });
+
+    function GreyDisplayAppering() {
+        greyDisplay.animate({ opacity: 0 }, 1000, null, function () {
+            __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(this).css({
+                "display": "none"
+            });
+        });
+        hiddenMenu.animate({ opacity: 0, right: "-=50%" }, 1000, null, function () {
+            __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(this).css({
+                "display": "none"
+            });
+        });
+    }
+    function HiddenMenuAppering() {
         greyDisplay.css({
             "opacity": "0",
             "display": "block"
@@ -2820,20 +2871,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         hiddenMenu.css({
             "opacity": "0",
             "display": "block"
-        }).animate({ opacity: 1 });
-    });
-    greyDisplay.on("click", function () {
-        greyDisplay.animate({ opacity: 0 }, 1000, null, function () {
-            __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(this).css({
-                "display": "none"
-            });
+        }).animate({ opacity: 1, right: "+=50%" });
+    }
+    function TurnToSecondPage() {
+        firstPage.animate({ opacity: 0 }, 1000, null, function () {
+            __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(this).css({ display: "none" });
+            secondPage.css({ "opacity": 1 }).fadeIn(1000);
         });
-        hiddenMenu.animate({ opacity: 0 }, 1000, null, function () {
-            __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(this).css({
-                "display": "none"
-            });
+    }
+    function TurnToFirstPage() {
+        secondPage.animate({ opacity: 0 }, 1000, null, function () {
+            __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(this).css({ display: "none" });
+            console.log(firstPage);
+            firstPage.css({ "opacity": 1 }).fadeIn(1000);
         });
-    });
+    }
 })();
 
 /***/ })
