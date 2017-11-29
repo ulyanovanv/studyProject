@@ -445,15 +445,19 @@ body.mobile {
   body.mobile .background {
     box-sizing: border-box;
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    max-width: 414px; }
     body.mobile .background__phon, body.mobile .background__white-circle, body.mobile .background__shadow-under-menu-button, body.mobile .background__colored-right-circle, body.mobile .background__white-circle-upon-colored, body.mobile .background__bottom-partcircle, body.mobile .background__grey-gradient, body.mobile .background__white-circle-second, body.mobile .background__colored-circle-second-page, body.mobile .background__colored-circle-second-page-coverage {
       height: 100%;
       width: 100%;
       position: absolute; }
+    body.mobile .background svg {
+      max-width: 414px; }
   body.mobile .first-page-content {
     position: absolute;
     height: 100%;
     width: 100%;
+    max-width: 414px;
     display: grid;
     grid-template: repeat(4, 1fr)/repeat(2, 1fr);
     justify-items: center;
@@ -539,10 +543,33 @@ body.mobile {
       left: 2%; }
     body.mobile .first-page-content__footer {
       padding-right: 50%; } }
+  @media only screen and (min-width: 900px) {
+    body.mobile .first-page-content__header {
+      left: -14%;
+      align-self: end; }
+    body.mobile .first-page-content__menu-button {
+      height: 85%;
+      width: 18%;
+      top: 3%;
+      left: 2%; }
+    body.mobile .first-page-content__menu-button_icon {
+      top: 37%;
+      left: 35%; }
+    body.mobile .first-page-content__slogan {
+      top: -7%;
+      width: 50%; }
+    body.mobile .first-page-content__start-button {
+      height: 47%;
+      width: 27%;
+      top: -18%;
+      left: 2%; }
+    body.mobile .first-page-content__footer {
+      padding-right: 50%; } }
   body.mobile .second-page-content {
     position: absolute;
     height: 100%;
     width: 100%;
+    max-width: 414px;
     display: grid;
     grid-template: repeat(6, 1fr)/repeat(2, 1fr);
     justify-items: center;

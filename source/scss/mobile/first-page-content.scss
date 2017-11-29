@@ -3,6 +3,7 @@
 
   height: 100%;
   width: 100%;
+  max-width: $maxWidth;
   display: grid;
   grid-template: repeat(4,1fr)/ repeat(2,1fr);
   justify-items: center;
@@ -99,6 +100,38 @@
   .first-page-content {
     &__header {
       left: -12%;
+      align-self: end;
+    }
+    &__menu-button {
+      height: 85%;
+      width: 18%;
+      top: 3%;
+      left: 2%;
+    }
+    &__menu-button_icon {
+      top: 37%;
+      left: 35%;
+    }
+    &__slogan {
+      top: -7%;
+      width: 50%;
+    }
+    &__start-button {
+      height: 47%;
+      width: 27%;
+      top: -18%;
+      left: 2%;
+    }
+    &__footer{
+      padding-right: 50%;
+    }
+  }
+}
+
+@media only screen and (min-width: 900px){
+  .first-page-content {
+    &__header {
+      left: -14%;
       align-self: end;
     }
     &__menu-button {

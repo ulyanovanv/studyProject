@@ -2,6 +2,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
+  max-width: $maxWidth;
   display: grid;
   grid-template: repeat(6,1fr)/ repeat(2,1fr);
   justify-items: center;

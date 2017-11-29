@@ -1,3 +1,5 @@
+$maxWidth: 414px;
+
 body.mobile {
 
   //   height:640px;
@@ -32,12 +34,16 @@ body.mobile {
    box-sizing: border-box;
    height: 100%;
    width: 100%;
+    max-width: $maxWidth;
   //     position: relative;
    &__phon, &__white-circle, &__shadow-under-menu-button, &__colored-right-circle, &__white-circle-upon-colored, &__bottom-partcircle, &__grey-gradient, &__white-circle-second, &__colored-circle-second-page, &__colored-circle-second-page-coverage {
      height: 100%;
      width: 100%;
      position: absolute;
    }
+    svg {
+      max-width: $maxWidth;
+    }
   }
 
 
