@@ -1,7 +1,7 @@
 body.mobile {
+  max-height:736px;
+  max-width: 414px;
 
-  //   height:640px;
-  //   width: 360px;
   background-color: #FFF;
   color: #000;
   font-size: 16px;
@@ -9,6 +9,10 @@ body.mobile {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.02rem;
+
+  .page-container {
+
+  }
 
   a {
     text-decoration: none;
@@ -32,12 +36,13 @@ body.mobile {
    box-sizing: border-box;
    height: 100%;
    width: 100%;
-  //     position: relative;
-   &__phon, &__white-circle, &__shadow-under-menu-button, &__colored-right-circle, &__white-circle-upon-colored, &__bottom-partcircle, &__grey-gradient, &__white-circle-second, &__colored-circle-second-page, &__colored-circle-second-page-coverage {
+   position: absolute;
+   &__phon,&__white-circle, &__white-circle, &__shadow-under-menu-button, &__colored-right-circle, &__white-circle-upon-colored, &__bottom-partcircle, &__grey-gradient, &__white-circle-second, &__colored-circle-second-page, &__colored-circle-second-page-coverage {
      height: 100%;
      width: 100%;
      position: absolute;
    }
+
   }
 
 

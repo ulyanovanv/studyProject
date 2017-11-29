@@ -16,24 +16,15 @@
 {% endblock %}
 
 {% block jsDifferent %}
-    <!doctype html>
-    <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Our first responsive web page with HTML5 and CSS3</title>
-        <meta name="description" content="A basic responsive web page – an example from Chapter 1">
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
-    <body>
     <div class="Header">
-        <a href="/" class="LogoWrapper"><img src="/images/SOC-Logo.png" alt="Scone O'Clock logo" /></a>
+        <a href="/" class="LogoWrapper">
+            <img src="img/SOC-Logo.png" alt="Scone O'Clock logo" /></a>
         <p class="Strap">Scones: the most resplendent of snacks</p>
     </div>
     <div class="IntroWrapper">
         <p class="IntroText">Occasionally maligned and misunderstood; the scone is a quintessentially British classic.</p>
         <div class="MoneyShot">
-            <img class="MoneyShotImg" src="/images/scones.jpg" alt="Incredible scones" />
+            <img class="MoneyShotImg" src="images/scones.jpg" srcset="SOC-Logo.png 1.5x"  alt="Incredible scones" />
             <p class="ImageCaption">Incredible scones, picture from Wikipedia</p>
         </div>
     </div>
@@ -64,8 +55,5 @@
             <li>Bake for 10 minutes until risen and golden on the top. Eat just warm or cold on the day of baking, generously (and I do mean generously) topped with jam and clotted cream. </li>
             <li>If freezing, freeze once cool. Defrost, then put in a low oven (about 160&deg;C) for a few minutes to refresh.</li>
         </ol>
-    </div>
-    </body>
-    </html>
 
 {% endblock %}

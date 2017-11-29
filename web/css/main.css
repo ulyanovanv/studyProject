@@ -373,60 +373,81 @@ body.c13 {
         box-sizing: border-box;
         width: 300px; } }
 
-body.ex1 * {
-  box-sizing: border-box; }
-
-body.ex1 body {
+body.ex1 {
   padding: 1rem .5rem;
   font-size: 1.3rem;
   line-height: 1.2;
   max-width: 60rem;
   margin: 0 auto;
   color: #333; }
-
-body.ex1 img {
-  max-width: 100%; }
-
-body.ex1 .Header {
-  text-align: center;
-  border-bottom: 8px double #f9f9f9;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem; }
-
-body.ex1 .Strap {
-  font-size: 1rem; }
-
-body.ex1 .MoneyShot {
-  position: relative; }
-
-body.ex1 .MoneyShotImg {
-  border: 6px solid #e8cfa9;
-  border-radius: 4px; }
-
-body.ex1 .LogoWrapper {
-  display: block; }
-
-body.ex1 .ImageCaption {
-  font-size: .75rem;
-  position: absolute;
-  bottom: .5rem;
-  right: 1rem; }
-
-body.ex1 .IntroText {
-  font-size: 1.8rem;
-  font-style: italic; }
-
-body.ex1 .MethodWrapper li {
-  padding: .4rem 0; }
-
-body.ex1 .MethodWrapper li:after {
-  content: "✼";
-  display: block;
-  text-align: center;
-  margin: 1rem 0 .5rem 0;
-  color: #eee; }
+  body.ex1 * {
+    box-sizing: border-box; }
+  body.ex1 img {
+    max-width: 100%; }
+  body.ex1 .Header {
+    text-align: center;
+    border-bottom: 8px double #f9f9f9;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem; }
+  body.ex1 .Strap {
+    font-size: 1rem; }
+  body.ex1 .MoneyShot {
+    position: relative; }
+  body.ex1 .MoneyShotImg {
+    border: 6px solid #e8cfa9;
+    border-radius: 4px; }
+  body.ex1 .LogoWrapper {
+    display: block; }
+  body.ex1 .ImageCaption {
+    font-size: .75rem;
+    position: absolute;
+    bottom: .5rem;
+    right: 1rem; }
+  body.ex1 .IntroText {
+    font-size: 1.8rem;
+    font-style: italic; }
+  body.ex1 .MethodWrapper li {
+    padding: .4rem 0; }
+  body.ex1 .MethodWrapper li:after {
+    content: "✼";
+    display: block;
+    text-align: center;
+    margin: 1rem 0 .5rem 0;
+    color: #eee; }
+  @media screen and (min-width: 50rem) {
+    body.ex1 body {
+      border-left: 4px solid #f9f9f9;
+      border-right: 4px solid #f9f9f9;
+      padding: 1rem 2rem; }
+    body.ex1 .IntroWrapper {
+      display: table;
+      table-layout: fixed;
+      width: 100%; }
+    body.ex1 .MoneyShot,
+    body.ex1 .IntroText {
+      display: table-cell;
+      width: 50%;
+      vertical-align: middle;
+      text-align: center; }
+    body.ex1 .IntroText {
+      padding: .5rem;
+      font-size: 2.5rem;
+      text-align: left;
+      position: relative; }
+    body.ex1 .Ingredients {
+      font-size: .9rem;
+      float: right;
+      padding: 1rem;
+      margin: 0 0 .5rem 1rem;
+      border-radius: 3px;
+      background-color: #ffffdf;
+      border: 2px solid #e8cfa9; }
+    body.ex1 .Ingredients h3 {
+      margin: 0; } }
 
 body.mobile {
+  max-height: 736px;
+  max-width: 414px;
   background-color: #FFF;
   color: #000;
   font-size: 16px;
@@ -445,8 +466,9 @@ body.mobile {
   body.mobile .background {
     box-sizing: border-box;
     height: 100%;
-    width: 100%; }
-    body.mobile .background__phon, body.mobile .background__white-circle, body.mobile .background__shadow-under-menu-button, body.mobile .background__colored-right-circle, body.mobile .background__white-circle-upon-colored, body.mobile .background__bottom-partcircle, body.mobile .background__grey-gradient, body.mobile .background__white-circle-second, body.mobile .background__colored-circle-second-page, body.mobile .background__colored-circle-second-page-coverage {
+    width: 100%;
+    position: absolute; }
+    body.mobile .background__phon, body.mobile .background__white-circle, body.mobile .background__white-circle, body.mobile .background__shadow-under-menu-button, body.mobile .background__colored-right-circle, body.mobile .background__white-circle-upon-colored, body.mobile .background__bottom-partcircle, body.mobile .background__grey-gradient, body.mobile .background__white-circle-second, body.mobile .background__colored-circle-second-page, body.mobile .background__colored-circle-second-page-coverage {
       height: 100%;
       width: 100%;
       position: absolute; }

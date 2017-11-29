@@ -1,18 +1,21 @@
+
+
 body.ex1 {
-//  @import 'ex1-media';
+
+
 
   * {
     box-sizing: border-box;
   }
 
-  body {
+
     padding: 1rem .5rem;
     font-size: 1.3rem;
     line-height: 1.2;
     max-width: 60rem;
     margin: 0 auto;
     color: #333;
-  }
+
 
   img {
     max-width: 100%;
@@ -67,49 +70,47 @@ body.ex1 {
     color: #eee;
   }
 
+  @media screen and (min-width: 50rem) {
+    body {
+      border-left: 4px solid #f9f9f9;
+      border-right: 4px solid #f9f9f9;
+      padding: 1rem 2rem;
+    }
 
-//  @media screen and (min-width: 50rem) {
-//    body {
-//      border-left: 4px solid #f9f9f9;
-//      border-right: 4px solid #f9f9f9;
-//      padding: 1rem 2rem;
-//    }
-//
-//    .IntroWrapper {
-//      display: table;
-//      table-layout: fixed;
-//      width: 100%;
-//    }
-//
-//    .MoneyShot,
-//    .IntroText {
-//      display: table-cell;
-//      width: 50%;
-//      vertical-align: middle;
-//      text-align: center;
-//    }
-//
-//    .IntroText {
-//      padding: .5rem;
-//      font-size: 2.5rem;
-//      text-align: left;
-//      position: relative;
-//    }
-//
-//    .Ingredients {
-//      font-size: .9rem;
-//      float: right;
-//      padding: 1rem;
-//      margin: 0 0 .5rem 1rem;
-//      border-radius: 3px;
-//      background-color: #ffffdf;
-//      border: 2px solid #e8cfa9;
-//    }
-//
-//    .Ingredients h3 {
-//      margin: 0;
-//    }
-//  }
+    .IntroWrapper {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+    }
 
+    .MoneyShot,
+    .IntroText {
+      display: table-cell;
+      width: 50%;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .IntroText {
+      padding: .5rem;
+      font-size: 2.5rem;
+      text-align: left;
+      position: relative;
+    }
+
+    .Ingredients {
+      font-size: .9rem;
+      float: right;
+      padding: 1rem;
+      margin: 0 0 .5rem 1rem;
+      border-radius: 3px;
+      background-color: #ffffdf;
+      border: 2px solid #e8cfa9;
+    }
+
+    .Ingredients h3 {
+      margin: 0;
+    }
+  }
 
 }
