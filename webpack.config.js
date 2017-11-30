@@ -16,7 +16,18 @@ module.exports = {
                 test : /\.jsx?/,
                 include : APP_DIR,
                 loader : 'babel-loader'
-            }
+            },
+            {
+                loader: 'postcss-loader',
+                options: {
+                    plugins: [
+                        autoprefixer({
+                            browsers:['ie >= 8', 'last 4 version']
+                        })
+                    ],
+                    sourceMap: true
+                }
+            },
         ]
 //        rules: [
 //            {

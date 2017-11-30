@@ -11,10 +11,13 @@
   "slogan slogan"
   "button button"
   "footer footer";
+  &_first-page-content_margin{
 
+  }
   &_relative {
     position: relative;
   }
+
   &__header {
     font-weight: bold;
     grid-area: header;
