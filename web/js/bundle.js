@@ -2806,24 +2806,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 (function () {
+    var greyDisplay = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(".hidden-menu__grey-display");
     var firstPage = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(".first-page");
     var secondPage = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(".second-page");
-
-    var greyDisplay = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(".hidden-menu__grey-display");
     var hiddenMenu = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(".hidden-menu");
 
     var missions = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()("#mission");
     var mainPage = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()("#main-page");
 
     var firstPageContent = firstPage.children(".first-page-content");
-    var firstPageMenuButton = firstPageContent.children(".first-page-content__menu-button");
-    var startButton = firstPageContent.children(".first-page-content__start-button");
-    var footerLink = firstPageContent.children(".first-page-content__footer");
+    var firstPageMenuButton = firstPageContent.find(".first-page-content__menu-button");
+    console.log(firstPageMenuButton);
+    var startButton = firstPageContent.find(".first-page-content__start-button");
+    var footerLink = firstPageContent.find(".first-page-content__footer");
 
     var secondPageContent = secondPage.children(".second-page-content");
-    var secondPageMenuButton = secondPageContent.children(".second-page-content__menu-button");
+    var secondPageMenuButton = secondPageContent.find(".second-page-content__menu-button");
 
     firstPageMenuButton.on("click", function () {
+        console.log("mm");
         HiddenMenuAppering();
         missions.css({ "display": "block" });
         mainPage.css({ "display": "none" });
@@ -2857,7 +2858,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 "display": "none"
             });
         });
-        hiddenMenu.animate({ opacity: 0, right: "-=50%" }, 1000, null, function () {
+        hiddenMenu.animate({ opacity: 0, right: "-=45%" }, 1000, null, function () {
             __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(this).css({
                 "display": "none"
             });
@@ -2871,7 +2872,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         hiddenMenu.css({
             "opacity": "0",
             "display": "block"
-        }).animate({ opacity: 1, right: "+=50%" });
+        }).animate({ opacity: 1, right: "+=45%" });
     }
     function TurnToSecondPage() {
         firstPage.animate({ opacity: 0 }, 1000, null, function () {

@@ -1,95 +1,81 @@
 .first-page-content {
   position: absolute;
-
+  top:0;
   height: 100%;
   width: 100%;
-  max-width: $maxWidth;
-  display: grid;
-  grid-template: repeat(4,1fr)/ repeat(2,1fr);
-  justify-items: center;
-  align-items: center;
-  grid-template-areas: "header menuu"
-  "slogan slogan"
-  "button button"
-  "footer footer";
+  &__margin {
+    padding: 10% 0;
+    height: 100%;
+    width: 80%;
+    margin: 0 10% 0 10%;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    &_flex-child{
 
-  &_relative {
-    position: relative;
+    }
   }
+  &_cap {
+    display: inline-flex;
+    align-items: center;
+  }
+
   &__header {
     font-weight: bold;
-    grid-area: header;
-    top: -3%;
+    margin-left: 4%;
   }
  
   &__menu-button {
-    grid-area: menuu;
-    top: -3%;
-    left: 5%;
+    margin: 0 4% 0 auto;
     border-radius: 100%;
     box-shadow: 0px 19px 30px 7px #dbdbdb;
-    height: 31%;
-    width: 28%;
-//    &:hover {
-//      background-color: Black;
-//    }
+    background-color: #FFF;
+    height: 56px;
+    width: 56px;
+    position: relative;
   }
   &__menu-button_icon {
     position: absolute;
-    top: 34%;
-    left: 33%;
+    top: 22px;
+    left: 20px;
   }
   &__slogan {
-    grid-area: slogan;
-    left: 3%;
-    top: 5%;
-
-    height: 25%;
-    width: 94%;
+    position: relative;
     &_purple-text {
-      padding-left: 7%;
     }
-
-
-
     &_text {
-//      display: inline-flex;
-      //        width: 50%;
-      height: 100%;
-      font-size: 2.4rem;
+      font-size: 1.6rem;
       font-weight: bold;
       font-family: Arial,serif;
     }
-
     &_under-text {
       font-size: 0.5rem;
-      padding-left: 7.7%;
+      position: $posAbs;
+      top: 26%;
+      left: 1%;
     }
   }
   &__start-button {
-    grid-area: button;
-    height: 30%;
-    width: 70%;
+    position: $posAbs;
+    top: 45%;
+    left: 1%;
+    width: 90%;
+    padding: 5%;
     margin: 0 auto;
     text-align: center;
     background: linear-gradient(45deg,#602485, #c64bd6);
     border-radius: 50px;
-    top: -7%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     &_link {
       color: #FFF;
       font-weight: bold;
+      text-align: center;
     }
   }
   &__footer{
-    grid-area: footer;
+    display: inline-flex;
     font-size: 0.7rem;
-    align-self: end;
-    bottom: 2%;
     color: #FFF;
-    padding-right: 20%;
     &_link {
       color:#b13dbe;
     }
@@ -98,64 +84,87 @@
 
 @media only screen and (orientation: landscape){
   .first-page-content {
+    &__margin {
+      padding: 6% 0;
+      height: 100%;
+      width: 86%;
+      margin: 0 7%;
+    }
     &__header {
-      left: -12%;
+      margin-left: 0%;
       align-self: end;
     }
-    &__menu-button {
-      height: 85%;
-      width: 18%;
-      top: 3%;
-      left: 2%;
-    }
-    &__menu-button_icon {
-      top: 37%;
-      left: 35%;
-    }
     &__slogan {
-      top: -7%;
-      width: 50%;
+      padding-left: 27%;
+      &_under-text {
+        padding-left: 26.5%;
+      }
+    }
+    &__menu-button {
+      margin: -3% 10% 0 auto;
     }
     &__start-button {
-      height: 47%;
-      width: 27%;
-      top: -18%;
-      left: 2%;
-    }
-    &__footer{
-      padding-right: 50%;
+      top: 41%;
+      left: 38%;
+      width: 20%;
+      padding: 3%;
     }
   }
 }
 
-@media only screen and (min-width: 900px){
+@media only screen and (min-width: 900px) {
+//  .mobile {
+//    max-width: 900px;
+//  }
+  .background {
+    max-width: 900px;
+  }
   .first-page-content {
+    &__margin {
+      max-width: 900px;
+//      padding: 6% 0;
+//      height: 100%;
+//      width: 86%;
+      margin: 0 auto;
+      width: 100%;
+      padding: 50px;
+    }
+    &_cap {
+      position: relative;
+    }
     &__header {
-      left: -14%;
-      align-self: end;
+//      margin-left: 30px ;
+
+    }
+    &_middle {
+      width: 285px;
+      margin: 0 auto;
     }
     &__menu-button {
-      height: 85%;
-      width: 18%;
-      top: 3%;
-      left: 2%;
+      position: absolute;
+      top: 11%;
+      right: 10%;
+      margin: 0;
+
     }
     &__menu-button_icon {
-      top: 37%;
-      left: 35%;
+
     }
     &__slogan {
-      top: -7%;
-      width: 50%;
+      padding: 0;
+
     }
     &__start-button {
-      height: 47%;
-      width: 27%;
-      top: -18%;
-      left: 2%;
+      top: 70px;
+//      left: 342px;
+      width: 170px;
+      padding: 25px;
+      left: 0;
+      right: 0;
+
     }
     &__footer{
-      padding-right: 50%;
+
     }
   }
 }

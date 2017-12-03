@@ -5,10 +5,9 @@
 import $ from '../../vendor/jquery.min.js';
 
 (function(){
+    var greyDisplay = $(".hidden-menu__grey-display");
     var firstPage = $(".first-page");
     var secondPage = $(".second-page");
-
-    var greyDisplay = $(".hidden-menu__grey-display");
     var hiddenMenu = $(".hidden-menu");
 
     var missions = $("#mission");
@@ -17,17 +16,19 @@ import $ from '../../vendor/jquery.min.js';
 
 
     var firstPageContent = firstPage.children(".first-page-content");
-    var firstPageMenuButton = firstPageContent.children(".first-page-content__menu-button");
-    var startButton = firstPageContent.children(".first-page-content__start-button");
-    var footerLink = firstPageContent.children(".first-page-content__footer");
+    var firstPageMenuButton = firstPageContent.find(".first-page-content__menu-button");
+    console.log(firstPageMenuButton);
+    var startButton = firstPageContent.find(".first-page-content__start-button");
+    var footerLink = firstPageContent.find(".first-page-content__footer");
 
 
     var secondPageContent = secondPage.children(".second-page-content");
-    var secondPageMenuButton = secondPageContent.children(".second-page-content__menu-button");
+    var secondPageMenuButton = secondPageContent.find(".second-page-content__menu-button");
 
 
 
     firstPageMenuButton.on("click",function(){
+        console.log("mm");
         HiddenMenuAppering();
         missions.css({"display":"block"});
         mainPage.css({"display":"none"});
@@ -62,7 +63,7 @@ import $ from '../../vendor/jquery.min.js';
                 "display":"none"
             });
         });
-        hiddenMenu.animate({opacity:0, right: "-=50%"},1000, null, function(){
+        hiddenMenu.animate({opacity:0, right: "-=45%"},1000, null, function(){
             $(this).css({
                 "display":"none"
             });
@@ -76,7 +77,7 @@ import $ from '../../vendor/jquery.min.js';
         hiddenMenu.css({
             "opacity":"0",
             "display":"block"
-        }).animate({opacity:1, right: "+=50%"});
+        }).animate({opacity:1, right: "+=45%"});
     }
     function TurnToSecondPage(){
         firstPage.animate({opacity:0},1000,null,function(){
