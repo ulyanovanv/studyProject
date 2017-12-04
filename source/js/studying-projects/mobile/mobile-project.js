@@ -12,6 +12,9 @@ import $ from '../../vendor/jquery.min.js';
 
     var missions = $("#mission");
     var mainPage = $("#main-page");
+    var rates = $("#rates");
+    var samples = $("#samples");
+    var isFirstPageOpened = true;
 
 
 
@@ -28,7 +31,6 @@ import $ from '../../vendor/jquery.min.js';
 
 
     firstPageMenuButton.on("click",function(){
-        console.log("mm");
         HiddenMenuAppering();
         missions.css({"display":"block"});
         mainPage.css({"display":"none"});
@@ -55,7 +57,28 @@ import $ from '../../vendor/jquery.min.js';
     mainPage.on("click",function(){
         TurnToFirstPage();
         GreyDisplayAppering();
-    })
+    });
+
+
+    rates.on("click",function(){
+        if (!isFirstPageOpened) {
+            TurnToFirstPage();
+        } else {
+            TurnToSecondPage();
+        }
+            GreyDisplayAppering();
+        isFirstPageOpened = ! isFirstPageOpened;
+    });
+    samples.on("click",function(){
+        if (!isFirstPageOpened) {
+            TurnToFirstPage();
+        } else {
+            TurnToSecondPage();
+        }
+        GreyDisplayAppering();
+        isFirstPageOpened = ! isFirstPageOpened;
+    });
+
 
     function GreyDisplayAppering(){
         greyDisplay.animate({opacity:0},1000, null, function(){
@@ -63,7 +86,7 @@ import $ from '../../vendor/jquery.min.js';
                 "display":"none"
             });
         });
-        hiddenMenu.animate({opacity:0, right: "-=45%"},1000, null, function(){
+        hiddenMenu.animate({opacity:0, right: "-45%"},1000, null, function(){
             $(this).css({
                 "display":"none"
             });
@@ -77,7 +100,7 @@ import $ from '../../vendor/jquery.min.js';
         hiddenMenu.css({
             "opacity":"0",
             "display":"block"
-        }).animate({opacity:1, right: "+=45%"});
+        }).animate({opacity:1, right: "5%"});
     }
     function TurnToSecondPage(){
         firstPage.animate({opacity:0},1000,null,function(){

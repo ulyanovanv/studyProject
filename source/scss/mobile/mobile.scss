@@ -27,11 +27,13 @@ body.mobile {
   .first-page {
     display: block;
     height: 100%;
+//    opacity: 1;
 
   }
   .second-page {
     display: none;
     height: 100%;
+//    opacity: 0;
 
   }
 
@@ -44,7 +46,7 @@ body.mobile {
    position: relative;
 //    max-width: $maxWidth;
   //     position: relative;
-   &__phon, &__white-circle, &__shadow-under-menu-button, &__colored-right-circle, &__white-circle-upon-colored, &__bottom-partcircle, &__grey-gradient, &__white-circle-second, &__colored-circle-second-page, &__colored-circle-second-page-coverage {
+   .svg_position {
      height: 100%;
      width: 100%;
      position: absolute;

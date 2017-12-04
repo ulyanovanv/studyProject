@@ -27,7 +27,7 @@
 
 
         <div class='background'>
-            <svg class='background__phon' viewBox='0 320 180 320'  >
+            <svg id='background__phon' class="svg_position" viewBox='0 320 180 320'  >
                 <defs>
                     <radialGradient id='gradient-grey' r='60%' fx='50%' fy='50%' spreadMethod='reflect'>
                         <stop offset='0%' stop-color='#e5e5e5' />
@@ -39,11 +39,11 @@
                 <rect height='640' width='360' fill='url("#gradient-grey")'/>
             </svg>
 
-            <svg class='background__white-circle'>
+            <svg id='background__white-circle' class="svg_position">
                 <ellipse rx='70%' ry='60%' cx='100%' cy='12%' fill='#FFF'/>
             </svg>
 
-            <svg class="background__colored-right-circle">
+            <svg id="background__colored-right-circle" class="svg_position">
                 <defs>
                     <linearGradient id='colored-circle'  x1="0" y1="0" x2="10%" y2="100%" spreadMethod='pad'>
                         <stop offset='0%' stop-color='#0fb5c1' />
@@ -55,7 +55,7 @@
             </svg>
 
 
-            <svg class="background__white-circle-upon-colored">
+            <svg id="background__white-circle-upon-colored" class="svg_position">
                 <defs>
                     <linearGradient id='white-circle'  x1="40%" y1="0" x2="0" y2="100%" spreadMethod='pad'>
                         <stop offset='15%' stop-color='#FFF' />
@@ -65,7 +65,7 @@
                 <circle fill="url('#white-circle')" cx="91%" cy="24%" r="5.5%"/>
             </svg>
 
-            <svg class="background__bottom-partcircle">
+            <svg id="background__bottom-partcircle" class="svg_position">
                 <defs>
                     <radialGradient id='big-colored-part-circle' cx='50%' cy='50%' r='80%' fx="95%" fy="0%" spreadMethod='pad'>
                         <stop offset='0%' stop-color='#003580' />
@@ -129,7 +129,7 @@
 
 
         <div class="background">
-            <svg class="background__grey-gradient" viewBox='180 320 180 320'>
+            <svg id="background__grey-gradient" class="svg_position" viewBox='180 320 180 320'>
                 <defs>
                     <radialGradient id='gradient-grey-second' r='60%' fx='50%' fy='50%' spreadMethod='reflect'>
                         <stop offset='0%' stop-color='#e5e5e5' />
@@ -140,10 +140,10 @@
                 </defs>
                 <rect height='640' width='360' fill='url("#gradient-grey-second")'/>
             </svg>
-            <svg class="background__white-circle-second">
+            <svg id="background__white-circle-second" class="svg_position">
                 <ellipse rx='70%' ry='60%' cx='0%' cy='12%' fill='#FFF'/>
             </svg>
-            <svg class="background__colored-circle-second-page">
+            <svg id="background__colored-circle-second-page" class="svg_position">
                <defs>
                    <linearGradient id="purple-circle" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
                        <stop offset="0%" stop-color="#003580"/>
@@ -154,7 +154,7 @@
                </defs>
                <circle fill="url('#purple-circle')" r="20%" cx="107%" cy="60%" />
             </svg>
-            <svg class="background__colored-circle-second-page-coverage">
+            <svg id="background__colored-circle-second-page-coverage" class="svg_position">
                 <defs>
                     <radialGradient id="grey-circle-coverage" spreadMethod="pad" cx='50%' cy='50%' r='170%' fx="70%" fy="55%">
 
@@ -228,12 +228,13 @@
 
 
     <div class='hidden-menu'>
-
-        <div class="hidden-menu__options">
-            <div class="hidden-menu__options_items" id="mission">Mission</div>
-            <div class="hidden-menu__options_items" id="main-page">Main page</div>
-            <div class="hidden-menu__options_items"  id="rates">Rates</div>
-            <div class="hidden-menu__options_items" id="samples">Samples</div>
+        <div class="hidden-menu_centration">
+            <div class="hidden-menu__options">
+                <div class="hidden-menu__options_items" id="mission">Mission</div>
+                <div class="hidden-menu__options_items" id="main-page">Main page</div>
+                <div class="hidden-menu__options_items" id="rates">Rates</div>
+                <div class="hidden-menu__options_items" id="samples">Samples</div>
+            </div>
         </div>
     </div>
 

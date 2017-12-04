@@ -3,6 +3,7 @@
   top:0;
   height: 100%;
   width: 100%;
+
   &__margin {
     padding: 10% 0;
     height: 100%;
@@ -34,6 +35,7 @@
     height: 56px;
     width: 56px;
     position: relative;
+    cursor: pointer;
   }
   &__menu-button_icon {
     position: absolute;
@@ -59,13 +61,13 @@
   &__start-button {
     position: $posAbs;
     top: 45%;
-    left: 1%;
     width: 90%;
     padding: 5%;
     margin: 0 auto;
     text-align: center;
     background: linear-gradient(45deg,#602485, #c64bd6);
     border-radius: 50px;
+    cursor: pointer;
     &_link {
       color: #FFF;
       font-weight: bold;
@@ -76,6 +78,7 @@
     display: inline-flex;
     font-size: 0.7rem;
     color: #FFF;
+    cursor: pointer;
     &_link {
       color:#b13dbe;
     }
@@ -158,7 +161,7 @@
       top: 70px;
 //      left: 342px;
       width: 170px;
-      padding: 25px;
+      padding: 20px;
       left: 0;
       right: 0;
 

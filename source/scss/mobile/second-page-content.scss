@@ -33,6 +33,7 @@
     border-radius: 100%;
     box-shadow: 0px 19px 30px 7px #dbdbdb;
     background-color: #FFF;
+    cursor: pointer;
   }
   &__menu-button_icon {
     position: absolute;
@@ -119,6 +120,62 @@
       &_text {
         font-size: 0.85rem;
         line-height: 1.04rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px){
+  .background {
+    max-width: 900px;
+  }
+  .second-page-content {
+    &__margin {
+      max-width: 900px;
+
+      margin: 0 auto;
+      width: 100%;
+      padding: 50px;
+
+    }
+    &_cap {
+      position: relative;
+    }
+    &__header {
+      position: relative;
+    }
+    &__menu-button {
+      position: absolute;
+      top: 11%;
+      right: 10%;
+      margin: 0;
+
+    }
+    &__title {
+      padding-top: 58px;
+      font-size: 40px;
+
+      &_title_purple-text {
+      }
+    }
+    &__missions {
+
+
+      &_aim {
+        padding-left: 0;
+
+      }
+      &_white-box {
+
+      }
+      &_icon {
+        width: 100px;
+
+      }
+      &_text {
+        font-size: 1rem;
+        padding-right: 5px;
+
       }
     }
   }

@@ -2813,6 +2813,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     var missions = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()("#mission");
     var mainPage = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()("#main-page");
+    var rates = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()("#rates");
+    var samples = __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()("#samples");
+    var isFirstPageOpened = true;
 
     var firstPageContent = firstPage.children(".first-page-content");
     var firstPageMenuButton = firstPageContent.find(".first-page-content__menu-button");
@@ -2824,7 +2827,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     var secondPageMenuButton = secondPageContent.find(".second-page-content__menu-button");
 
     firstPageMenuButton.on("click", function () {
-        console.log("mm");
         HiddenMenuAppering();
         missions.css({ "display": "block" });
         mainPage.css({ "display": "none" });
@@ -2852,13 +2854,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         GreyDisplayAppering();
     });
 
+    rates.on("click", function () {
+        if (!isFirstPageOpened) {
+            TurnToFirstPage();
+        } else {
+            TurnToSecondPage();
+        }
+        GreyDisplayAppering();
+        isFirstPageOpened = !isFirstPageOpened;
+    });
+    samples.on("click", function () {
+        if (!isFirstPageOpened) {
+            TurnToFirstPage();
+        } else {
+            TurnToSecondPage();
+        }
+        GreyDisplayAppering();
+        isFirstPageOpened = !isFirstPageOpened;
+    });
+
     function GreyDisplayAppering() {
         greyDisplay.animate({ opacity: 0 }, 1000, null, function () {
             __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(this).css({
                 "display": "none"
             });
         });
-        hiddenMenu.animate({ opacity: 0, right: "-=45%" }, 1000, null, function () {
+        hiddenMenu.animate({ opacity: 0, right: "-45%" }, 1000, null, function () {
             __WEBPACK_IMPORTED_MODULE_0__vendor_jquery_min_js___default()(this).css({
                 "display": "none"
             });
@@ -2872,7 +2893,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         hiddenMenu.css({
             "opacity": "0",
             "display": "block"
-        }).animate({ opacity: 1, right: "+=45%" });
+        }).animate({ opacity: 1, right: "5%" });
     }
     function TurnToSecondPage() {
         firstPage.animate({ opacity: 0 }, 1000, null, function () {

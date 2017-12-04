@@ -455,7 +455,7 @@ body.mobile {
     height: 100%;
     width: 100%;
     position: relative; }
-    body.mobile .background__phon, body.mobile .background__white-circle, body.mobile .background__shadow-under-menu-button, body.mobile .background__colored-right-circle, body.mobile .background__white-circle-upon-colored, body.mobile .background__bottom-partcircle, body.mobile .background__grey-gradient, body.mobile .background__white-circle-second, body.mobile .background__colored-circle-second-page, body.mobile .background__colored-circle-second-page-coverage {
+    body.mobile .background .svg_position {
       height: 100%;
       width: 100%;
       position: absolute; }
@@ -486,7 +486,8 @@ body.mobile {
       background-color: #FFF;
       height: 56px;
       width: 56px;
-      position: relative; }
+      position: relative;
+      cursor: pointer; }
     body.mobile .first-page-content__menu-button_icon {
       position: absolute;
       top: 22px;
@@ -505,13 +506,13 @@ body.mobile {
     body.mobile .first-page-content__start-button {
       position: absolute;
       top: 45%;
-      left: 1%;
       width: 90%;
       padding: 5%;
       margin: 0 auto;
       text-align: center;
       background: linear-gradient(45deg, #602485, #c64bd6);
-      border-radius: 50px; }
+      border-radius: 50px;
+      cursor: pointer; }
       body.mobile .first-page-content__start-button_link {
         color: #FFF;
         font-weight: bold;
@@ -519,7 +520,8 @@ body.mobile {
     body.mobile .first-page-content__footer {
       display: inline-flex;
       font-size: 0.7rem;
-      color: #FFF; }
+      color: #FFF;
+      cursor: pointer; }
       body.mobile .first-page-content__footer_link {
         color: #b13dbe; }
   @media only screen and (orientation: landscape) {
@@ -565,7 +567,7 @@ body.mobile {
     body.mobile .first-page-content__start-button {
       top: 70px;
       width: 170px;
-      padding: 25px;
+      padding: 20px;
       left: 0;
       right: 0; } }
   body.mobile .second-page-content {
@@ -595,7 +597,8 @@ body.mobile {
       width: 56px;
       border-radius: 100%;
       box-shadow: 0px 19px 30px 7px #dbdbdb;
-      background-color: #FFF; }
+      background-color: #FFF;
+      cursor: pointer; }
     body.mobile .second-page-content__menu-button_icon {
       position: absolute;
       top: 22px;
@@ -655,6 +658,33 @@ body.mobile {
       body.mobile .second-page-content__missions_text {
         font-size: 0.85rem;
         line-height: 1.04rem; } }
+  @media only screen and (min-width: 900px) {
+    body.mobile .background {
+      max-width: 900px; }
+    body.mobile .second-page-content__margin {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 50px; }
+    body.mobile .second-page-content_cap {
+      position: relative; }
+    body.mobile .second-page-content__header {
+      position: relative; }
+    body.mobile .second-page-content__menu-button {
+      position: absolute;
+      top: 11%;
+      right: 10%;
+      margin: 0; }
+    body.mobile .second-page-content__title {
+      padding-top: 58px;
+      font-size: 40px; }
+    body.mobile .second-page-content__missions_aim {
+      padding-left: 0; }
+    body.mobile .second-page-content__missions_icon {
+      width: 100px; }
+    body.mobile .second-page-content__missions_text {
+      font-size: 1rem;
+      padding-right: 5px; } }
   body.mobile .hidden-menu__grey-display {
     height: 100%;
     width: 100%;
@@ -665,7 +695,7 @@ body.mobile {
   body.mobile .hidden-menu {
     z-index: 6;
     position: absolute;
-    right: -40%;
+    right: -45%;
     top: 14%;
     height: 25%;
     width: 45%;
@@ -685,14 +715,29 @@ body.mobile {
         border-radius: 25px;
         text-align: center;
         margin-bottom: 1%;
-        background: linear-gradient(10deg, #076bca -30%, #7e5298 48%, #0fb5c1 128%); }
+        background: linear-gradient(10deg, #076bca -30%, #7e5298 48%, #0fb5c1 128%);
+        cursor: pointer; }
   @media only screen and (orientation: landscape) {
     body.mobile .hidden-menu__options_items {
       padding: 3%; } }
   @media only screen and (min-width: 900px) {
     body.mobile .hidden-menu {
-      right: -52%; }
-      body.mobile .hidden-menu__options_items {
-        padding: 3%;
-        max-width: 330px;
-        max-height: 23px; } }
+      right: -45%;
+      height: 100%;
+      width: 100%; }
+      body.mobile .hidden-menu_centration {
+        max-width: 900px;
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        padding: 50px;
+        height: 100%; }
+      body.mobile .hidden-menu__options {
+        position: absolute;
+        top: 36px;
+        right: 70px; }
+        body.mobile .hidden-menu__options_items {
+          padding: 12px;
+          width: 300px;
+          height: 23px;
+          top: 85px; } }
