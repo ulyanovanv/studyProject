@@ -6,6 +6,9 @@ ol, li, dl, dt, dd, form, a, fieldset, th, td //input, body
   border: 0;
   outline: none;
 }
+html {
+  height: 100%;
+}
 body {
   line-height: 1;
   margin: 8px;

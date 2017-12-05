@@ -1,118 +1,180 @@
 .second-page-content {
   position: absolute;
+  top:0;
   height: 100%;
   width: 100%;
-  display: grid;
-  grid-template: repeat(6,1fr)/ repeat(2,1fr);
-  justify-items: center;
-  align-items: center;
+  &__margin {
+    padding: 10% 0;
+    height: 100%;
+    width: 80%;
+    margin: 0 10% 0 10%;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    &_flex-child{
+
+    }
+  }
+  &_cap {
+    display: inline-flex;
+    align-items: center;
+  }
 
   &__header {
-    grid-area: 1 / 1 / span 1/ span 1;
     font-weight: bold;  //repetation
+    margin-left: 4%;
   }
   &__menu-button {
-    grid-area: 1 / 2 / span 1/ span 1;
     position: relative;
-    top: 2%;
-    left: 8%;
+    margin: 0 4% 0 auto;
+    height: 56px;
+    width: 56px;
     border-radius: 100%;
     box-shadow: 0px 19px 30px 7px #dbdbdb;
-    height: 48%;
-    width: 28%;  //repetation
     background-color: #FFF;
+    cursor: pointer;
   }
   &__menu-button_icon {
     position: absolute;
-    top: 34%;
-    left: 33%;
+    top: 22px;
+    left: 20px;
+  }
+  &_page-name {
+    height: 23%;
   }
   &__title {
-    grid-area: 2 / 1 / span 1/ span 2;
-    font-size: 2rem;
+
+    font-size: 1.8rem;
     font-weight: bold;
     font-family: Arial,serif;
     &_title_purple-text {
-      padding-left: 7%;
     }
   }
+  &_points {
+    height: 62%;
+  }
   &__missions {
-    grid-area: 3 / 1 / span 4/ span 2;
     display: flex;
     flex-flow: column;
     height: 100%;
     justify-content: start;
-    margin-top: -5%;
-    margin-left: -3%;
     &_aim {
-      width: 75%;
-      margin: 6% auto 13% auto;
-      height: 10%;
+      padding-left: 2%;
+      margin-bottom: 5%
     }
     &_white-box {
-//      height: 30px;
-//      width: 100%;
-//      background-color: White;
-//      opacity: 0.5;
     }
     &_icon {
       width: 20%;
-      margin-bottom: 2%;
     }
     &_text {
       color: #000;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       line-height: 1.08rem;
+      padding-top: 2%;
     }
   }
 }
 
 @media only screen and (orientation: landscape) {
   .second-page-content {
-
+    &__margin {
+      padding: 6% 0;
+      height: 100%;
+      width: 86%;
+      margin: 0 7%;
+    }
     &__header {
+      margin-left: 0%;
       align-self: end;
-      justify-self: self-start;
-      padding-left: 20%;
     }
     &__menu-button {
-      top: 5%;
-      left: 15%;
-      height: 110%;
-      width: 15%;
+      margin: -3% 10% 0 auto;
     }
     &__title {
-
+      height: 100%;
       &_title_purple-text {
-
       }
     }
     &__missions {
       flex-flow: row;
-      padding: 7% 3% 0 10%;
       display: inline-flex;
       justify-content: space-evenly;
 
       &_aim {
-        display: flex;
-        flex-flow: column;
-        justify-content: space-evenly;
+        width: calc(100%/3);
         margin: initial;
-        height: 60%;
-        width: 28%;
-//        border: 5% solid transparent;
-
+        flex: 1 1 auto;
+        padding-left: 3%;
       }
       &_white-box {
         display: flex;
         justify-content: center;
+        padding: 12% 2%;
+      }
+      &_icon {
+         width: 30%;
+        height: 50%;
+      }
+      &_text {
+        font-size: 0.85rem;
+        line-height: 1.04rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px){
+  .background {
+    max-width: 900px;
+  }
+  .second-page-content {
+    &__margin {
+      max-width: 900px;
+
+      margin: 0 auto;
+      width: 100%;
+      padding: 50px;
+
+    }
+    &_cap {
+      position: relative;
+    }
+    &__header {
+      position: relative;
+    }
+    &__menu-button {
+      position: absolute;
+      top: 11%;
+      right: 10%;
+      margin: 0;
+
+    }
+    &__title {
+      padding-top: 58px;
+      font-size: 40px;
+
+      &_title_purple-text {
+      }
+    }
+    &__missions {
+
+
+      &_aim {
+        padding-left: 0;
+
+      }
+      &_white-box {
 
       }
       &_icon {
-        height: 30%;
+        width: 100px;
 
       }
       &_text {
+        font-size: 1rem;
+        padding-right: 5px;
 
       }
     }

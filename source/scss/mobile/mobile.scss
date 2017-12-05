@@ -1,7 +1,10 @@
-body.mobile {
-  max-height:736px;
-  max-width: 414px;
+$maxWidth: 414px;
+$posAbs: absolute;
 
+body.mobile {
+
+  //   height:640px;
+  //   width: 360px;
   background-color: #FFF;
   color: #000;
   font-size: 16px;
@@ -9,14 +12,13 @@ body.mobile {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.02rem;
-
-  .page-container {
-
-  }
+  height: 100%;
+  overflow: hidden;
 
   a {
     text-decoration: none;
   }
+
   .green-letter {
     color: #0fb5c1;
   }
@@ -24,25 +26,34 @@ body.mobile {
 
   .first-page {
     display: block;
+    height: 100%;
+//    opacity: 1;
 
   }
   .second-page {
     display: none;
+    height: 100%;
+//    opacity: 0;
 
   }
 
 
   .background {
    box-sizing: border-box;
+   margin: 0 auto;
    height: 100%;
    width: 100%;
-   position: absolute;
-   &__phon,&__white-circle, &__white-circle, &__shadow-under-menu-button, &__colored-right-circle, &__white-circle-upon-colored, &__bottom-partcircle, &__grey-gradient, &__white-circle-second, &__colored-circle-second-page, &__colored-circle-second-page-coverage {
+   position: relative;
+//    max-width: $maxWidth;
+  //     position: relative;
+   .svg_position {
      height: 100%;
      width: 100%;
      position: absolute;
    }
-
+    svg {
+//      max-width: $maxWidth;
+    }
   }
 
 

@@ -5,25 +5,28 @@
 import $ from '../../vendor/jquery.min.js';
 
 (function(){
+    var greyDisplay = $(".hidden-menu__grey-display");
     var firstPage = $(".first-page");
     var secondPage = $(".second-page");
-
-    var greyDisplay = $(".hidden-menu__grey-display");
     var hiddenMenu = $(".hidden-menu");
 
     var missions = $("#mission");
     var mainPage = $("#main-page");
+    var rates = $("#rates");
+    var samples = $("#samples");
+    var isFirstPageOpened = true;
 
 
 
     var firstPageContent = firstPage.children(".first-page-content");
-    var firstPageMenuButton = firstPageContent.children(".first-page-content__menu-button");
-    var startButton = firstPageContent.children(".first-page-content__start-button");
-    var footerLink = firstPageContent.children(".first-page-content__footer");
+    var firstPageMenuButton = firstPageContent.find(".first-page-content__menu-button");
+    console.log(firstPageMenuButton);
+    var startButton = firstPageContent.find(".first-page-content__start-button");
+    var footerLink = firstPageContent.find(".first-page-content__footer");
 
 
     var secondPageContent = secondPage.children(".second-page-content");
-    var secondPageMenuButton = secondPageContent.children(".second-page-content__menu-button");
+    var secondPageMenuButton = secondPageContent.find(".second-page-content__menu-button");
 
 
 
@@ -54,7 +57,28 @@ import $ from '../../vendor/jquery.min.js';
     mainPage.on("click",function(){
         TurnToFirstPage();
         GreyDisplayAppering();
-    })
+    });
+
+
+    rates.on("click",function(){
+        if (!isFirstPageOpened) {
+            TurnToFirstPage();
+        } else {
+            TurnToSecondPage();
+        }
+            GreyDisplayAppering();
+        isFirstPageOpened = ! isFirstPageOpened;
+    });
+    samples.on("click",function(){
+        if (!isFirstPageOpened) {
+            TurnToFirstPage();
+        } else {
+            TurnToSecondPage();
+        }
+        GreyDisplayAppering();
+        isFirstPageOpened = ! isFirstPageOpened;
+    });
+
 
     function GreyDisplayAppering(){
         greyDisplay.animate({opacity:0},1000, null, function(){
@@ -62,7 +86,7 @@ import $ from '../../vendor/jquery.min.js';
                 "display":"none"
             });
         });
-        hiddenMenu.animate({opacity:0, right: "-=50%"},1000, null, function(){
+        hiddenMenu.animate({opacity:0, right: "-45%"},1000, null, function(){
             $(this).css({
                 "display":"none"
             });
@@ -76,7 +100,7 @@ import $ from '../../vendor/jquery.min.js';
         hiddenMenu.css({
             "opacity":"0",
             "display":"block"
-        }).animate({opacity:1, right: "+=50%"});
+        }).animate({opacity:1, right: "5%"});
     }
     function TurnToSecondPage(){
         firstPage.animate({opacity:0},1000,null,function(){
