@@ -33,6 +33,9 @@
       background: linear-gradient(10deg, #076bca -30%, #7e5298 48%, #0fb5c1 128%);
       cursor: pointer;
     }
+    &_items:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 @media only screen and (orientation: landscape){

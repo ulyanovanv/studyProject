@@ -20,6 +20,13 @@
   "homepage": "https://github.com/ulyanovanv/studyProject#readme",
   "devDependencies": {
     "jquery": "^3.2.1",
+    "json-loader": "^0.5.7",
+    "modernizr": "^3.5.0",
+    "modernizr-loader": "^1.0.1",
     "node-sass": "^4.5.3"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   }
 }

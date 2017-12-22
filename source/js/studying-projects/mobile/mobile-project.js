@@ -79,7 +79,6 @@ import $ from '../../vendor/jquery.min.js';
         isFirstPageOpened = ! isFirstPageOpened;
     });
 
-
     function GreyDisplayAppering(){
         greyDisplay.animate({opacity:0},1000, null, function(){
             $(this).css({

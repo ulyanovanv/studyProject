@@ -1,4 +1,5 @@
 import $ from './vendor/jquery.min.js';
+import Modernizr from 'modernizr';
 //var $ = require("./vendor/jquery.min.js");
 
 /**
@@ -9,6 +10,7 @@ import $ from './vendor/jquery.min.js';
 //        $(this).animate({width:"+=100px"},1000);
 //    })
 //})
+
 
 let body = $("body");
 

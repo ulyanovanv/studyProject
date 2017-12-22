@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body.lesson-third {
   margin-top: 8px; }
   body.lesson-third #game {
@@ -376,59 +375,6 @@ body.c13 {
         box-sizing: border-box;
         width: 300px; } }
 
-body.ex1 * {
-  box-sizing: border-box; }
-
-body.ex1 body {
-  padding: 1rem .5rem;
-  font-size: 1.3rem;
-  line-height: 1.2;
-  max-width: 60rem;
-  margin: 0 auto;
-  color: #333; }
-
-body.ex1 img {
-  max-width: 100%; }
-
-body.ex1 .Header {
-  text-align: center;
-  border-bottom: 8px double #f9f9f9;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem; }
-
-body.ex1 .Strap {
-  font-size: 1rem; }
-
-body.ex1 .MoneyShot {
-  position: relative; }
-
-body.ex1 .MoneyShotImg {
-  border: 6px solid #e8cfa9;
-  border-radius: 4px; }
-
-body.ex1 .LogoWrapper {
-  display: block; }
-
-body.ex1 .ImageCaption {
-  font-size: .75rem;
-  position: absolute;
-  bottom: .5rem;
-  right: 1rem; }
-
-body.ex1 .IntroText {
-  font-size: 1.8rem;
-  font-style: italic; }
-
-body.ex1 .MethodWrapper li {
-  padding: .4rem 0; }
-
-body.ex1 .MethodWrapper li:after {
-  content: "✼";
-  display: block;
-  text-align: center;
-  margin: 1rem 0 .5rem 0;
-  color: #eee; }
-
 body.mobile {
   background-color: #FFF;
   color: #000;
@@ -717,6 +663,8 @@ body.mobile {
         margin-bottom: 1%;
         background: linear-gradient(10deg, #076bca -30%, #7e5298 48%, #0fb5c1 128%);
         cursor: pointer; }
+      body.mobile .hidden-menu__options_items:last-child {
+        margin-bottom: 0; }
   @media only screen and (orientation: landscape) {
     body.mobile .hidden-menu__options_items {
       padding: 3%; } }
