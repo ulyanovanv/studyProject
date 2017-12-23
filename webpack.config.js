@@ -16,34 +16,8 @@ module.exports = {
                 test : /\.jsx?/,
                 include : APP_DIR,
                 loader : 'babel-loader'
-            },
-//            {
-//                loader: 'postcss-loader',
-//                options: {
-//                    plugins: [
-//                        autoprefixer({
-//                            browsers:['ie >= 8', 'last 4 version']
-//                        })
-//                    ],
-//                    sourceMap: true
-//                }
-//            },
-        ],
-        rules: [
-            {
-                test: /\.modernizrrc.js$/,
-                use: [ 'modernizr-loader' ]
-            },
-            {
-                test: /\.modernizrrc(\.json)?$/,
-                use: [ 'modernizr-loader', 'json-loader' ]
             }
         ]
 
-    },
-    resolve: {
-        alias: {
-            modernizr$: path.resolve(__dirname, ".modernizrrc")
-        }
     }
 };

@@ -1,5 +1,5 @@
 import $ from './vendor/jquery.min.js';
-import Modernizr from 'modernizr';
+//import Modernizr from 'modernizr';
 //var $ = require("./vendor/jquery.min.js");
 
 /**
@@ -31,4 +31,8 @@ if (body.hasClass("c13")){
 
 if (body.hasClass("mobile")){
     require("./studying-projects/mobile/mobile-project.js");
+}
+
+if (body.hasClass("basics")){
+    require("./studying-projects/ingredients-choose/ingredients.js");
 }

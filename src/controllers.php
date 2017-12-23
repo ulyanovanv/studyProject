@@ -63,7 +63,7 @@ $app->get('/c13', function () use ($app) {
 });
 
 $app->get('/ex1', function () use ($app) {
-    return $app['twig']->render('studybookCSS/ex1.html.twig', array());
+    return $app['twig']->render('ReactIngredients/ingredients.html.twig', array());
 });
 
 $app->get('/mobile', function () use ($app) {
