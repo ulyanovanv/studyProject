@@ -1,6 +1,7 @@
 
   body.basics {
     background-color: burlywood;
+    font-size: 1rem;
     #app {
       width: 100%;
     }
@@ -12,14 +13,48 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      width: 850px;
+      width: 700px;
     }
     .img-cell {
       margin: 7px;
+      img {
+        height: 185px;
+        width: 185px;
+      }
       &:hover {
         box-shadow: 0px 0px 12px 5px #FFF;
       }
 
+    }
+    .func-center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .span-decor {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      font-family: 'Indie Flower', 'Courgette', 'Pacifico', cursive;
+      font-size: 2rem;
+    }
+    .menu {
+      color: #ad133f;
+    }
+    .click-button {
+        background-color: #FFF;
+
+        width: 30%;
+        border: 2px solid Black;
+        box-shadow: inset 0px 0px 7px;
+        border-radius: 40px;
+        padding: 5px;
+        &:hover {
+          box-shadow: inset 0px 0px 7px, 0px 0px 10px 1px;
+          text-shadow: 0px 0px 2px;
+          text-decoration: none;
+        }
     }
 
 }

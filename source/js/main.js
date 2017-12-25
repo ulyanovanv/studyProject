@@ -34,5 +34,5 @@ if (body.hasClass("mobile")){
 }
 
 if (body.hasClass("basics")){
-    require("./studying-projects/ingredients-choose/ingredients.js");
+    require("./studying-projects/ingredients-choose/main-container.js");
 }
