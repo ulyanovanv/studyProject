@@ -2,6 +2,8 @@
  * Created by Anastasya on 27.08.17.
  */
 
+import $ from '../../vendor/jquery.min.js';
+
 function Count(){
     var listLength = $("li").length;
     $("#number_of_lis>span").text(listLength);

@@ -65,196 +65,6 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2544,6 +2354,196 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)(module)))
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2551,12 +2551,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(26);
-} else {
   module.exports = __webpack_require__(27);
+} else {
+  module.exports = __webpack_require__(28);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 3 */
@@ -2719,7 +2719,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = emptyObject;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 6 */
@@ -2779,7 +2779,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 7 */
@@ -2848,7 +2848,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = warning;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 8 */
@@ -2867,7 +2867,7 @@ module.exports = warning;
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(6);
   var warning = __webpack_require__(7);
-  var ReactPropTypesSecret = __webpack_require__(28);
+  var ReactPropTypesSecret = __webpack_require__(29);
   var loggedTypeFailures = {};
 }
 
@@ -2915,7 +2915,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
 module.exports = checkPropTypes;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 9 */
@@ -2956,12 +2956,12 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(29);
+  module.exports = __webpack_require__(30);
 } else {
-  module.exports = __webpack_require__(32);
+  module.exports = __webpack_require__(33);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 10 */
@@ -3081,7 +3081,7 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 12 */
@@ -3212,7 +3212,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(30);
+var isTextNode = __webpack_require__(31);
 
 /*eslint-disable no-bitwise */
 
@@ -3336,7 +3336,7 @@ var OneIngredient = exports.OneIngredient = function (_React$Component) {
 "use strict";
 
 
-var _jqueryMin = __webpack_require__(1);
+var _jqueryMin = __webpack_require__(0);
 
 var _jqueryMin2 = _interopRequireDefault(_jqueryMin);
 
@@ -3357,24 +3357,36 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var body = (0, _jqueryMin2.default)("body");
 
-if (body.hasClass("calender")) {
+if (body.hasClass("todo")) {
     __webpack_require__(20);
 }
 
-if (body.hasClass("main-in-numbers")) {
+if (body.hasClass("calender")) {
     __webpack_require__(21);
 }
 
-if (body.hasClass("c13")) {
+if (body.hasClass("main-in-numbers")) {
     __webpack_require__(22);
 }
 
+if (body.hasClass("c13")) {
+    __webpack_require__(23);
+}
+
 if (body.hasClass("mobile")) {
-    __webpack_require__(24);
+    __webpack_require__(25);
 }
 
 if (body.hasClass("basics")) {
-    __webpack_require__(25);
+    __webpack_require__(26);
+}
+
+if (body.hasClass("calculator")) {
+    __webpack_require__(40);
+}
+
+if (body.hasClass("oughts-crosses")) {
+    __webpack_require__(41);
 }
 
 /***/ }),
@@ -3421,13 +3433,189 @@ module.exports = __webpack_amd_options__;
 "use strict";
 
 
-/**
- * Created by Anastasiia on 9/29/17.
- */
-var $ = __webpack_require__(1);
+var _jqueryMin = __webpack_require__(0);
 
-var months = ["Januar", "Februar", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-var parentDiv = $("#third-line");
+var _jqueryMin2 = _interopRequireDefault(_jqueryMin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Count() {
+    var listLength = (0, _jqueryMin2.default)("li").length;
+    (0, _jqueryMin2.default)("#number_of_lis>span").text(listLength);
+} /**
+   * Created by Anastasya on 27.08.17.
+   */
+
+(0, _jqueryMin2.default)(document).ready(function () {
+    //fadeIn lis
+    (0, _jqueryMin2.default)("li").hide().each(function (index) {
+        var time = 500 * (0, _jqueryMin2.default)(this).index() + 500;
+        //$(this).delay(500).animate({opacity:1.0},time,function(){
+        //$(this).show();
+        //});
+        (0, _jqueryMin2.default)(this).delay(index * 500).fadeIn(time);
+    });
+});
+function handleLiClick(event) {
+    var removeLi = (0, _jqueryMin2.default)(this);
+    console.log(event.target);
+    if (removeLi.hasClass("grey")) {
+        removeLi.animate({ paddingLeft: "+=240px",
+            opacity: 0.0 }, 500, function () {
+            removeLi.remove();
+            Count();
+        });
+    } else {
+        removeLi.attr("class", "grey");
+        removeLi.detach();
+        (0, _jqueryMin2.default)("ul").append(removeLi);
+    }
+};
+(0, _jqueryMin2.default)(document).ready(function () {
+    //class change
+    (0, _jqueryMin2.default)("li").on('click', handleLiClick);
+});
+
+(0, _jqueryMin2.default)(function () {
+    //form work in footer
+    var newItem = (0, _jqueryMin2.default)("#new_item");
+    var formNew = (0, _jqueryMin2.default)("#form_to_add");
+    var textToSend = (0, _jqueryMin2.default)("#item_description");
+    var buttonToSubmit = (0, _jqueryMin2.default)("#button_to_submit");
+    textToSend.on("focus", function () {
+        (0, _jqueryMin2.default)(this).css("background-color", "#fff");
+    });
+    textToSend.on("blur", function () {
+        (0, _jqueryMin2.default)(this).css("background-color", "#617280");
+    });
+    newItem.on("click", function () {
+        (0, _jqueryMin2.default)("#button_to_add").hide();
+        formNew.show();
+    });
+    buttonToSubmit.on("click", function (event) {
+        event.preventDefault();
+        var lengthToCheck = textToSend.val().length;
+        if (lengthToCheck < 5) {
+            alert("too short");
+            return;
+        }
+        var textTo = textToSend.val();
+        var newLi = (0, _jqueryMin2.default)("<li>" + textTo + "</li>");
+        randomListElementClass(newLi);
+        (0, _jqueryMin2.default)("ul").append(newLi);
+        newLi.on('click', handleLiClick);
+        formNew.hide();
+        (0, _jqueryMin2.default)("#button_to_add").show();
+        textToSend.val('');
+        Count();
+    });
+});
+(0, _jqueryMin2.default)(function () {
+    console.log((0, _jqueryMin2.default)(document).height());
+    console.log((0, _jqueryMin2.default)(window).height());
+    console.log((0, _jqueryMin2.default)("#footer").offset().top);
+    var footer = (0, _jqueryMin2.default)("#footer");
+    var slidingDiv = (0, _jqueryMin2.default)("#total_summa");
+    var end = footer.offset().top - (0, _jqueryMin2.default)(window).height() + 100;
+    (0, _jqueryMin2.default)(window).on("scroll", function () {
+        console.log((0, _jqueryMin2.default)(window).scrollTop());
+        if (end < (0, _jqueryMin2.default)(window).scrollTop()) {
+            slidingDiv.animate({ right: "40px" }, 500);
+        } else {
+            slidingDiv.stop(true).animate({ right: "-100px" }, 500);
+        }
+    });
+});
+
+function randomListElementClass(el) {
+    var x = Math.floor(Math.random() * 2);
+    if (x === 1) {
+        el.addClass('hot');
+    } else {
+        el.addClass('orange');
+    }
+}
+
+//$(function(){
+//    $.ajax('/to-do-app-load', {}).done(function(oooop){
+//        //var content = "";
+//        var obj = JSON.parse(oooop).data;
+//        var container = $("#spisok ul");
+//        container.html('');
+//        for (var x = 0; x < obj.length; x++) {
+//            var el = $("<li>" + obj[x].value + " " + obj[x].isDone + "</li>");
+//
+//            console.log(obj[x].isDone);
+//            if (obj[x].isDone === 'true') {
+//                randomListElementClass(el);
+//            } else {
+//                el.addClass("grey");
+//            }
+//            el.on('click', handleLiClick);
+//            container.append(el);
+//        }
+//        Count();
+//    })
+//    //$.ajax('/url', {method: 'POST', data:{dfgd:sefsef, awdawd:[]}})
+//});
+
+//$.post('/to-do-app-save', {data:{data:[{value:'honey', isDone:true}, {value:'sausge', isDone:false},  {value:'milk', isDone:true}, {value:'milk', isDone:false} ]}});
+
+(0, _jqueryMin2.default)(function () {
+    _jqueryMin2.default.ajax({
+        type: "GET",
+        url: '/to-do-app-load',
+        timeout: 100,
+        beforeSend: function beforeSend() {
+            (0, _jqueryMin2.default)("#spisok ul").append("<div id='wait'> wait a moment</div>");
+        },
+        complete: function complete() {
+            (0, _jqueryMin2.default)("#spisok ul").remove("#wait");
+        },
+        success: function success(data) {
+            var obj = JSON.parse(data).data;
+            var container = (0, _jqueryMin2.default)("#spisok ul");
+            container.html('');
+            for (var x = 0; x < obj.length; x++) {
+                var el = (0, _jqueryMin2.default)("<li>" + obj[x].value + " " + obj[x].isDone + "</li>");
+
+                console.log(obj[x].isDone);
+                if (obj[x].isDone === 'true') {
+                    randomListElementClass(el);
+                } else {
+                    el.addClass("grey");
+                }
+                el.on('click', handleLiClick);
+                container.append(el);
+            }
+            Count();
+        },
+        error: function error() {
+            (0, _jqueryMin2.default)("#spisok ul").append("<span> not success, try again</span>");
+        }
+
+    });
+    //$.ajax('/url', {method: 'POST', data:{dfgd:sefsef, awdawd:[]}})
+});
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jqueryMin = __webpack_require__(0);
+
+var _jqueryMin2 = _interopRequireDefault(_jqueryMin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var months = ["Januar", "Februar", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; /**
+                                                                                                                                        * Created by Anastasiia on 9/29/17.
+                                                                                                                                        */
+
+var parentDiv = (0, _jqueryMin2.default)("#third-line");
 
 var today = new Date();
 var currentDate = new Date(today.getFullYear(), today.getMonth(), 1);
@@ -3435,11 +3623,11 @@ var currentMonth = currentDate.getMonth();
 var currentWeekDay = currentDate.getDay().toString();
 var currentYear = currentDate.getFullYear();
 
-$(document).ready(function () {
+(0, _jqueryMin2.default)(document).ready(function () {
     createEmptyCells(currentWeekDay, parentDiv);
     createCalenderDates(nextDate, parentDiv);
-    $("#year").text(currentYear);
-    $("#month").text(months[currentMonth]);
+    (0, _jqueryMin2.default)("#year").text(currentYear);
+    (0, _jqueryMin2.default)("#month").text(months[currentMonth]);
 });
 
 var nextDate = new Date(currentYear, currentMonth + 1);
@@ -3459,8 +3647,8 @@ function createNextCalenderMonth() {
     currentYear = currentDate.getFullYear();
     currentWeekDay = currentDate.getDay().toString();
 
-    $("#year").text(currentYear);
-    $("#month").text(months[currentMonth]); //writing the year and month -------
+    (0, _jqueryMin2.default)("#year").text(currentYear);
+    (0, _jqueryMin2.default)("#month").text(months[currentMonth]); //writing the year and month -------
 
     createEmptyCells(currentWeekDay, parentDiv);
 
@@ -3482,8 +3670,8 @@ function createPreviousCalenderMonth() {
     currentYear = currentDate.getFullYear();
     currentWeekDay = currentDate.getDay().toString();
 
-    $("#year").text(currentYear);
-    $("#month").text(months[currentMonth]);
+    (0, _jqueryMin2.default)("#year").text(currentYear);
+    (0, _jqueryMin2.default)("#month").text(months[currentMonth]);
 
     createEmptyCells(currentWeekDay, parentDiv);
 
@@ -3553,7 +3741,7 @@ function createCalenderDates(nextDate, parentDiv) {
 
     for (var number = 1; number <= lastDay; number++) {
         var date = new Date(yesterday.getFullYear(), yesterday.getMonth(), number);
-        var newDay = $("<div class='day'>" + number + "</div>");
+        var newDay = (0, _jqueryMin2.default)("<div class='day'>" + number + "</div>");
         parentDiv.append(newDay);
 
         if (today.toDateString() == date.toDateString()) {
@@ -3585,37 +3773,39 @@ function createNewDaysOfNextMonths(currWeekDay) {
             break;
     }
     for (var i = 1; i <= addDateCounter; i++) {
-        var nDay = $("<div class='day blue'>" + i + "</div>");
+        var nDay = (0, _jqueryMin2.default)("<div class='day blue'>" + i + "</div>");
         parentDiv.append(nDay);
     }
 }
 
-$(function () {
-    $("#to-right").on("click", createNextCalenderMonth);
+(0, _jqueryMin2.default)(function () {
+    (0, _jqueryMin2.default)("#to-right").on("click", createNextCalenderMonth);
 });
-$(function () {
-    $("#to-left").on("click", createPreviousCalenderMonth);
+(0, _jqueryMin2.default)(function () {
+    (0, _jqueryMin2.default)("#to-left").on("click", createPreviousCalenderMonth);
 });
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-/**
- * Created by Anastasiia on 9/26/17.
- */
+var _jqueryMin = __webpack_require__(0);
 
-var $ = __webpack_require__(1);
+var _jqueryMin2 = _interopRequireDefault(_jqueryMin);
 
-$(document).ready(function () {
-    $("#beginning-button").on("click", function () {
-        $("#first").hide();
-        $("#second").show();
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _jqueryMin2.default)(document).ready(function () {
+    (0, _jqueryMin2.default)("#beginning-button").on("click", function () {
+        (0, _jqueryMin2.default)("#first").hide();
+        (0, _jqueryMin2.default)("#second").show();
     });
-});
+}); /**
+     * Created by Anastasiia on 9/26/17.
+     */
 
 var counter = 1;
 var seconds = 10;
@@ -3624,7 +3814,7 @@ var colors = ["#61b861", "#ec8b68", "#d7666b", "#403c3b", "#0077cc", "#003580", 
 function createNumbers() {
     for (var i = 1; i < 10; i++) {
         var num = Math.ceil(Math.random() * 9);
-        var currentCell = $("#c" + num);
+        var currentCell = (0, _jqueryMin2.default)("#c" + num);
         var col = Math.ceil(Math.random() * 7);
         currentCell.css({ color: colors[col] });
         if (currentCell.text()) {
@@ -3635,20 +3825,20 @@ function createNumbers() {
     }
 }
 
-$(function () {
-    $(".cell").on("click", function () {
-        if ($(this).text() == counter) {
-            $(this).removeClass("initial-color").addClass("red");
+(0, _jqueryMin2.default)(function () {
+    (0, _jqueryMin2.default)(".cell").on("click", function () {
+        if ((0, _jqueryMin2.default)(this).text() == counter) {
+            (0, _jqueryMin2.default)(this).removeClass("initial-color").addClass("red");
             counter++;
         }
         var cells = document.getElementsByClassName("cell");
         for (var j = 0; j < 9; j++) {
-            var cc = $(cells[j]);
+            var cc = (0, _jqueryMin2.default)(cells[j]);
             if (cc.hasClass("red") === false) {
                 break;
             }
             if (cc.hasClass("red") && j === 8) {
-                $("#time-left").html("Вы выиграли");
+                (0, _jqueryMin2.default)("#time-left").html("Вы выиграли");
             }
         }
     });
@@ -3658,7 +3848,7 @@ function timer() {
     var intervalId = setInterval(function () {
         seconds--;
         if (seconds < 0) {
-            $("#time-left").html("Вы проиграли");
+            (0, _jqueryMin2.default)("#time-left").html("Вы проиграли");
             counter = 10;
             clearInterval(intervalId);
             return;
@@ -3667,38 +3857,38 @@ function timer() {
             clearInterval(intervalId);
             return;
         }
-        $("#seconds").text(seconds);
+        (0, _jqueryMin2.default)("#seconds").text(seconds);
     }, 1000);
 }
 
 function gameReset() {
-    var cell = $(".cell");
+    var cell = (0, _jqueryMin2.default)(".cell");
     cell.text("");
     createNumbers();
     counter = 1;
     cell.removeClass("red").addClass("initial-color");
-    $("#time-left").html("Времени осталось:" + "<span id='seconds'>10</span>");
+    (0, _jqueryMin2.default)("#time-left").html("Времени осталось:" + "<span id='seconds'>10</span>");
     timer();
     seconds = 10;
 }
 
-$(function () {
-    $("#new-game").on("click", gameReset);
-    $("#beginning-button").on("click", gameReset);
+(0, _jqueryMin2.default)(function () {
+    (0, _jqueryMin2.default)("#new-game").on("click", gameReset);
+    (0, _jqueryMin2.default)("#beginning-button").on("click", gameReset);
 });
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _jqueryMin = __webpack_require__(1);
+var _jqueryMin = __webpack_require__(0);
 
 var _jqueryMin2 = _interopRequireDefault(_jqueryMin);
 
-var _pureFunctions = __webpack_require__(23);
+var _pureFunctions = __webpack_require__(24);
 
 var functions = _interopRequireWildcard(_pureFunctions);
 
@@ -3877,7 +4067,7 @@ var universalRequired = functions.universalRequired,
 })();
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3894,7 +4084,7 @@ exports.getBirthdayTimestamp = getBirthdayTimestamp;
 exports.sendForm = sendForm;
 exports.transferReceivedData = transferReceivedData;
 
-var _jqueryMin = __webpack_require__(1);
+var _jqueryMin = __webpack_require__(0);
 
 var _jqueryMin2 = _interopRequireDefault(_jqueryMin);
 
@@ -4141,13 +4331,13 @@ function transferReceivedData(infa, elements) {
 }
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _jqueryMin = __webpack_require__(1);
+var _jqueryMin = __webpack_require__(0);
 
 var _jqueryMin2 = _interopRequireDefault(_jqueryMin);
 
@@ -4262,7 +4452,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //var $ = require("../vendor/jquery.min.js");
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4278,9 +4468,9 @@ var _reactDom = __webpack_require__(9);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _ingredients = __webpack_require__(37);
+var _ingredients = __webpack_require__(38);
 
-var _rezept = __webpack_require__(38);
+var _rezept = __webpack_require__(39);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4337,7 +4527,7 @@ var MainContainer = function (_React$Component) {
 _reactDom2.default.render(_react2.default.createElement(MainContainer, null), document.getElementById("app"));
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4365,7 +4555,7 @@ isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_F
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5727,10 +5917,10 @@ module.exports = react;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5749,7 +5939,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5985,7 +6175,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6000,7 +6190,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
  * @typechecks
  */
 
-var isNode = __webpack_require__(31);
+var isNode = __webpack_require__(32);
 
 /**
  * @param {*} object The object to check.
@@ -6013,7 +6203,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6041,7 +6231,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6075,8 +6265,8 @@ var containsNode = __webpack_require__(14);
 var focusNode = __webpack_require__(15);
 var emptyObject = __webpack_require__(5);
 var checkPropTypes = __webpack_require__(8);
-var hyphenateStyleName = __webpack_require__(33);
-var camelizeStyleName = __webpack_require__(35);
+var hyphenateStyleName = __webpack_require__(34);
+var camelizeStyleName = __webpack_require__(36);
 
 /**
  * WARNING: DO NOT manually require this module.
@@ -21440,10 +21630,10 @@ module.exports = reactDom;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21458,7 +21648,7 @@ module.exports = reactDom;
 
 
 
-var hyphenate = __webpack_require__(34);
+var hyphenate = __webpack_require__(35);
 
 var msPattern = /^ms-/;
 
@@ -21485,7 +21675,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21521,7 +21711,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21536,7 +21726,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(36);
+var camelize = __webpack_require__(37);
 
 var msPattern = /^-ms-/;
 
@@ -21564,7 +21754,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21599,7 +21789,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21646,9 +21836,6 @@ var ImagesContainer = exports.ImagesContainer = function (_React$Component) {
         };
         return _this;
     }
-    //    checkThreeComponents(){
-    //        return true;
-    //    }
 
     _createClass(ImagesContainer, [{
         key: 'clickAction',
@@ -21710,7 +21897,7 @@ var ImagesContainer = exports.ImagesContainer = function (_React$Component) {
 }(_react2.default.Component);
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21809,6 +21996,154 @@ var Rezept = exports.Rezept = function (_React$Component) {
 
     return Rezept;
 }(_react2.default.Component);
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jqueryMin = __webpack_require__(0);
+
+var _jqueryMin2 = _interopRequireDefault(_jqueryMin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _jqueryMin2.default)(document).ready(function () {
+    var prepareToCalculate = "";
+    var result = (0, _jqueryMin2.default)("#calculate");
+    (0, _jqueryMin2.default)(".special").on("click", function () {
+        var letter = (0, _jqueryMin2.default)(this).text();
+        if (isNaN(prepareToCalculate[prepareToCalculate.length - 1])) {
+            if (isNaN(letter)) {
+                console.log("ii");
+                return false;
+            }
+        }
+        prepareToCalculate += letter;
+        result.val(prepareToCalculate);
+        console.log(letter);
+        console.log(prepareToCalculate);
+    });
+    (0, _jqueryMin2.default)("#clean").on("click", function () {
+        var newLine = prepareToCalculate.substr(0, prepareToCalculate.length - 1);
+        prepareToCalculate = newLine;
+        result.val(newLine);
+    });
+    (0, _jqueryMin2.default)("#even").on("click", function () {
+        var x = eval(prepareToCalculate);
+        result.val(x);
+        prepareToCalculate = "";
+    });
+    //    $("#division, #multiply, #minus, #plus").on('click')
+}); /**
+     * Created by Anastasiia on 12/29/17.
+     */
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jqueryMin = __webpack_require__(0);
+
+var _jqueryMin2 = _interopRequireDefault(_jqueryMin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SYMBOL_1 = 'X';
+var SYMBOL_2 = 'O';
+var WIN_CONDITIONS = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]];
+(0, _jqueryMin2.default)(function () {
+    var game = new Game();
+});
+
+function Game() {
+    this.players = [new Player(SYMBOL_1), new Player(SYMBOL_2)];
+    this.currentPlayer = this.players[0];
+    this.victoryNoone = 0;
+    this.cells = [];
+    for (var i = 1; i <= 9; i++) {
+        this.cells[i] = new Cell(this, i);
+        // console.log(this.cells[i].symbol); // - здесь создаются объекты для клеток
+    }
+    this.nextTurn = function () {
+        this.currentPlayer = this.currentPlayer.symbol === this.players[0].symbol ? this.players[1] : this.players[0];
+        (0, _jqueryMin2.default)("#whose-turn span").text(this.currentPlayer.symbol);
+        this.isWinner();
+    };
+    this.clearing = function () {
+        for (var key in this.cells) {
+            this.cells[key].clear();
+        }
+    };
+    (0, _jqueryMin2.default)("#start-again").on('click', this.clearing.bind(this));
+
+    this.isWinner = function () {
+        for (var i = 0; i < WIN_CONDITIONS.length; i++) {
+            var firstNum = WIN_CONDITIONS[i][0];
+            var secondNum = WIN_CONDITIONS[i][1];
+            var thirdNum = WIN_CONDITIONS[i][2];
+            var firstSymbol = this.cells[firstNum].symbol;
+            var secondSymbol = this.cells[secondNum].symbol;
+            var thirdSymbol = this.cells[thirdNum].symbol;
+            if (firstSymbol && firstSymbol === secondSymbol && firstSymbol === thirdSymbol) {
+                for (var key in this.players) {
+                    if (firstSymbol === this.players[key].symbol) {
+                        this.players[key].win();
+                        this.clearing();
+                        return;
+                    }
+                }
+            }
+        }
+        for (var i in this.cells) {
+            if (!this.cells[i].symbol) {
+                return;
+            }
+        }
+        this.nodobyWon();
+    };
+    this.nodobyWon = function () {
+        this.victoryNoone++;
+        (0, _jqueryMin2.default)("#winDraw").text(this.victoryNoone);
+        this.clearing();
+    };
+}
+
+function Player(symbol) {
+    this.symbol = symbol;
+    this.victory = 0;
+    this.win = function () {
+        this.victory++;
+        (0, _jqueryMin2.default)("#win" + this.symbol).text(this.victory);
+    };
+}
+
+function Cell(game, number) {
+    this.game = game;
+    this.number = number;
+    this.symbol = '';
+    this.htmlEl = (0, _jqueryMin2.default)('.c' + this.number);
+    // console.log(this.cells);
+    this.addSymbol = function (symbol) {
+        this.symbol = symbol;
+        this.htmlEl.text(symbol);
+    };
+    this.clear = function () {
+        this.symbol = '';
+        this.htmlEl.text('');
+    };
+    this.click = function () {
+        if (this.symbol) return;
+        this.addSymbol(this.game.currentPlayer.symbol);
+        this.game.nextTurn();
+    };
+    this.htmlEl.on('click', this.click.bind(this));
+}
 
 /***/ })
 /******/ ]);

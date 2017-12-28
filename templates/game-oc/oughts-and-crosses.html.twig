@@ -1,0 +1,52 @@
+{% extends "layouts/layout.html.twig" %}
+
+{% block title %}
+    Oughts and crosses
+{% endblock %}
+
+{% block additionalLinks %}
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet"
+{% endblock %}
+
+{% block bodyClass %}
+    oughts-crosses
+{% endblock %}
+
+{% block jsDifferent %}
+
+{% endblock %}
+
+{% block content %}
+    <div id="game-place">
+        <div id="game">
+            <div id="game-list">
+                <div class="row">
+                    <div class="cell c1" ></div>
+                    <div class="cell c2"></div>
+                    <div class="cell c3"></div>
+                </div>
+                <div class="row">
+                    <div class="cell c4"></div>
+                    <div class="cell c5"></div>
+                    <div class="cell c6"></div>
+                </div>
+                <div class="row">
+                    <div class="cell c7"></div>
+                    <div class="cell c8"></div>
+                    <div class="cell c9"></div>
+                </div>
+            </div>
+            <div id="whose-turn">
+                Ходит:<span>X</span>
+            </div>
+            <div id="start-again">
+                <button type="button">Начать сначала</button>
+            </div>
+        </div>
+        <div id="counter">
+            <a class="result">Выиграл Х: <span id="winX"></span></a>
+            <a class="result">Выиграл О: <span id="winO"></span></a>
+            <a class="result">Ничья: <span id="winDraw"></span></a>
+        </div>
+
+{% endblock %}

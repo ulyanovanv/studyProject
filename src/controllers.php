@@ -9,7 +9,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 //Request::setTrustedProxies(array('127.0.0.1'));
 
 $app->get('/', function () use ($app) {
-    return $app['twig']->render('index.html.twig', array());
+    return $app['twig']->render('cv.html.twig', array());
 })
 ->bind('homepage');
 
@@ -35,7 +35,7 @@ $app->post('/to-do-app-save', function () use ($app) {
 
 
 $app->get('/cv', function () use ($app) {
-    return $app['twig']->render('cv/index.html.twig', array());
+    return $app['twig']->render('mobile/index.html.twig', array());
 });
 
 $app->get('/lesson3', function () use ($app) {
@@ -49,7 +49,6 @@ $app->get('/numbersgame', function () use ($app) {
     return $app['twig']->render('numbersgame/index.html.twig', array());
 });
 
-
 $app->get('/calender', function () use ($app) {
     return $app['twig']->render('calender/index.html.twig', array());
 });
@@ -62,12 +61,20 @@ $app->get('/c13', function () use ($app) {
     return $app['twig']->render('forms/c13.html.twig', array());
 });
 
-$app->get('/ex1', function () use ($app) {
+$app->get('/ingridients', function () use ($app) {
     return $app['twig']->render('ReactIngredients/ingredients.html.twig', array());
 });
 
 $app->get('/mobile', function () use ($app) {
-    return $app['twig']->render('cv/mobile-version.html.twig', array());
+    return $app['twig']->render('mobile/mobile-version.html.twig', array());
+});
+
+$app->get('/calculator', function () use ($app) {
+    return $app['twig']->render('small-calculator/calculator.html.twig', array());
+});
+
+$app->get('/oughts-and-crosses', function () use ($app) {
+    return $app['twig']->render('game-oc/oughts-and-crosses.html.twig', array());
 });
 
 

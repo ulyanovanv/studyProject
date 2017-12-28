@@ -1,0 +1,166 @@
+{% extends "layouts/layout.html.twig" %}
+
+{% block title %}
+    CV Anastasiia Rubinchik
+{% endblock %}
+
+{% block additionalLinks %}
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Crimson+Text:400,400i|Source+Serif+Pro');
+    </style>
+    <link name=’viewport’ content=’width=device-width,initial-scale=1.0/>
+{% endblock %}
+
+{% block bodyClass %}
+    my-cv
+{% endblock %}
+
+{% block content %}
+
+    <div class="cv">
+        <div class="cv_cenralization">
+
+            <section class="cv__parts my-image desktop-center" id="my-image">
+                <picture class="my-image_container">
+                    <img class="my-image__insert"src="./images/cv-images/my-picture-grey.jpg" tab="my picture" />
+                </picture>
+            </section>
+
+            <section class="cv__parts information cv_text-indent desktop-side" id="information">
+                <div class="cv_line-indent">
+                    <p class="cv_headings">
+                        Hello!
+                    </p>
+                    <p class="cv_headings">
+                        I am Anastasiia Rubinchik.
+                    </p>
+                    <div class="information__self-description">
+                        <p cv_text-indent> I’ve been living in Berlin for last 2 years. </p>
+                        <p cv_text-indent>Into programming I was engaged not accidentally - I'm surrounded by people connected with web development. I’ve got very interested in the process of programming and studying various techniques. </p>
+                        <p cv_text-indent>I have been studying programming since 6 months in my spare time. I learn on my own, namely I take online courses, read articles and books, practise writing code, performing various tasks.</p>
+                        <p cv_text-indent>My goal is to become a professional front-end developer.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv__parts education cv_text-indent desktop-side" id="education">
+                <div class="cv_line-indent">
+                    <p class="cv_headings">
+                        education
+                    </p>
+                    <div class="education__description">
+                        <p class="education__description_timeline">&#9679; September 1, 2011 - June 31, 2015</p>
+                        <p class="education__description_nomination">Bachelor degree in International Affairs</p>
+                        <p class="education__description_place">National Research University - High School of Economics, Moscow, Russia </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv__parts experience cv_text-indent desktop-side" id="experience">
+                <div class="cv_line-indent">
+                    <p class="cv_headings">
+                        professional experience
+                    </p>
+                    <div class="experience__description">
+                        <p class="experience__description_timeline">&#9679; April 01, 2015 – May 15, 2015</p>
+                        <p class="experience__description_nomination">Trainee in Department of International Cooperation</p>
+                        <p class="experience__description_place">Joint Stock Company "Russian Railways", Moscow, Russia</p>
+                        <p class="experience__description_duties">Analysis of the development of the Eurasian Economic Union and identification of the weaknesses of the Eurasian Economic Union and its impact on the Russian railroad</p>
+                    </div>
+                    <div class="experience__description">
+                        <p class="experience__description_timeline">&#9679; November 15,2016 - January 15,2018</p>
+                        <p class="experience__description_nomination">Tourist consultant and saleswoman</p>
+                        <p class="experience__description_place">TMB Tourismus-Marketing Brandenburg GmbH, Schoenefeld Airport</p>
+                        <p class="experience__description_duties">Travel tickets consultation, sightseeings advice, office activities</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv__parts techniques cv_text-indent desktop-center" id="techniques">
+                <p class="cv_headings">
+                    techniques
+                </p>
+                <p>HTML5, CSS3, Sass, Flexbox and Grid Layouts, SVG graphics, Bootstrap 3, JavaScript, JQuery, React JS, ES6, npm, git</p>
+            </section>
+
+            <section class="cv__parts skills cv_text-indent desktop-side" id="skills">
+                <p class="cv_headings">
+                    skills
+                </p>
+                <ul class="skills__list">
+                    <li class="skills__list_items">Eager to learn</li>
+                    <li class="skills__list_items">Ability to work with documentations</li>
+                    <li class="skills__list_items">Self-organisation</li>
+                    <li class="skills__list_items">Problem-solver</li>
+                    <li class="skills__list_items">Success-oriented</li>
+                    <li class="skills__list_items">IDE: PhpStorm</li>
+                </ul>
+
+            </section>
+
+            <section class="cv__parts languages desktop-center" id="languages">
+                <p class="cv_headings">
+                    languages
+                </p>
+                <div class="languages_container">
+                    <div class="languages__each">English (Upper-intermediate)</div>
+                    <div class="languages__each">German (Upper-intermediate)</div>
+                    <div class="languages__each">Russian (Native speaker)</div>
+                </div>
+            </section>
+
+            <section class="cv__parts hobbies desktop-side" id="hobbies">
+                <p class="cv_headings">
+                    hobbies
+                </p>
+                <p>Travelling, board games, coding, snowboarding, handiwork, TV series, euro coins collection</p>
+
+            </section>
+
+            <section class="cv__parts projects prj-to-do-app" id="prj-to-do-app">
+                prj-to-do-app
+            </section>
+
+            <section class="cv__parts projects prj-calender" id="prj-calender">
+                prj-calender
+            </section>
+
+            <section class="cv__parts projects prj-form-c13" id="prj-form-c13">
+                prj-form-c13
+            </section>
+
+            <section class="cv__parts projects prj-calculator" id="prj-calculator">
+                prj-calculator
+            </section>
+
+            <section class="cv__parts projects prj-game" id="prj-game">
+                prj-game
+            </section>
+
+            <section class="cv__parts projects prj-mobile" id="prj-mobile">
+                prj-mobile
+            </section>
+
+            <section class="cv__parts projects prj-react-ingredients" id="prj-react-ingredients">
+                prj-react-ingredients
+            </section>
+
+            <section class="cv__parts contacts" id="contacts">
+                Voltastr. 1 13355 Berlin, Germany
+                Phone number 0 179 3182901
+                e-mail: av.ulyanova@gmail.com
+                web-site:http://anastasiia.ilfate.net/
+                git repository: https://github.com/ulyanovanv
+            </section>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
+
+{% block jsDifferent %}
+
+
+{% endblock %}

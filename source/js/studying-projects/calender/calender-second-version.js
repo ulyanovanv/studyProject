@@ -1,7 +1,7 @@
 /**
  * Created by Anastasiia on 9/29/17.
  */
-var $ = require("../vendor/jquery.min.js");
+import $ from '../../vendor/jquery.min.js';
 
 
 const months = ["Januar","Februar","March","April","May","June","July","August","September","October","November","December"];

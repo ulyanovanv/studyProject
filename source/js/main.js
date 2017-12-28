@@ -14,13 +14,16 @@ import $ from './vendor/jquery.min.js';
 
 let body = $("body");
 
+if (body.hasClass("todo")){
+    require("./studying-projects/todo/todo-app.js");
+}
 
 if (body.hasClass("calender")){
-    require("./studying-projects/calender-second-version.js");
+    require("./studying-projects/calender/calender-second-version.js");
 }
 
 if (body.hasClass("main-in-numbers")){
-    require("./studying-projects/numbers-game.js");
+    require("./studying-projects/game-with-numbers/numbers-game.js");
 }
 
 
@@ -35,4 +38,13 @@ if (body.hasClass("mobile")){
 
 if (body.hasClass("basics")){
     require("./studying-projects/ingredients-choose/main-container.js");
+}
+
+
+if (body.hasClass("calculator")){
+    require("./studying-projects/calculator/calculator.js");
+}
+
+if (body.hasClass("oughts-crosses")){
+    require("./studying-projects/oughts-and-crosses/oughts-and-crosses.js");
 }

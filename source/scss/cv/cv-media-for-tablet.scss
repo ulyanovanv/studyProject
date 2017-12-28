@@ -1,0 +1,125 @@
+body.my-cv {
+
+  @media screen and (min-width:48rem) {
+
+    .cv {
+      height: auto;
+      &__parts{
+        margin: 0px;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        min-width: 230px;
+      }
+    }
+
+    .cv_cenralization {
+      display: grid;
+      grid-template: repeat(17,200px)/repeat(2,2fr);
+      grid-gap: 20px 20px;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .cv_text-indent {
+      text-indent: 1rem;
+    }
+    .cv_headings {
+      font-size: 1rem;
+      padding: 0 0 4px 0;
+
+    }
+    .my-image {
+      grid-area: 1 / 2 / span 2 /span 1;
+      &_container {
+        margin: inherit;
+      }
+      &__insert{
+        width: 160px;
+      }
+    }
+    .information{
+      grid-area: 2 / 1 / span 2 /span 1;
+    }
+    .education{
+      grid-area: 3 / 2 / span 2 /span 1;
+      &__description {
+        &_timeline{
+
+        }
+        &_nomination {
+          font-size: 1rem;
+        }
+        &_place{
+
+        }
+      }
+    }
+    .experience{
+      grid-area: 4 / 1 / span 2 /span 1;
+      &__description {
+
+        &_timeline{
+
+        }
+        &_nomination {
+          font-size: 1rem;
+        }
+        &_place{
+
+        }
+        &_duties{
+
+        }
+      }
+    }
+    .techniques {
+      grid-area: 5 / 2 / span 2 /span 1;
+    }
+    .skills {
+      grid-area: 6 / 1 / span 2 /span 1;
+      &__list{
+
+        &_item{
+
+        }
+      }
+    }
+    .languages {
+      grid-area: 7 / 2 / span 2 /span 1;
+      &_container {
+
+      }
+
+      &__each{
+
+      }
+    }
+    .hobbies {
+      grid-area: 8 / 1 / span 2 /span 1;
+    }
+    .prj-to-do-app {
+      grid-area: 9 / 2 / span 2 /span 1;
+    }
+    .prj-calender {
+      grid-area: 10 / 1 / span 2 /span 1;
+    }
+    .prj-form-c13 {
+      grid-area: 11 / 2 / span 2 /span 1;
+    }
+    .prj-mobile {
+      grid-area: 12 / 1 / span 2 /span 1;
+    }
+    .prj-game {
+      grid-area: 13 / 2 / span 2 /span 1;
+    }
+    .prj-calculator{
+      grid-area: 14 / 1 / span 2 /span 1;
+    }
+    .prj-react-ingredients{
+      grid-area: 15 / 2 / span 2 /span 1;
+    }
+    .contacts{
+      grid-area: 16 / 1 / span 2 /span 1;
+    }
+  }
+}

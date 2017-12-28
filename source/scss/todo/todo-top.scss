@@ -3,53 +3,54 @@ body.todo {
   color:White;
   text-shadow: 2px 2px 1px Black;
   font-size: 16px;
-}
-#main_div {
-  background-color: #403c3b;
-  width: 480px;
-  margin: 20px auto 20px auto;
-  text-align: center;
-  font-family: "Open Sans", "Times New Roman", serif;
-}
 
-#header_r {
-  font-size: 1.7rem;
-  background-color: #403c3b;
-}
-#first_line {
-  background-image: url(https://i.pinimg.com/236x/44/17/78/441778b5f0fb528c93dda88692e714a9--cat-tattoo-black-small-cat-tattoos.jpg);
-  background-position: center bottom;
-  height: 130px;
-  width:130px;
-  margin: 10px auto;
-  color:#403c3b;
-  font-weight: bold;
-  text-shadow: none;
-  position: relative;
-  div {
-    position:absolute;
-    display: block;
-    bottom: 10px;
-    width:100%;
-
+  #main_div {
+    background-color: #403c3b;
+    width: 480px;
+    margin: 20px auto 20px auto;
+    text-align: center;
+    font-family: "Open Sans", "Times New Roman", serif;
   }
-}
-#second_line {
-  display: inline-flex;
-}
-#buy {
-  text-transform: uppercase;
-  margin: 5px;
-  letter-spacing: 0.3rem;
-}
-#number_of_lis {
-  //display: none;
-  span {
-    background-color: White;
-    border-radius: 20px 20px;
-    font-size: 1.2rem;
-    color: Black;
-    padding: 2px;  // css add to js
-    vertical-align: bottom;
+
+  #header_r {
+    font-size: 1.7rem;
+    background-color: #403c3b;
+  }
+  #first_line {
+    background-image: url(https://i.pinimg.com/236x/44/17/78/441778b5f0fb528c93dda88692e714a9--cat-tattoo-black-small-cat-tattoos.jpg);
+    background-position: center bottom;
+    height: 130px;
+    width:130px;
+    margin: 10px auto;
+    color:#403c3b;
+    font-weight: bold;
+    text-shadow: none;
+    position: relative;
+    div {
+      position:absolute;
+      display: block;
+      bottom: 10px;
+      width:100%;
+
+    }
+  }
+  #second_line {
+    display: inline-flex;
+  }
+  #buy {
+    text-transform: uppercase;
+    margin: 5px;
+    letter-spacing: 0.3rem;
+  }
+  #number_of_lis {
+    //display: none;
+    span {
+      background-color: White;
+      border-radius: 20px 20px;
+      font-size: 1.2rem;
+      color: Black;
+      padding: 2px;  // css add to js
+      vertical-align: bottom;
+    }
   }
 }

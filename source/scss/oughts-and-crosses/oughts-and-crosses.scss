@@ -1,0 +1,60 @@
+body.oughts-crosses {
+  @mixin flexbox($flex-flow) {
+    display: flex;
+    flex-flow: $flex-flow;
+  }
+
+  background: radial-gradient(circle farthest-side at center,  #b4ddb4 0%, #83c783 30%, #52b152 80%);
+
+  #game-place{
+    width: 600px;
+    border: 2px ridge #0e8a39;
+    box-shadow: 0px 0px 20px 5px #619961;
+    position: absolute;
+    margin-left: -300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    left: 50%;
+    font-size: 18px;
+    background: White;
+  }
+  #game {
+    text-align: center;
+    margin: 40px 0;
+    &>div {
+      margin-bottom: 16px;
+    }
+  }
+  #game-list {
+    @include flexbox(column);
+    align-items: center;
+  }
+  .row {
+    @include flexbox(row);
+  }
+  .cell{
+    height: 40px;
+    width: 40px;
+    border: 2px solid Black;
+    font-size: 2rem;
+    font-family: "Bitter", serif;
+  }
+  #whose-turn{
+    font-size: 0.875rem;
+  }
+  #start-again {}
+  #counter {
+    float: right;
+    position: absolute;
+    left: 75%;
+    top: 15%;
+    border:1px solid Black;
+    padding: 10px;
+    width: 120px;
+    @include flexbox(column);
+  }
+  .result {
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,55 @@
+{% extends "layouts/layout.html.twig" %}
+
+{% block title %}
+    Calculator
+{% endblock %}
+
+{% block additionalLinks %}
+
+{% endblock %}
+
+{% block bodyClass %}
+    calculator
+{% endblock %}
+
+
+{% block content %}
+    <div id="centralization">
+        <div id="main-div">
+            <div class="string">
+                <div class="pole">
+                    <div class="elem" id="clean">C</div>
+                    <input type="text" id="calculate" placeholder="let's calculate"/>
+                </div>
+            </div>
+            <div class="string">
+                <div class="elem special" id="seven">7</div>
+                <div class="elem special" id="eight">8</div>
+                <div class="elem special" id="nine">9</div>
+                <div class="elem special" id="division">/</div>
+            </div>
+            <div class="string">
+                <div class="elem special" id="four">4</div>
+                <div class="elem special" id="five">5</div>
+                <div class="elem special" id="six">6</div>
+                <div class="elem special" id="multiply">*</div>
+            </div>
+            <div class="string">
+                <div class="elem special" id="one">1</div>
+                <div class="elem special" id="two">2</div>
+                <div class="elem special" id="three">3</div>
+                <div class="elem special"id="minus">-</div>
+            </div>
+            <div class="string">
+                <div class="elem special" id="zero">0</div>
+                <div class="elem special" id="point">.</div>
+                <div class="elem" id="even">=</div>
+                <div class="elem special" id="plus">+</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block jsDifferent %}
+
+{% endblock %}

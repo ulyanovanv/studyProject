@@ -1,12 +1,19 @@
+@import "reset";
+@import "todo/todo";
 
 @import "lesson-third/lesson-third";
-@import "lesson-third/lesson-forth";
+
 @import "numbers-game/main-in-numbers";
 @import "numbers-game/calender";
 
-@import "reset";
+
 @import "forms/form-nice";
 @import "forms/c13";
 
 @import "ingredients/basics";
 @import "mobile/mobile";
+
+@import "calculator/calculator";
+@import "oughts-and-crosses/oughts-and-crosses";
+
+@import "cv/cv-main";
