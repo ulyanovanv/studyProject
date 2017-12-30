@@ -1,33 +1,47 @@
+$black : #000;
+$headings-color : #670305;
+//  $orange : #F56B39;
+$orange : #a84625;
+//$cv-background: #c4b0c9;
+$cv-background: #4d4141;
+//$aside-columns-background : #e4d0e9;
+$aside-columns-background : #afe4e4;
+$aside-columns-text : #4d4141;
+$center-columns-text : #4d4141;
+$center-columns-background: #f7e7ce;
+$block-bottom-line: #fefed5;
+
 body.my-cv{
 
 
   @mixin flex($flex-direction,$justify-content,$align-items) {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: $flex-direction;
     justify-content: $justify-content;
     align-items: $align-items;
   }
 
+
+
 //  background-color: #feff99;
 //  background-color: #FDD264;
-  background-color: #c4b0c9;
-  font-size: 1rem;
+  background-color: $cv-background;
+  font-size: 0.9rem;
   font-family: 'Source Serif Pro', 'Crimson Text', 'Cormorant Garamond', serif;
 
 
   .cv {
     height: auto;
     &__parts{
-      margin: 40px;
+//      margin: 40px;
 //      @include flex(column,center,center);
 //      background-color: #ffffff;
 //      border-radius: 40px;
-      padding: 33px;
-      border: 1px solid black;
+      padding: 25px;
+//      border: 1px solid $black;
 //      box-shadow: 0px 0px 12px 4px #F56B39;
-      font-size: 1.4rem;
-      line-height: 1.8rem;
+//      font-size: 1.4rem;
+      line-height: 1.3rem;
 
     }
   }
@@ -37,24 +51,27 @@ body.my-cv{
   }
 
   .cv_text-indent {
-    text-indent: 3rem;
+    text-indent: 1rem;
   }
   .cv_headings {
     text-transform: uppercase;
     font-weight: bold;
-    padding: 12px 0;
-    font-size: 1.5rem;
-    color:#670305;
+    padding: 5px 0;
+    font-size: 1.1rem;
+    color: $headings-color;
   }
   .my-image {
+//    padding: 0;
     &_container {
       padding: 20px;
       text-align: center;
+      @include flex(row,center,center);
     }
     &__insert{
-      width: 60%;
-      max-width: 160px;
-//      height: 300px;
+      width: 80%;
+      max-width: 200px;
+
+
     }
   }
   .information{}
@@ -62,13 +79,12 @@ body.my-cv{
     &__description {
       &_timeline{
         font-size: 0.8rem;
-        color:#F56B39;
+        color: $orange;
         font-weight: bold;
       }
       &_nomination {
-        font-size: 1.6rem;
+        font-size: 1.0rem;
         font-weight: bold;
-        padding: 10px 0;
       }
       &_place{
 
@@ -77,17 +93,19 @@ body.my-cv{
   }
   .experience{
     &__description {
-      margin: 10px 0;
+//      margin: 10px 0;
       &_timeline{
         font-size: 0.8rem;
-        color:#F56B39;
+        color: $orange;
         font-weight: bold;
       }
       &_nomination {
-        font-size: 1.6rem;
+        font-size: 1.0rem;
         font-weight: bold;
-        padding: 10px 0;
       }
+//      &_nomination + &_nomination {
+//        margin-bottom: 60px;
+//      }
       &_place{
 
       }
@@ -97,10 +115,56 @@ body.my-cv{
     }
   }
   .techniques {
+    &_container{
+
+    }
+    &__each{
+
+    }
+    &__svg{
+      padding: 1px 1px 2px 16px;
+      background-size: 18px 18px;
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+    .html5 {
+      background-image: url('/images/svg/techniques/html.svg');
+    }
+    .css33 {
+      background-image: url('/images/svg/techniques/css.svg');
+    }
+    .sass {
+      background-image: url('/images/svg/techniques/sass.svg');
+    }
+    .layouts {
+      background-image: url("/images/svg/techniques/layouts.svg");
+    }
+    .svg {
+      background-image: url('/images/svg/techniques/svg.svg');
+    }
+    .bootstrap3 {
+      background-image: url('/images/svg/techniques/bootstrap3.svg');
+    }
+    .jss {
+      background-image: url('/images/svg/techniques/js.svg');
+    }
+    .jquery {
+      background-image: url('/images/svg/techniques/jquery.svg');
+    }
+    .react {
+      background-image: url('/images/svg/techniques/reactjs.svg');
+    }
+    .npm {
+      background-image: url('/images/svg/techniques/npm.svg');
+    }
+    .git {
+      background-image: url('/images/svg/techniques/git.svg');
+    }
 
   }
   .skills {
     &__list{
+      padding-left: 20px;
       list-style-type: disc;
       &_item{
         text-indent: 1rem;
@@ -109,15 +173,74 @@ body.my-cv{
   }
   .languages {
     &_container {
-      @include flex(column, center, center);
+      @include flex(row, center, center);
+      flex: no-wrap;
+      margin-top: 15px;
     }
 
     &__each{
-        flex: 1 0 auto;
+      padding-left: 10px;
+//        flex: 1 0 auto;
     }
+    &__svg-container {
+      width: 50px;
+      height: 50px;
+    }
+    &_uppercase {
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+    &_font-size {
+      font-size: 0.8rem;
+    }
+    .english {
+      .languages__svg-container {
+        background-image: url('/images/svg/languages/english-part-grey.svg');
+      }
+      &:hover .languages__svg-container {
+        background-image: url('/images/svg/languages/english-part.svg');
+      }
+      &:hover .languages_uppercase {
+        color: $headings-color;
+      }
+    }
+    .german{
+      .languages__svg-container {
+        background-image: url('/images/svg/languages/german-part-grey.svg');
+      }
+      &:hover .languages__svg-container {
+        background-image: url('/images/svg/languages/german-part.svg');
+      }
+      &:hover .languages_uppercase {
+        color: $headings-color;
+      }
+    }
+    .russian{
+      .languages__svg-container {
+        background-image: url('/images/svg/languages/russian-grey.svg');
+      }
+      &:hover .languages__svg-container {
+        background-image: url('/images/svg/languages/russian.svg');
+      }
+      &:hover .languages_uppercase {
+        color: $headings-color;
+      }
+    }
+
   }
   .hobbies {
-
+    &_container {
+      @include flex(row,space-around,center);
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    &__each{
+      padding: 3px;
+    }
+    &__svg {
+      height: 80px;
+      width: 80px;
+    }
   }
 
 

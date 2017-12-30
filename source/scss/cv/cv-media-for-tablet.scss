@@ -9,13 +9,14 @@ body.my-cv {
         font-size: 1rem;
         line-height: 1.2rem;
         min-width: 230px;
+        padding: 10px;
       }
     }
 
     .cv_cenralization {
       display: grid;
       grid-template: repeat(17,200px)/repeat(2,2fr);
-      grid-gap: 20px 20px;
+//      grid-gap: 20px 20px;
       width: 80%;
       margin: 0 auto;
     }
@@ -96,6 +97,16 @@ body.my-cv {
     }
     .hobbies {
       grid-area: 8 / 1 / span 2 /span 1;
+      &_container {
+
+      }
+      &__each{
+
+      }
+      &__svg {
+        height: 95px;
+        width: 95px;
+      }
     }
     .prj-to-do-app {
       grid-area: 9 / 2 / span 2 /span 1;

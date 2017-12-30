@@ -8,7 +8,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Crimson+Text:400,400i|Source+Serif+Pro');
     </style>
-    <link name=’viewport’ content=’width=device-width,initial-scale=1.0/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, minimal-ui">
 {% endblock %}
 
 {% block bodyClass %}
@@ -80,7 +80,41 @@
                 <p class="cv_headings">
                     techniques
                 </p>
-                <p>HTML5, CSS3, Sass, Flexbox and Grid Layouts, SVG graphics, Bootstrap 3, JavaScript, JQuery, React JS, ES6, npm, git</p>
+                <div class="techniques_container">
+                    <div class="techniques__each">
+                        <p class="html5 techniques__svg">HTML5</p>
+                    </div>
+                    <div class="techniques__each">
+                        <p class="css33 techniques__svg">CSS3</p>
+                    </div>
+                    <div class="techniques__each">
+                        <p class="sass techniques__svg">Sass</p>
+                    </div>
+                    <div class="techniques__each">
+                        <p class="layouts techniques__svg">Flexbox and Grid Layouts</p>
+                    </div>
+                    <div class="techniques__each">
+                        <p class="svg techniques__svg">SVG graphics</p>
+                    </div>
+                    <div class="techniques__each">
+                        <p class="bootstrap3 techniques__svg">Bootstrap3</p>
+                    </div>
+                    <div class="techniques__each">
+                        <p class="jss techniques__svg">JavaScript, ES6</p>
+                    </div>
+                    <div class="techniques__each">
+                        <p class="jquery techniques__svg">JQuery</p>
+                    </div>
+                    <div class="techniques__each">
+                        <p class="react techniques__svg">ReactJS</p>
+                    </div>
+                    <div class="techniques__each">
+                        <p class="npm techniques__svg" >npm</p>
+                    </div>
+                    <div class="techniques__each">
+                        <p class="git techniques__svg">git</p>
+                    </div>
+                </div>
             </section>
 
             <section class="cv__parts skills cv_text-indent desktop-side" id="skills">
@@ -103,18 +137,48 @@
                     languages
                 </p>
                 <div class="languages_container">
-                    <div class="languages__each">English (Upper-intermediate)</div>
-                    <div class="languages__each">German (Upper-intermediate)</div>
-                    <div class="languages__each">Russian (Native speaker)</div>
+                    <div class="languages__each english">
+                        <div class="languages__svg-container" ></div>
+                        <p class="languages_uppercase">English</p>
+                        <p class="languages_font-size">Upper-intermediate</p>
+                    </div>
+                    <div class="languages__each german">
+                        <div class="languages__svg-container"></div>
+                        <p class="languages_uppercase">German</p>
+                        <p class="languages_font-size">Upper-intermediate</p>
+                    </div>
+                    <div class="languages__each russian">
+                        <div class="languages__svg-container"></div>
+                        <p class="languages_uppercase">Russian</p>
+                        <p class="languages_font-size">Native-speaker</p>
+                    </div>
                 </div>
             </section>
 
-            <section class="cv__parts hobbies desktop-side" id="hobbies">
+            <section class="cv__parts hobbies  desktop-side" id="hobbies">
                 <p class="cv_headings">
                     hobbies
                 </p>
-                <p>Travelling, board games, coding, snowboarding, handiwork, TV series, euro coins collection</p>
-
+                <div class="hobbies_container">
+                    <div class="hobbies__each">
+                        <img src="/images/svg/hobbies/snowboarding.svg" class="hobbies__svg snowboarding" alt="snowboarding" title="snowboarding"/>
+                    </div>
+                    <div class="hobbies__each">
+                        <img src="/images/svg/hobbies/travelling.svg" class="hobbies__svg travelling" alt="travelling" title="travelling"/>
+                    </div>
+                    <div class="hobbies__each">
+                        <img src="/images/svg/hobbies/board-games.svg" class="hobbies__svg board-games" alt="board games" title="board games"/>
+                    </div>
+                    <div class="hobbies__each">
+                        <img src="/images/svg/hobbies/handiwork.svg" class="hobbies__svg handiwork" alt="handiwork" title="handiwork"/>
+                    </div>
+                    <div class="hobbies__each">
+                        <img src="/images/svg/hobbies/tv-series.svg" class="hobbies__svg tv-series" alt="TV series" title="TV series"/>
+                    </div>
+                    <div class="hobbies__each">
+                        <img src="/images/svg/hobbies/coins.svg" class="hobbies__svg coins" alt="eurocoins collection" title="eurocoins collection"/>
+                    </div>
+                 </div>
             </section>
 
             <section class="cv__parts projects prj-to-do-app" id="prj-to-do-app">
@@ -145,7 +209,7 @@
                 prj-react-ingredients
             </section>
 
-            <section class="cv__parts contacts" id="contacts">
+            <section class="cv__parts contacts cv_text-indent" id="contacts">
                 Voltastr. 1 13355 Berlin, Germany
                 Phone number 0 179 3182901
                 e-mail: av.ulyanova@gmail.com

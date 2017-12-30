@@ -10,7 +10,7 @@ html {
 
 body {
   line-height: 1;
-  margin: 8px;
+  margin: 0px;
   padding: 0;
   border: 0;
   outline: none; }
@@ -975,63 +975,127 @@ body.oughts-crosses {
     font-size: 0.95rem; }
 
 body.my-cv {
-  background-color: #c4b0c9;
-  font-size: 1rem;
+  background-color: #4d4141;
+  font-size: 0.9rem;
   font-family: 'Source Serif Pro', 'Crimson Text', 'Cormorant Garamond', serif; }
   body.my-cv .cv {
     height: auto; }
     body.my-cv .cv__parts {
-      margin: 40px;
-      padding: 33px;
-      border: 1px solid black;
-      font-size: 1.4rem;
-      line-height: 1.8rem; }
+      padding: 25px;
+      line-height: 1.3rem; }
   body.my-cv .cv_centralization {
     margin: 0 auto; }
   body.my-cv .cv_text-indent {
-    text-indent: 3rem; }
+    text-indent: 1rem; }
   body.my-cv .cv_headings {
     text-transform: uppercase;
     font-weight: bold;
-    padding: 12px 0;
-    font-size: 1.5rem;
+    padding: 5px 0;
+    font-size: 1.1rem;
     color: #670305; }
   body.my-cv .my-image_container {
     padding: 20px;
-    text-align: center; }
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
   body.my-cv .my-image__insert {
-    width: 60%;
-    max-width: 160px; }
+    width: 80%;
+    max-width: 200px; }
   body.my-cv .education__description_timeline {
     font-size: 0.8rem;
-    color: #F56B39;
+    color: #a84625;
     font-weight: bold; }
   body.my-cv .education__description_nomination {
-    font-size: 1.6rem;
-    font-weight: bold;
-    padding: 10px 0; }
-  body.my-cv .experience__description {
-    margin: 10px 0; }
-    body.my-cv .experience__description_timeline {
-      font-size: 0.8rem;
-      color: #F56B39;
-      font-weight: bold; }
-    body.my-cv .experience__description_nomination {
-      font-size: 1.6rem;
-      font-weight: bold;
-      padding: 10px 0; }
+    font-size: 1.0rem;
+    font-weight: bold; }
+  body.my-cv .experience__description_timeline {
+    font-size: 0.8rem;
+    color: #a84625;
+    font-weight: bold; }
+  body.my-cv .experience__description_nomination {
+    font-size: 1.0rem;
+    font-weight: bold; }
+  body.my-cv .techniques__svg {
+    padding: 1px 1px 2px 16px;
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: left center; }
+  body.my-cv .techniques .html5 {
+    background-image: url("/images/svg/techniques/html.svg"); }
+  body.my-cv .techniques .css33 {
+    background-image: url("/images/svg/techniques/css.svg"); }
+  body.my-cv .techniques .sass {
+    background-image: url("/images/svg/techniques/sass.svg"); }
+  body.my-cv .techniques .layouts {
+    background-image: url("/images/svg/techniques/layouts.svg"); }
+  body.my-cv .techniques .svg {
+    background-image: url("/images/svg/techniques/svg.svg"); }
+  body.my-cv .techniques .bootstrap3 {
+    background-image: url("/images/svg/techniques/bootstrap3.svg"); }
+  body.my-cv .techniques .jss {
+    background-image: url("/images/svg/techniques/js.svg"); }
+  body.my-cv .techniques .jquery {
+    background-image: url("/images/svg/techniques/jquery.svg"); }
+  body.my-cv .techniques .react {
+    background-image: url("/images/svg/techniques/reactjs.svg"); }
+  body.my-cv .techniques .npm {
+    background-image: url("/images/svg/techniques/npm.svg"); }
+  body.my-cv .techniques .git {
+    background-image: url("/images/svg/techniques/git.svg"); }
   body.my-cv .skills__list {
+    padding-left: 20px;
     list-style-type: disc; }
     body.my-cv .skills__list_item {
       text-indent: 1rem; }
   body.my-cv .languages_container {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    flex: no-wrap;
+    margin-top: 15px; }
   body.my-cv .languages__each {
-    flex: 1 0 auto; }
+    padding-left: 10px; }
+  body.my-cv .languages__svg-container {
+    width: 50px;
+    height: 50px; }
+  body.my-cv .languages_uppercase {
+    text-transform: uppercase;
+    margin-top: 10px; }
+  body.my-cv .languages_font-size {
+    font-size: 0.8rem; }
+  body.my-cv .languages .english .languages__svg-container {
+    background-image: url("/images/svg/languages/english-part-grey.svg"); }
+  body.my-cv .languages .english:hover .languages__svg-container {
+    background-image: url("/images/svg/languages/english-part.svg"); }
+  body.my-cv .languages .english:hover .languages_uppercase {
+    color: #670305; }
+  body.my-cv .languages .german .languages__svg-container {
+    background-image: url("/images/svg/languages/german-part-grey.svg"); }
+  body.my-cv .languages .german:hover .languages__svg-container {
+    background-image: url("/images/svg/languages/german-part.svg"); }
+  body.my-cv .languages .german:hover .languages_uppercase {
+    color: #670305; }
+  body.my-cv .languages .russian .languages__svg-container {
+    background-image: url("/images/svg/languages/russian-grey.svg"); }
+  body.my-cv .languages .russian:hover .languages__svg-container {
+    background-image: url("/images/svg/languages/russian.svg"); }
+  body.my-cv .languages .russian:hover .languages_uppercase {
+    color: #670305; }
+  body.my-cv .hobbies_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px; }
+  body.my-cv .hobbies__each {
+    padding: 3px; }
+  body.my-cv .hobbies__svg {
+    height: 80px;
+    width: 80px; }
 
 @media screen and (min-width: 48rem) {
   body.my-cv .cv {
@@ -1040,11 +1104,11 @@ body.my-cv {
       margin: 0px;
       font-size: 1rem;
       line-height: 1.2rem;
-      min-width: 230px; }
+      min-width: 230px;
+      padding: 10px; }
   body.my-cv .cv_cenralization {
     display: grid;
     grid-template: repeat(17, 200px)/repeat(2, 2fr);
-    grid-gap: 20px 20px;
     width: 80%;
     margin: 0 auto; }
   body.my-cv .cv_text-indent {
@@ -1076,6 +1140,9 @@ body.my-cv {
     grid-area: 7 / 2 / span 2 /span 1; }
   body.my-cv .hobbies {
     grid-area: 8 / 1 / span 2 /span 1; }
+    body.my-cv .hobbies__svg {
+      height: 95px;
+      width: 95px; }
   body.my-cv .prj-to-do-app {
     grid-area: 9 / 2 / span 2 /span 1; }
   body.my-cv .prj-calender {
@@ -1097,13 +1164,13 @@ body.my-cv {
   body.my-cv .cv {
     height: auto; }
     body.my-cv .cv__parts {
-      margin: 0px; }
+      margin: 0px;
+      padding: 20px; }
   body.my-cv .cv_cenralization {
     width: 85%;
     margin: 20px auto;
     display: grid;
-    grid-template: 100px 150px 180px repeat(9, 200px)/repeat(3, 3fr);
-    grid-gap: 20px 20px;
+    grid-template: repeat(30, 100px)/repeat(3, 3fr);
     min-width: 230px; }
   body.my-cv .cv_text-indent {
     text-indent: 1rem; }
@@ -1111,47 +1178,58 @@ body.my-cv {
     font-size: 1rem;
     padding: 0 0 4px 0; }
   body.my-cv .desktop-side {
-    background-color: #e4d0e9; }
+    background-color: #afe4e4;
+    color: #4d4141; }
+  body.my-cv .desktop-center {
+    color: #4d4141;
+    background-color: #f7e7ce; }
   body.my-cv .cv_line-indent {
-    margin: 0 20px;
     border-bottom: 1px solid #fefed5; }
   body.my-cv .my-image {
+    padding: 0;
     grid-area: 1 / 2 / span 2 /span 1; }
     body.my-cv .my-image_container {
-      margin: inherit; }
+      margin: inherit;
+      padding: 0;
+      height: 100%; }
     body.my-cv .my-image__insert {
-      width: 160px; }
+      width: auto;
+      height: auto;
+      max-height: 100%; }
   body.my-cv .information {
-    grid-area: 2 / 1 / span 2 /span 1; }
+    grid-area: 1 / 1 / span 5 /span 1; }
   body.my-cv .education {
     grid-area: 2 / 3 / span 2 /span 1; }
     body.my-cv .education__description_nomination {
       font-size: 1rem; }
   body.my-cv .experience {
-    grid-area: 4 / 3 / span 2 /span 1; }
+    grid-area: 4 / 3 / span 5 /span 1; }
     body.my-cv .experience__description_nomination {
       font-size: 1rem; }
   body.my-cv .techniques {
-    grid-area: 3 / 2 / span 2 /span 1; }
+    grid-area: 3 / 2 / span 3 /span 1; }
   body.my-cv .skills {
-    grid-area: 4 / 1 / span 2 /span 1; }
+    grid-area: 5 / 1 / span 2 /span 1; }
   body.my-cv .languages {
-    grid-area: 5 / 2 / span 2 /span 1; }
+    grid-area: 6 / 2 / span 2 /span 1; }
   body.my-cv .hobbies {
-    grid-area: 6 / 1 / span 2 /span 1; }
-  body.my-cv .prj-to-do-app {
-    grid-area: 8 / 1 / span 2 /span 1; }
+    grid-area: 8 / 2 / span 3 /span 1; }
+    body.my-cv .hobbies__svg {
+      height: 80px;
+      width: 80px; }
   body.my-cv .prj-calender {
-    grid-area: 10 / 1 / span 2 /span 1; }
-  body.my-cv .prj-form-c13 {
-    grid-area: 7 / 2 / span 2 /span 1; }
-  body.my-cv .prj-mobile {
-    grid-area: 9 / 2 / span 2 /span 1; }
+    grid-area: 7 / 1 / span 3 /span 1; }
+  body.my-cv .prj-to-do-app {
+    grid-area: 10 / 1 / span 3 /span 1; }
   body.my-cv .prj-game {
-    grid-area: 11 / 2 / span 2 /span 1; }
+    grid-area: 13 / 1 / span 3 /span 1; }
+  body.my-cv .prj-form-c13 {
+    grid-area: 11 / 2 / span 3 /span 1; }
+  body.my-cv .prj-mobile {
+    grid-area: 14 / 2 / span 3 /span 1; }
   body.my-cv .prj-calculator {
-    grid-area: 6 / 3 / span 2 /span 1; }
+    grid-area: 9 / 3 / span 3 /span 1; }
   body.my-cv .prj-react-ingredients {
-    grid-area: 8 / 3 / span 2 /span 1; }
+    grid-area: 12 / 3 / span 3 /span 1; }
   body.my-cv .contacts {
-    grid-area: 10 / 3 / span 2 /span 1; } }
+    grid-area: 15 / 3 / span 2 /span 1; } }
