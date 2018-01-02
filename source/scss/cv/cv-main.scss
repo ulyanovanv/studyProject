@@ -1,48 +1,47 @@
 $black : #000;
-$headings-color : #670305;
-//  $orange : #F56B39;
+$headings-color : #4d4141;
 $orange : #a84625;
-//$cv-background: #c4b0c9;
 $cv-background: #4d4141;
-//$aside-columns-background : #e4d0e9;
 $aside-columns-background : #afe4e4;
-$aside-columns-text : #4d4141;
-$center-columns-text : #4d4141;
+$text-color: #4d4141;
 $center-columns-background: #f7e7ce;
-$block-bottom-line: #fefed5;
+$block-bottom-line: #4d4141;
 
 body.my-cv{
-
-
   @mixin flex($flex-direction,$justify-content,$align-items) {
     display: flex;
     flex-direction: $flex-direction;
     justify-content: $justify-content;
     align-items: $align-items;
   }
-
-
-
-//  background-color: #feff99;
-//  background-color: #FDD264;
   background-color: $cv-background;
-  font-size: 0.9rem;
   font-family: 'Source Serif Pro', 'Crimson Text', 'Cormorant Garamond', serif;
+  color: $text-color;
+  font-size: 0.9rem;
+
+  @media screen and (min-width:54rem) and (max-width: 58rem) {
+    font-size: 1rem;
+  }
+  @media screen and (min-width:58rem) and (max-width: 63rem) {
+    font-size: 0.8rem;
+  }
+  @media screen and (min-width:63rem) and (max-width: 68rem) {
+    font-size: 0.9rem;
+  }
+  @media screen and (min-width:68rem)  {
+    font-size: 1rem;
+  }
+
+
 
 
   .cv {
     height: auto;
     &__parts{
-//      margin: 40px;
-//      @include flex(column,center,center);
-//      background-color: #ffffff;
-//      border-radius: 40px;
       padding: 25px;
-//      border: 1px solid $black;
-//      box-shadow: 0px 0px 12px 4px #F56B39;
-//      font-size: 1.4rem;
       line-height: 1.3rem;
-
+      background-color: #f7e7ce;
+      margin: 10px;
     }
   }
 
@@ -60,26 +59,48 @@ body.my-cv{
     font-size: 1.1rem;
     color: $headings-color;
   }
-  .my-image {
-//    padding: 0;
-    &_container {
-      padding: 20px;
-      text-align: center;
-      @include flex(row,center,center);
+
+  .general-info {
+    .my-image {
+      &_container {
+        text-align: center;
+        background-image: url('/images/cv-images/my-picture-grey.jpg');
+        @include flex(row,center,center);
+        padding: 0;
+        width: auto;
+        background-size: 100%;
+        background-repeat: no-repeat;
+//        max-width: 300px;
+//        height: 300px;
+        margin: 0 auto 20px auto;
+        border-radius: 50%;
+      }
     }
-    &__insert{
-      width: 80%;
-      max-width: 200px;
-
-
+    .information{}
+  }
+  @media screen  and (max-width: 48rem){
+    .my-image_container {
+      max-width: 300px;
+      height: 300px;
     }
   }
-  .information{}
+  @media screen and (min-width:48rem) and (max-width: 71.5rem){
+    .my-image_container {
+      max-width: 250px;
+      height: 250px;
+    }
+  }
+  @media screen and (min-width: 71.5rem) {
+    .my-image_container {
+      max-width: 300px;
+      height: 300px;
+    }
+  }
+
   .education{
     &__description {
       &_timeline{
         font-size: 0.8rem;
-        color: $orange;
         font-weight: bold;
       }
       &_nomination {
@@ -93,19 +114,14 @@ body.my-cv{
   }
   .experience{
     &__description {
-//      margin: 10px 0;
       &_timeline{
         font-size: 0.8rem;
-        color: $orange;
         font-weight: bold;
       }
       &_nomination {
         font-size: 1.0rem;
         font-weight: bold;
       }
-//      &_nomination + &_nomination {
-//        margin-bottom: 60px;
-//      }
       &_place{
 
       }
@@ -116,13 +132,14 @@ body.my-cv{
   }
   .techniques {
     &_container{
-
+//        padding-left: 10px;
     }
     &__each{
 
+
     }
     &__svg{
-      padding: 1px 1px 2px 16px;
+      padding: 1px 1px 1px 16px;
       background-size: 18px 18px;
       background-repeat: no-repeat;
       background-position: left center;
@@ -180,7 +197,6 @@ body.my-cv{
 
     &__each{
       padding-left: 10px;
-//        flex: 1 0 auto;
     }
     &__svg-container {
       width: 50px;
@@ -200,9 +216,6 @@ body.my-cv{
       &:hover .languages__svg-container {
         background-image: url('/images/svg/languages/english-part.svg');
       }
-      &:hover .languages_uppercase {
-        color: $headings-color;
-      }
     }
     .german{
       .languages__svg-container {
@@ -211,9 +224,6 @@ body.my-cv{
       &:hover .languages__svg-container {
         background-image: url('/images/svg/languages/german-part.svg');
       }
-      &:hover .languages_uppercase {
-        color: $headings-color;
-      }
     }
     .russian{
       .languages__svg-container {
@@ -221,9 +231,6 @@ body.my-cv{
       }
       &:hover .languages__svg-container {
         background-image: url('/images/svg/languages/russian.svg');
-      }
-      &:hover .languages_uppercase {
-        color: $headings-color;
       }
     }
 
@@ -235,13 +242,96 @@ body.my-cv{
       margin-top: 10px;
     }
     &__each{
-      padding: 3px;
+      padding: 5px;
     }
     &__svg {
       height: 80px;
       width: 80px;
     }
   }
+  .contacts {
+
+    &__details {
+      text-indent: 0;
+
+    }
+    &_links {
+      color: $text-color;
+    }
+    &_text-bold {
+      font-weight: bold;
+    }
+  }
+  .projects {
+//    padding: 0;
+    height: 250px;
+    &__container {
+//      background-size: 600px 600px;
+      background-size: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .prj-calender {
+//    padding: 0;
+    &_img {
+      background-image: url('/images/projects-img/prj-calender-grey.jpg');
+    }
+    &:hover .prj-calender_img {
+      background-image: url('/images/projects-img/prj-calender.jpg');
+    }
+  }
+  .prj-form-c13 {
+    &_img {
+      background-image: url('/images/projects-img/prj-form-c13-grey.jpg');
+    }
+    &:hover .prj-form-c13_img {
+      background-image: url('/images/projects-img/prj-form-c13.jpg');
+    }
+  }
+  .prj-mobile {
+    &_img {
+      background-image: url('/images/projects-img/prj-mobile-grey.jpg');
+    }
+    &:hover .prj-mobile_img {
+      background-image: url('/images/projects-img/prj-mobile.jpg');
+    }
+  }
+  .prj-to-do-app {
+    &_img {
+      background-image: url('/images/projects-img/prj-to-do-app-grey.jpg');
+    }
+    &:hover .prj-to-do-app_img {
+      background-image: url('/images/projects-img/prj-to-do-app.jpg');
+    }
+  }
+  .prj-react-ingredients {
+    &_img {
+      background-image: url('/images/projects-img/prj-react-ingredients-grey.jpg');
+    }
+    &:hover .prj-react-ingredients_img {
+      background-image: url('/images/projects-img/prj-react-ingredients.jpg');
+    }
+  }
+  .prj-game {
+    &_img {
+      background-image: url('/images/projects-img/prj-game-grey.jpg');
+    }
+    &:hover .prj-game_img {
+      background-image: url('/images/projects-img/prj-game.jpg');
+    }
+  }
+  .prj-calculator {
+    &_img {
+      background-image: url('/images/projects-img/prj-calculator-grey.jpg');
+    }
+    &:hover .prj-calculator_img {
+      background-image: url('/images/projects-img/prj-calculator.jpg');
+    }
+  }
+
 
 
 

@@ -37,7 +37,8 @@ body.todo {
   background-color: Black;
   color: White;
   text-shadow: 2px 2px 1px Black;
-  font-size: 16px; }
+  font-size: 16px;
+  margin-top: 150px; }
   body.todo #main_div {
     background-color: #403c3b;
     width: 480px;
@@ -976,13 +977,28 @@ body.oughts-crosses {
 
 body.my-cv {
   background-color: #4d4141;
-  font-size: 0.9rem;
-  font-family: 'Source Serif Pro', 'Crimson Text', 'Cormorant Garamond', serif; }
+  font-family: 'Source Serif Pro', 'Crimson Text', 'Cormorant Garamond', serif;
+  color: #4d4141;
+  font-size: 0.9rem; }
+  @media screen and (min-width: 54rem) and (max-width: 58rem) {
+    body.my-cv {
+      font-size: 1rem; } }
+  @media screen and (min-width: 58rem) and (max-width: 63rem) {
+    body.my-cv {
+      font-size: 0.8rem; } }
+  @media screen and (min-width: 63rem) and (max-width: 68rem) {
+    body.my-cv {
+      font-size: 0.9rem; } }
+  @media screen and (min-width: 68rem) {
+    body.my-cv {
+      font-size: 1rem; } }
   body.my-cv .cv {
     height: auto; }
     body.my-cv .cv__parts {
       padding: 25px;
-      line-height: 1.3rem; }
+      line-height: 1.3rem;
+      background-color: #f7e7ce;
+      margin: 10px; }
   body.my-cv .cv_centralization {
     margin: 0 auto; }
   body.my-cv .cv_text-indent {
@@ -992,33 +1008,46 @@ body.my-cv {
     font-weight: bold;
     padding: 5px 0;
     font-size: 1.1rem;
-    color: #670305; }
-  body.my-cv .my-image_container {
-    padding: 20px;
+    color: #4d4141; }
+  body.my-cv .general-info .my-image_container {
     text-align: center;
+    background-image: url("/images/cv-images/my-picture-grey.jpg");
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center; }
-  body.my-cv .my-image__insert {
-    width: 80%;
-    max-width: 200px; }
+    align-items: center;
+    padding: 0;
+    width: auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto 20px auto;
+    border-radius: 50%; }
+  @media screen and (max-width: 48rem) {
+    body.my-cv .my-image_container {
+      max-width: 300px;
+      height: 300px; } }
+  @media screen and (min-width: 48rem) and (max-width: 71.5rem) {
+    body.my-cv .my-image_container {
+      max-width: 250px;
+      height: 250px; } }
+  @media screen and (min-width: 71.5rem) {
+    body.my-cv .my-image_container {
+      max-width: 300px;
+      height: 300px; } }
   body.my-cv .education__description_timeline {
     font-size: 0.8rem;
-    color: #a84625;
     font-weight: bold; }
   body.my-cv .education__description_nomination {
     font-size: 1.0rem;
     font-weight: bold; }
   body.my-cv .experience__description_timeline {
     font-size: 0.8rem;
-    color: #a84625;
     font-weight: bold; }
   body.my-cv .experience__description_nomination {
     font-size: 1.0rem;
     font-weight: bold; }
   body.my-cv .techniques__svg {
-    padding: 1px 1px 2px 16px;
+    padding: 1px 1px 1px 16px;
     background-size: 18px 18px;
     background-repeat: no-repeat;
     background-position: left center; }
@@ -1070,20 +1099,14 @@ body.my-cv {
     background-image: url("/images/svg/languages/english-part-grey.svg"); }
   body.my-cv .languages .english:hover .languages__svg-container {
     background-image: url("/images/svg/languages/english-part.svg"); }
-  body.my-cv .languages .english:hover .languages_uppercase {
-    color: #670305; }
   body.my-cv .languages .german .languages__svg-container {
     background-image: url("/images/svg/languages/german-part-grey.svg"); }
   body.my-cv .languages .german:hover .languages__svg-container {
     background-image: url("/images/svg/languages/german-part.svg"); }
-  body.my-cv .languages .german:hover .languages_uppercase {
-    color: #670305; }
   body.my-cv .languages .russian .languages__svg-container {
     background-image: url("/images/svg/languages/russian-grey.svg"); }
   body.my-cv .languages .russian:hover .languages__svg-container {
     background-image: url("/images/svg/languages/russian.svg"); }
-  body.my-cv .languages .russian:hover .languages_uppercase {
-    color: #670305; }
   body.my-cv .hobbies_container {
     display: flex;
     flex-direction: row;
@@ -1092,85 +1115,127 @@ body.my-cv {
     flex-wrap: wrap;
     margin-top: 10px; }
   body.my-cv .hobbies__each {
-    padding: 3px; }
+    padding: 5px; }
   body.my-cv .hobbies__svg {
     height: 80px;
     width: 80px; }
+  body.my-cv .contacts__details {
+    text-indent: 0; }
+  body.my-cv .contacts_links {
+    color: #4d4141; }
+  body.my-cv .contacts_text-bold {
+    font-weight: bold; }
+  body.my-cv .projects {
+    height: 250px; }
+    body.my-cv .projects__container {
+      background-size: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 100%; }
+  body.my-cv .prj-calender_img {
+    background-image: url("/images/projects-img/prj-calender-grey.jpg"); }
+  body.my-cv .prj-calender:hover .prj-calender_img {
+    background-image: url("/images/projects-img/prj-calender.jpg"); }
+  body.my-cv .prj-form-c13_img {
+    background-image: url("/images/projects-img/prj-form-c13-grey.jpg"); }
+  body.my-cv .prj-form-c13:hover .prj-form-c13_img {
+    background-image: url("/images/projects-img/prj-form-c13.jpg"); }
+  body.my-cv .prj-mobile_img {
+    background-image: url("/images/projects-img/prj-mobile-grey.jpg"); }
+  body.my-cv .prj-mobile:hover .prj-mobile_img {
+    background-image: url("/images/projects-img/prj-mobile.jpg"); }
+  body.my-cv .prj-to-do-app_img {
+    background-image: url("/images/projects-img/prj-to-do-app-grey.jpg"); }
+  body.my-cv .prj-to-do-app:hover .prj-to-do-app_img {
+    background-image: url("/images/projects-img/prj-to-do-app.jpg"); }
+  body.my-cv .prj-react-ingredients_img {
+    background-image: url("/images/projects-img/prj-react-ingredients-grey.jpg"); }
+  body.my-cv .prj-react-ingredients:hover .prj-react-ingredients_img {
+    background-image: url("/images/projects-img/prj-react-ingredients.jpg"); }
+  body.my-cv .prj-game_img {
+    background-image: url("/images/projects-img/prj-game-grey.jpg"); }
+  body.my-cv .prj-game:hover .prj-game_img {
+    background-image: url("/images/projects-img/prj-game.jpg"); }
+  body.my-cv .prj-calculator_img {
+    background-image: url("/images/projects-img/prj-calculator-grey.jpg"); }
+  body.my-cv .prj-calculator:hover .prj-calculator_img {
+    background-image: url("/images/projects-img/prj-calculator.jpg"); }
 
 @media screen and (min-width: 48rem) {
   body.my-cv .cv {
     height: auto; }
     body.my-cv .cv__parts {
       margin: 0px;
-      font-size: 1rem;
-      line-height: 1.2rem;
+      line-height: 1.15rem;
       min-width: 230px;
-      padding: 10px; }
+      padding: 18px; }
   body.my-cv .cv_cenralization {
     display: grid;
-    grid-template: repeat(17, 200px)/repeat(2, 2fr);
-    width: 80%;
-    margin: 0 auto; }
+    grid-template: repeat(25, 100px)/repeat(2, 2fr);
+    width: 75%;
+    margin: 20px auto; }
   body.my-cv .cv_text-indent {
     text-indent: 1rem; }
   body.my-cv .cv_headings {
     font-size: 1rem;
     padding: 0 0 4px 0; }
-  body.my-cv .my-image {
-    grid-area: 1 / 2 / span 2 /span 1; }
-    body.my-cv .my-image_container {
-      margin: inherit; }
-    body.my-cv .my-image__insert {
-      width: 160px; }
-  body.my-cv .information {
-    grid-area: 2 / 1 / span 2 /span 1; }
+  body.my-cv .cv_line-indent {
+    border-bottom: 1px solid #4d4141;
+    height: 100%; }
+  body.my-cv .tablet-left {
+    background-color: #afe4e4; }
+  body.my-cv .general-info {
+    grid-area: 1 / 1 / span 7 /span 1; }
+    body.my-cv .general-info .my-image_container {
+      margin: 0 auto 5px auto; }
+  body.my-cv .contacts {
+    grid-area: 1/ 2 / span 2 /span 1; }
   body.my-cv .education {
-    grid-area: 3 / 2 / span 2 /span 1; }
+    grid-area: 6 / 2 / span 2 /span 1; }
     body.my-cv .education__description_nomination {
       font-size: 1rem; }
   body.my-cv .experience {
-    grid-area: 4 / 1 / span 2 /span 1; }
+    grid-area: 8 / 2 / span 4 /span 1; }
     body.my-cv .experience__description_nomination {
       font-size: 1rem; }
   body.my-cv .techniques {
-    grid-area: 5 / 2 / span 2 /span 1; }
+    grid-area: 3 / 2 / span 3 /span 1; }
   body.my-cv .skills {
-    grid-area: 6 / 1 / span 2 /span 1; }
+    grid-area: 8 / 1 / span 3 /span 1; }
   body.my-cv .languages {
-    grid-area: 7 / 2 / span 2 /span 1; }
+    grid-area: 12 / 2 / span 2 /span 1; }
   body.my-cv .hobbies {
-    grid-area: 8 / 1 / span 2 /span 1; }
+    grid-area: 11 / 1 / span 4 /span 1; }
     body.my-cv .hobbies__svg {
-      height: 95px;
-      width: 95px; }
-  body.my-cv .prj-to-do-app {
-    grid-area: 9 / 2 / span 2 /span 1; }
+      height: 90px;
+      width: 90px; }
+  body.my-cv .projects {
+    height: 270px; }
   body.my-cv .prj-calender {
-    grid-area: 10 / 1 / span 2 /span 1; }
-  body.my-cv .prj-form-c13 {
-    grid-area: 11 / 2 / span 2 /span 1; }
+    grid-area: 15 / 1 / span 3 /span 1; }
   body.my-cv .prj-mobile {
-    grid-area: 12 / 1 / span 2 /span 1; }
-  body.my-cv .prj-game {
-    grid-area: 13 / 2 / span 2 /span 1; }
+    grid-area: 18 / 1 / span 3/span 1; }
   body.my-cv .prj-calculator {
-    grid-area: 14 / 1 / span 2 /span 1; }
+    grid-area: 21 / 1 / span 3 /span 1; }
+  body.my-cv .prj-form-c13 {
+    grid-area: 14 / 2 / span 3 /span 1; }
   body.my-cv .prj-react-ingredients {
-    grid-area: 15 / 2 / span 2 /span 1; }
-  body.my-cv .contacts {
-    grid-area: 16 / 1 / span 2 /span 1; } }
+    grid-area: 17 / 2 / span 3 /span 1; }
+  body.my-cv .prj-game {
+    grid-area: 20 / 2 / span 3 /span 1; }
+  body.my-cv .prj-to-do-app {
+    grid-area: 23 / 2 / span 3 /span 1; } }
 
-@media screen and (min-width: 70rem) {
+@media screen and (min-width: 60rem) {
   body.my-cv .cv {
     height: auto; }
     body.my-cv .cv__parts {
-      margin: 0px;
-      padding: 20px; }
+      padding: 15px;
+      line-height: 1.2rem; }
   body.my-cv .cv_cenralization {
     width: 85%;
-    margin: 20px auto;
-    display: grid;
-    grid-template: repeat(30, 100px)/repeat(3, 3fr);
+    grid-template: repeat(17, 100px)/repeat(3, 3fr);
     min-width: 230px; }
   body.my-cv .cv_text-indent {
     text-indent: 1rem; }
@@ -1178,58 +1243,50 @@ body.my-cv {
     font-size: 1rem;
     padding: 0 0 4px 0; }
   body.my-cv .desktop-side {
-    background-color: #afe4e4;
-    color: #4d4141; }
+    background-color: #afe4e4; }
   body.my-cv .desktop-center {
-    color: #4d4141;
     background-color: #f7e7ce; }
-  body.my-cv .cv_line-indent {
-    border-bottom: 1px solid #fefed5; }
-  body.my-cv .my-image {
-    padding: 0;
+  body.my-cv .general-info {
+    grid-area: 1 / 1 / span 7 /span 1; }
+    body.my-cv .general-info .my-image {
+      padding: 0; }
+    body.my-cv .general-info .information {
+      grid-area: 3 / 3 / span 2 /span 1; }
+  body.my-cv .contacts {
     grid-area: 1 / 2 / span 2 /span 1; }
-    body.my-cv .my-image_container {
-      margin: inherit;
-      padding: 0;
-      height: 100%; }
-    body.my-cv .my-image__insert {
-      width: auto;
-      height: auto;
-      max-height: 100%; }
-  body.my-cv .information {
-    grid-area: 1 / 1 / span 5 /span 1; }
   body.my-cv .education {
-    grid-area: 2 / 3 / span 2 /span 1; }
+    grid-area: 1 / 3 / span 2 /span 1; }
     body.my-cv .education__description_nomination {
       font-size: 1rem; }
   body.my-cv .experience {
-    grid-area: 4 / 3 / span 5 /span 1; }
+    grid-area: 3 / 3 / span 4 /span 1; }
     body.my-cv .experience__description_nomination {
       font-size: 1rem; }
   body.my-cv .techniques {
     grid-area: 3 / 2 / span 3 /span 1; }
   body.my-cv .skills {
-    grid-area: 5 / 1 / span 2 /span 1; }
+    grid-area: 7 / 3 / span 3 /span 1; }
   body.my-cv .languages {
-    grid-area: 6 / 2 / span 2 /span 1; }
+    grid-area: 8 / 1 / span 2 /span 1; }
   body.my-cv .hobbies {
-    grid-area: 8 / 2 / span 3 /span 1; }
+    grid-area: 6 / 2 / span 3 /span 1; }
+    body.my-cv .hobbies__each {
+      width: 23%;
+      margin: auto; }
     body.my-cv .hobbies__svg {
-      height: 80px;
-      width: 80px; }
-  body.my-cv .prj-calender {
-    grid-area: 7 / 1 / span 3 /span 1; }
+      height: 100%;
+      width: 100%; }
   body.my-cv .prj-to-do-app {
-    grid-area: 10 / 1 / span 3 /span 1; }
+    grid-area: 13 / 3 / span 3 /span 1; }
   body.my-cv .prj-game {
-    grid-area: 13 / 1 / span 3 /span 1; }
+    grid-area: 12 / 2 / span 3 /span 1; }
+  body.my-cv .prj-calender {
+    grid-area: 10 / 1 / span 3 /span 1; }
   body.my-cv .prj-form-c13 {
-    grid-area: 11 / 2 / span 3 /span 1; }
-  body.my-cv .prj-mobile {
-    grid-area: 14 / 2 / span 3 /span 1; }
-  body.my-cv .prj-calculator {
-    grid-area: 9 / 3 / span 3 /span 1; }
+    grid-area: 13 / 1 / span 3 /span 1; }
   body.my-cv .prj-react-ingredients {
-    grid-area: 12 / 3 / span 3 /span 1; }
-  body.my-cv .contacts {
-    grid-area: 15 / 3 / span 2 /span 1; } }
+    grid-area: 10 / 3 / span 3 /span 1; }
+  body.my-cv .prj-mobile {
+    grid-area: 9 / 2 / span 3 /span 1; }
+  body.my-cv .prj-calculator {
+    grid-area: 15 / 2 / span 3 /span 1; } }

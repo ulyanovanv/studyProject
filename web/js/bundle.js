@@ -3838,7 +3838,7 @@ function createNumbers() {
                 break;
             }
             if (cc.hasClass("red") && j === 8) {
-                (0, _jqueryMin2.default)("#time-left").html("Вы выиграли");
+                (0, _jqueryMin2.default)("#time-left").html("You won");
             }
         }
     });
@@ -3848,7 +3848,7 @@ function timer() {
     var intervalId = setInterval(function () {
         seconds--;
         if (seconds < 0) {
-            (0, _jqueryMin2.default)("#time-left").html("Вы проиграли");
+            (0, _jqueryMin2.default)("#time-left").html("You lost");
             counter = 10;
             clearInterval(intervalId);
             return;
@@ -3867,7 +3867,7 @@ function gameReset() {
     createNumbers();
     counter = 1;
     cell.removeClass("red").addClass("initial-color");
-    (0, _jqueryMin2.default)("#time-left").html("Времени осталось:" + "<span id='seconds'>10</span>");
+    (0, _jqueryMin2.default)("#time-left").html("Time left:" + "<span id='seconds'>10</span>");
     timer();
     seconds = 10;
 }

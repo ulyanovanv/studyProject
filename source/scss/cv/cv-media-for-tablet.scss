@@ -6,43 +6,55 @@ body.my-cv {
       height: auto;
       &__parts{
         margin: 0px;
-        font-size: 1rem;
-        line-height: 1.2rem;
+//        font-size: 1rem;
+        line-height: 1.15rem;
         min-width: 230px;
-        padding: 10px;
+        padding: 18px;
       }
     }
-
     .cv_cenralization {
       display: grid;
-      grid-template: repeat(17,200px)/repeat(2,2fr);
-//      grid-gap: 20px 20px;
-      width: 80%;
-      margin: 0 auto;
+      grid-template: repeat(25,100px)/repeat(2,2fr);
+      width: 75%;
+      margin: 20px auto;
     }
-
     .cv_text-indent {
       text-indent: 1rem;
     }
     .cv_headings {
       font-size: 1rem;
       padding: 0 0 4px 0;
+    }
+    .cv_line-indent {
 
+      border-bottom: 1px solid $block-bottom-line;
+      height: 100%;
     }
-    .my-image {
-      grid-area: 1 / 2 / span 2 /span 1;
-      &_container {
-        margin: inherit;
+    .tablet-left {
+      background-color: $aside-columns-background;
+    }
+
+
+    .general-info {
+      grid-area: 1 / 1 / span 7 /span 1;
+      .my-image {
+        &_container {
+//          max-width: 250px;
+//          height: 250px;
+          margin: 0 auto 5px auto;
+        }
       }
-      &__insert{
-        width: 160px;
+      .information{
+
       }
     }
-    .information{
-      grid-area: 2 / 1 / span 2 /span 1;
+
+    .contacts{
+      grid-area: 1/ 2 / span 2 /span 1;
     }
+
     .education{
-      grid-area: 3 / 2 / span 2 /span 1;
+      grid-area: 6 / 2 / span 2 /span 1;
       &__description {
         &_timeline{
 
@@ -56,7 +68,7 @@ body.my-cv {
       }
     }
     .experience{
-      grid-area: 4 / 1 / span 2 /span 1;
+      grid-area: 8 / 2 / span 4 /span 1;
       &__description {
 
         &_timeline{
@@ -74,10 +86,10 @@ body.my-cv {
       }
     }
     .techniques {
-      grid-area: 5 / 2 / span 2 /span 1;
+      grid-area: 3 / 2 / span 3 /span 1;
     }
     .skills {
-      grid-area: 6 / 1 / span 2 /span 1;
+      grid-area: 8 / 1 / span 3 /span 1;
       &__list{
 
         &_item{
@@ -86,7 +98,7 @@ body.my-cv {
       }
     }
     .languages {
-      grid-area: 7 / 2 / span 2 /span 1;
+      grid-area: 12 / 2 / span 2 /span 1;
       &_container {
 
       }
@@ -96,7 +108,7 @@ body.my-cv {
       }
     }
     .hobbies {
-      grid-area: 8 / 1 / span 2 /span 1;
+      grid-area: 11 / 1 / span 4 /span 1;
       &_container {
 
       }
@@ -104,33 +116,39 @@ body.my-cv {
 
       }
       &__svg {
-        height: 95px;
-        width: 95px;
+        height: 90px;
+        width: 90px;
       }
     }
-    .prj-to-do-app {
-      grid-area: 9 / 2 / span 2 /span 1;
+    .projects {
+      height: 270px;
+      &__container {
+//        background-size: 100%;
+      }
     }
+
+
     .prj-calender {
-      grid-area: 10 / 1 / span 2 /span 1;
-    }
-    .prj-form-c13 {
-      grid-area: 11 / 2 / span 2 /span 1;
+      grid-area: 15 / 1 / span 3 /span 1;
     }
     .prj-mobile {
-      grid-area: 12 / 1 / span 2 /span 1;
-    }
-    .prj-game {
-      grid-area: 13 / 2 / span 2 /span 1;
+      grid-area: 18 / 1 / span 3/span 1;
     }
     .prj-calculator{
-      grid-area: 14 / 1 / span 2 /span 1;
+      grid-area: 21 / 1 / span 3 /span 1;
+    }
+    .prj-form-c13 {
+      grid-area: 14 / 2 / span 3 /span 1;
     }
     .prj-react-ingredients{
-      grid-area: 15 / 2 / span 2 /span 1;
+      grid-area: 17 / 2 / span 3 /span 1;
     }
-    .contacts{
-      grid-area: 16 / 1 / span 2 /span 1;
+    .prj-game {
+      grid-area: 20 / 2 / span 3 /span 1;
+    }
+    .prj-to-do-app {
+      grid-area: 23 / 2 / span 3 /span 1;
     }
   }
+
 }
