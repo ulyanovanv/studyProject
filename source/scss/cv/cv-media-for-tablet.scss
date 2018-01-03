@@ -1,12 +1,9 @@
 body.my-cv {
 
   @media screen and (min-width:48rem) {
-
     .cv {
-      height: auto;
       &__parts{
         margin: 0px;
-//        font-size: 1rem;
         line-height: 1.15rem;
         min-width: 230px;
         padding: 18px;
@@ -18,15 +15,11 @@ body.my-cv {
       width: 75%;
       margin: 20px auto;
     }
-    .cv_text-indent {
-      text-indent: 1rem;
-    }
     .cv_headings {
       font-size: 1rem;
       padding: 0 0 4px 0;
     }
     .cv_line-indent {
-
       border-bottom: 1px solid $block-bottom-line;
       height: 100%;
     }
@@ -34,100 +27,44 @@ body.my-cv {
       background-color: $aside-columns-background;
     }
 
-
     .general-info {
       grid-area: 1 / 1 / span 7 /span 1;
       .my-image {
         &_container {
-//          max-width: 250px;
-//          height: 250px;
           margin: 0 auto 5px auto;
         }
       }
-      .information{
-
-      }
-    }
-
-    .contacts{
-      grid-area: 1/ 2 / span 2 /span 1;
-    }
-
-    .education{
-      grid-area: 6 / 2 / span 2 /span 1;
-      &__description {
-        &_timeline{
-
-        }
-        &_nomination {
-          font-size: 1rem;
-        }
-        &_place{
-
-        }
-      }
-    }
-    .experience{
-      grid-area: 8 / 2 / span 4 /span 1;
-      &__description {
-
-        &_timeline{
-
-        }
-        &_nomination {
-          font-size: 1rem;
-        }
-        &_place{
-
-        }
-        &_duties{
-
-        }
-      }
-    }
-    .techniques {
-      grid-area: 3 / 2 / span 3 /span 1;
     }
     .skills {
       grid-area: 8 / 1 / span 3 /span 1;
-      &__list{
-
-        &_item{
-
-        }
-      }
-    }
-    .languages {
-      grid-area: 12 / 2 / span 2 /span 1;
-      &_container {
-
-      }
-
-      &__each{
-
-      }
     }
     .hobbies {
       grid-area: 11 / 1 / span 4 /span 1;
-      &_container {
-
-      }
-      &__each{
-
-      }
       &__svg {
         height: 90px;
         width: 90px;
       }
     }
-    .projects {
-      height: 270px;
-      &__container {
-//        background-size: 100%;
-      }
+    .contacts{
+      grid-area: 1 / 2 / span 2 /span 1;
+    }
+    .techniques {
+      grid-area: 3 / 2 / span 3 /span 1;
+    }
+    .education{
+      grid-area: 6 / 2 / span 2 /span 1;
+    }
+    .experience{
+      grid-area: 8 / 2 / span 4 /span 1;
+    }
+    .languages {
+      grid-area: 12 / 2 / span 2 /span 1;
     }
 
 
+    .projects {
+      height: 270px;
+    }
     .prj-calender {
       grid-area: 15 / 1 / span 3 /span 1;
     }

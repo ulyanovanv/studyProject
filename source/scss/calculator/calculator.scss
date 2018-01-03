@@ -1,10 +1,13 @@
 body.calculator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+
   #centralization {
-    width: 240px;
-    margin: auto;
+    width: 265px;
     font-size: 20px;
     font-family: Verdana, serif;
-    border: 1px solid Black;
   }
   #main-div {
     border: 1px solid Black;

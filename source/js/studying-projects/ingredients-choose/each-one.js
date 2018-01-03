@@ -4,7 +4,6 @@
 
 import React from 'react';
 const colors = {
-
     white: "#eee",
     red: "#993333",
     blue: "#333399"

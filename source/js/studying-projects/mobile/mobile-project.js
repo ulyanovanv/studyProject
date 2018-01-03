@@ -67,7 +67,7 @@ import $ from '../../vendor/jquery.min.js';
             TurnToSecondPage();
         }
             GreyDisplayAppering();
-        isFirstPageOpened = ! isFirstPageOpened;
+        isFirstPageOpened = !isFirstPageOpened;
     });
     samples.on("click",function(){
         if (!isFirstPageOpened) {
@@ -76,7 +76,7 @@ import $ from '../../vendor/jquery.min.js';
             TurnToSecondPage();
         }
         GreyDisplayAppering();
-        isFirstPageOpened = ! isFirstPageOpened;
+        isFirstPageOpened = !isFirstPageOpened;
     });
 
     function GreyDisplayAppering(){

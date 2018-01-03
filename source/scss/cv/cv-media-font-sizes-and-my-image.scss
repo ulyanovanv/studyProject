@@ -1,0 +1,37 @@
+body.my-cv {
+
+  //media for font-size
+
+  @media screen and (min-width:54rem) and (max-width: 58rem) {
+    font-size: 1rem;
+  }
+  @media screen and (min-width:58rem) and (max-width: 63rem) {
+    font-size: 0.8rem;
+  }
+  @media screen and (min-width:63rem) and (max-width: 68rem) {
+    font-size: 0.9rem;
+  }
+  @media screen and (min-width:68rem)  {
+    font-size: 1rem;
+  }
+
+  //media for my-image-size
+  @media screen  and (max-width: 48rem){
+    .my-image_container {
+      max-width: 300px;
+      height: 300px;
+    }
+  }
+  @media screen and (min-width:48rem) and (max-width: 71.5rem){
+    .my-image_container {
+      max-width: 250px;
+      height: 250px;
+    }
+  }
+  @media screen and (min-width: 71.5rem) {
+    .my-image_container {
+      max-width: 300px;
+      height: 300px;
+    }
+  }
+}

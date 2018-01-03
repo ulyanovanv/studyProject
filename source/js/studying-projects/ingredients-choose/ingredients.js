@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {OneIngredient} from './each-one';
+
 const images = [
     "/images/reactIngredients/mushrooms.jpg",
     "/images/reactIngredients/beans.jpg",

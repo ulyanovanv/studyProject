@@ -1,0 +1,236 @@
+body.my-cv {
+  @mixin flex($flex-direction,$justify-content,$align-items) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+  }
+
+  .general-info {
+    .my-image {
+      &_container {
+        text-align: center;
+        background-image: url('/images/cv-images/my-picture-grey.jpg');
+        padding: 0;
+        width: auto;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: 0 auto 20px auto;
+        border-radius: 50%;
+      }
+    }
+  }
+  .education{
+    &__description {
+      &_timeline{
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+      &_nomination {
+        font-size: 1.0rem;
+        font-weight: bold;
+      }
+    }
+  }
+  .experience{
+    &__description {
+      &_timeline{
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+      &_nomination {
+        font-size: 1.0rem;
+        font-weight: bold;
+      }
+    }
+  }
+  .techniques {
+    &__svg{
+      padding: 1px 1px 1px 16px;
+      background-size: 18px 18px;
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+    .html5 {
+      background-image: url('/images/svg/techniques/html.svg');
+    }
+    .css33 {
+      background-image: url('/images/svg/techniques/css.svg');
+    }
+    .sass {
+      background-image: url('/images/svg/techniques/sass.svg');
+    }
+    .layouts {
+      background-image: url("/images/svg/techniques/layouts.svg");
+    }
+    .svg {
+      background-image: url('/images/svg/techniques/svg.svg');
+    }
+    .bootstrap3 {
+      background-image: url('/images/svg/techniques/bootstrap3.svg');
+    }
+    .jss {
+      background-image: url('/images/svg/techniques/js.svg');
+    }
+    .jquery {
+      background-image: url('/images/svg/techniques/jquery.svg');
+    }
+    .react {
+      background-image: url('/images/svg/techniques/reactjs.svg');
+    }
+    .npm {
+      background-image: url('/images/svg/techniques/npm.svg');
+    }
+    .git {
+      background-image: url('/images/svg/techniques/git.svg');
+    }
+  }
+  .skills {
+    &__list{
+      padding-left: 20px;
+      list-style-type: disc;
+      &_item{
+        text-indent: 1rem;
+      }
+    }
+  }
+  .languages {
+    &_container {
+      @include flex(row, center, center);
+      flex: no-wrap;
+      margin-top: 15px;
+    }
+    &__each{
+      padding-left: 10px;
+    }
+    &__svg-container {
+      width: 50px;
+      height: 50px;
+    }
+    &_uppercase {
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+    &_font-size {
+      font-size: 0.8rem;
+    }
+    .english {
+      .languages__svg-container {
+        background-image: url('/images/svg/languages/english-part-grey.svg');
+      }
+      &:hover .languages__svg-container {
+        background-image: url('/images/svg/languages/english-part.svg');
+      }
+    }
+    .german{
+      .languages__svg-container {
+        background-image: url('/images/svg/languages/german-part-grey.svg');
+      }
+      &:hover .languages__svg-container {
+        background-image: url('/images/svg/languages/german-part.svg');
+      }
+    }
+    .russian{
+      .languages__svg-container {
+        background-image: url('/images/svg/languages/russian-grey.svg');
+      }
+      &:hover .languages__svg-container {
+        background-image: url('/images/svg/languages/russian.svg');
+      }
+    }
+  }
+  .hobbies {
+    &_container {
+      @include flex(row,space-around,center);
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    &__each{
+      padding: 5px;
+    }
+    &__svg {
+      height: 80px;
+      width: 80px;
+    }
+  }
+  .contacts {
+    &__details {
+      text-indent: 0;
+    }
+    &_links {
+      color: $text-color;
+    }
+    &_text-bold {
+      font-weight: bold;
+    }
+  }
+  .projects {
+    height: 250px;
+    &__container {
+      background-size: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 100%;
+      transition: background-image 0.5s ease-in;
+    }
+  }
+
+  .prj-calender {
+    &_img {
+      background-image: url('/images/projects-img/prj-calender-grey.jpg');
+    }
+    &:hover .prj-calender_img {
+      background-image: url('/images/projects-img/prj-calender.jpg');
+    }
+  }
+  .prj-form-c13 {
+    &_img {
+      background-image: url('/images/projects-img/prj-form-c13-grey.jpg');
+    }
+    &:hover .prj-form-c13_img {
+      background-image: url('/images/projects-img/prj-form-c13.jpg');
+    }
+  }
+  .prj-mobile {
+    &_img {
+      background-image: url('/images/projects-img/prj-mobile-grey.jpg');
+    }
+    &:hover .prj-mobile_img {
+      background-image: url('/images/projects-img/prj-mobile.jpg');
+    }
+  }
+  .prj-to-do-app {
+    &_img {
+      background-image: url('/images/projects-img/prj-to-do-app-grey.jpg');
+    }
+    &:hover .prj-to-do-app_img {
+      background-image: url('/images/projects-img/prj-to-do-app.jpg');
+    }
+  }
+  .prj-react-ingredients {
+    &_img {
+      background-image: url('/images/projects-img/prj-react-ingredients-grey.jpg');
+    }
+    &:hover .prj-react-ingredients_img {
+      background-image: url('/images/projects-img/prj-react-ingredients.jpg');
+    }
+  }
+  .prj-game {
+    &_img {
+      background-image: url('/images/projects-img/prj-game-grey.jpg');
+      background-position: center top;
+    }
+    &:hover .prj-game_img {
+      background-image: url('/images/projects-img/prj-game.jpg');
+    }
+  }
+  .prj-calculator {
+    &_img {
+      background-image: url('/images/projects-img/prj-calculator-grey.jpg');
+    }
+    &:hover .prj-calculator_img {
+      background-image: url('/images/projects-img/prj-calculator.jpg');
+    }
+  }
+}
