@@ -3298,7 +3298,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 */
 
 var colors = {
-
     white: "#eee",
     red: "#993333",
     blue: "#333399"
@@ -3577,14 +3576,8 @@ function randomListElementClass(el) {
             var container = (0, _jqueryMin2.default)("#spisok ul");
             container.html('');
             for (var x = 0; x < obj.length; x++) {
-                var el = (0, _jqueryMin2.default)("<li>" + obj[x].value + " " + obj[x].isDone + "</li>");
-
-                console.log(obj[x].isDone);
-                if (obj[x].isDone === 'true') {
-                    randomListElementClass(el);
-                } else {
-                    el.addClass("grey");
-                }
+                var el = (0, _jqueryMin2.default)("<li>" + obj[x].value + "</li>");
+                randomListElementClass(el);
                 el.on('click', handleLiClick);
                 container.append(el);
             }
@@ -4385,11 +4378,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     missions.on("click", function () {
         TurnToSecondPage();
         GreyDisplayAppering();
+        isFirstPageOpened = false;
     });
 
     mainPage.on("click", function () {
         TurnToFirstPage();
         GreyDisplayAppering();
+        isFirstPageOpened = true;
     });
 
     rates.on("click", function () {
@@ -4431,7 +4426,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         hiddenMenu.css({
             "opacity": "0",
             "display": "block"
-        }).animate({ opacity: 1, right: "5%" });
+        }).animate({ opacity: 1, right: "10%" });
     }
     function TurnToSecondPage() {
         firstPage.animate({ opacity: 0 }, 1000, null, function () {

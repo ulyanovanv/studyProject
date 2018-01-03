@@ -51,12 +51,14 @@ import $ from '../../vendor/jquery.min.js';
 
     missions.on("click", function(){
         TurnToSecondPage();
-        GreyDisplayAppering()
+        GreyDisplayAppering();
+        isFirstPageOpened = false;
     });
 
     mainPage.on("click",function(){
         TurnToFirstPage();
         GreyDisplayAppering();
+        isFirstPageOpened = true;
     });
 
 
@@ -99,7 +101,7 @@ import $ from '../../vendor/jquery.min.js';
         hiddenMenu.css({
             "opacity":"0",
             "display":"block"
-        }).animate({opacity:1, right: "5%"});
+        }).animate({opacity:1, right: "10%"});
     }
     function TurnToSecondPage(){
         firstPage.animate({opacity:0},1000,null,function(){

@@ -144,14 +144,8 @@ $(function(){
             var container = $("#spisok ul");
             container.html('');
             for (var x = 0; x < obj.length; x++) {
-                var el = $("<li>" + obj[x].value + " " + obj[x].isDone + "</li>");
-
-                console.log(obj[x].isDone);
-                if (obj[x].isDone === 'true') {
-                    randomListElementClass(el);
-                } else {
-                    el.addClass("grey");
-                }
+                var el = $("<li>" + obj[x].value + "</li>");
+                randomListElementClass(el);
                 el.on('click', handleLiClick);
                 container.append(el);
             }

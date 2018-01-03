@@ -22,7 +22,7 @@ $app->get('/to-do-app', 'Controllers\\ToDoController::index');
 $app->get('/to-do-app-load', function () use ($app) {
     $session = $app['session']->get('todo');
     return !empty($session) ? json_encode($session) : json_encode(['data' => [
-        ['value' => 'buy stuff', 'isDone' => false],
+        ['value' => 'buy stuff', 'isDone' => true],
         ['value' => 'eat stuff', 'isDone' => true],
         ['value' => 'go to sleep', 'isDone' => false],
     ]]);
