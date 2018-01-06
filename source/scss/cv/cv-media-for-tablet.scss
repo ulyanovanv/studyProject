@@ -11,7 +11,7 @@ body.my-cv {
     }
     .cv_cenralization {
       display: grid;
-      grid-template: repeat(25,100px)/repeat(2,2fr);
+      grid-template: repeat(23,100px)/repeat(2,2fr);
       width: 75%;
       margin: 20px auto;
     }
@@ -71,9 +71,12 @@ body.my-cv {
     .prj-mobile {
       grid-area: 18 / 1 / span 3/span 1;
     }
-    .prj-calculator{
+    .prj-to-do-app {
       grid-area: 21 / 1 / span 3 /span 1;
     }
+//    .prj-calculator{
+//      grid-area: 21 / 1 / span 3 /span 1;
+//    }
     .prj-form-c13 {
       grid-area: 14 / 2 / span 3 /span 1;
     }
@@ -83,9 +86,7 @@ body.my-cv {
     .prj-game {
       grid-area: 20 / 2 / span 3 /span 1;
     }
-    .prj-to-do-app {
-      grid-area: 23 / 2 / span 3 /span 1;
-    }
+
   }
 
 }

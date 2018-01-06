@@ -224,30 +224,51 @@ body.main-in-numbers {
   body.main-in-numbers p {
     margin: 16px 0; }
   body.main-in-numbers .red {
-    background-color: darkred; }
+    background-color: #ffbfdc; }
+  body.main-in-numbers .button {
+    background-image: linear-gradient(#FFF 0%, #fee7f1 100%);
+    height: 30px;
+    width: 89px;
+    border-radius: 10px;
+    border: 1px #fee7f1 solid;
+    outline: none; }
+    body.main-in-numbers .button:hover {
+      box-shadow: 0 0 3px #FFF; }
   body.main-in-numbers #main-div {
-    background-color: lightgoldenrodyellow;
+    background-color: #faf1e3;
     padding: 30px;
     height: 100%; }
   body.main-in-numbers #centre {
     text-align: center;
-    box-shadow: 0 0 15px 5px #FFFFFF;
+    box-shadow: 0 0 15px 5px #FFFFFF, inset 0px 0px 30px #FFF;
     box-sizing: inherit;
-    padding: 20px; }
+    padding: 20px;
+    background-image: url("/images/sacura.jpg");
+    background-repeat: no-repeat;
+    background-position: 0% 45%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  body.main-in-numbers #first {
+    width: 70%; }
+    body.main-in-numbers #first #instruction {
+      text-align: center; }
   body.main-in-numbers #second {
     display: none; }
+    body.main-in-numbers #second #time-left {
+      font-size: 20px; }
     body.main-in-numbers #second #centralization {
       display: flex;
       justify-content: center; }
     body.main-in-numbers #second #game-board {
       margin-bottom: 20px;
-      border: 1px solid Black;
       display: flex;
       flex-direction: column;
       align-items: center;
       width: max-content;
       border-radius: 5px;
-      background-color: #FFF; }
+      background-color: transparent; }
       body.main-in-numbers #second #game-board .row {
         display: flex;
         flex-flow: row; }
@@ -255,7 +276,6 @@ body.main-in-numbers {
         height: 60px;
         width: 60px;
         font-size: 2rem;
-        border: 1px solid Black;
         margin: 3px;
         text-align: center;
         border-radius: 5px;
@@ -263,8 +283,10 @@ body.main-in-numbers {
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none; }
+        body.main-in-numbers #second #game-board .cell:hover {
+          box-shadow: inset 0px 0px 30px #FFF; }
       body.main-in-numbers #second #game-board .initial-color {
-        background-color: lightgoldenrodyellow; }
+        background-color: #faf1e3; }
 
 body.calender {
   font-size: 16px;
@@ -374,11 +396,13 @@ body.c13 {
   line-height: 1.2rem;
   background-image: url("http://www.parhlo.com/wp-content/uploads/2016/01/1.-Naran-Kaghan-Waterfalls.jpg"), radial-gradient(#78052d, #d7666b);
   background-repeat: inherit;
+  background-size: 100% 100%;
   background-blend-mode: color-burn;
   height: 750px;
   width: 100%;
   margin: 0;
-  box-shadow: inset 0px 21px 73px black; }
+  box-shadow: inset 0px 21px 73px black;
+  position: fixed; }
   body.c13 .red {
     color: black;
     font-size: 1.2rem; }
@@ -526,7 +550,9 @@ body.c13 {
 
 body.basics {
   background-color: burlywood;
-  font-size: 1rem; }
+  font-size: 1rem;
+  height: 100%;
+  display: flex; }
   body.basics #app {
     width: 100%; }
   body.basics .img-flex-container {
@@ -984,7 +1010,7 @@ body.my-cv {
   body.my-cv .cv_centralization {
     margin: 0 auto; }
   body.my-cv .cv_text-indent {
-    text-indent: 1rem; }
+    text-indent: 0.5rem; }
   body.my-cv .cv_headings {
     text-transform: uppercase;
     font-weight: bold;
@@ -1058,10 +1084,12 @@ body.my-cv .techniques .git {
   background-image: url("/images/svg/techniques/git.svg"); }
 
 body.my-cv .skills__list {
-  padding-left: 20px;
+  padding-left: 16px;
   list-style-type: disc; }
   body.my-cv .skills__list_item {
     text-indent: 1rem; }
+    body.my-cv .skills__list_item span {
+      left: -10px; }
 
 body.my-cv .languages_container {
   display: flex;
@@ -1129,11 +1157,14 @@ body.my-cv .contacts_text-bold {
 
 body.my-cv .projects {
   height: 250px; }
+  body.my-cv .projects__used-techniques {
+    margin-bottom: 4px;
+    text-align: center; }
   body.my-cv .projects__container {
     background-size: 100%;
     background-position: center center;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 95%;
     width: 100%;
     transition: background-image 0.5s ease-in; }
 
@@ -1174,12 +1205,6 @@ body.my-cv .prj-game_img {
 body.my-cv .prj-game:hover .prj-game_img {
   background-image: url("/images/projects-img/prj-game.jpg"); }
 
-body.my-cv .prj-calculator_img {
-  background-image: url("/images/projects-img/prj-calculator-grey.jpg"); }
-
-body.my-cv .prj-calculator:hover .prj-calculator_img {
-  background-image: url("/images/projects-img/prj-calculator.jpg"); }
-
 @media screen and (min-width: 54rem) and (max-width: 58rem) {
   body.my-cv {
     font-size: 1rem; } }
@@ -1201,12 +1226,12 @@ body.my-cv .prj-calculator:hover .prj-calculator_img {
     max-width: 300px;
     height: 300px; } }
 
-@media screen and (min-width: 48rem) and (max-width: 71.5rem) {
+@media screen and (min-width: 48rem) and (max-width: 75rem) {
   body.my-cv .my-image_container {
     max-width: 250px;
     height: 250px; } }
 
-@media screen and (min-width: 71.5rem) {
+@media screen and (min-width: 75rem) {
   body.my-cv .my-image_container {
     max-width: 300px;
     height: 300px; } }
@@ -1219,7 +1244,7 @@ body.my-cv .prj-calculator:hover .prj-calculator_img {
     padding: 18px; }
   body.my-cv .cv_cenralization {
     display: grid;
-    grid-template: repeat(25, 100px)/repeat(2, 2fr);
+    grid-template: repeat(23, 100px)/repeat(2, 2fr);
     width: 75%;
     margin: 20px auto; }
   body.my-cv .cv_headings {
@@ -1257,25 +1282,24 @@ body.my-cv .prj-calculator:hover .prj-calculator_img {
     grid-area: 15 / 1 / span 3 /span 1; }
   body.my-cv .prj-mobile {
     grid-area: 18 / 1 / span 3/span 1; }
-  body.my-cv .prj-calculator {
+  body.my-cv .prj-to-do-app {
     grid-area: 21 / 1 / span 3 /span 1; }
   body.my-cv .prj-form-c13 {
     grid-area: 14 / 2 / span 3 /span 1; }
   body.my-cv .prj-react-ingredients {
     grid-area: 17 / 2 / span 3 /span 1; }
   body.my-cv .prj-game {
-    grid-area: 20 / 2 / span 3 /span 1; }
-  body.my-cv .prj-to-do-app {
-    grid-area: 23 / 2 / span 3 /span 1; } }
+    grid-area: 20 / 2 / span 3 /span 1; } }
 
 @media screen and (min-width: 60rem) {
   body.my-cv .cv__parts {
     padding: 15px;
     line-height: 1.2rem; }
   body.my-cv .cv_cenralization {
-    width: 85%;
-    grid-template: repeat(17, 100px)/repeat(3, 3fr);
-    min-width: 230px; }
+    width: 82%;
+    grid-template: repeat(15, 100px)/repeat(3, 3fr);
+    min-width: 230px;
+    max-width: 1060px; }
   body.my-cv .desktop-side {
     background-color: #afe4e4; }
   body.my-cv .desktop-center {
@@ -1312,8 +1336,6 @@ body.my-cv .prj-calculator:hover .prj-calculator_img {
     grid-area: 9 / 2 / span 3 /span 1; }
   body.my-cv .prj-game {
     grid-area: 12 / 2 / span 3 /span 1; }
-  body.my-cv .prj-calculator {
-    grid-area: 15 / 2 / span 3 /span 1; }
   body.my-cv .prj-react-ingredients {
     grid-area: 10 / 3 / span 3 /span 1; }
   body.my-cv .prj-to-do-app {

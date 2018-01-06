@@ -4,11 +4,13 @@ body.c13 {
   line-height: 1.2rem;
   background-image: url("http://www.parhlo.com/wp-content/uploads/2016/01/1.-Naran-Kaghan-Waterfalls.jpg"), radial-gradient(#78052d, #d7666b) ;
   background-repeat: inherit;
+  background-size: 100% 100%;
   background-blend-mode: color-burn;
   height: 750px;
   width: 100%;
   margin: 0;
   box-shadow: inset 0px 21px 73px black;
+  position: fixed;
 
   @mixin flex($flex-direction, $justify-content, $align-items) {
     display: flex;

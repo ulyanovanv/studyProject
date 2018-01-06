@@ -5,23 +5,52 @@ body.main-in-numbers {
     margin: 16px 0;
   }
   .red {
-    background-color: darkred;
+    background-color: #ffbfdc;
+  }
+  .button {
+    background-image: linear-gradient( #FFF 0%, #fee7f1 100%);
+    height: 30px;
+    width: 89px;
+    border-radius: 10px;
+    border: 1px #fee7f1 solid;
+    outline: none;
+    &:hover {
+      box-shadow: 0 0 3px #FFF ;
+    }
   }
 
    #main-div {
-     background-color: lightgoldenrodyellow;
+//     background-color: lightgoldenrodyellow;
+     background-color: #faf1e3;
      padding: 30px;
      height: 100%;
    }
     #centre {
       text-align: center;
-      box-shadow: 0 0 15px 5px #FFFFFF;
+      box-shadow: 0 0 15px 5px #FFFFFF, inset 0px 0px 30px #FFF;
       box-sizing: inherit;
       padding: 20px;
+      background-image: url('/images/sacura.jpg');
+      background-repeat: no-repeat;
+      background-position: 0% 45%;
+      height: 450px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+   #first {
+     width: 70%;
+     #instruction {
+       text-align: center;
+     }
+   }
 
    #second{
      display: none;
+
+     #time-left {
+       font-size: 20px;
+     }
 
      #centralization {
        display: flex;
@@ -29,13 +58,12 @@ body.main-in-numbers {
      }
      #game-board {
        margin-bottom: 20px;
-       border: 1px solid Black;
        display: flex;
        flex-direction: column;
        align-items: center;
        width: max-content;
        border-radius: 5px;
-       background-color: #FFF;
+       background-color: transparent;
        .row {
          display: flex;
          flex-flow: row;
@@ -44,7 +72,6 @@ body.main-in-numbers {
            height: 60px;
            width: 60px;
            font-size: 2rem;
-           border: 1px solid Black;
            margin: 3px;
            text-align: center;
            border-radius: 5px;
@@ -52,12 +79,16 @@ body.main-in-numbers {
            -webkit-user-select: none;
            -moz-user-select: none;
            -ms-user-select: none;
+           &:hover {
+             box-shadow:  inset 0px 0px 30px #FFF;
+           }
 
          }
          .initial-color {
-           background-color: lightgoldenrodyellow;
+           background-color: #faf1e3;
          }
      }
+
 
    }
 
