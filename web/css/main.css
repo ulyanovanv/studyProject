@@ -995,6 +995,14 @@ body.oughts-crosses {
     padding: 8px;
     font-size: 0.95rem; }
 
+body.my-cv .education__description_timeline, body.my-cv .experience__description_timeline {
+  font-size: 0.8rem;
+  font-weight: bold; }
+
+body.my-cv .education__description_nomination, body.my-cv .experience__description_nomination {
+  font-size: 1.0rem;
+  font-weight: bold; }
+
 body.my-cv {
   background-color: #4d4141;
   font-family: 'Source Serif Pro', 'Crimson Text', 'Cormorant Garamond', serif;
@@ -1020,29 +1028,13 @@ body.my-cv {
 
 body.my-cv .general-info .my-image_container {
   text-align: center;
-  background-image: url("/images/cv-images/my-picture-grey.jpg");
   padding: 0;
   width: auto;
+  background-image: url("/images/cv-images/my-picture-grey.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   margin: 0 auto 20px auto;
   border-radius: 50%; }
-
-body.my-cv .education__description_timeline {
-  font-size: 0.8rem;
-  font-weight: bold; }
-
-body.my-cv .education__description_nomination {
-  font-size: 1.0rem;
-  font-weight: bold; }
-
-body.my-cv .experience__description_timeline {
-  font-size: 0.8rem;
-  font-weight: bold; }
-
-body.my-cv .experience__description_nomination {
-  font-size: 1.0rem;
-  font-weight: bold; }
 
 body.my-cv .techniques__svg {
   padding: 1px 1px 1px 16px;
@@ -1050,11 +1042,11 @@ body.my-cv .techniques__svg {
   background-repeat: no-repeat;
   background-position: left center; }
 
-body.my-cv .techniques .html5 {
+body.my-cv .techniques .html {
   background-image: url("/images/svg/techniques/html.svg"); }
 
 body.my-cv .techniques .css33 {
-  background-image: url("/images/svg/techniques/css.svg"); }
+  background-image: url("/images/svg/techniques/css33.svg"); }
 
 body.my-cv .techniques .sass {
   background-image: url("/images/svg/techniques/sass.svg"); }
@@ -1069,13 +1061,13 @@ body.my-cv .techniques .bootstrap3 {
   background-image: url("/images/svg/techniques/bootstrap3.svg"); }
 
 body.my-cv .techniques .jss {
-  background-image: url("/images/svg/techniques/js.svg"); }
+  background-image: url("/images/svg/techniques/jss.svg"); }
 
 body.my-cv .techniques .jquery {
   background-image: url("/images/svg/techniques/jquery.svg"); }
 
 body.my-cv .techniques .react {
-  background-image: url("/images/svg/techniques/reactjs.svg"); }
+  background-image: url("/images/svg/techniques/react.svg"); }
 
 body.my-cv .techniques .npm {
   background-image: url("/images/svg/techniques/npm.svg"); }
@@ -1199,8 +1191,7 @@ body.my-cv .prj-react-ingredients:hover .prj-react-ingredients_img {
   background-image: url("/images/projects-img/prj-react-ingredients.jpg"); }
 
 body.my-cv .prj-game_img {
-  background-image: url("/images/projects-img/prj-game-grey.jpg");
-  background-position: center top; }
+  background-image: url("/images/projects-img/prj-game-grey.jpg"); }
 
 body.my-cv .prj-game:hover .prj-game_img {
   background-image: url("/images/projects-img/prj-game.jpg"); }

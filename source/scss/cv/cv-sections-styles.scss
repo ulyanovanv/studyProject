@@ -1,18 +1,12 @@
 body.my-cv {
-  @mixin flex($flex-direction,$justify-content,$align-items) {
-    display: flex;
-    flex-direction: $flex-direction;
-    justify-content: $justify-content;
-    align-items: $align-items;
-  }
 
   .general-info {
     .my-image {
       &_container {
         text-align: center;
-        background-image: url('/images/cv-images/my-picture-grey.jpg');
         padding: 0;
         width: auto;
+        background-image: url('/images/cv-images/my-picture-grey.jpg');
         background-size: 100%;
         background-repeat: no-repeat;
         margin: 0 auto 20px auto;
@@ -23,24 +17,20 @@ body.my-cv {
   .education{
     &__description {
       &_timeline{
-        font-size: 0.8rem;
-        font-weight: bold;
+        @extend %timeline;
       }
       &_nomination {
-        font-size: 1.0rem;
-        font-weight: bold;
+        @extend %nomination;
       }
     }
   }
   .experience{
     &__description {
       &_timeline{
-        font-size: 0.8rem;
-        font-weight: bold;
+        @extend %timeline;
       }
       &_nomination {
-        font-size: 1.0rem;
-        font-weight: bold;
+        @extend %nomination;
       }
     }
   }
@@ -51,38 +41,11 @@ body.my-cv {
       background-repeat: no-repeat;
       background-position: left center;
     }
-    .html5 {
-      background-image: url('/images/svg/techniques/html.svg');
-    }
-    .css33 {
-      background-image: url('/images/svg/techniques/css.svg');
-    }
-    .sass {
-      background-image: url('/images/svg/techniques/sass.svg');
-    }
-    .layouts {
-      background-image: url("/images/svg/techniques/layouts.svg");
-    }
-    .svg {
-      background-image: url('/images/svg/techniques/svg.svg');
-    }
-    .bootstrap3 {
-      background-image: url('/images/svg/techniques/bootstrap3.svg');
-    }
-    .jss {
-      background-image: url('/images/svg/techniques/js.svg');
-    }
-    .jquery {
-      background-image: url('/images/svg/techniques/jquery.svg');
-    }
-    .react {
-      background-image: url('/images/svg/techniques/reactjs.svg');
-    }
-    .npm {
-      background-image: url('/images/svg/techniques/npm.svg');
-    }
-    .git {
-      background-image: url('/images/svg/techniques/git.svg');
+    $list-of-names : (html,css33,sass,layouts,svg,bootstrap3,jss,jquery,react,npm,git);
+    @each $name in $list-of-names {
+      .#{$name} {
+        background-image: url('/images/svg/techniques/#{$name}.svg');
+      }
     }
   }
   .skills {
@@ -184,61 +147,16 @@ body.my-cv {
     }
   }
 
-  .prj-calender {
-    &_img {
-      background-image: url('/images/projects-img/prj-calender-grey.jpg');
-    }
-    &:hover .prj-calender_img {
-      background-image: url('/images/projects-img/prj-calender.jpg');
-    }
-  }
-  .prj-form-c13 {
-    &_img {
-      background-image: url('/images/projects-img/prj-form-c13-grey.jpg');
-    }
-    &:hover .prj-form-c13_img {
-      background-image: url('/images/projects-img/prj-form-c13.jpg');
+  $prj-names : (prj-calender,prj-form-c13,prj-mobile,prj-to-do-app,prj-react-ingredients,prj-game);
+  @each $prj-name in $prj-names {
+    .#{$prj-name} {
+      &_img {
+        background-image: url('/images/projects-img/#{$prj-name}-grey.jpg');
+      }
+      &:hover .#{$prj-name}_img {
+        background-image: url('/images/projects-img/#{$prj-name}.jpg');
+      }
     }
   }
-  .prj-mobile {
-    &_img {
-      background-image: url('/images/projects-img/prj-mobile-grey.jpg');
-    }
-    &:hover .prj-mobile_img {
-      background-image: url('/images/projects-img/prj-mobile.jpg');
-    }
-  }
-  .prj-to-do-app {
-    &_img {
-      background-image: url('/images/projects-img/prj-to-do-app-grey.jpg');
-    }
-    &:hover .prj-to-do-app_img {
-      background-image: url('/images/projects-img/prj-to-do-app.jpg');
-    }
-  }
-  .prj-react-ingredients {
-    &_img {
-      background-image: url('/images/projects-img/prj-react-ingredients-grey.jpg');
-    }
-    &:hover .prj-react-ingredients_img {
-      background-image: url('/images/projects-img/prj-react-ingredients.jpg');
-    }
-  }
-  .prj-game {
-    &_img {
-      background-image: url('/images/projects-img/prj-game-grey.jpg');
-      background-position: center top;
-    }
-    &:hover .prj-game_img {
-      background-image: url('/images/projects-img/prj-game.jpg');
-    }
-  }
-//  .prj-calculator {
-//    &_img {
-//      background-image: url('/images/projects-img/prj-calculator-grey.jpg');
-//    }
-//    &:hover .prj-calculator_img {
-//      background-image: url('/images/projects-img/prj-calculator.jpg');
-//    }
-//  }
+
 }

@@ -1,11 +1,6 @@
-$black : #000;
-$headings-color : #4d4141;
-$orange : #a84625;
-$cv-background: #4d4141;
-$aside-columns-background : #afe4e4;
-$text-color: #4d4141;
-$center-columns-background: #f7e7ce;
-$block-bottom-line: #4d4141;
+
+
+@import "cv-var&mixin";
 
 body.my-cv{
 
