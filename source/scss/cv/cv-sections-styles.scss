@@ -152,9 +152,11 @@ body.my-cv {
     .#{$prj-name} {
       &_img {
         background-image: url('/images/projects-img/#{$prj-name}-grey.jpg');
+        background: url('/images/projects-img/#{$prj-name}.jpg')-9999px -9999px;
       }
       &:hover .#{$prj-name}_img {
         background-image: url('/images/projects-img/#{$prj-name}.jpg');
+        background: url('/images/projects-img/#{$prj-name}-grey.jpg')-9999px -9999px;
       }
     }
   }

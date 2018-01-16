@@ -400,7 +400,6 @@ body.c13 {
   background-blend-mode: color-burn;
   height: 750px;
   width: 100%;
-  margin: 0;
   box-shadow: inset 0px 21px 73px black;
   position: fixed; }
   body.c13 .red {
@@ -1161,40 +1160,52 @@ body.my-cv .projects {
     transition: background-image 0.5s ease-in; }
 
 body.my-cv .prj-calender_img {
-  background-image: url("/images/projects-img/prj-calender-grey.jpg"); }
+  background-image: url("/images/projects-img/prj-calender-grey.jpg");
+  background: url("/images/projects-img/prj-calender.jpg")-9999px-9999px; }
 
 body.my-cv .prj-calender:hover .prj-calender_img {
-  background-image: url("/images/projects-img/prj-calender.jpg"); }
+  background-image: url("/images/projects-img/prj-calender.jpg");
+  background: url("/images/projects-img/prj-calender-grey.jpg")-9999px-9999px; }
 
 body.my-cv .prj-form-c13_img {
-  background-image: url("/images/projects-img/prj-form-c13-grey.jpg"); }
+  background-image: url("/images/projects-img/prj-form-c13-grey.jpg");
+  background: url("/images/projects-img/prj-form-c13.jpg")-9999px-9999px; }
 
 body.my-cv .prj-form-c13:hover .prj-form-c13_img {
-  background-image: url("/images/projects-img/prj-form-c13.jpg"); }
+  background-image: url("/images/projects-img/prj-form-c13.jpg");
+  background: url("/images/projects-img/prj-form-c13-grey.jpg")-9999px-9999px; }
 
 body.my-cv .prj-mobile_img {
-  background-image: url("/images/projects-img/prj-mobile-grey.jpg"); }
+  background-image: url("/images/projects-img/prj-mobile-grey.jpg");
+  background: url("/images/projects-img/prj-mobile.jpg")-9999px-9999px; }
 
 body.my-cv .prj-mobile:hover .prj-mobile_img {
-  background-image: url("/images/projects-img/prj-mobile.jpg"); }
+  background-image: url("/images/projects-img/prj-mobile.jpg");
+  background: url("/images/projects-img/prj-mobile-grey.jpg")-9999px-9999px; }
 
 body.my-cv .prj-to-do-app_img {
-  background-image: url("/images/projects-img/prj-to-do-app-grey.jpg"); }
+  background-image: url("/images/projects-img/prj-to-do-app-grey.jpg");
+  background: url("/images/projects-img/prj-to-do-app.jpg")-9999px-9999px; }
 
 body.my-cv .prj-to-do-app:hover .prj-to-do-app_img {
-  background-image: url("/images/projects-img/prj-to-do-app.jpg"); }
+  background-image: url("/images/projects-img/prj-to-do-app.jpg");
+  background: url("/images/projects-img/prj-to-do-app-grey.jpg")-9999px-9999px; }
 
 body.my-cv .prj-react-ingredients_img {
-  background-image: url("/images/projects-img/prj-react-ingredients-grey.jpg"); }
+  background-image: url("/images/projects-img/prj-react-ingredients-grey.jpg");
+  background: url("/images/projects-img/prj-react-ingredients.jpg")-9999px-9999px; }
 
 body.my-cv .prj-react-ingredients:hover .prj-react-ingredients_img {
-  background-image: url("/images/projects-img/prj-react-ingredients.jpg"); }
+  background-image: url("/images/projects-img/prj-react-ingredients.jpg");
+  background: url("/images/projects-img/prj-react-ingredients-grey.jpg")-9999px-9999px; }
 
 body.my-cv .prj-game_img {
-  background-image: url("/images/projects-img/prj-game-grey.jpg"); }
+  background-image: url("/images/projects-img/prj-game-grey.jpg");
+  background: url("/images/projects-img/prj-game.jpg")-9999px-9999px; }
 
 body.my-cv .prj-game:hover .prj-game_img {
-  background-image: url("/images/projects-img/prj-game.jpg"); }
+  background-image: url("/images/projects-img/prj-game.jpg");
+  background: url("/images/projects-img/prj-game-grey.jpg")-9999px-9999px; }
 
 @media screen and (min-width: 54rem) and (max-width: 58rem) {
   body.my-cv {
