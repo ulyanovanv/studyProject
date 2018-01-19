@@ -1,0 +1,35 @@
+
+.page-header{
+  &__upper-menu{
+
+    background-color: #F5F5F5;
+
+    @include flexbox(row,space-between);
+    font-size: 0.75rem;
+
+    &_block {
+      margin: 10px;
+      //&:first-child {
+      //  margin-left: 50px;
+      //}
+      &:nth-child(2) {
+        margin-left: auto;
+      }
+      &:last-child {
+        padding-right: 30px;
+      }
+      &:first-child ~ * {
+        text-transform: uppercase;
+      }
+      &_border{
+        border-left: 1px solid #000;
+        padding-left: 20px;
+      }
+    }
+
+  }
+  &__lower-menu{
+    background-color: #FAFAFA;
+  }
+
+}

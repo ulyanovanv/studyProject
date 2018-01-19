@@ -176,11 +176,11 @@ export function sendForm(event,valid, elements, form){
         }
         //   Jquery ajax method
 
-//        var content = $(form).serialize();
+//        var first-page-content = $(form).serialize();
 //        $.ajax({
 //            type:"POST",
 //            url:"/user",
-//            data: content,
+//            data: first-page-content,
 //            timeout: 2000,
 //            beforeSend: function(){},
 //            success: function(){
@@ -205,16 +205,16 @@ export function sendForm(event,valid, elements, form){
 //            pure Java Script ajax method
 
 //        var xhr = new XMLHttpRequest();
-//        var content = "";
-//        content += "name=" + elements.name.value;
+//        var first-page-content = "";
+//        first-page-content += "name=" + elements.name.value;
 //        for (var i=0; i<7; i++){
 //            var name = elements[i].name;
 //            var value = elements[i].value;
-//            content += "&" + name + "=" + value;
+//            first-page-content += "&" + name + "=" + value;
 //        }
 //        xhr.open("POST","/user", true);
 //        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-//        xhr.send(content);
+//        xhr.send(first-page-content);
 
     }catch(error){
         console.log(error);

@@ -150,13 +150,12 @@ body.my-cv {
   $prj-names : (prj-calender,prj-form-c13,prj-mobile,prj-to-do-app,prj-react-ingredients,prj-game);
   @each $prj-name in $prj-names {
     .#{$prj-name} {
+      background: url('/images/projects-img/#{$prj-name}.jpg') no-repeat -9999px -9999px ;
       &_img {
         background-image: url('/images/projects-img/#{$prj-name}-grey.jpg');
-        background: url('/images/projects-img/#{$prj-name}.jpg')-9999px -9999px;
       }
       &:hover .#{$prj-name}_img {
-        background-image: url('/images/projects-img/#{$prj-name}.jpg');
-        background: url('/images/projects-img/#{$prj-name}-grey.jpg')-9999px -9999px;
+        background-image: url('/images/projects-img/#{$prj-name}.jpg') ;
       }
     }
   }

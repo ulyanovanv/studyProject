@@ -105,7 +105,7 @@ function randomListElementClass(el) {
 
 //$(function(){
 //    $.ajax('/to-do-app-load', {}).done(function(oooop){
-//        //var content = "";
+//        //var first-page-content = "";
 //        var obj = JSON.parse(oooop).data;
 //        var container = $("#spisok ul");
 //        container.html('');

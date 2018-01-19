@@ -48,3 +48,6 @@ if (body.hasClass("calculator")){
 if (body.hasClass("oughts-crosses")){
     require("./studying-projects/oughts-and-crosses/oughts-and-crosses.js");
 }
+if (body.hasClass("shop")){
+    require("./studying-projects/online-shop/general.js");
+}

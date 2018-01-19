@@ -77,6 +77,10 @@ $app->get('/oughts-and-crosses', function () use ($app) {
     return $app['twig']->render('game-oc/oughts-and-crosses.html.twig', array());
 });
 
+$app->get('/online-shop', function () use ($app) {
+    return $app['twig']->render('online-shop/shop.html.twig', array());
+});
+
 
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
