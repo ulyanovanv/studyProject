@@ -1,0 +1,125 @@
+.first-page-slider {
+  text-transform: uppercase;
+
+  &__image-container {
+    position: absolute;
+    img {
+      width: 100%;
+      max-width: 1450px;
+    }
+  }
+  &_central-message {
+    top: 9vw;
+    left: 1vw;
+    width: 15vw;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    height: 35vw;
+    @include flexbox(column, space-between);
+  }
+
+  &__discounts {
+    border: 2px solid #FFF;
+    border-radius: 2px;
+    height: 15vw;
+    width: 15vw;
+
+
+    @include flexbox(row, center, center);
+
+    &_container {
+
+      @include flexbox(column, space-around);
+      border: 1px solid #FFF;
+      box-sizing: padding-box;
+      height: 14vw;
+      width: 14vw;
+      font-family: Tahoma, Geneva, sans-serif;
+      .discounts-season {
+        margin-top: 1vw;
+        font-size: 1.2vw;
+        color: #FFF;
+        letter-spacing: 0.07rem
+      }
+      .discounts-sale {
+        font-size: 4vw;
+
+      }
+      .discounts-third-line {
+        @include flexbox(row, space-evenly);
+        p {
+          color: #FFF;
+          font-size: 1.2vw;
+        }
+
+        //&::before {
+        //  height: 5%;
+        //  width: 25%;
+        //  border: 1px solid #FFF;
+        //  content: " ";
+        //}
+        &_bottom-line {
+          height: 1.2vw;
+          width: 3vw;
+          border-bottom: 1px solid #FFF;
+          margin: 0 6px;
+        }
+        &_smaller-container {
+          height: 0.7vw;
+          width: 2vw;
+          border-bottom: 1px solid #FFF;
+
+        }
+        &_left  {
+
+          //height: 0.7vw;
+          //width: 2vw;
+          //border-bottom: 1px solid #FFF;
+          @extend .discounts-third-line_smaller-container;
+          margin-left: 1vw;
+        }
+
+      }
+      .discounts-number {
+        margin-bottom: 1vw;
+        font-size: 2vw;
+      }
+    }
+
+  }
+  &__shop-button{
+    position: relative;
+    background-color: #f09d66;
+    color: #FFF;
+    height: 4vw;
+    width: 15vw;
+    margin-bottom: 6vw;
+    p {
+      line-height: 4vw;
+      font-size: 2vw;
+    }
+
+
+
+  }
+  &__slider-changer{
+    @include flexbox(row, space-evenly);
+    width: 100px;
+
+    &_romb{
+      height: 10px;
+      width: 10px;
+      transform: rotate(45deg);
+      background-color: #949ca3;
+
+
+    }
+    &_black{
+      background-color: #000;
+    }
+  }
+
+
+
+}

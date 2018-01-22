@@ -999,26 +999,171 @@ body.shop {
   width: 100%;
   font-size: 1rem;
   font-family: "Bitter", serif; }
+  body.shop .centrelaze {
+    width: 100%; }
+  body.shop a {
+    text-decoration: none; }
   body.shop .page-header__upper-menu {
     background-color: #F5F5F5;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.75rem; }
-    body.shop .page-header__upper-menu_block {
-      margin: 10px; }
-      body.shop .page-header__upper-menu_block:nth-child(2) {
-        margin-left: auto; }
-      body.shop .page-header__upper-menu_block:last-child {
-        padding-right: 30px; }
-      body.shop .page-header__upper-menu_block:first-child ~ * {
-        text-transform: uppercase; }
-      body.shop .page-header__upper-menu_block_border {
-        border-left: 1px solid #000;
-        padding-left: 20px; }
+    font-size: 0.75rem;
+    padding: 10px 50px; }
+    body.shop .page-header__upper-menu_block:nth-child(2) {
+      margin-left: auto;
+      padding-right: 10px; }
+    body.shop .page-header__upper-menu_block:first-child ~ * {
+      text-transform: uppercase; }
+    body.shop .page-header__upper-menu_block_border {
+      border-left: 1px solid #000;
+      padding: 0 10px; }
+    body.shop .page-header__upper-menu_block_last-padding {
+      padding: 0 0 0 10px; }
   body.shop .page-header__lower-menu {
-    background-color: #FAFAFA; }
+    padding: 0 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+    body.shop .page-header__lower-menu .categories {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'IM Fell Double Pica', serif; }
+      body.shop .page-header__lower-menu .categories__name {
+        padding-right: 8px;
+        font-size: 1.2rem; }
+    body.shop .page-header__lower-menu .page-name {
+      font-family: 'IM Fell Double Pica', serif;
+      font-size: 3rem;
+      padding: 5px 5px 5px 5vw; }
+    body.shop .page-header__lower-menu .right-side {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center; }
+      body.shop .page-header__lower-menu .right-side__social-nets {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; }
+        body.shop .page-header__lower-menu .right-side__social-nets_type {
+          padding: 0 2px;
+          background-size: 36px 36px;
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 36px;
+          width: 36px; }
+        body.shop .page-header__lower-menu .right-side__social-nets .facebook {
+          background-image: url("/images/online-shop/icons/facebook.png"); }
+        body.shop .page-header__lower-menu .right-side__social-nets .twitter {
+          background-image: url("/images/online-shop/icons/twitter.png"); }
+        body.shop .page-header__lower-menu .right-side__social-nets .pinterest {
+          background-image: url("/images/online-shop/icons/pinterest.png"); }
+        body.shop .page-header__lower-menu .right-side__social-nets .instagram {
+          background-image: url("/images/online-shop/icons/instagram.png"); }
+      body.shop .page-header__lower-menu .right-side__select-collection select {
+        background-color: black;
+        color: white;
+        height: 30px;
+        width: 100px;
+        text-align: center;
+        padding-left: 5px;
+        outline: none;
+        margin-left: 10px; }
+  body.shop .first-page-slider {
+    text-transform: uppercase; }
+    body.shop .first-page-slider__image-container {
+      position: absolute; }
+      body.shop .first-page-slider__image-container img {
+        width: 100%;
+        max-width: 1450px; }
+    body.shop .first-page-slider_central-message {
+      top: 9vw;
+      left: 1vw;
+      width: 15vw;
+      position: relative;
+      z-index: 1;
+      margin: 0 auto;
+      height: 35vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; }
+    body.shop .first-page-slider__discounts {
+      border: 2px solid #FFF;
+      border-radius: 2px;
+      height: 15vw;
+      width: 15vw;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      body.shop .first-page-slider__discounts_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid #FFF;
+        box-sizing: padding-box;
+        height: 14vw;
+        width: 14vw;
+        font-family: Tahoma, Geneva, sans-serif; }
+        body.shop .first-page-slider__discounts_container .discounts-season {
+          margin-top: 1vw;
+          font-size: 1.2vw;
+          color: #FFF;
+          letter-spacing: 0.07rem; }
+        body.shop .first-page-slider__discounts_container .discounts-sale {
+          font-size: 4vw; }
+        body.shop .first-page-slider__discounts_container .discounts-third-line {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center; }
+          body.shop .first-page-slider__discounts_container .discounts-third-line p {
+            color: #FFF;
+            font-size: 1.2vw; }
+          body.shop .first-page-slider__discounts_container .discounts-third-line_bottom-line {
+            height: 1.2vw;
+            width: 3vw;
+            border-bottom: 1px solid #FFF;
+            margin: 0 6px; }
+          body.shop .first-page-slider__discounts_container .discounts-third-line_smaller-container, body.shop .first-page-slider__discounts_container .discounts-third-line_left {
+            height: 0.7vw;
+            width: 2vw;
+            border-bottom: 1px solid #FFF; }
+          body.shop .first-page-slider__discounts_container .discounts-third-line_left {
+            margin-left: 1vw; }
+        body.shop .first-page-slider__discounts_container .discounts-number {
+          margin-bottom: 1vw;
+          font-size: 2vw; }
+    body.shop .first-page-slider__shop-button {
+      position: relative;
+      background-color: #f09d66;
+      color: #FFF;
+      height: 4vw;
+      width: 15vw;
+      margin-bottom: 6vw; }
+      body.shop .first-page-slider__shop-button p {
+        line-height: 4vw;
+        font-size: 2vw; }
+    body.shop .first-page-slider__slider-changer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100px; }
+      body.shop .first-page-slider__slider-changer_romb {
+        height: 10px;
+        width: 10px;
+        transform: rotate(45deg);
+        background-color: #949ca3; }
+      body.shop .first-page-slider__slider-changer_black {
+        background-color: #000; }
 
 body.my-cv .education__description_timeline, body.my-cv .experience__description_timeline {
   font-size: 0.8rem;

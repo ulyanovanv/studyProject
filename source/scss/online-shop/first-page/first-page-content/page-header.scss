@@ -1,35 +1,101 @@
 
 .page-header{
+
+
   &__upper-menu{
-
     background-color: #F5F5F5;
-
     @include flexbox(row,space-between);
     font-size: 0.75rem;
-
+    padding: 10px 50px;
     &_block {
-      margin: 10px;
-      //&:first-child {
-      //  margin-left: 50px;
-      //}
+      //margin: 10px;
+
       &:nth-child(2) {
         margin-left: auto;
+        padding-right: 10px;
       }
-      &:last-child {
-        padding-right: 30px;
-      }
+
       &:first-child ~ * {
         text-transform: uppercase;
       }
       &_border{
         border-left: 1px solid #000;
-        padding-left: 20px;
+        //padding-left: 20px;
+        padding: 0 10px;
+
+
       }
+      &_last-padding{
+        padding: 0 0 0 10px;
+      }
+      //&:last-child{
+      //  &:last-child {
+      //    padding: 0 0 0 10px;
+      //  }
+      //}
+
+    
     }
 
   }
   &__lower-menu{
-    background-color: #FAFAFA;
+    padding: 0 50px;
+    //background-color: #FAFAFA;
+    @include flexbox(row,space-between);
+    &_block {
+
+    }
+    .categories {
+      @include flexbox(row,space-between);
+      font-family: 'IM Fell Double Pica', serif;
+
+      &__name {
+        padding-right: 8px;
+        font-size: 1.2rem;
+      }
+    }
+    .page-name {
+      font-family: 'IM Fell Double Pica', serif;
+      font-size: 3rem;
+      padding: 5px 5px 5px 5vw;
+      //padding-left: 4vw;
+    }
+    .right-side {
+      @include flexbox(row,space-between);
+
+      &__social-nets {
+        @include flexbox(row,space-between);
+
+        &_type {
+          padding: 0 2px;
+          background-size: 36px 36px;
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 36px;
+          width: 36px;
+        }
+        $social-icons: facebook, twitter, pinterest, instagram;
+        @each $icon in $social-icons {
+          .#{$icon}{
+            background-image: url("/images/online-shop/icons/#{$icon}.png");
+          }
+        }
+      }
+      &__select-collection{
+        select {
+          background-color: black;
+          color: white;
+          height: 30px;
+          width: 100px;
+          text-align: center;
+          padding-left: 5px;
+          outline: none;
+          margin-left: 10px;
+        }
+
+      }
+    }
   }
 
 }
+

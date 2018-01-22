@@ -22162,9 +22162,9 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _firstPage = __webpack_require__(43);
 
-var _productPage = __webpack_require__(45);
+var _productPage = __webpack_require__(46);
 
-var _basketPage = __webpack_require__(46);
+var _basketPage = __webpack_require__(47);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22233,7 +22233,7 @@ _reactDom2.default.render(_react2.default.createElement(Parent, null), main);
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.FirstPage = undefined;
 
@@ -22245,6 +22245,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _pageHeader = __webpack_require__(44);
 
+var _slider = __webpack_require__(45);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22254,22 +22256,27 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var FirstPage = exports.FirstPage = function (_React$Component) {
-    _inherits(FirstPage, _React$Component);
+  _inherits(FirstPage, _React$Component);
 
-    function FirstPage() {
-        _classCallCheck(this, FirstPage);
+  function FirstPage() {
+    _classCallCheck(this, FirstPage);
 
-        return _possibleConstructorReturn(this, (FirstPage.__proto__ || Object.getPrototypeOf(FirstPage)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (FirstPage.__proto__ || Object.getPrototypeOf(FirstPage)).apply(this, arguments));
+  }
+
+  _createClass(FirstPage, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "centrelaze" },
+        _react2.default.createElement(_pageHeader.PageHeader, null),
+        _react2.default.createElement(_slider.Slider, null)
+      );
     }
+  }]);
 
-    _createClass(FirstPage, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(_pageHeader.PageHeader, null);
-        }
-    }]);
-
-    return FirstPage;
+  return FirstPage;
 }(_react2.default.Component);
 
 /***/ }),
@@ -22329,8 +22336,8 @@ var PageHeader = exports.PageHeader = function (_React$Component) {
             "div",
             { className: "page-header__upper-menu_block " },
             _react2.default.createElement(
-              "p",
-              null,
+              "a",
+              { href: "/online-shop" },
               "welcome msg!"
             )
           ),
@@ -22338,8 +22345,8 @@ var PageHeader = exports.PageHeader = function (_React$Component) {
             "div",
             { className: "page-header__upper-menu_block " },
             _react2.default.createElement(
-              "p",
-              { className: "page-header__upper-menu_block_border" },
+              "a",
+              { className: "page-header__upper-menu_block_border", href: "/online-shop" },
               " my account"
             )
           ),
@@ -22347,8 +22354,8 @@ var PageHeader = exports.PageHeader = function (_React$Component) {
             "div",
             { className: "page-header__upper-menu_block " },
             _react2.default.createElement(
-              "p",
-              { className: "page-header__upper-menu_block_border" },
+              "a",
+              { className: "page-header__upper-menu_block_border", href: "/online-shop" },
               "my whistlelist"
             )
           ),
@@ -22356,8 +22363,8 @@ var PageHeader = exports.PageHeader = function (_React$Component) {
             "div",
             { className: "page-header__upper-menu_block " },
             _react2.default.createElement(
-              "p",
-              { className: "page-header__upper-menu_block_border" },
+              "a",
+              { className: "page-header__upper-menu_block_border page-header__upper-menu_block_last-padding", href: "/online-shop" },
               "login"
             )
           )
@@ -22367,18 +22374,87 @@ var PageHeader = exports.PageHeader = function (_React$Component) {
           { className: "page-header__lower-menu" },
           _react2.default.createElement(
             "div",
-            null,
-            "f"
+            { className: "page-header__lower-menu_block categories" },
+            _react2.default.createElement(
+              "div",
+              { className: "categories__name" },
+              _react2.default.createElement(
+                "a",
+                { href: "/online-shop" },
+                "Home"
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "categories__name" },
+              _react2.default.createElement(
+                "a",
+                { href: "/online-shop" },
+                "Galleries"
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "categories__name" },
+              _react2.default.createElement(
+                "a",
+                { href: "/online-shop" },
+                "Categories"
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "categories__name" },
+              _react2.default.createElement(
+                "a",
+                { href: "/online-shop" },
+                "Pages"
+              )
+            )
           ),
           _react2.default.createElement(
             "div",
-            null,
-            "g"
+            { className: "page-header__lower-menu_block page-name" },
+            _react2.default.createElement(
+              "p",
+              null,
+              "Spophia"
+            )
           ),
           _react2.default.createElement(
             "div",
-            null,
-            "h"
+            { className: "page-header__lower-menu_block right-side" },
+            _react2.default.createElement(
+              "div",
+              { className: "right-side__social-nets" },
+              _react2.default.createElement("a", { className: "right-side__social-nets_type facebook", href: "/online-shop" }),
+              _react2.default.createElement("a", { className: "right-side__social-nets_type twitter", href: "/online-shop" }),
+              _react2.default.createElement("a", { className: "right-side__social-nets_type pinterest", href: "/online-shop" }),
+              _react2.default.createElement("a", { className: "right-side__social-nets_type instagram", href: "/online-shop" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "right-side__select-collection" },
+              _react2.default.createElement(
+                "select",
+                null,
+                _react2.default.createElement(
+                  "option",
+                  null,
+                  "Bikini"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  null,
+                  "Underwear"
+                ),
+                _react2.default.createElement(
+                  "option",
+                  null,
+                  "Sexy socs"
+                )
+              )
+            )
           )
         )
       );
@@ -22390,6 +22466,122 @@ var PageHeader = exports.PageHeader = function (_React$Component) {
 
 /***/ }),
 /* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Slider = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Slider = exports.Slider = function (_React$Component) {
+  _inherits(Slider, _React$Component);
+
+  function Slider() {
+    _classCallCheck(this, Slider);
+
+    return _possibleConstructorReturn(this, (Slider.__proto__ || Object.getPrototypeOf(Slider)).apply(this, arguments));
+  }
+
+  _createClass(Slider, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "section",
+        { className: "first-page-slider" },
+        _react2.default.createElement(
+          "div",
+          { className: "first-page-slider__image-container" },
+          _react2.default.createElement("img", { src: "/images/online-shop/center/first-center.jpg" })
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "first-page-slider_central-message" },
+          _react2.default.createElement(
+            "div",
+            { className: "first-page-slider__discounts" },
+            _react2.default.createElement(
+              "div",
+              { className: "first-page-slider__discounts_container" },
+              _react2.default.createElement(
+                "div",
+                { className: "discounts-season" },
+                "Mid-season"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "discounts-sale" },
+                "Sale"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "discounts-third-line" },
+                _react2.default.createElement(
+                  "div",
+                  { className: "discounts-third-line_bottom-line" },
+                  _react2.default.createElement("div", { className: "discounts-third-line_left" })
+                ),
+                _react2.default.createElement(
+                  "p",
+                  null,
+                  "Up to"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "discounts-third-line_bottom-line" },
+                  _react2.default.createElement("div", { className: "discounts-third-line_smaller-container" })
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "discounts-number" },
+                " 50% off"
+              )
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "first-page-slider__shop-button" },
+            _react2.default.createElement(
+              "p",
+              null,
+              "Shop now"
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "first-page-slider__slider-changer" },
+            _react2.default.createElement("div", { className: "first-page-slider__slider-changer_romb first-page-slider__slider-changer_black" }),
+            _react2.default.createElement("div", { className: "first-page-slider__slider-changer_romb" }),
+            _react2.default.createElement("div", { className: "first-page-slider__slider-changer_romb" }),
+            _react2.default.createElement("div", { className: "first-page-slider__slider-changer_romb" })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Slider;
+}(_react2.default.Component);
+
+/***/ }),
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22438,7 +22630,7 @@ var ProductPage = exports.ProductPage = function (_React$Component) {
 }(_react2.default.Component);
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
