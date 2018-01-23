@@ -997,107 +997,118 @@ body.oughts-crosses {
 body.shop {
   height: 100%;
   width: 100%;
+  min-width: 800px;
   font-size: 1rem;
-  font-family: "Bitter", serif; }
+  color: #000;
+  font-family: Tahoma, Geneva, sans-serif; }
+  body.shop .first-page-support__services_triangle-beige-left, body.shop .first-page-support__services_triangle-beige-right, body.shop .first-page-support__services_triangle-white-left, body.shop .first-page-support__services_triangle-white-right {
+    width: 0;
+    height: 0;
+    border-style: solid; }
   body.shop .centrelaze {
     width: 100%; }
   body.shop a {
     text-decoration: none; }
-  body.shop .page-header__upper-menu {
-    background-color: #F5F5F5;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.75rem;
-    padding: 10px 50px; }
-    body.shop .page-header__upper-menu_block:nth-child(2) {
-      margin-left: auto;
-      padding-right: 10px; }
-    body.shop .page-header__upper-menu_block:first-child ~ * {
-      text-transform: uppercase; }
-    body.shop .page-header__upper-menu_block_border {
-      border-left: 1px solid #000;
-      padding: 0 10px; }
-    body.shop .page-header__upper-menu_block_last-padding {
-      padding: 0 0 0 10px; }
-  body.shop .page-header__lower-menu {
-    padding: 0 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center; }
-    body.shop .page-header__lower-menu .categories {
+  body.shop .page-header {
+    font-family: "Bitter", serif; }
+    body.shop .page-header__upper-menu {
+      background-color: #F5F5F5;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      font-family: 'IM Fell Double Pica', serif; }
-      body.shop .page-header__lower-menu .categories__name {
-        padding-right: 8px;
-        font-size: 1.2rem; }
-    body.shop .page-header__lower-menu .page-name {
-      font-family: 'IM Fell Double Pica', serif;
-      font-size: 3rem;
-      padding: 5px 5px 5px 5vw; }
-    body.shop .page-header__lower-menu .right-side {
+      font-size: 0.75rem;
+      padding: 10px 50px; }
+      body.shop .page-header__upper-menu_block:nth-child(2) {
+        margin-left: auto;
+        padding-right: 10px; }
+      body.shop .page-header__upper-menu_block:first-child ~ * {
+        text-transform: uppercase; }
+      body.shop .page-header__upper-menu_block_border {
+        border-left: 1px solid #000;
+        padding: 0 10px; }
+      body.shop .page-header__upper-menu_block_last-padding {
+        padding: 0 0 0 10px; }
+    body.shop .page-header__lower-menu {
+      padding: 0 50px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center; }
-      body.shop .page-header__lower-menu .right-side__social-nets {
+      body.shop .page-header__lower-menu .categories {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "IM Fell Double Pica", serif; }
+        body.shop .page-header__lower-menu .categories__name {
+          padding-right: 8px;
+          font-size: 1.2rem; }
+      body.shop .page-header__lower-menu .page-name {
+        font-family: "IM Fell Double Pica", serif;
+        font-size: 3rem;
+        padding: 5px 5px 5px 5vw; }
+      body.shop .page-header__lower-menu .right-side {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center; }
-        body.shop .page-header__lower-menu .right-side__social-nets_type {
-          padding: 0 2px;
-          background-size: 36px 36px;
-          background-position: center;
-          background-repeat: no-repeat;
-          height: 36px;
-          width: 36px; }
-        body.shop .page-header__lower-menu .right-side__social-nets .facebook {
-          background-image: url("/images/online-shop/icons/facebook.png"); }
-        body.shop .page-header__lower-menu .right-side__social-nets .twitter {
-          background-image: url("/images/online-shop/icons/twitter.png"); }
-        body.shop .page-header__lower-menu .right-side__social-nets .pinterest {
-          background-image: url("/images/online-shop/icons/pinterest.png"); }
-        body.shop .page-header__lower-menu .right-side__social-nets .instagram {
-          background-image: url("/images/online-shop/icons/instagram.png"); }
-      body.shop .page-header__lower-menu .right-side__select-collection select {
-        background-color: black;
-        color: white;
-        height: 30px;
-        width: 100px;
-        text-align: center;
-        padding-left: 5px;
-        outline: none;
-        margin-left: 10px; }
+        body.shop .page-header__lower-menu .right-side__social-nets {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center; }
+          body.shop .page-header__lower-menu .right-side__social-nets_type {
+            padding: 0 2px;
+            background-size: 36px 36px;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 36px;
+            width: 36px; }
+          body.shop .page-header__lower-menu .right-side__social-nets .facebook {
+            background-image: url("/images/online-shop/icons/facebook.png"); }
+          body.shop .page-header__lower-menu .right-side__social-nets .twitter {
+            background-image: url("/images/online-shop/icons/twitter.png"); }
+          body.shop .page-header__lower-menu .right-side__social-nets .pinterest {
+            background-image: url("/images/online-shop/icons/pinterest.png"); }
+          body.shop .page-header__lower-menu .right-side__social-nets .instagram {
+            background-image: url("/images/online-shop/icons/instagram.png"); }
+        body.shop .page-header__lower-menu .right-side__select-collection select {
+          background-color: #000;
+          color: #FFF;
+          height: 30px;
+          width: 100px;
+          text-align: center;
+          padding-left: 5px;
+          outline: none;
+          margin-left: 10px; }
   body.shop .first-page-slider {
+    padding-bottom: 2vw;
     text-transform: uppercase; }
     body.shop .first-page-slider__image-container {
       position: absolute; }
       body.shop .first-page-slider__image-container img {
         width: 100%;
-        max-width: 1450px; }
+        max-width: 1440px; }
     body.shop .first-page-slider_central-message {
-      top: 9vw;
+      height: 46vw;
       left: 1vw;
       width: 15vw;
       position: relative;
       z-index: 1;
       margin: 0 auto;
-      height: 35vw;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center; }
     body.shop .first-page-slider__discounts {
       border: 2px solid #FFF;
       border-radius: 2px;
       height: 15vw;
       width: 15vw;
+      max-width: 13rem;
+      max-height: 13rem;
+      margin-top: 10vw;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -1111,7 +1122,8 @@ body.shop {
         box-sizing: padding-box;
         height: 14vw;
         width: 14vw;
-        font-family: Tahoma, Geneva, sans-serif; }
+        max-width: 12rem;
+        max-height: 12rem; }
         body.shop .first-page-slider__discounts_container .discounts-season {
           margin-top: 1vw;
           font-size: 1.2vw;
@@ -1147,10 +1159,12 @@ body.shop {
       color: #FFF;
       height: 4vw;
       width: 15vw;
+      max-width: 13rem;
       margin-bottom: 6vw; }
-      body.shop .first-page-slider__shop-button p {
+      body.shop .first-page-slider__shop-button a {
         line-height: 4vw;
-        font-size: 2vw; }
+        font-size: 2vw;
+        color: #FFF; }
     body.shop .first-page-slider__slider-changer {
       display: flex;
       flex-direction: row;
@@ -1164,6 +1178,142 @@ body.shop {
         background-color: #949ca3; }
       body.shop .first-page-slider__slider-changer_black {
         background-color: #000; }
+  @media (min-width: 1440px) {
+    body.shop .first-page-slider {
+      padding-bottom: 0; }
+      body.shop .first-page-slider__image-container {
+        left: 50px;
+        right: 50px; }
+      body.shop .first-page-slider__slider-changer {
+        margin-bottom: 30px; } }
+  body.shop .first-page-support {
+    color: #FFF; }
+    body.shop .first-page-support_container {
+      padding: 10px 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center; }
+    body.shop .first-page-support .shipping {
+      background-image: url("/images/online-shop/icons/shipping.png");
+      background-repeat: no-repeat;
+      background-position: 35px;
+      background-size: 37px 37px; }
+    body.shop .first-page-support .return {
+      background-image: url("/images/online-shop/icons/return.png");
+      background-repeat: no-repeat;
+      background-position: 35px;
+      background-size: 37px 37px; }
+    body.shop .first-page-support .support {
+      background-image: url("/images/online-shop/icons/support.png");
+      background-repeat: no-repeat;
+      background-position: 35px;
+      background-size: 37px 37px; }
+    body.shop .first-page-support .return {
+      background-position: 0px; }
+    body.shop .first-page-support__services {
+      height: 65px;
+      box-sizing: border-box; }
+      body.shop .first-page-support__services_beige {
+        background-color: #d9bf8f;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        padding-left: 90px;
+        width: 31vw; }
+      body.shop .first-page-support__services_black {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #000;
+        width: 37vw; }
+        body.shop .first-page-support__services_black_text-container {
+          padding-left: 50px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: flex-start;
+          margin-left: 5px; }
+      body.shop .first-page-support__services_name {
+        text-transform: uppercase;
+        font-size: 1.2rem; }
+      body.shop .first-page-support__services_undertext {
+        font-size: 0.7rem; }
+    body.shop .first-page-support__services_triangle-beige-left {
+      border-width: 32.5px 0 32.5px 32px;
+      border-color: transparent transparent transparent #d9bf8f; }
+    body.shop .first-page-support__services_triangle-beige-right {
+      border-width: 32.5px 32px 32.5px 0;
+      border-color: transparent #d9bf8f transparent transparent; }
+    body.shop .first-page-support__services_triangle-white-left {
+      border-width: 32.5px 0 32.5px 32px;
+      border-color: transparent transparent transparent #FFF; }
+    body.shop .first-page-support__services_triangle-white-right {
+      border-width: 32.5px 32px 32.5px 0;
+      border-color: transparent #FFF transparent transparent; }
+  body.shop .first-page-collection_container {
+    padding: 10px 50px; }
+  body.shop .first-page-collection_padding {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid #d9bf8f;
+    padding: 5px; }
+  body.shop .first-page-collection__article {
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 22%;
+    height: 340px;
+    padding: 2px;
+    box-sizing: border-box;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end; }
+    body.shop .first-page-collection__article_for-add-button {
+      opacity: 0;
+      transition: opacity 1s; }
+    body.shop .first-page-collection__article:hover .first-page-collection__article_for-add-button {
+      opacity: 0.8; }
+    body.shop .first-page-collection__article_trapezium {
+      margin: 0 auto;
+      width: 10vw;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      text-transform: uppercase;
+      border-bottom: 40px solid #f09d66; }
+    body.shop .first-page-collection__article_add {
+      position: absolute;
+      text-transform: uppercase;
+      margin: -27px 0 0 34px; }
+  @media (min-width: 800px) and (max-width: 1130px) {
+    body.shop .first-page-collection__article {
+      width: 32%;
+      padding-bottom: 0px; } }
+  body.shop .headers_container {
+    padding: 10px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+  body.shop .headers__lines {
+    width: 30vw;
+    height: 5px;
+    border-bottom: 1px solid #d9bf8f; }
+  body.shop .headers__rombs {
+    height: 10px;
+    width: 10px;
+    transform: rotate(45deg);
+    background-color: #d9bf8f; }
+  body.shop .headers__current-heading {
+    font-family: "IM Fell Double Pica", serif;
+    font-size: 1.7rem; }
 
 body.my-cv .education__description_timeline, body.my-cv .experience__description_timeline {
   font-size: 0.8rem;

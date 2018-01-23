@@ -1,0 +1,72 @@
+.first-page-collection {
+  &_container {
+    padding: 10px $padding-for-centre;
+  }
+  &_padding {
+    @include flexbox(row,center);
+    flex-wrap: wrap;
+    border: 1px solid $beige-for-support;
+    padding: 5px;
+  }
+
+  //$start : 1;
+  //$end :8;
+  //@for $i from $start through $end {
+  //  .collection_#{$i} {
+  //    background-image: url("/images/online-shop/collection/collection_#{$i}.jpg");
+  //    background-repeat: no-repeat;
+  //    background-position: center center;
+  //  }
+  //}
+
+  &__article {
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 22%;
+    height: 340px;
+    padding: 2px;
+    box-sizing: border-box;
+    margin: 5px;
+    @include flexbox(row, center,flex-end);
+
+    &_for-add-button {
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    &:hover .first-page-collection__article_for-add-button{
+      opacity: 0.8;
+    }
+
+      &_trapezium {
+        margin: 0 auto;
+        //height: 298px;
+        width: 10vw;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        text-transform: uppercase;
+
+        border-bottom: 40px solid $slight-orange ;
+
+      }
+      &_add {
+        //line-height: 2.5rem;
+        position: absolute;
+        text-transform: uppercase;
+        margin: -27px 0 0 34px;
+
+      }
+
+
+
+  }
+}
+
+@media (min-width: 800px) and (max-width:1130px){
+  .first-page-collection {
+    &__article {
+      width: 32%;
+      padding-bottom: 0px;
+    }
+  }
+}

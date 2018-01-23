@@ -30,7 +30,7 @@ export class Slider extends React.Component {
 
           <div className="first-page-slider__shop-button">
 
-            <p>Shop now</p>
+            <a href="/online-shop">Shop now</a>
 
           </div>
 

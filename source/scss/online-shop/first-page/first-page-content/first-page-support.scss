@@ -1,0 +1,76 @@
+.first-page-support {
+  color: $white-fonts;
+  &_container {
+    padding: 10px $padding-for-centre;
+    @include flexbox(row,space-between);
+  }
+
+  $services-icons: shipping,return,support;
+  @each $icon-service in $services-icons {
+    .#{$icon-service}{
+      background-image: url("/images/online-shop/icons/#{$icon-service}.png");
+      background-repeat: no-repeat;
+      background-position: 35px;
+      background-size: 37px 37px;
+    }
+  }
+  .return {
+    background-position: 0px;
+  }
+
+  &__services{
+    height: 65px;
+    box-sizing: border-box;
+
+    &_beige {
+      background-color: $beige-for-support;
+      @include flexbox(column,space-evenly, flex-start);
+      padding-left: 90px;
+      width: 31vw;
+    }
+    &_black {
+      @include flexbox(row,space-between);
+      background-color: $black-fonts;
+      width: 37vw;
+      &_text-container {
+        padding-left: 50px;
+        height: 100%;
+        @include flexbox(column,space-evenly, flex-start);
+        margin-left: 5px;
+      }
+    }
+    &_name {
+      text-transform: uppercase;
+      font-size: 1.2rem
+    }
+    &_undertext{
+      font-size: 0.7rem;
+    }
+  }
+
+  //triangles
+  &__services {
+
+    &_triangle-beige-left {
+      @extend %triangle-beige ;
+      border-width: 32.5px 0 32.5px 32px;
+      border-color: transparent transparent transparent $beige-for-support;
+    }
+    &_triangle-beige-right {
+      @extend %triangle-beige ;
+      border-width: 32.5px 32px 32.5px 0;
+      border-color: transparent $beige-for-support transparent transparent;
+    }
+    &_triangle-white-left {
+      @extend %triangle-beige ;
+      border-width: 32.5px 0 32.5px 32px;
+      border-color: transparent transparent transparent #FFF;
+    }
+    &_triangle-white-right {
+      @extend %triangle-beige ;
+      border-width: 32.5px 32px 32.5px 0;
+      border-color: transparent #FFF transparent transparent ;
+    }
+
+  }
+}

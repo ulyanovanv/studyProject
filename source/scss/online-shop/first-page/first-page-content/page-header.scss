@@ -1,12 +1,12 @@
 
 .page-header{
-
+  font-family: "Bitter", serif;
 
   &__upper-menu{
     background-color: #F5F5F5;
     @include flexbox(row,space-between);
     font-size: 0.75rem;
-    padding: 10px 50px;
+    padding: 10px $padding-for-centre;
     &_block {
       //margin: 10px;
 
@@ -19,7 +19,7 @@
         text-transform: uppercase;
       }
       &_border{
-        border-left: 1px solid #000;
+        border-left: 1px solid $black-fonts;
         //padding-left: 20px;
         padding: 0 10px;
 
@@ -39,7 +39,7 @@
 
   }
   &__lower-menu{
-    padding: 0 50px;
+    padding: 0 $padding-for-centre;
     //background-color: #FAFAFA;
     @include flexbox(row,space-between);
     &_block {
@@ -47,7 +47,7 @@
     }
     .categories {
       @include flexbox(row,space-between);
-      font-family: 'IM Fell Double Pica', serif;
+      font-family: $font-for-headings;
 
       &__name {
         padding-right: 8px;
@@ -55,7 +55,7 @@
       }
     }
     .page-name {
-      font-family: 'IM Fell Double Pica', serif;
+      font-family: $font-for-headings;
       font-size: 3rem;
       padding: 5px 5px 5px 5vw;
       //padding-left: 4vw;
@@ -83,8 +83,8 @@
       }
       &__select-collection{
         select {
-          background-color: black;
-          color: white;
+          background-color: $black-fonts;
+          color: $white-fonts;
           height: 30px;
           width: 100px;
           text-align: center;

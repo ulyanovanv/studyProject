@@ -1,29 +1,37 @@
 .first-page-slider {
+  padding-bottom: 2vw;
   text-transform: uppercase;
 
   &__image-container {
     position: absolute;
     img {
       width: 100%;
-      max-width: 1450px;
+      max-width: 1440px;
     }
   }
+
+
+
   &_central-message {
-    top: 9vw;
+    height: 46vw;
+    //top: 9vw;
     left: 1vw;
     width: 15vw;
     position: relative;
     z-index: 1;
     margin: 0 auto;
-    height: 35vw;
-    @include flexbox(column, space-between);
+    //height: 35vw;
+    @include flexbox(column, space-around);
   }
 
   &__discounts {
-    border: 2px solid #FFF;
+    border: 2px solid $white-fonts;
     border-radius: 2px;
     height: 15vw;
     width: 15vw;
+    max-width: 13rem;
+    max-height: 13rem;
+    margin-top:10vw;
 
 
     @include flexbox(row, center, center);
@@ -31,15 +39,19 @@
     &_container {
 
       @include flexbox(column, space-around);
-      border: 1px solid #FFF;
+      border: 1px solid $white-fonts;
       box-sizing: padding-box;
       height: 14vw;
       width: 14vw;
-      font-family: Tahoma, Geneva, sans-serif;
+      max-width: 12rem;
+      max-height: 12rem;
+
+
       .discounts-season {
+
         margin-top: 1vw;
         font-size: 1.2vw;
-        color: #FFF;
+        color: $white-fonts;
         letter-spacing: 0.07rem
       }
       .discounts-sale {
@@ -49,33 +61,33 @@
       .discounts-third-line {
         @include flexbox(row, space-evenly);
         p {
-          color: #FFF;
+          color: $white-fonts;
           font-size: 1.2vw;
         }
 
         //&::before {
         //  height: 5%;
         //  width: 25%;
-        //  border: 1px solid #FFF;
+        //  border: 1px solid $white-fonts;
         //  content: " ";
         //}
         &_bottom-line {
           height: 1.2vw;
           width: 3vw;
-          border-bottom: 1px solid #FFF;
+          border-bottom: 1px solid $white-fonts;
           margin: 0 6px;
         }
         &_smaller-container {
           height: 0.7vw;
           width: 2vw;
-          border-bottom: 1px solid #FFF;
+          border-bottom: 1px solid $white-fonts;
 
         }
         &_left  {
 
           //height: 0.7vw;
           //width: 2vw;
-          //border-bottom: 1px solid #FFF;
+          //border-bottom: 1px solid $white-fonts;
           @extend .discounts-third-line_smaller-container;
           margin-left: 1vw;
         }
@@ -90,14 +102,16 @@
   }
   &__shop-button{
     position: relative;
-    background-color: #f09d66;
-    color: #FFF;
+    background-color: $slight-orange;
+    color: $white-fonts;
     height: 4vw;
     width: 15vw;
+    max-width: 13rem;
     margin-bottom: 6vw;
-    p {
+    a {
       line-height: 4vw;
       font-size: 2vw;
+      color: $white-fonts;
     }
 
 
@@ -116,10 +130,26 @@
 
     }
     &_black{
-      background-color: #000;
+      background-color: $black-fonts;
     }
   }
+}
 
 
+@media (min-width: 1440px) {
+  .first-page-slider {
+    padding-bottom: 0;
+    &__image-container {
+      left: $padding-for-centre;
+      right: $padding-for-centre;
+      img {
+        //width: 100%;
+        //max-width: 1440px;
+      }
+    }
+    &__slider-changer{
+      margin-bottom: 30px;
+    }
+  }
 
 }

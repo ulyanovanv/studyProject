@@ -1,0 +1,23 @@
+.headers {
+
+  &_container {
+    padding: 10px $padding-for-centre;
+    @include flexbox(row,space-between);
+  }
+  &__lines {
+    width: 30vw;
+    height: 5px;
+    border-bottom: 1px solid $beige-for-support;
+  }
+  &__rombs {
+    height: 10px;
+    width: 10px;
+    transform: rotate(45deg);
+    background-color: $beige-for-support;
+  }
+  &__current-heading {
+    font-family: $font-for-headings;
+    font-size: 1.7rem;
+  }
+
+}
