@@ -65,6 +65,16 @@ export class PageFooter extends React.Component {
         </div>
         <div className="page-footer__lower">
           <div className="page-footer__lower_border-top">
+            <p className="page-footer__lower_text">
+              @2018 Spopia fashion <br/>
+              All rights reserved <br/>
+              Designed by MoccaLabs
+            </p>
+            <div className="page-footer__lower_payments">
+              <img src="./images/online-shop/svg/visa.png" title="visa"/>
+              <img src="./images/online-shop/svg/master.png" title="mastercard"/>
+              <img src="./images/online-shop/svg/amex.png" title="american express"/>
+            </div>
 
           </div>
         </div>

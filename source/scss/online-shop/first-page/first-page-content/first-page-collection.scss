@@ -1,4 +1,6 @@
 .first-page-collection {
+
+
   &_container {
     padding: 10px $padding-for-centre;
   }
@@ -27,35 +29,61 @@
     padding: 2px;
     box-sizing: border-box;
     margin: 5px;
-    @include flexbox(row, center,flex-end);
+    //@include flexbox(column, space-between,center);
+    position: relative;
 
     &_for-add-button {
       opacity: 0;
-      transition: opacity 1s;
+      transition: opacity 0.5s;
+      position: absolute;
+      bottom: 0px;
+      //left: calc(100% - 20px);
+      transform: translateX(calc(50%-40px));
+      right: 0;
+      left: 0;
     }
 
     &:hover .first-page-collection__article_for-add-button{
-      opacity: 0.8;
+      opacity: 0.85;
+    }
+    &_reduction {
+      position: absolute;
+
+      height: 45px;
+      width: 45px;
+      background-color: #feab12;
+      border-radius: 50%;
+      align-self: flex-start;
+      margin: 20px;
+      &_persentage {
+        line-height: 45px;
+        color: $white-fonts;
+      }
     }
 
-      &_trapezium {
-        margin: 0 auto;
-        //height: 298px;
-        width: 10vw;
-        border-left: 40px solid transparent;
-        border-right: 40px solid transparent;
-        text-transform: uppercase;
+    &_trapezium {
 
-        border-bottom: 40px solid $slight-orange ;
+      margin: 0 auto;
+      //height: 298px;
+      width: 10vw;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      text-transform: uppercase;
 
-      }
-      &_add {
-        //line-height: 2.5rem;
-        position: absolute;
-        text-transform: uppercase;
-        margin: -27px 0 0 34px;
+      border-bottom: 40px solid $slight-orange ;
 
-      }
+    }
+    &_add {
+      //line-height: 2.5rem;
+      position: absolute;
+      text-transform: uppercase;
+      //margin: -27px 0 0 34px;
+      //width: 11vw;
+      text-align: center;
+      width: 100%;
+      line-height: 40px;
+
+    }
 
 
 
@@ -67,6 +95,18 @@
     &__article {
       width: 32%;
       padding-bottom: 0px;
+      &_add {
+        font-size: 1.5vw;
+      }
     }
   }
 }
+//@media (min-width: 1130px){
+//  .first-page-collection {
+//    &__article {
+//      &_for-add-button {
+//        margin-bottom: -2px;
+//      }
+//    }
+//  }
+//}

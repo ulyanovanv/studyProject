@@ -1,12 +1,25 @@
 import React from "react";
+import ImageGallery from 'react-image-gallery';
 
 export class Slider extends React.Component {
   render() {
+    const images = [
+      {
+        original: '/images/online-shop/center/first-center.jpg',
+      },
+      {
+        original: '/images/online-shop/center/first-center.jpg',
+      },
+      {
+        original: '/images/online-shop/center/first-center.jpg',
+      },
+  ]
     return (
       <section className="first-page-slider">
 
         <div className="first-page-slider__image-container">
-          <img src="/images/online-shop/center/first-center.jpg"/>
+          <ImageGallery items={images} infinite={false} showFullscreenButton={false} showPlayButton={false} showThumbnails={false}/>
+          {/*<img src="/images/online-shop/center/first-center.jpg"/>*/}
         </div>
 
         <div className="first-page-slider_central-message">

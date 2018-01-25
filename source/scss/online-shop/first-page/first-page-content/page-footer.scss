@@ -20,6 +20,7 @@
         }
       }
       &_stay-connected {
+        width: 0;
         flex: 4;
         @include flexbox (column,flex-start,flex-start)
         //border: 1px solid white;
@@ -64,9 +65,9 @@
       background-image: url("/images/online-shop/footer/#{$icon}.png");
       background-size: contain;
       background-repeat: no-repeat;
-      height: 45px;
-      width: 45px;
-      margin-right: 20px;
+      height: 42px;
+      width: 42px;
+      margin-right: 1vw;
     }
   }
   #subscribe_email {
@@ -90,6 +91,18 @@
     padding: 10px $padding-for-centre;
     &_border-top {
       border-top: 1px solid $grey-for-footer;
+      @include flexbox(column, flex-start, flex-start);
+    }
+    &_text {
+      color: $grey-for-footer;
+      font-size: 0.7rem;
+      padding: 5px 0;
+      line-height: 0.9rem;
+      text-align: left;
+    }
+    &_payments img {
+      height: 20px;
+      padding-right: 5px;
     }
   }
 }

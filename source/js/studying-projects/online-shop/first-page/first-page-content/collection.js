@@ -4,14 +4,14 @@ import {Headings} from "./headings";
 import {Item} from "./../collection-items/item";
 
 let products = [
-  {image:"/images/online-shop/collection/collection_1.jpg", price: 300, discount:0},
-  {image:"/images/online-shop/collection/collection_2.jpg", price: 300, discount:0},
-  {image:"/images/online-shop/collection/collection_3.jpg", price: 300, discount:0},
-  {image:"/images/online-shop/collection/collection_4.jpg", price: 300, discount:30},
-  {image:"/images/online-shop/collection/collection_5.jpg", price: 300, discount:0},
-  {image:"/images/online-shop/collection/collection_6.jpg", price: 300, discount:40},
-  {image:"/images/online-shop/collection/collection_7.jpg", price: 300, discount:0},
-  {image:"/images/online-shop/collection/collection_8.jpg", price: 300, discount:0},
+  {image:"/images/online-shop/collection/collection_1.jpg", discount:"10"},
+  {image:"/images/online-shop/collection/collection_2.jpg"},
+  {image:"/images/online-shop/collection/collection_3.jpg", discount: "20"},
+  {image:"/images/online-shop/collection/collection_4.jpg", discount: "20"},
+  {image:"/images/online-shop/collection/collection_5.jpg"},
+  {image:"/images/online-shop/collection/collection_6.jpg"},
+  {image:"/images/online-shop/collection/collection_7.jpg"},
+  {image:"/images/online-shop/collection/collection_8.jpg", discount: "10"},
 ];
 
 export class Collection extends React.Component {
@@ -21,7 +21,7 @@ export class Collection extends React.Component {
 
   renderFunction(){
     return products.map(item => {
-      return <Item image={ item.image }/>;
+      return <Item image={ item.image } discount={item.discount}/>;
     });
   }
 
