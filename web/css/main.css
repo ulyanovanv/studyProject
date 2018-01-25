@@ -1089,7 +1089,8 @@ body.shop {
       position: absolute; }
       body.shop .first-page-slider__image-container img {
         width: 100%;
-        max-width: 1440px; }
+        max-width: 1440px;
+        min-width: 800px; }
     body.shop .first-page-slider_central-message {
       height: 46vw;
       left: 1vw;
@@ -1297,7 +1298,7 @@ body.shop {
       width: 32%;
       padding-bottom: 0px; } }
   body.shop .headers_container {
-    padding: 10px 50px;
+    padding: 20px 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1314,6 +1315,212 @@ body.shop {
   body.shop .headers__current-heading {
     font-family: "IM Fell Double Pica", serif;
     font-size: 1.7rem; }
+  body.shop .first-page-brands_container {
+    padding: 10px 50px; }
+  body.shop .first-page-brands_padding {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    height: 150px;
+    width: 100%; }
+  body.shop .first-page-brands__name {
+    background-repeat: no-repeat;
+    height: 10vw;
+    width: 150px;
+    background-size: 8vw;
+    background-position: center; }
+  body.shop .first-page-brands .bakery {
+    background-image: url("/images/online-shop/brands/bakery.png"); }
+  body.shop .first-page-brands .harvest {
+    background-image: url("/images/online-shop/brands/harvest.png"); }
+  body.shop .first-page-brands .home-energy {
+    background-image: url("/images/online-shop/brands/home-energy.png"); }
+  body.shop .first-page-brands .landlock {
+    background-image: url("/images/online-shop/brands/landlock.png"); }
+  body.shop .first-page-brands .lavalier {
+    background-image: url("/images/online-shop/brands/lavalier.png"); }
+  body.shop .first-page-brands .spectrum {
+    background-image: url("/images/online-shop/brands/spectrum.png"); }
+  body.shop .first-page-customer-reviews_container {
+    padding: 0 50px;
+    background-color: #d9bf8f;
+    width: 100%;
+    box-sizing: border-box; }
+  body.shop .first-page-customer-reviews_triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 40px 160px 0 160px;
+    border-color: #FFF transparent transparent transparent;
+    position: absolute;
+    left: calc(50% - 160px); }
+  body.shop .first-page-customer-reviews__customers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 22px 1vw; }
+    body.shop .first-page-customer-reviews__customers_content-picture > img {
+      height: 25vw;
+      width: 21vw;
+      max-width: 312px;
+      max-height: 398px; }
+    body.shop .first-page-customer-reviews__customers_content-left {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-end;
+      flex: 1; }
+      body.shop .first-page-customer-reviews__customers_content-left_description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        height: 20vw;
+        text-align: left; }
+    body.shop .first-page-customer-reviews__customers_content-right {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-end;
+      flex: 1;
+      flex-direction: row-reverse; }
+      body.shop .first-page-customer-reviews__customers_content-right_description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        height: 20vw;
+        text-align: right; }
+  body.shop .first-page-customer-reviews .opinion {
+    font-family: "IM Fell Double Pica", serif;
+    color: #fffaf0;
+    line-height: 1.5rem;
+    letter-spacing: 0.03rem;
+    font-size: 1.5vw;
+    flex: 2 0; }
+  body.shop .first-page-customer-reviews .customer-name {
+    font-family: "IM Fell Double Pica", serif;
+    color: #000;
+    font-size: 2.8vw;
+    flex: 1 0; }
+  body.shop .first-page-customer-reviews .occupation {
+    color: #707070;
+    text-transform: uppercase;
+    font-size: 1.4vw;
+    flex: 1 0; }
+  body.shop .page-footer {
+    background-color: #000;
+    color: #FFF;
+    width: 100%; }
+    body.shop .page-footer__upper {
+      padding: 10px 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: flex-start; }
+      body.shop .page-footer__upper_navigation {
+        flex: 6;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start; }
+        body.shop .page-footer__upper_navigation_column {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          font-family: 'Arial', serif;
+          width: 20vw; }
+      body.shop .page-footer__upper_stay-connected {
+        flex: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start; }
+        body.shop .page-footer__upper_stay-connected_sub {
+          height: 40%; }
+        body.shop .page-footer__upper_stay-connected_form {
+          padding: 25px 0; }
+          body.shop .page-footer__upper_stay-connected_form_container {
+            border: 1px solid #323030;
+            padding: 5px; }
+    body.shop .page-footer .headings {
+      text-transform: uppercase;
+      line-height: 35px;
+      padding: 10px 0;
+      text-align: left; }
+      body.shop .page-footer .headings i {
+        text-transform: lowercase;
+        font-family: "IM Fell Double Pica", serif; }
+    body.shop .page-footer .items {
+      line-height: 2rem;
+      font-size: 0.8rem;
+      color: #323030;
+      font-weight: bold; }
+    body.shop .page-footer .icons {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 25px 0; }
+    body.shop .page-footer .icons_facebook {
+      background-image: url("/images/online-shop/footer/facebook.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 45px;
+      width: 45px;
+      margin-right: 20px; }
+    body.shop .page-footer .icons_twitter {
+      background-image: url("/images/online-shop/footer/twitter.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 45px;
+      width: 45px;
+      margin-right: 20px; }
+    body.shop .page-footer .icons_instagram {
+      background-image: url("/images/online-shop/footer/instagram.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 45px;
+      width: 45px;
+      margin-right: 20px; }
+    body.shop .page-footer .icons_pinterest {
+      background-image: url("/images/online-shop/footer/pinterest.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 45px;
+      width: 45px;
+      margin-right: 20px; }
+    body.shop .page-footer .icons_wifi {
+      background-image: url("/images/online-shop/footer/wifi.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 45px;
+      width: 45px;
+      margin-right: 20px; }
+    body.shop .page-footer #subscribe_email {
+      background-color: #000;
+      border: none;
+      outline: none;
+      color: #FFF; }
+    body.shop .page-footer #subscribe_submit {
+      color: #FFF;
+      background-color: #323030;
+      border: none;
+      height: 30px;
+      width: 100px;
+      outline: none; }
+    body.shop .page-footer__lower {
+      padding: 10px 50px; }
+      body.shop .page-footer__lower_border-top {
+        border-top: 1px solid #323030; }
+
+@media (max-width: 800px) {
+  .shop {
+    overflow-x: hidden; } }
 
 body.my-cv .education__description_timeline, body.my-cv .experience__description_timeline {
   font-size: 0.8rem;

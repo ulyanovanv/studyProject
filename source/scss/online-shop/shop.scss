@@ -7,9 +7,10 @@ body.shop {
     width: 100%;
     min-width: 800px;
     font-size: 1rem;
-
     color: $black-fonts;
     font-family: Tahoma, Geneva, sans-serif;
+
+
 
     .centrelaze {
         width: 100%;
@@ -19,4 +20,9 @@ body.shop {
     }
 
     @import "first-page/first-page";
+}
+@media (max-width: 800px){
+    .shop {
+        overflow-x: hidden;
+    }
 }
