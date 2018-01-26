@@ -22632,32 +22632,62 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var images = [{
+  original: '/images/online-shop/center/first-center.jpg'
+}, {
+  original: '/images/online-shop/center/first-center.jpg'
+}, {
+  original: '/images/online-shop/center/first-center.jpg'
+}, {
+  original: '/images/online-shop/center/first-center.jpg'
+}];
+
 var Slider = exports.Slider = function (_React$Component) {
   _inherits(Slider, _React$Component);
 
-  function Slider() {
+  function Slider(props) {
     _classCallCheck(this, Slider);
 
-    return _possibleConstructorReturn(this, (Slider.__proto__ || Object.getPrototypeOf(Slider)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Slider.__proto__ || Object.getPrototypeOf(Slider)).call(this, props));
+
+    _this.state = {
+      numberOfActiveImage: 0
+    };
+    _this.renderRombs = _this.renderRombs.bind(_this);
+    return _this;
   }
 
   _createClass(Slider, [{
+    key: 'renderRombs',
+    value: function renderRombs() {
+      var rombs = [];
+      for (var i = 0; i < images.length; i++) {
+        var activeClass = i === this.state.numberOfActiveImage ? " first-page-slider__slider-changer_black" : "";
+        rombs.push(_react2.default.createElement('div', { key: i, className: "first-page-slider__slider-changer_romb" + activeClass }));
+      }
+      return rombs;
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var images = [{
-        original: '/images/online-shop/center/first-center.jpg'
-      }, {
-        original: '/images/online-shop/center/first-center.jpg'
-      }, {
-        original: '/images/online-shop/center/first-center.jpg'
-      }];
+      var _this2 = this;
+
       return _react2.default.createElement(
         'section',
         { className: 'first-page-slider' },
         _react2.default.createElement(
           'div',
           { className: 'first-page-slider__image-container' },
-          _react2.default.createElement(_reactImageGallery2.default, { items: images, infinite: false, showFullscreenButton: false, showPlayButton: false, showThumbnails: false })
+          _react2.default.createElement(_reactImageGallery2.default, { items: images,
+            infinite: false,
+            showFullscreenButton: false,
+            showPlayButton: false,
+            showThumbnails: false,
+            onSlide: function onSlide(currentIndex) {
+              _this2.setState({ numberOfActiveImage: currentIndex });
+
+              console.log(_this2.state.numberOfActiveImage);
+            } })
         ),
         _react2.default.createElement(
           'div',
@@ -22716,10 +22746,7 @@ var Slider = exports.Slider = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'first-page-slider__slider-changer' },
-            _react2.default.createElement('div', { className: 'first-page-slider__slider-changer_romb first-page-slider__slider-changer_black' }),
-            _react2.default.createElement('div', { className: 'first-page-slider__slider-changer_romb' }),
-            _react2.default.createElement('div', { className: 'first-page-slider__slider-changer_romb' }),
-            _react2.default.createElement('div', { className: 'first-page-slider__slider-changer_romb' })
+            this.renderRombs()
           )
         )
       );

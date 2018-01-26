@@ -1,24 +1,55 @@
 import React from "react";
 import ImageGallery from 'react-image-gallery';
 
+const images = [
+  {
+    original: '/images/online-shop/center/first-center.jpg',
+  },
+  {
+    original: '/images/online-shop/center/first-center.jpg',
+  },
+  {
+    original: '/images/online-shop/center/first-center.jpg',
+  },
+  {
+    original: '/images/online-shop/center/first-center.jpg',
+  }
+]
+
 export class Slider extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      numberOfActiveImage: 0
+    }
+    this.renderRombs = this.renderRombs.bind(this);
+  }
+  renderRombs() {
+    let rombs = [];
+    for (let i=0; i<images.length; i++) {
+      let activeClass = i === this.state.numberOfActiveImage ? " first-page-slider__slider-changer_black" : "";
+      rombs.push(<div key={i} className={ "first-page-slider__slider-changer_romb" + activeClass }></div>);
+    }
+    return rombs;
+  }
+
+
   render() {
-    const images = [
-      {
-        original: '/images/online-shop/center/first-center.jpg',
-      },
-      {
-        original: '/images/online-shop/center/first-center.jpg',
-      },
-      {
-        original: '/images/online-shop/center/first-center.jpg',
-      },
-  ]
+
     return (
       <section className="first-page-slider">
 
         <div className="first-page-slider__image-container">
-          <ImageGallery items={images} infinite={false} showFullscreenButton={false} showPlayButton={false} showThumbnails={false}/>
+          <ImageGallery items={images}
+                        infinite={false}
+                        showFullscreenButton={false}
+                        showPlayButton={false}
+                        showThumbnails={false}
+                        onSlide={
+                          (currentIndex) => {
+                            this.setState({numberOfActiveImage: currentIndex});
+                          }
+                        }/>
           {/*<img src="/images/online-shop/center/first-center.jpg"/>*/}
         </div>
 
@@ -48,10 +79,7 @@ export class Slider extends React.Component {
           </div>
 
           <div className="first-page-slider__slider-changer">
-            <div className="first-page-slider__slider-changer_romb first-page-slider__slider-changer_black"></div>
-            <div className="first-page-slider__slider-changer_romb"></div>
-            <div className="first-page-slider__slider-changer_romb"></div>
-            <div className="first-page-slider__slider-changer_romb"></div>
+            { this.renderRombs() }
           </div>
 
         </div>
