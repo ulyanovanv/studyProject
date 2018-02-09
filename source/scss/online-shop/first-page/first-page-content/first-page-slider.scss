@@ -11,8 +11,6 @@
     }
   }
 
-
-
   &_central-message {
     height: 46vw;
     //top: 9vw;
@@ -24,7 +22,6 @@
     //height: 35vw;
     @include flexbox(column, space-around);
   }
-
   &__discounts {
     border: 2px solid $white-fonts;
     border-radius: 2px;
@@ -33,7 +30,6 @@
     max-width: 13rem;
     max-height: 13rem;
     margin-top:10vw;
-
 
     @include flexbox(row, center, center);
 
@@ -46,7 +42,6 @@
       width: 14vw;
       max-width: 12rem;
       max-height: 12rem;
-
 
       .discounts-season {
 
@@ -66,12 +61,6 @@
           font-size: 1.2vw;
         }
 
-        //&::before {
-        //  height: 5%;
-        //  width: 25%;
-        //  border: 1px solid $white-fonts;
-        //  content: " ";
-        //}
         &_bottom-line {
           height: 1.2vw;
           width: 3vw;
@@ -85,10 +74,6 @@
 
         }
         &_left  {
-
-          //height: 0.7vw;
-          //width: 2vw;
-          //border-bottom: 1px solid $white-fonts;
           @extend .discounts-third-line_smaller-container;
           margin-left: 1vw;
         }
@@ -115,8 +100,6 @@
       color: $white-fonts;
     }
 
-
-
   }
   &__slider-changer{
     @include flexbox(row, space-evenly);
@@ -127,7 +110,6 @@
       width: 10px;
       transform: rotate(45deg);
       background-color: #949ca3;
-
 
     }
     &_black{

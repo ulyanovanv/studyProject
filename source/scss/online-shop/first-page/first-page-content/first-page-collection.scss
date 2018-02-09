@@ -31,6 +31,7 @@
     margin: 5px;
     //@include flexbox(column, space-between,center);
     position: relative;
+    cursor: pointer;
 
     &_for-add-button {
       opacity: 0;

@@ -1,7 +1,15 @@
 import React from "react";
 
+import {PageHeader} from "./..//first-page/first-page-content/page-header";
+import {ChosenItems} from "./chosen-items";
+import {PageFooter} from "./..//first-page/first-page-content/page-footer";
+
 export class BasketPage extends React.Component {
-    render(){
-        return <h1>basket Page </h1>;
-    }
+  render(){
+    return <div className="centrelaze">
+      <PageHeader/>
+      <ChosenItems/>
+      <PageFooter/>
+    </div>;
+  }
 }

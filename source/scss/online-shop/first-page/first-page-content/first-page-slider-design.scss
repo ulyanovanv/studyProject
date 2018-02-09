@@ -1,0 +1,27 @@
+.first-page-slider {
+  %slider-buttons-design {
+    font-size: 2em;
+    &[disabled] {
+      display: none;
+    }
+    &:hover::before {
+      color: $slight-orange;
+    }
+  }
+  .image-gallery-left-nav {
+    @extend %slider-buttons-design;
+    &::before {
+      content: "⇦";
+      color: $grey;
+      text-shadow: 0 1px 1px #1a1a1a;
+    }
+  }
+  .image-gallery-right-nav {
+    @extend %slider-buttons-design;
+    &::before {
+      content: "⇨";
+      color: $grey;
+      text-shadow: 0 1px 1px #1a1a1a;
+    }
+  }
+}
