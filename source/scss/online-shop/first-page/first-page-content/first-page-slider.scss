@@ -30,6 +30,8 @@
     max-width: 13rem;
     max-height: 13rem;
     margin-top:10vw;
+    min-width: 110px;
+    min-height: 110px;
 
     @include flexbox(row, center, center);
 
@@ -42,9 +44,10 @@
       width: 14vw;
       max-width: 12rem;
       max-height: 12rem;
+      min-width: 100px;
+      min-height: 100px;
 
       .discounts-season {
-
         margin-top: 1vw;
         font-size: 1.2vw;
         color: $white-fonts;
@@ -52,7 +55,6 @@
       }
       .discounts-sale {
         font-size: 4vw;
-
       }
       .discounts-third-line {
         @include flexbox(row, space-evenly);
@@ -99,7 +101,6 @@
       font-size: 2vw;
       color: $white-fonts;
     }
-
   }
   &__slider-changer{
     @include flexbox(row, space-evenly);
@@ -136,3 +137,55 @@
   }
 
 }
+
+@media (max-width: 800px) {
+  .first-page-slider {
+    //padding-bottom: 2vw;
+    &__image-container {
+      img {
+        width: 100%;
+        min-width: 360px;
+      }
+    }
+
+    &__discounts {
+      &_container {
+        .discounts-season {
+          font-size: 0.6rem;
+        }
+        .discounts-sale {
+          font-size: 2rem;
+        }
+        .discounts-third-line > p {
+          font-size: 0.4rem;
+        }
+        .discounts-number {
+          font-size: 0.6rem;
+        }
+      }
+    }
+    &__shop-button {
+      display: none;
+    }
+    &__slider-changer {
+
+      &_romb {
+        height: 1.4vw;
+        width: 1.4vw;
+        min-width: 10px;
+        min-height: 10px;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .first-page-slider {
+    &__slider-changer {
+      padding-top: 100px;
+    }
+    &_central-message {
+      @include flexbox(column, flex-start);
+    }
+  }
+}
+

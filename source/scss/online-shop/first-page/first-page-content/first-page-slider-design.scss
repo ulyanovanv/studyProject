@@ -11,7 +11,8 @@
   .image-gallery-left-nav {
     @extend %slider-buttons-design;
     &::before {
-      content: "⇦";
+      //content: "⇦";
+      content: "⮜";
       color: $grey;
       text-shadow: 0 1px 1px #1a1a1a;
     }
@@ -19,9 +20,22 @@
   .image-gallery-right-nav {
     @extend %slider-buttons-design;
     &::before {
-      content: "⇨";
+      content: "⮞";
       color: $grey;
       text-shadow: 0 1px 1px #1a1a1a;
+    }
+  }
+
+
+}
+@media (max-width: 500px){
+  .first-page-slider {
+    .image-gallery-slide {
+      transform: scale(1.5) !important;
+      margin: 50px 0;
+    }
+    %slider-buttons-design{
+      font-size: 1.5rem;
     }
   }
 }

@@ -11,7 +11,7 @@ body.my-cv {
     }
     .cv_cenralization {
       display: grid;
-      grid-template: repeat(23,100px)/repeat(2,2fr);
+      grid-template: repeat(26,100px)/repeat(2,2fr);
       width: 75%;
       margin: 20px auto;
     }
@@ -65,6 +65,7 @@ body.my-cv {
     .projects {
       height: 270px;
     }
+
     .prj-calender {
       grid-area: 15 / 1 / span 3 /span 1;
     }
@@ -74,14 +75,17 @@ body.my-cv {
     .prj-to-do-app {
       grid-area: 21 / 1 / span 3 /span 1;
     }
-    .prj-form-c13 {
+    .prj-online-shop {
       grid-area: 14 / 2 / span 3 /span 1;
     }
-    .prj-react-ingredients{
+    .prj-form-c13 {
       grid-area: 17 / 2 / span 3 /span 1;
     }
-    .prj-game {
+    .prj-react-ingredients{
       grid-area: 20 / 2 / span 3 /span 1;
+    }
+    .prj-game {
+      grid-area: 23 / 2 / span 3 /span 1;
     }
 
   }

@@ -1,7 +1,6 @@
 .page-footer {
   background-color: $black-fonts;
   color: $white-fonts;
-  //height: 200px;
   width: 100%;
 
   &__upper {
@@ -15,8 +14,6 @@
           @include flexbox(column, flex-start, flex-start);
           font-family: 'Arial', serif;
           width: 20vw;
-
-
         }
       }
       &_stay-connected {
@@ -33,9 +30,7 @@
             border: 1px solid $grey-for-footer;
             padding:5px;
           }
-
         }
-
       }
     }
 
@@ -54,6 +49,9 @@
     font-size: 0.8rem;
     color: $grey-for-footer;
     font-weight: bold;
+    &:hover {
+      color: $white-fonts
+    }
   }
   .icons {
     @include flexbox(row, flex-start);
@@ -85,8 +83,6 @@
     outline: none;
   }
 
-
-
   &__lower {
     padding: 10px $padding-for-centre;
     &_border-top {
@@ -103,6 +99,56 @@
     &_payments img {
       height: 20px;
       padding-right: 5px;
+    }
+  }
+}
+
+
+@media (max-width: 800px){
+  .page-footer {
+    &__upper {
+      padding: 10px $padding-for-centre-media;
+      @include flexbox(column, space-evenly, flex-start);
+      &_navigation {
+        width: 100%;
+        margin-bottom: 10px;
+        @include flexbox(row, space-around, flex-start);
+        &_column {
+          width: 27vw;
+          .headings {
+            height: 45px;
+          }
+        }
+      }
+
+      &_stay-connected {
+        width: 100%;
+        &_form {
+          padding: 10px 0;
+          //width: 80%;
+        }
+      }
+    }
+    &__lower {
+      padding: 10px $padding-for-centre-media;
+    }
+    .headings {
+      line-height: 20px;
+      padding: 0;
+      font-size: 0.9rem;
+      //height: 60px;
+    }
+    .items {
+      line-height: 1.2rem;
+      text-align: left;
+      //font-size: 0.8rem;
+    }
+    .icons {
+      padding: 14px 0;
+      & > a {
+        width: 42px;
+        padding-right: 10px;
+      }
     }
   }
 }

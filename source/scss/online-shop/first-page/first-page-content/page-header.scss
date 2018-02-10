@@ -1,4 +1,3 @@
-
 .page-header{
   font-family: "Bitter", serif;
 
@@ -8,13 +7,11 @@
     font-size: 0.75rem;
     padding: 10px $padding-for-centre;
     &_block {
-      //margin: 10px;
 
       &:nth-child(2) {
         margin-left: auto;
         padding-right: 10px;
       }
-
       &:first-child ~ * {
         text-transform: uppercase;
       }
@@ -22,33 +19,19 @@
         border-left: 1px solid $black-fonts;
         //padding-left: 20px;
         padding: 0 10px;
-
-
       }
       &_last-padding{
         padding: 0 0 0 10px;
       }
-      //&:last-child{
-      //  &:last-child {
-      //    padding: 0 0 0 10px;
-      //  }
-      //}
-
-    
     }
-
   }
+
   &__lower-menu{
     padding: 0 $padding-for-centre;
-    //background-color: #FAFAFA;
     @include flexbox(row,space-between);
-    &_block {
-
-    }
     .categories {
       @include flexbox(row,space-between);
       font-family: $font-for-headings;
-
       &__name {
         padding-right: 8px;
         font-size: 1.2rem;
@@ -58,7 +41,6 @@
       font-family: $font-for-headings;
       font-size: 3rem;
       padding: 5px 5px 5px 5vw;
-      //padding-left: 4vw;
     }
     .right-side {
       @include flexbox(row,space-between);
@@ -92,10 +74,30 @@
           outline: none;
           margin-left: 10px;
         }
-
       }
     }
   }
+}
 
+@media (max-width: 800px) {
+  .page-header{
+    &__upper-menu{
+      display: none;
+    }
+    &__lower-menu{
+      @include flexbox(column,space-between);
+      flex-direction: column-reverse;
+      padding: 0;
+      .categories {
+        width: 100%;
+        @include flexbox(row, space-evenly);
+        height: 30px;
+        line-height: 30px;
+      }
+      .right-side {
+        display:none;
+      }
+    }
+  }
 }
 

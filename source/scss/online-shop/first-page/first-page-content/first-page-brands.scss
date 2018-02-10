@@ -1,18 +1,23 @@
 .first-page-brands {
   &_container {
     padding: 10px $padding-for-centre;
-
   }
   &_padding {
     @include flexbox(row,space-between);
     background-color: #f2f2f2;
     height: 150px;
     width: 100%;
+    a:first-child {
+      padding-left: 2vw;
+    }
+    a:last-child {
+      padding-right: 2vw;
+    }
   }
   &__name {
     background-repeat: no-repeat;
     height: 10vw;
-    width: 150px;
+    width: 8vw;
     background-size: 8vw;
     background-position: center;
 
@@ -23,8 +28,37 @@
       background-image: url("/images/online-shop/brands/#{$icon}.png");
     }
   }
-  //.home-energy {
-  //  margin-right: 25px;
-  //}
+}
 
+@media (max-width: 800px){
+  .first-page-brands {
+    &_container {
+      padding: 0;
+    }
+    &_padding {
+      @include flexbox(row,space-evenly);
+      flex-wrap: wrap;
+      height: unset;
+      a:first-child {
+        padding-left: 0;
+      }
+      a:last-child {
+        padding-right: 0;
+      }
+    }
+    &__name {
+      height: 30vw;
+      width: 45vw;
+      background-size: 130px;
+      max-width: 200px;
+
+    }
+  }
+}
+@media (max-width: 500px) {
+  .first-page-brands {
+    &__name {
+      background-size: 100px;
+    }
+  }
 }

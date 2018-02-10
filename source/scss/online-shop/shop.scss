@@ -23,7 +23,8 @@ body.shop {
 
 }
 @media (max-width: 800px){
-    .shop {
+    body.shop {
         overflow-x: hidden;
+        min-width: unset;
     }
 }

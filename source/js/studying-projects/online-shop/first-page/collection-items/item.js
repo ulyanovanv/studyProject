@@ -4,22 +4,19 @@ import React from "react";
 export class Item extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      color: "black"
-    }
+    //this.state = {
+    //  color: "black"
+   // }
   }
 
-  componentWillReceiveProps(nextProps){
-    let newColor = this.props.color;
-    this.setState({color: newColor});
-  }
 
   render() {
 
     return (
       <div className="first-page-collection__article"
            style={{
-             backgroundImage: `url('${this.props.image}')`
+             backgroundImage: `url('${this.props.image}')`,
+             filter: this.props.filter
            }}
            onClick={this.props.onClick}
       >
@@ -34,10 +31,10 @@ export class Item extends React.Component {
 
 
         <div className="first-page-collection__article_for-add-button">
-          <div className="first-page-collection__article_add" style={{color: this.state.color}}>
-            +add to cart
+          <div className="first-page-collection__article_add" style={{color: this.props.color}}>
+            {this.props.isAdded}
           </div>
-          <div className="first-page-collection__article_trapezium" >
+          <div className="first-page-collection__article_trapezium" style={{borderBottom: this.props.borderBottom}} >
           </div>
         </div>
       </div>

@@ -19,5 +19,18 @@
     font-family: $font-for-headings;
     font-size: 1.7rem;
   }
+}
 
+@media (max-width: 800px){
+  .headers {
+    &_container {
+      padding: 20px $padding-for-centre-media;
+    }
+    &__lines {
+      width: 20vw;
+    }
+    &__current-heading {
+      font-size: 1.3rem;
+    }
+  }
 }

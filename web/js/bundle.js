@@ -3687,26 +3687,13 @@ var Item = exports.Item = function (_React$Component) {
   function Item(props) {
     _classCallCheck(this, Item);
 
-    var _this = _possibleConstructorReturn(this, (Item.__proto__ || Object.getPrototypeOf(Item)).call(this, props));
-
-    _this.state = {
-      color: "black"
-    };
-    return _this;
+    return _possibleConstructorReturn(this, (Item.__proto__ || Object.getPrototypeOf(Item)).call(this, props));
+    //this.state = {
+    //  color: "black"
+    // }
   }
 
   _createClass(Item, [{
-    key: "giveItemUp",
-    value: function giveItemUp(e) {
-      this.props.addToList(this.props.image);
-    }
-  }, {
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(nextProps) {
-      var newColor = this.props.color;
-      this.setState({ color: newColor });
-    }
-  }, {
     key: "render",
     value: function render() {
 
@@ -3714,7 +3701,8 @@ var Item = exports.Item = function (_React$Component) {
         "div",
         { className: "first-page-collection__article",
           style: {
-            backgroundImage: "url('" + this.props.image + "')"
+            backgroundImage: "url('" + this.props.image + "')",
+            filter: this.props.filter
           },
           onClick: this.props.onClick
         },
@@ -3737,10 +3725,10 @@ var Item = exports.Item = function (_React$Component) {
           { className: "first-page-collection__article_for-add-button" },
           _react2.default.createElement(
             "div",
-            { className: "first-page-collection__article_add", style: { color: this.state.color } },
-            "+add to cart"
+            { className: "first-page-collection__article_add", style: { color: this.props.color } },
+            this.props.isAdded
           ),
-          _react2.default.createElement("div", { className: "first-page-collection__article_trapezium" })
+          _react2.default.createElement("div", { className: "first-page-collection__article_trapezium", style: { borderBottom: this.props.borderBottom } })
         )
       );
     }
@@ -26246,7 +26234,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var products = [{ image: "/images/online-shop/collection/collection_1.jpg", isSelected: false, color: "black", discount: "10" }, { image: "/images/online-shop/collection/collection_2.jpg", isSelected: false, color: "black" }, { image: "/images/online-shop/collection/collection_3.jpg", isSelected: false, color: "black", discount: "20" }, { image: "/images/online-shop/collection/collection_4.jpg", isSelected: false, color: "black", discount: "20" }, { image: "/images/online-shop/collection/collection_5.jpg", isSelected: false, color: "black" }, { image: "/images/online-shop/collection/collection_6.jpg", isSelected: false, color: "black" }, { image: "/images/online-shop/collection/collection_7.jpg", isSelected: false, color: "black" }, { image: "/images/online-shop/collection/collection_8.jpg", isSelected: false, color: "black", discount: "10" }];
+var products = [{ image: "/images/online-shop/collection/collection_1.jpg", discount: "10" }, { image: "/images/online-shop/collection/collection_2.jpg" }, { image: "/images/online-shop/collection/collection_3.jpg", discount: "20" }, { image: "/images/online-shop/collection/collection_4.jpg", discount: "20" }, { image: "/images/online-shop/collection/collection_5.jpg" }, { image: "/images/online-shop/collection/collection_6.jpg" }, { image: "/images/online-shop/collection/collection_7.jpg" }, { image: "/images/online-shop/collection/collection_8.jpg", discount: "10" }];
 
 var Collection = exports.Collection = function (_React$Component) {
   _inherits(Collection, _React$Component);
@@ -26258,9 +26246,10 @@ var Collection = exports.Collection = function (_React$Component) {
 
     _this.state = {
       selectedItems: []
-      // color: "black"
     };
     _this.addToList = _this.addToList.bind(_this);
+    _this.renderFunction = _this.renderFunction.bind(_this);
+    _this.isSelected = _this.isSelected.bind(_this);
     return _this;
   }
 
@@ -26269,26 +26258,25 @@ var Collection = exports.Collection = function (_React$Component) {
     value: function addToList(item) {
       var currentItems = this.state.selectedItems;
 
-      item.isSelected = !item.isSelected;
-      if (item.isSelected === true) {
-        currentItems.push(item.image);
-        item.color = "white";
-        // this.setState({color:"white"});
+      if (!this.isSelected(item)) {
+        currentItems.push(item);
       } else {
         for (var i = 0; i < currentItems.length; i++) {
-          if (item.image === currentItems[i]) {
+          if (item === currentItems[i]) {
             currentItems.splice(i, 1);
           }
         }
-        item.color = "black";
-        // this.setState({color:"black"});
       }
 
-      // this.setState({selectedItems: currentItems});
-      // let toggleColor = "black" ? "white" : "black";
-      // this.setState({color: toggleColor});
-      console.log(item.color);
-      console.log(this.state.selectedItems);
+      this.setState({ selectedItems: currentItems });
+    }
+  }, {
+    key: "isSelected",
+    value: function isSelected(item) {
+      for (var key in this.state.selectedItems) {
+        if (this.state.selectedItems[key] === item) return true;
+      }
+      return false;
     }
   }, {
     key: "renderFunction",
@@ -26296,9 +26284,16 @@ var Collection = exports.Collection = function (_React$Component) {
       var _this2 = this;
 
       return products.map(function (item, i) {
-        return _react2.default.createElement(_item.Item, { key: "image_" + i, image: item.image, discount: item.discount, onClick: function onClick() {
+        return _react2.default.createElement(_item.Item, { key: "image_" + i,
+          image: item.image,
+          discount: item.discount,
+          onClick: function onClick() {
             return _this2.addToList(item);
-          }, color: item.color });
+          },
+          color: _this2.isSelected(item) ? 'white' : 'black',
+          borderBottom: _this2.isSelected(item) ? '40px solid black' : '40px solid #f09d66',
+          filter: _this2.isSelected(item) ? "drop-shadow(0px 0px 4px #333)" : "none",
+          isAdded: _this2.isSelected(item) ? "added" : "+add to cart" });
       });
     }
   }, {
