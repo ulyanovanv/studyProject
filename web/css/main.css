@@ -2349,7 +2349,7 @@ body.my-cv .prj-game:hover .prj-game_img {
     line-height: 1.2rem; }
   body.my-cv .cv_cenralization {
     width: 82%;
-    grid-template: repeat(18, 100px)/repeat(3, 3fr);
+    grid-template: repeat(17, 100px)/repeat(3, 3fr);
     min-width: 230px;
     max-width: 1060px; }
   body.my-cv .desktop-side {
