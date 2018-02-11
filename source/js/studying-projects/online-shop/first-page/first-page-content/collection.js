@@ -1,21 +1,22 @@
 import React from "react";
+import {connect} from "react-redux";
 
 import {Headings} from "./headings";
 import {Item} from "./../collection-items/item";
 
 let products = [
-  {image:"/images/online-shop/collection/collection_1.jpg", discount:"10"},
-  {image:"/images/online-shop/collection/collection_2.jpg"},
-  {image:"/images/online-shop/collection/collection_3.jpg", discount: "20"},
-  {image:"/images/online-shop/collection/collection_4.jpg", discount: "20"},
-  {image:"/images/online-shop/collection/collection_5.jpg"},
-  {image:"/images/online-shop/collection/collection_6.jpg"},
-  {image:"/images/online-shop/collection/collection_7.jpg"},
-  {image:"/images/online-shop/collection/collection_8.jpg", discount: "10"},
+  {id:0, image:"/images/online-shop/collection/collection_1.jpg", discount:"10"},
+  {id:1, image:"/images/online-shop/collection/collection_2.jpg"},
+  {id:2, image:"/images/online-shop/collection/collection_3.jpg", discount: "20"},
+  {id:3, image:"/images/online-shop/collection/collection_4.jpg", discount: "20"},
+  {id:4, image:"/images/online-shop/collection/collection_5.jpg"},
+  {id:5, image:"/images/online-shop/collection/collection_6.jpg"},
+  {id:6, image:"/images/online-shop/collection/collection_7.jpg"},
+  {id:7, image:"/images/online-shop/collection/collection_8.jpg", discount: "10"},
 ];
 
 
-export class Collection extends React.Component {
+class Collection extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -30,20 +31,22 @@ export class Collection extends React.Component {
     let currentItems = this.state.selectedItems;
 
     if (!this.isSelected(item)){
-      currentItems.push(item);
+      this.props.dispatch({type: "ADD_ITEM", item});
+      // currentItems.push(item);
     } else {
-      for (let i = 0; i < currentItems.length; i++){
-        if (item === currentItems[i]){
-          currentItems.splice(i,1);
-        }
-      }
+      this.props.dispatch({type: "DELETE_ITEM", item});
+      // for (let i = 0; i < currentItems.length; i++){
+      //   if (item === currentItems[i]){
+      //     currentItems.splice(i,1);
+      //   }
+      // }
     }
 
      this.setState({selectedItems: currentItems});
   }
   isSelected(item) {
-    for (let key in this.state.selectedItems) {
-      if (this.state.selectedItems[key] === item) return true;
+    for (let key in this.props.store.basket.items) {
+      if (this.props.store.basket.items[key].id === item.id) return true;
     }
     return false;
   }
@@ -61,6 +64,7 @@ export class Collection extends React.Component {
   }
 
   render() {
+    console.log(this.props.store);
     return (
       <section className="first-page-collection">
         <Headings headerName="Summer Collection"/>
@@ -73,3 +77,4 @@ export class Collection extends React.Component {
     );
   }
 }
+export default connect(state => ({store:state}))(Collection);

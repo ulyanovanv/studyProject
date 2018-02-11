@@ -1,5 +1,8 @@
  import React from "react";
  import ReactDOM from "react-dom";
+ import {createStore} from 'redux';
+ import myreducer from './reducers';
+ import {Provider} from 'react-redux';
 
 // import {Child} from './shop-child';
  import {FirstPage} from './first-page/first-page';
@@ -10,22 +13,41 @@
      textAlign: "center"
  }
 
- class Parent extends React.Component {
+ let store = createStore(myreducer);
 
-     render(){
-         return (<div className="centralization" style={styles}>
-             <FirstPage/>
-         {false && <ProductPage/>}
-         {false && <BasketPage/>}
+ class Parent extends React.Component {
+     constructor(props) {
+       super(props);
+       this.state = {isFirstPage: true};
+       this.changeOutlook = this.changeOutlook.bind(this);
+     }
+
+     changeOutlook(result) {
+       this.setState({isFirstPage: result})
+     }
+
+     render() {
+         return (
+           <div className="centralization" style={styles}>
+             <Provider store={store}>
+               <div>
+                 {this.state.isFirstPage && <FirstPage changeOutlook={this.changeOutlook} />}
+                 {!this.state.isFirstPage && <BasketPage changeOutlook={this.changeOutlook} />}
+               </div>
+
+             </Provider>
          </div>)
      }
  }
+
  let main = document.getElementsByClassName("shop")[0];
 
  ReactDOM.render(
      <Parent/>,
      main
  )
+
+
 
 
 
