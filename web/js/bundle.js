@@ -4435,47 +4435,51 @@ var PageHeader = exports.PageHeader = function (_React$Component) {
           { className: "page-header__upper-menu" },
           _react2.default.createElement(
             "div",
-            { className: "page-header__upper-menu_block " },
+            { className: "to-centre" },
             _react2.default.createElement(
-              "p",
-              null,
-              "Call 0 179 3182901"
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "page-header__upper-menu_block " },
+              "div",
+              { className: "page-header__upper-menu_block " },
+              _react2.default.createElement(
+                "p",
+                null,
+                "Call 0 179 3182901"
+              )
+            ),
             _react2.default.createElement(
-              "a",
-              { href: "/online-shop" },
-              "welcome msg!"
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "page-header__upper-menu_block " },
+              "div",
+              { className: "page-header__upper-menu_block " },
+              _react2.default.createElement(
+                "a",
+                { href: "/online-shop" },
+                "welcome msg!"
+              )
+            ),
             _react2.default.createElement(
-              "a",
-              { className: "page-header__upper-menu_block_border", href: "/online-shop" },
-              " my account"
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "page-header__upper-menu_block ", onClick: this.props.onClick },
+              "div",
+              { className: "page-header__upper-menu_block " },
+              _react2.default.createElement(
+                "a",
+                { className: "page-header__upper-menu_block_border", href: "/online-shop" },
+                " my account"
+              )
+            ),
             _react2.default.createElement(
-              "a",
-              { className: "page-header__upper-menu_block_border" },
-              "my whistlelist"
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "page-header__upper-menu_block " },
+              "div",
+              { className: "page-header__upper-menu_block ", onClick: this.props.onClick },
+              _react2.default.createElement(
+                "a",
+                { className: "page-header__upper-menu_block_border" },
+                "my whistlelist"
+              )
+            ),
             _react2.default.createElement(
-              "a",
-              { className: "page-header__upper-menu_block_border page-header__upper-menu_block_last-padding", href: "/online-shop" },
-              "login"
+              "div",
+              { className: "page-header__upper-menu_block " },
+              _react2.default.createElement(
+                "a",
+                { className: "page-header__upper-menu_block_border page-header__upper-menu_block_last-padding", href: "/online-shop" },
+                "login"
+              )
             )
           )
         ),
@@ -4484,84 +4488,88 @@ var PageHeader = exports.PageHeader = function (_React$Component) {
           { className: "page-header__lower-menu" },
           _react2.default.createElement(
             "div",
-            { className: "page-header__lower-menu_block categories" },
+            { className: "to-centre" },
             _react2.default.createElement(
               "div",
-              { className: "categories__name" },
+              { className: "page-header__lower-menu_block categories" },
               _react2.default.createElement(
-                "a",
-                { href: "/online-shop" },
-                "Home"
+                "div",
+                { className: "categories__name" },
+                _react2.default.createElement(
+                  "a",
+                  { href: "/online-shop" },
+                  "Home"
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "categories__name" },
+                _react2.default.createElement(
+                  "a",
+                  { href: "/online-shop" },
+                  "Galleries"
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "categories__name" },
+                _react2.default.createElement(
+                  "a",
+                  { href: "/online-shop" },
+                  "Categories"
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "categories__name" },
+                _react2.default.createElement(
+                  "a",
+                  { href: "/online-shop" },
+                  "Pages"
+                )
               )
             ),
             _react2.default.createElement(
               "div",
-              { className: "categories__name" },
+              { className: "page-header__lower-menu_block page-name" },
               _react2.default.createElement(
-                "a",
-                { href: "/online-shop" },
-                "Galleries"
-              )
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "categories__name" },
-              _react2.default.createElement(
-                "a",
-                { href: "/online-shop" },
-                "Categories"
-              )
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "categories__name" },
-              _react2.default.createElement(
-                "a",
-                { href: "/online-shop" },
-                "Pages"
-              )
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "page-header__lower-menu_block page-name" },
-            _react2.default.createElement(
-              "p",
-              null,
-              "Spophia"
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "page-header__lower-menu_block right-side" },
-            _react2.default.createElement(
-              "div",
-              { className: "right-side__social-nets" },
-              _react2.default.createElement("a", { className: "right-side__social-nets_type facebook", href: "/online-shop" }),
-              _react2.default.createElement("a", { className: "right-side__social-nets_type twitter", href: "/online-shop" }),
-              _react2.default.createElement("a", { className: "right-side__social-nets_type pinterest", href: "/online-shop" }),
-              _react2.default.createElement("a", { className: "right-side__social-nets_type instagram", href: "/online-shop" })
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "right-side__select-collection" },
-              _react2.default.createElement(
-                "select",
+                "p",
                 null,
+                "Spophia"
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "page-header__lower-menu_block right-side" },
+              _react2.default.createElement(
+                "div",
+                { className: "right-side__social-nets" },
+                _react2.default.createElement("a", { className: "right-side__social-nets_type facebook", href: "/online-shop" }),
+                _react2.default.createElement("a", { className: "right-side__social-nets_type twitter", href: "/online-shop" }),
+                _react2.default.createElement("a", { className: "right-side__social-nets_type pinterest", href: "/online-shop" }),
+                _react2.default.createElement("a", { className: "right-side__social-nets_type instagram", href: "/online-shop" })
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "right-side__select-collection" },
                 _react2.default.createElement(
-                  "option",
+                  "select",
                   null,
-                  "Bikini"
-                ),
-                _react2.default.createElement(
-                  "option",
-                  null,
-                  "Underwear"
-                ),
-                _react2.default.createElement(
-                  "option",
-                  null,
-                  "Sexy socs"
+                  _react2.default.createElement(
+                    "option",
+                    null,
+                    "Bikini"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    null,
+                    "Underwear"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    null,
+                    "Sexy socs"
+                  )
                 )
               )
             )
@@ -4732,57 +4740,61 @@ var PageFooter = exports.PageFooter = function (_React$Component) {
         { className: "page-footer" },
         _react2.default.createElement(
           "div",
-          { className: "page-footer__upper" },
+          { className: "to-centre" },
           _react2.default.createElement(
             "div",
-            { className: "page-footer__upper_navigation" },
-            this.renderTheList(columnShops),
-            this.renderTheList(columnInformation),
-            this.renderTheList(columnCustomerService)
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "page-footer__upper_stay-connected" },
+            { className: "page-footer__upper" },
             _react2.default.createElement(
               "div",
-              { className: "page-footer__upper_stay-connected_sub" },
-              _react2.default.createElement(
-                "p",
-                { className: "headings" },
-                "stay connected"
-              ),
-              _react2.default.createElement(
-                "div",
-                { className: "icons" },
-                _react2.default.createElement("a", { className: "icons_facebook", href: "/online-shop" }),
-                _react2.default.createElement("a", { className: "icons_twitter", href: "/online-shop" }),
-                _react2.default.createElement("a", { className: "icons_instagram", href: "/online-shop" }),
-                _react2.default.createElement("a", { className: "icons_pinterest", href: "/online-shop" }),
-                _react2.default.createElement("a", { className: "icons_wifi", href: "/online-shop" })
-              )
+              { className: "page-footer__upper_navigation" },
+              this.renderTheList(columnShops),
+              this.renderTheList(columnInformation),
+              this.renderTheList(columnCustomerService)
             ),
             _react2.default.createElement(
               "div",
-              { className: "page-footer__upper_stay-connected_sub" },
+              { className: "page-footer__upper_stay-connected" },
               _react2.default.createElement(
-                "p",
-                { className: "headings" },
-                "subscribe ",
+                "div",
+                { className: "page-footer__upper_stay-connected_sub" },
                 _react2.default.createElement(
-                  "i",
-                  null,
-                  "in"
+                  "p",
+                  { className: "headings" },
+                  "stay connected"
                 ),
-                " our new letters"
-              ),
-              _react2.default.createElement(
-                "form",
-                { id: "subscribe", className: "page-footer__upper_stay-connected_form", method: "post", target: "_blank", action: "" },
                 _react2.default.createElement(
                   "div",
-                  { className: "page-footer__upper_stay-connected_form_container" },
-                  _react2.default.createElement("input", { type: "email", name: "email-for-subscription", id: "subscribe_email", placeholder: "Enter Your Email Address" }),
-                  _react2.default.createElement("input", { type: "submit", name: "submit-for-subscription", id: "subscribe_submit", value: "SUBSCRIBE" })
+                  { className: "icons" },
+                  _react2.default.createElement("a", { className: "icons_facebook", href: "/online-shop" }),
+                  _react2.default.createElement("a", { className: "icons_twitter", href: "/online-shop" }),
+                  _react2.default.createElement("a", { className: "icons_instagram", href: "/online-shop" }),
+                  _react2.default.createElement("a", { className: "icons_pinterest", href: "/online-shop" }),
+                  _react2.default.createElement("a", { className: "icons_wifi", href: "/online-shop" })
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "page-footer__upper_stay-connected_sub" },
+                _react2.default.createElement(
+                  "p",
+                  { className: "headings" },
+                  "subscribe ",
+                  _react2.default.createElement(
+                    "i",
+                    null,
+                    "in"
+                  ),
+                  " our new letters"
+                ),
+                _react2.default.createElement(
+                  "form",
+                  { id: "subscribe", className: "page-footer__upper_stay-connected_form", method: "post", target: "_blank", action: "" },
+                  _react2.default.createElement(
+                    "div",
+                    { className: "page-footer__upper_stay-connected_form_container" },
+                    _react2.default.createElement("input", { type: "email", name: "email-for-subscription", id: "subscribe_email", placeholder: "Enter Your Email Address" }),
+                    _react2.default.createElement("input", { type: "submit", name: "submit-for-subscription", id: "subscribe_submit", value: "SUBSCRIBE" })
+                  )
                 )
               )
             )
@@ -4790,25 +4802,29 @@ var PageFooter = exports.PageFooter = function (_React$Component) {
         ),
         _react2.default.createElement(
           "div",
-          { className: "page-footer__lower" },
+          { className: "to-centre" },
           _react2.default.createElement(
             "div",
-            { className: "page-footer__lower_border-top" },
-            _react2.default.createElement(
-              "p",
-              { className: "page-footer__lower_text" },
-              "@2018 Spopia fashion ",
-              _react2.default.createElement("br", null),
-              "All rights reserved ",
-              _react2.default.createElement("br", null),
-              "Designed by MoccaLabs"
-            ),
+            { className: "page-footer__lower" },
             _react2.default.createElement(
               "div",
-              { className: "page-footer__lower_payments" },
-              _react2.default.createElement("img", { src: "./images/online-shop/svg/visa.png", title: "visa" }),
-              _react2.default.createElement("img", { src: "./images/online-shop/svg/master.png", title: "mastercard" }),
-              _react2.default.createElement("img", { src: "./images/online-shop/svg/amex.png", title: "american express" })
+              { className: "page-footer__lower_border-top" },
+              _react2.default.createElement(
+                "p",
+                { className: "page-footer__lower_text" },
+                "@2018 Spopia fashion ",
+                _react2.default.createElement("br", null),
+                "All rights reserved ",
+                _react2.default.createElement("br", null),
+                "Designed by MoccaLabs"
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "page-footer__lower_payments" },
+                _react2.default.createElement("img", { src: "./images/online-shop/svg/visa.png", title: "visa" }),
+                _react2.default.createElement("img", { src: "./images/online-shop/svg/master.png", title: "mastercard" }),
+                _react2.default.createElement("img", { src: "./images/online-shop/svg/amex.png", title: "american express" })
+              )
             )
           )
         )
@@ -5106,6 +5122,7 @@ var parentDiv = (0, _jqueryMin2.default)("#third-line");
 
 var today = new Date();
 var currentDate = new Date(today.getFullYear(), today.getMonth(), 1);
+var currentDay = today.getDate();
 var currentMonth = currentDate.getMonth();
 var currentWeekDay = currentDate.getDay().toString();
 var currentYear = currentDate.getFullYear();
@@ -5115,6 +5132,11 @@ var currentYear = currentDate.getFullYear();
     createCalenderDates(nextDate, parentDiv);
     (0, _jqueryMin2.default)("#year").text(currentYear);
     (0, _jqueryMin2.default)("#month").text(months[currentMonth]);
+    (0, _jqueryMin2.default)(".calender__current-date_day").text(currentDay);
+    (0, _jqueryMin2.default)(".calender__current-date_global_month").text(months[currentMonth]);
+    (0, _jqueryMin2.default)(".calender__current-date_global_year").text(currentYear);
+    (0, _jqueryMin2.default)(".calender__current-meetings_current-date_date").text(currentDay);
+    (0, _jqueryMin2.default)(".calender__current-meetings_current-date_month").text(months[currentMonth]);
 });
 
 var nextDate = new Date(currentYear, currentMonth + 1);
@@ -5182,7 +5204,7 @@ function findEmptyCells(currentWeekDay, div) {
     }
     var xCounter = 0;
     for (var i = currentWeekDay - 1; i > 0; i--) {
-        div.append("<div class='day blue'>" + array[xCounter] + "</div>");
+        div.append("<div class='day grey'>" + array[xCounter] + "</div>");
         xCounter++;
     }
 }
@@ -5207,28 +5229,33 @@ function createEmptyCells(currentWeekDay, parentDiv) {
             for (var ll = lastDay - lastWeekDay + 1; ll <= lastDay; ll++) {
                 array.push(ll);
             }
+
             var xCounter = 0;
             for (var i = 6; i > 0; i--) {
-                parentDiv.append("<div class='day blue'>" + array[xCounter] + "</div>");
+                var colorForFont = i === 1 ? "#46a699" : "grey";
+
+                parentDiv.append("<div class='day grey' style='color:" + colorForFont + " '>" + array[xCounter] + "</div>");
                 xCounter++;
             }
             break;
     }
-};
+}
 
 function createCalenderDates(nextDate, parentDiv) {
     var yesterday = new Date(nextDate);
-    console.log(yesterday);
-    //    var currentWeekDay = yesterday.getDay();
     var findLastDayOfCurrentMonth = yesterday.setDate(nextDate.getDate() - 1); //?
     var lastDayOfCurrentMonth = new Date(findLastDayOfCurrentMonth);
     var lastDay = lastDayOfCurrentMonth.getDate();
     var currWeekDay = lastDayOfCurrentMonth.getDay().toString();
-    console.log(currWeekDay);
 
     for (var number = 1; number <= lastDay; number++) {
+
         var date = new Date(yesterday.getFullYear(), yesterday.getMonth(), number);
-        var newDay = (0, _jqueryMin2.default)("<div class='day'>" + number + "</div>");
+
+        var day = date.getDay();
+        var colorForFont = day === 6 || day === 0 ? "#46a699" : "#000";
+
+        var newDay = (0, _jqueryMin2.default)("<div class='day' style='color:" + colorForFont + " '>" + number + "</div>");
         parentDiv.append(newDay);
 
         if (today.toDateString() == date.toDateString()) {
@@ -5260,7 +5287,9 @@ function createNewDaysOfNextMonths(currWeekDay) {
             break;
     }
     for (var i = 1; i <= addDateCounter; i++) {
-        var nDay = (0, _jqueryMin2.default)("<div class='day blue'>" + i + "</div>");
+        var colorForFont = i === addDateCounter - 1 || i === addDateCounter ? "#46a699" : "#000";
+
+        var nDay = (0, _jqueryMin2.default)("<div class='day grey' style='color:" + colorForFont + " '>" + i + "</div>");
         parentDiv.append(nDay);
     }
 }
@@ -28977,11 +29006,12 @@ var ChosenItems = function (_React$Component) {
           discount: item.discount,
           onClick: function onClick() {
             return _this2.addToList(item);
-          },
-          color: _this2.isSelected(item) ? 'white' : 'black',
-          borderBottom: _this2.isSelected(item) ? '40px solid black' : '40px solid #f09d66',
-          filter: _this2.isSelected(item) ? "drop-shadow(0px 0px 4px #333)" : "none",
-          isAdded: _this2.isSelected(item) ? "added" : "+add to cart" });
+          }
+          // color={this.isSelected(item) ? 'white' : 'black'}
+          // borderBottom={this.isSelected(item) ? '40px solid black' : '40px solid #f09d66'}
+          // filter={this.isSelected(item) ? "drop-shadow(0px 0px 4px #333)" : "none"}
+          // isAdded={this.isSelected(item) ? "added" : "+add to cart"}
+        });
       });
     }
   }, {

@@ -1,11 +1,12 @@
 .headers {
+  @extend %to-centre;
 
   &_container {
     padding: 20px $padding-for-centre;
     @include flexbox(row,space-between);
   }
   &__lines {
-    width: 30vw;
+    width: 25vw;
     height: 5px;
     border-bottom: 1px solid $beige-for-support;
   }
@@ -31,6 +32,13 @@
     }
     &__current-heading {
       font-size: 1.3rem;
+    }
+  }
+}
+@media (min-width: 1480px){
+  .headers{
+    &_container {
+      padding: 10px $padding-for-centre-big-media;
     }
   }
 }

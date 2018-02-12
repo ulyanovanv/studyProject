@@ -1,16 +1,16 @@
 body.calender {
   font-size: 16px;
   font-family: 'PT Sans', sans-serif;
-  width: 100%;
+
   position: relative;
   height: 100%;
-  background-image: linear-gradient( #7FFFD4 , #FFD700), linear-gradient( #000 50%, #FFF 50%), linear-gradient(90deg,  #000 50%, #FFF 50% ),
-  URL("http://images.all-free-download.com/images/graphiclarge/linen_fabric_background_04_hd_picture_169825.jpg");
-//  background-image: linear-gradient( #7FFFD4 , #FFD700), linear-gradient( #000 50%, #FFF 50%), linear-gradient(90deg,  #000 50%, #FFF 50% ),
-//  url("images/linen_fabric.jpg");
-  background-blend-mode:  screen, difference, exclusion;
-  background-repeat: repeat;
-  background-size: 100% 100%, 100px 100px, 100px 100px;
+  width: 100%;
+
+  //background-image: linear-gradient( #7FFFD4 , #FFD700), linear-gradient( #000 50%, #FFF 50%), linear-gradient(90deg,  #000 50%, #FFF 50% ),
+  //URL("http://images.all-free-download.com/images/graphiclarge/linen_fabric_background_04_hd_picture_169825.jpg");
+  //background-blend-mode:  screen, difference, exclusion;
+  //background-repeat: repeat;
+  //background-size: 100% 100%, 100px 100px, 100px 100px;
 
 
   @mixin flexbox($direction,$jc,$ai) {
@@ -20,91 +20,197 @@ body.calender {
     align-items: $ai;
   }
 
-  .blue {
-    color: #0077cc;
+  .grey {
+    color: grey;
     opacity: 0.7;
   }
   .current-date {
-    color: #FFFFFF;
-    background-color: #000000;
+    //color: #FFFFFF;
+    //background-color: #000000;
+    border: 2px #46a699 dashed;
+    border-radius: 50px;
   }
 
   #center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -104px;
-    margin-left: -110px;
+    //position: absolute;
+    //top: 50%;
+    //left: 50%;
+    //margin-top: -104px;
+    //margin-left: -110px;
+    height: 100%;
+    display: flex;
   }
 
-  #calender-view {
-    text-align: center;
-    border: 1px solid Black;
-    width: 217px;
+  .calender {
+    @include flexbox(column, space-between, center);
     background-color: #FFF;
-  }
+    margin: auto;
+    height: 640px;
+    width: 360px;
+    border: 2px solid #c9c9c9;
+    border-radius: 50px;
+    box-shadow: 0px 0px 60px 20px #e4e4e4;
 
-  #first-line{
-    @include flexbox(row,space-between,center);
-    height: 45px;
-    #global-date{
-      padding-left: 10px;
 
-      #left-side{
-        font-size: 1.1rem;
-        #year{}
-        #month{}
+  //position: absolute;
+    //top: 50%;
+    //left: 50%;
+    //margin-top: -107px;
+    //margin-left: -103px;
+
+    &__current-date{
+      width: 100%;
+      height: 180px;
+
+
+      background: linear-gradient(75deg, #46a699, #99dadc);
+
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      border-bottom-left-radius: 50% 16%;
+      border-bottom-right-radius: 60% 47%;
+      color: #FFF;
+      @include flexbox(row, center, center);
+      filter: drop-shadow(0px 6px 3px grey);
+
+      %padding {
+        padding: 0 20px;
       }
-    }
-    #rifles{
-     padding-right: 8px;
-     @include flexbox(row,space-between,center);
-     width: 50px;
-      #to-left{
-        padding: 4px 10px 4px 4px;
-        &:hover {
-          cursor: pointer;
+
+      &_day {
+        font-size: 5rem;
+        line-height: 4rem;
+        @extend %padding;
+      }
+      &_global {
+        @include flexbox(column, center, center);
+        border-left: 2px solid #FFF;
+        @extend %padding;
+        line-height: 2rem;
+        &_month {
+          font-size: 1.4rem;
+        }
+        &_year {
+          font-size: 2.5rem;
         }
       }
-      #to-right{
-        padding: 4px;
-        &:hover {
-          cursor: pointer;
+
+    }
+
+    &__month{
+      text-align: center;
+      //border: 1px solid Black;
+      width: 280px;
+
+      #first-line{
+        @include flexbox(row,space-between,center);
+        height: 45px;
+        width: 280px;
+        #global-date{
+          //padding-left: 10px;
+
+          #left-side{
+            font-size: 1.1rem;
+            #year{}
+            #month{}
+          }
+        }
+        .rifles{
+          //padding-right: 8px;
+          @include flexbox(row,space-between,center);
+          //width: 50px;
+
+          %decor {
+            font-weight: bold;
+            color: grey;
+            border: 1px solid grey;
+            height: 35px;
+            width: 35px;
+            line-height: 35px;
+            border-radius: 50%;
+            &:hover {
+              color: #FFF;
+              background: linear-gradient(75deg, #46a699, #99dadc);
+              border: 1px solid #FFF;
+              cursor: pointer;
+            }
+          }
+
+          #to-left{
+            @extend  %decor;
+            margin-left: 10px;
+            //padding: 4px 10px 4px 4px;
+            //&:hover {
+            //
+            //}
+          }
+          #to-right{
+            @extend  %decor;
+            margin-right:10px;
+            //padding: 4px;
+            //&:hover {
+            //  cursor: pointer;
+            //}
+          }
+
+        }
+      }
+
+      #second-line{
+        @include flexbox(row,space-around,center);
+        //background-color: #b9d4eb;
+        //border-top: 1px solid #4a5c6b;
+        //border-bottom: 1px solid #4a5c6b;
+        font-weight: bold;
+        //line-height: 20px;
+        line-height: 40px;
+        color: #949ca3;
+        .weekday{
+          width: 31px;
+          box-sizing: border-box;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      #third-line{
+        @include flexbox(row,flex-start,center);
+        flex-wrap: wrap;
+
+        .day{
+          width: 40px;
+          height: 40px;
+          //padding: 2px;
+          box-sizing: border-box;
+          font-size: 1.1rem;
+          line-height: 40px;
+          &:hover {
+            color: #FFF;
+            //background-color: #000;
+            cursor: pointer;
+            background: linear-gradient(75deg, #46a699, #99dadc);
+            border-radius: 50px;
+          }
         }
       }
     }
-  }
 
-  #second-line{
-    @include flexbox(row,space-around,center);
-    background-color: #b9d4eb;
-    border-top: 1px solid #4a5c6b;
-    border-bottom: 1px solid #4a5c6b;
-    line-height: 20px;
-    .weekday{
-      width: 31px;
-      box-sizing: border-box;
-      &:hover {
-        cursor: pointer;
+    &__current-meetings {
+      height: 120px;
+      width: 280px;
+      padding-left: 15px;
+
+      &_current-date {
+        font-size: 2rem;
+        padding-bottom: 10px;
+        color: grey;
+      }
+      &_meetings {
+
       }
     }
   }
 
-  #third-line{
-    @include flexbox(row,flex-start,center);
-    flex-wrap: wrap;
 
-    .day{
-      width: 31px;
-      padding: 2px;
-      box-sizing: border-box;
-      font-size: 1.1rem;
-      line-height: 1.4;
-      &:hover {
-        color: #FFF;
-        background-color: #000;
-        cursor: pointer;
-      }
-    }
-  }
 }

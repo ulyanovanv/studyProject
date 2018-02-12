@@ -1,4 +1,8 @@
 .first-page-customer-reviews {
+  //@extend %to-centre;
+  width: 100%;
+  max-width: none;
+
   &_container {
     padding: 0 $padding-for-centre;
     background-color: $beige-for-support;
@@ -19,6 +23,8 @@
     @include flexbox (row);
     padding: 22px 1vw;
 
+    @extend %to-centre;
+
     &_content-picture > img {
       height: 25vw;
       width: 21vw;
@@ -31,7 +37,7 @@
       flex: 1;
       &_description{
         @include flexbox(column,space-evenly, flex-start);
-        height: 20vw;
+        height: 18vw;
         text-align: left;
       }
     }
@@ -43,7 +49,7 @@
 
       &_description{
         @include flexbox(column,space-evenly, flex-end);
-        height: 20vw;
+        height: 18vw;
         text-align: right;
       }
     }
@@ -53,10 +59,11 @@
   .opinion {
     font-family: $font-for-headings;
     color: #fffaf0;
-    line-height: 1.5rem;
+    //line-height: 1.5rem;
     letter-spacing: 0.03rem;
     font-size: 1.5vw;
     flex: 2 0;
+    margin-top: 20px;
   }
   .customer-name {
     font-family: $font-for-headings;
@@ -75,5 +82,18 @@
 @media (max-width: 800px) {
   .first-page-customer-reviews{
     display: none;
+  }
+}
+@media (min-width: 1480px){
+  .first-page-customer-reviews{
+    .opinion {
+      font-size: 2rem;
+    }
+    .customer-name {
+      font-size: 3rem
+    }
+    .occupation {
+      font-size: 2rem;
+    }
   }
 }

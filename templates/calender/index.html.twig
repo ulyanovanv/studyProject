@@ -6,6 +6,7 @@
 
 {% block additionalLinks %}
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, minimal-ui">
 {% endblock %}
 
 {% block bodyClass %}
@@ -15,35 +16,80 @@
 {% block content %}
 
     <div id="center">
-        <div id="calender-view">
-            <div id="first-line">
-                <div id="global-date">
-                    <p id="left-side">
-                        <span id="year"></span>
-                        <span id="month"></span>
-                    </p>
+        <div class="calender">
+            {#<svg class='calender__current-date_ellipse'#}
+                 {#viewBox="0 0 50% 50%"#}
+                 {#height="200px"#}
+                 {#width="100%"#}
+                 {#style="border-top-left-radius:50px; border-top-right-radius:50px; position: relative">#}
+                {#<defs>#}
+                    {#<linearGradient id='gradient-for-ellipse'  x1="0" y1="0" x2="50%" y2="0" spreadMethod='pad'>#}
+                        {#<stop offset='0%' stop-color='#46a699' />#}
+                        {#<stop offset='100%' stop-color='#99dadc' />#}
+                    {#</linearGradient>#}
+                {#</defs>#}
+                {#<ellipse cx="150" cy="80" rx="250" ry="110"  fill="url(#gradient-for-ellipse)"/>#}
+
+
+            {#</svg>#}
+
+            <div class="calender__current-date">
+
+                <div class="calender__current-date_day"></div>
+                <div class="calender__current-date_global">
+                    <div class="calender__current-date_global_month"></div>
+                    <div class="calender__current-date_global_year"></div>
                 </div>
-                <div id="rifles">
-                    <div id="to-left">
-                        <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
-                    </div>
-                    <div id="to-right">
-                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                    </div>
-                </div>
-            </div>
-            <div id="second-line">
-                <div class="weekday">Mo</div>
-                <div class="weekday">Tu</div>
-                <div class="weekday">We</div>
-                <div class="weekday">Th</div>
-                <div class="weekday">Fr</div>
-                <div class="weekday">Sa</div>
-                <div class="weekday">Su</div>
-            </div>
-            <div id="third-line">
 
             </div>
+
+            <div class="calender__month">
+                <div id="first-line">
+                    <div class="rifles">
+                        <div id="to-left">
+                            <
+                            {#<span> < </span>#}
+                            {#<i class="fa fa-long-arrow-left" aria-hidden="true"></i>#}
+                            {#<div class="decor"> < </div>#}
+                        </div>
+                    </div>
+                    <div id="global-date">
+                        <p id="left-side">
+                            <span id="year"></span>
+                            <span id="month"></span>
+                        </p>
+                    </div>
+                    <div class="rifles">
+                        <div id="to-right">
+                            >
+                            {#<span> > </span>#}
+                            {#<i class="fa fa-long-arrow-right" aria-hidden="true"></i>#}
+                            {#<div class="decor"> > </div>#}
+                        </div>
+                    </div>
+                </div>
+                <div id="second-line">
+                    <div class="weekday">Mo</div>
+                    <div class="weekday">Tu</div>
+                    <div class="weekday">We</div>
+                    <div class="weekday">Th</div>
+                    <div class="weekday">Fr</div>
+                    <div class="weekday">Sa</div>
+                    <div class="weekday">Su</div>
+                </div>
+                <div id="third-line">
+
+                </div>
+            </div>
+
+            <div class="calender__current-meetings">
+                <div class="calender__current-meetings_current-date">
+                    <span class="calender__current-meetings_current-date_date"></span>
+                    <span class="calender__current-meetings_current-date_month"></span>
+                </div>
+                <div class="calender__current-meetings_meetings">14:30 - Marketing teem meeting</div>
+            </div>
+
         </div>
     </div>
 

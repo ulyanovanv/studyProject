@@ -1,4 +1,5 @@
 .first-page-brands {
+  @extend %to-centre;
   &_container {
     padding: 10px $padding-for-centre;
   }
@@ -59,6 +60,13 @@
   .first-page-brands {
     &__name {
       background-size: 100px;
+    }
+  }
+}
+@media (min-width: 1480px){
+  .first-page-brands{
+    &_container {
+      padding: 10px $padding-for-centre-big-media;
     }
   }
 }

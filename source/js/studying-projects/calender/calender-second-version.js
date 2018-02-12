@@ -10,6 +10,7 @@ var parentDiv = $("#third-line");
 
 var today = new Date();
 var currentDate = new Date(today.getFullYear(), today.getMonth(), 1);
+var currentDay = today.getDate();
 var currentMonth = currentDate.getMonth();
 var currentWeekDay = currentDate.getDay().toString();
 var currentYear = currentDate.getFullYear();
@@ -20,6 +21,11 @@ $(document).ready(function(){
     createCalenderDates(nextDate, parentDiv);
     $("#year").text(currentYear);
     $("#month").text(months[currentMonth]);
+    $(".calender__current-date_day").text(currentDay);
+    $(".calender__current-date_global_month").text(months[currentMonth]);
+    $(".calender__current-date_global_year").text(currentYear);
+    $(".calender__current-meetings_current-date_date").text(currentDay);
+    $(".calender__current-meetings_current-date_month").text(months[currentMonth]);
 });
 
 var nextDate = new Date(currentYear,currentMonth + 1);
@@ -88,8 +94,8 @@ function findEmptyCells(currentWeekDay, div) {
         array.push(ll);
     }
     var xCounter = 0;
-    for(var i = currentWeekDay - 1; i > 0; i--){
-        div.append("<div class='day blue'>" + array[xCounter] +"</div>");
+    for(var i = currentWeekDay - 1; i > 0; i--) {
+      div.append("<div class='day grey'>" + array[xCounter] +"</div>");
         xCounter++;
     }
 }
@@ -114,29 +120,36 @@ function createEmptyCells(currentWeekDay, parentDiv) {
             for(var ll = lastDay - lastWeekDay + 1; ll<=lastDay; ll++){
                 array.push(ll);
             }
+
             var xCounter = 0;
             for(var i = 6; i>0; i--){
-                parentDiv.append("<div class='day blue'>" + array[xCounter] +"</div>");
+                var colorForFont = ( i === 1  ) ? "#46a699" : "grey";
+
+                parentDiv.append("<div class='day grey' style='color:" + colorForFont + " '>"+ array[xCounter] +"</div>");
                 xCounter++;
             }
             break;
     }
-};
+}
 
 function createCalenderDates(nextDate, parentDiv){
     var yesterday = new Date(nextDate);
-    console.log(yesterday);
-//    var currentWeekDay = yesterday.getDay();
     var findLastDayOfCurrentMonth = yesterday.setDate(nextDate.getDate()-1); //?
     var lastDayOfCurrentMonth = new Date(findLastDayOfCurrentMonth);
     var lastDay = lastDayOfCurrentMonth.getDate();
     var currWeekDay = lastDayOfCurrentMonth.getDay().toString();
-    console.log(currWeekDay);
 
     for (var number = 1; number <= lastDay; number ++) {
+
+
         var date = new Date(yesterday.getFullYear(), yesterday.getMonth(), number);
-        var newDay = $("<div class='day'>"+number+"</div>");
+
+        var day = date.getDay();
+        var colorForFont = (day === 6 || day === 0) ? "#46a699" : "#000";
+
+        var newDay = $("<div class='day' style='color:" + colorForFont + " '>"+number+"</div>");
         parentDiv.append(newDay);
+
 
         if (today.toDateString() == date.toDateString()){
             newDay.addClass("current-date");
@@ -168,7 +181,9 @@ function createNewDaysOfNextMonths(currWeekDay){
             break;
     }
     for (var i = 1; i <= addDateCounter;i++){
-        var nDay = $("<div class='day blue'>"+i+"</div>");
+        var colorForFont = (i === addDateCounter-1 || i === addDateCounter) ? "#46a699" : "#000";
+
+        var nDay = $("<div class='day grey' style='color:" + colorForFont + " '>"+i+"</div>");
         parentDiv.append(nDay);
     }
 }

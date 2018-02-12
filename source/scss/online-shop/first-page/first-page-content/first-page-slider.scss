@@ -1,8 +1,11 @@
 .first-page-slider {
+
+  @extend %to-centre;
   padding-bottom: 2vw;
   text-transform: uppercase;
 
   &__image-container {
+    @extend %to-centre;
     position: absolute;
     img {
       width: 100%;
@@ -21,6 +24,7 @@
     margin: 0 auto;
     //height: 35vw;
     @include flexbox(column, space-around);
+    max-height: 700px;
   }
   &__discounts {
     border: 2px solid $white-fonts;
@@ -126,14 +130,31 @@
     &__image-container {
       left: $padding-for-centre;
       right: $padding-for-centre;
-      img {
-        //width: 100%;
-        //max-width: 1440px;
-      }
+
     }
     &__slider-changer{
       margin-bottom: 30px;
     }
+    &__discounts {
+      &_container {
+        .discounts-season {
+          font-size: 1.2rem;
+        }
+        .discounts-sale {
+          font-size: 3rem;
+        }
+        .discounts-third-line > p {
+          font-size: 1rem;
+        }
+        .discounts-number {
+          font-size: 2rem;
+        }
+      }
+    }
+    &__shop-button > a{
+      font-size: 2rem;
+    }
+
   }
 
 }

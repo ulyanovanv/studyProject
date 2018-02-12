@@ -28,54 +28,58 @@ export class PageFooter extends React.Component {
   render(){
     return (
       <footer className="page-footer">
-        <div className="page-footer__upper">
-          <div className="page-footer__upper_navigation">
-            {this.renderTheList(columnShops)}
-            {this.renderTheList(columnInformation)}
-            {this.renderTheList(columnCustomerService)}
-          </div>
-          <div className="page-footer__upper_stay-connected">
-
-            <div className="page-footer__upper_stay-connected_sub">
-              <p className="headings">
-                stay connected
-              </p>
-              <div className="icons">
-                <a className="icons_facebook" href="/online-shop"></a>
-                <a className="icons_twitter" href="/online-shop"></a>
-                <a className="icons_instagram" href="/online-shop"></a>
-                <a className="icons_pinterest" href="/online-shop"></a>
-                <a className="icons_wifi" href="/online-shop"></a>
-              </div>
+        <div className="to-centre">
+          <div className="page-footer__upper">
+            <div className="page-footer__upper_navigation">
+              {this.renderTheList(columnShops)}
+              {this.renderTheList(columnInformation)}
+              {this.renderTheList(columnCustomerService)}
             </div>
+            <div className="page-footer__upper_stay-connected">
 
-            <div className="page-footer__upper_stay-connected_sub">
-              <p className="headings">
-                subscribe <i>in</i> our new letters
-              </p>
-              <form id="subscribe" className="page-footer__upper_stay-connected_form" method="post" target="_blank" action="">
-                <div className="page-footer__upper_stay-connected_form_container">
-                  <input type="email" name="email-for-subscription" id="subscribe_email" placeholder="Enter Your Email Address"/>
-                  <input type="submit" name="submit-for-subscription" id="subscribe_submit" value="SUBSCRIBE"/>
+              <div className="page-footer__upper_stay-connected_sub">
+                <p className="headings">
+                  stay connected
+                </p>
+                <div className="icons">
+                  <a className="icons_facebook" href="/online-shop"></a>
+                  <a className="icons_twitter" href="/online-shop"></a>
+                  <a className="icons_instagram" href="/online-shop"></a>
+                  <a className="icons_pinterest" href="/online-shop"></a>
+                  <a className="icons_wifi" href="/online-shop"></a>
                 </div>
-              </form>
-            </div>
+              </div>
 
+              <div className="page-footer__upper_stay-connected_sub">
+                <p className="headings">
+                  subscribe <i>in</i> our new letters
+                </p>
+                <form id="subscribe" className="page-footer__upper_stay-connected_form" method="post" target="_blank" action="">
+                  <div className="page-footer__upper_stay-connected_form_container">
+                    <input type="email" name="email-for-subscription" id="subscribe_email" placeholder="Enter Your Email Address"/>
+                    <input type="submit" name="submit-for-subscription" id="subscribe_submit" value="SUBSCRIBE"/>
+                  </div>
+                </form>
+              </div>
+
+            </div>
           </div>
         </div>
-        <div className="page-footer__lower">
-          <div className="page-footer__lower_border-top">
-            <p className="page-footer__lower_text">
-              @2018 Spopia fashion <br/>
-              All rights reserved <br/>
-              Designed by MoccaLabs
-            </p>
-            <div className="page-footer__lower_payments">
-              <img src="./images/online-shop/svg/visa.png" title="visa"/>
-              <img src="./images/online-shop/svg/master.png" title="mastercard"/>
-              <img src="./images/online-shop/svg/amex.png" title="american express"/>
-            </div>
+        <div className="to-centre">
+          <div className="page-footer__lower">
+            <div className="page-footer__lower_border-top">
+              <p className="page-footer__lower_text">
+                @2018 Spopia fashion <br/>
+                All rights reserved <br/>
+                Designed by MoccaLabs
+              </p>
+              <div className="page-footer__lower_payments">
+                <img src="./images/online-shop/svg/visa.png" title="visa"/>
+                <img src="./images/online-shop/svg/master.png" title="mastercard"/>
+                <img src="./images/online-shop/svg/amex.png" title="american express"/>
+              </div>
 
+            </div>
           </div>
         </div>
       </footer>

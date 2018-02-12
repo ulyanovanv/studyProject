@@ -1,7 +1,14 @@
 .page-footer {
+  //@extend %to-centre;
   background-color: $black-fonts;
   color: $white-fonts;
   width: 100%;
+  max-width: none;
+
+  .to-centre {
+    @extend %to-centre;
+    @include flexbox(column, flex-start, flex-start);
+  }
 
   &__upper {
     padding: 10px $padding-for-centre;
@@ -14,6 +21,7 @@
           @include flexbox(column, flex-start, flex-start);
           font-family: 'Arial', serif;
           width: 20vw;
+          max-width: 350px;
         }
       }
       &_stay-connected {
@@ -84,10 +92,11 @@
   }
 
   &__lower {
-    padding: 10px $padding-for-centre;
+    padding: 10px 0;
+    width: 100%;
     &_border-top {
       border-top: 1px solid $grey-for-footer;
-      @include flexbox(column, flex-start, flex-start);
+      //@include flexbox(column, flex-start, flex-start);
     }
     &_text {
       color: $grey-for-footer;
@@ -96,9 +105,12 @@
       line-height: 0.9rem;
       text-align: left;
     }
-    &_payments img {
-      height: 20px;
-      padding-right: 5px;
+    &_payments  {
+      text-align: left;
+      img {
+        height: 20px;
+        padding-right: 5px;
+      }
     }
   }
 }

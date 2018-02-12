@@ -1,4 +1,5 @@
 .first-page-support {
+  @extend %to-centre;
   color: $white-fonts;
   &_container {
     padding: 10px $padding-for-centre;
@@ -78,5 +79,12 @@
 @media (max-width: 800px) {
   .first-page-support{
       display: none;
+  }
+}
+@media (min-width: 1480px){
+  .first-page-support{
+    &_container {
+      padding: 10px $padding-for-centre-big-media;
+    }
   }
 }
