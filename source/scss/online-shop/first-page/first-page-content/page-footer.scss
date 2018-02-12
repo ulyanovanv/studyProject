@@ -22,6 +22,7 @@
           font-family: 'Arial', serif;
           width: 20vw;
           max-width: 350px;
+          min-width: 115px;
         }
       }
       &_stay-connected {
@@ -92,8 +93,11 @@
   }
 
   &__lower {
-    padding: 10px 0;
+    //padding: 10px 0;
+    padding: 10px $padding-for-centre;
     width: 100%;
+    box-sizing: border-box;
+
     &_border-top {
       border-top: 1px solid $grey-for-footer;
       //@include flexbox(column, flex-start, flex-start);

@@ -1440,14 +1440,15 @@ body.shop {
           outline: none;
           margin-left: 10px; }
   @media (max-width: 800px) {
-    body.shop .page-header__upper-menu {
-      display: none; }
-    body.shop .page-header__lower-menu {
+    body.shop .page-header .to-centre {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      flex-direction: column-reverse;
+      flex-direction: column-reverse; }
+    body.shop .page-header__upper-menu {
+      display: none; }
+    body.shop .page-header__lower-menu {
       padding: 0; }
       body.shop .page-header__lower-menu .categories {
         width: 100%;
@@ -1762,7 +1763,7 @@ body.shop {
         font-size: 1.5vw; } }
   @media (max-width: 800px) {
     body.shop .first-page-collection_container {
-      padding: 10px 12px; }
+      padding: 10px 10px; }
     body.shop .first-page-collection_padding {
       display: flex;
       flex-direction: column;
@@ -1799,7 +1800,7 @@ body.shop {
     font-size: 1.7rem; }
   @media (max-width: 800px) {
     body.shop .headers_container {
-      padding: 20px 12px; }
+      padding: 20px 10px; }
     body.shop .headers__lines {
       width: 20vw; }
     body.shop .headers__current-heading {
@@ -1974,7 +1975,8 @@ body.shop {
           align-items: flex-start;
           font-family: 'Arial', serif;
           width: 20vw;
-          max-width: 350px; }
+          max-width: 350px;
+          min-width: 115px; }
       body.shop .page-footer__upper_stay-connected {
         width: 0;
         flex: 4;
@@ -2058,8 +2060,9 @@ body.shop {
       width: 100px;
       outline: none; }
     body.shop .page-footer__lower {
-      padding: 10px 0;
-      width: 100%; }
+      padding: 10px 20px;
+      width: 100%;
+      box-sizing: border-box; }
       body.shop .page-footer__lower_border-top {
         border-top: 1px solid #323030; }
       body.shop .page-footer__lower_text {
@@ -2075,7 +2078,7 @@ body.shop {
           padding-right: 5px; }
   @media (max-width: 800px) {
     body.shop .page-footer__upper {
-      padding: 10px 12px;
+      padding: 10px 10px;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -2096,7 +2099,7 @@ body.shop {
         body.shop .page-footer__upper_stay-connected_form {
           padding: 10px 0; }
     body.shop .page-footer__lower {
-      padding: 10px 12px; }
+      padding: 10px 10px; }
     body.shop .page-footer .headings {
       line-height: 20px;
       padding: 0;

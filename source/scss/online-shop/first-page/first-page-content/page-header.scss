@@ -89,12 +89,17 @@
 
 @media (max-width: 800px) {
   .page-header{
+    .to-centre {
+      @include flexbox(column,space-between);
+      flex-direction: column-reverse;
+    }
+
     &__upper-menu{
       display: none;
     }
     &__lower-menu{
-      @include flexbox(column,space-between);
-      flex-direction: column-reverse;
+      //@include flexbox(column,space-between);
+      //flex-direction: column-reverse;
       padding: 0;
       .categories {
         width: 100%;
