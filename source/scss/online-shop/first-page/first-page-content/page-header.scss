@@ -40,6 +40,7 @@
     .categories {
       @include flexbox(row,space-between);
       font-family: $font-for-headings;
+      width: 300px;
       &__name {
         padding-right: 8px;
         font-size: 1.2rem;
@@ -48,11 +49,13 @@
     .page-name {
       font-family: $font-for-headings;
       font-size: 3rem;
-      padding: 5px 5px 5px 5vw;
+      padding: 5px 0 5px 15px;
+      letter-spacing: 2px;
+      //padding: 5px 5px 5px 5vw;
     }
     .right-side {
       @include flexbox(row,space-between);
-
+      width: 300px;
       &__social-nets {
         @include flexbox(row,space-between);
 

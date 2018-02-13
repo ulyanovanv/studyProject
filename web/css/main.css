@@ -1397,19 +1397,22 @@ body.shop {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        font-family: "IM Fell Double Pica", serif; }
+        font-family: "IM Fell Double Pica", serif;
+        width: 300px; }
         body.shop .page-header__lower-menu .categories__name {
           padding-right: 8px;
           font-size: 1.2rem; }
       body.shop .page-header__lower-menu .page-name {
         font-family: "IM Fell Double Pica", serif;
         font-size: 3rem;
-        padding: 5px 5px 5px 5vw; }
+        padding: 5px 0 5px 15px;
+        letter-spacing: 2px; }
       body.shop .page-header__lower-menu .right-side {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center; }
+        align-items: center;
+        width: 300px; }
         body.shop .page-header__lower-menu .right-side__social-nets {
           display: flex;
           flex-direction: row;
