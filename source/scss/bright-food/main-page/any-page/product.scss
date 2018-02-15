@@ -1,0 +1,19 @@
+.products {
+
+  @include flexbox(row, flex-start, center);
+  flex-wrap: wrap;
+  
+  &_background {
+    height: 350px;
+    width: 270px;
+    background: {
+      image: url("/images/bright-food/products/grey-background.png");
+      position: center;
+      size: contain;
+      repeat: no-repeat;
+    }
+    img {
+      width: 210px;
+    }
+  }
+}

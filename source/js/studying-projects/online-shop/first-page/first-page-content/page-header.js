@@ -18,7 +18,7 @@ export class PageHeader extends React.Component {
             <div className="page-header__upper-menu_block "
                  onClick={ this.props.onClick}
                  title="Choose the products from the summer collection before click">
-              <a className="page-header__upper-menu_block_border" style={{color: "#FFF", backgroundColor: "#000"}}>my whistlelist</a>
+              <a className="page-header__upper-menu_block_border" style={{color: "#FFF", backgroundColor: "#000"}}>my basket</a>
             </div>
             <div className="page-header__upper-menu_block ">
               <a className="page-header__upper-menu_block_border page-header__upper-menu_block_last-padding" href="/online-shop">login</a>

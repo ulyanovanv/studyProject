@@ -7,7 +7,6 @@
 
 // import {Child} from './shop-child';
  import {FirstPage} from './first-page/first-page';
- import {ProductPage} from './product-page/product-page';
  import {BasketPage} from './basket-page/basket-page';
 
  const styles = {
@@ -35,7 +34,6 @@
                  {this.state.isFirstPage && <FirstPage changeOutlook={this.changeOutlook} />}
                  {!this.state.isFirstPage && <BasketPage changeOutlook={this.changeOutlook} />}
                </div>
-
              </Provider>
          </div>)
      }

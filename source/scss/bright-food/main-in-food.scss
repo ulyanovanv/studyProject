@@ -1,0 +1,29 @@
+body.bright-food {
+  @import "tools/variables";
+  @import "tools/mixins";
+  @import "tools/classes";
+
+  @import "main-page/main-page";
+  height: 100%;
+  width: 100%;
+  min-width: 800px;
+  font-size: 1rem;
+  font-family: Arial, serif;
+  line-height: 1rem;
+  color: $font-black;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .centre {
+    width: 100%;
+    //height: auto;
+  }
+
+}

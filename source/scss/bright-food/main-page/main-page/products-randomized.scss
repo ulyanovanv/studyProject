@@ -1,0 +1,42 @@
+.products-randomized {
+  &_padding {
+    padding: 20px 40px;
+    margin-top: 65px;
+  }
+  &__navigation {
+    width: 850px;
+    margin: 0 auto;
+    @include flexbox(row, space-evenly, center);
+    &_button {
+      //margin: 0 5px;
+      font-size: 0.65rem;
+      color: #b5b5b5;
+      border: 2px solid #b5b5b5;
+      width: 130px;
+      height: 25px;
+      line-height: 25px;
+      border-radius: 999px;
+      span {
+        @extend %font-bold;
+      }
+      &:hover {
+        color: $font-white;
+        background-color: $green;
+        border: 2px solid transparent;
+        box-shadow: 0px 0px 10px 1px $font-grey;
+      }
+    }
+    &_organic {
+      @include flexbox(column, center, center);
+      position: relative;
+      #fruit {
+        height: 100px;
+        position: absolute;
+        top: -80px;
+      }
+      #organic {
+        height: 80px;
+      }
+    }
+  }
+}

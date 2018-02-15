@@ -81,6 +81,10 @@ $app->get('/online-shop', function () use ($app) {
     return $app['twig']->render('online-shop/shop.html.twig', array());
 });
 
+$app->get('/bright-food', function () use ($app) {
+    return $app['twig']->render('bright-food/bright-food.html.twig', array());
+});
+
 
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {

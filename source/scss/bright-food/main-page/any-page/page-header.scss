@@ -1,0 +1,190 @@
+.page-header {
+  position: relative;
+  width: 100%;
+  height:475px;
+  &_image-container {
+    height:500px;
+    width: auto;
+    //max-width: 1600px;
+    min-width: 850px;
+    margin: auto;
+    background: url("/images/bright-food/main-image/main-image.jpg");
+    //background-size: cover;
+    background-size: 100% auto;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+  }
+  &_padding {
+    padding: 20px 40px;
+  }
+  &__menu{
+    @include flexbox(row,space-between, center);
+    height: 40px;
+    &_left-side{
+      font-size: 1.2rem;
+      position: relative;
+      font-family: Verdana, serif;
+      #logo {
+        @extend %font-bold;
+      }
+      #leaf{
+        width: 14px;
+        position: absolute;
+        top: -19px;
+        left: 40px;
+      }
+    }
+    &_right-side{
+      font-size: 0.9rem;
+      @include flexbox(row,space-evenly,center);
+
+      &_navigation{
+        @include flexbox(row,space-evenly);
+        &_name{
+          @include flexbox(column,center,center);
+          padding: 0 14px;
+          text-transform: uppercase;
+          position:relative;
+          cursor: pointer;
+          &_green-circle {
+            height:1px;
+            width: 1px;
+            opacity: 0;
+            background-color: $green;
+            border-radius: 50%;
+            //display: none;
+            position: absolute;
+            top: 18px;
+            transition: width 0.3s, height 0.3s;
+            //-webkit-transition: width 1s, height 1s;
+          }
+          &:hover .page-header__menu_right-side_navigation_name_green-circle {
+            opacity: 1;
+            height:7px;
+            width: 7px;
+
+            //display: block;
+          }
+        }
+      }
+
+      &_basket{
+        @include flexbox(row,flex-start,center);
+        &_combine{
+          @extend %padding-left-in-header;
+          cursor: pointer;
+          position: relative;
+          #basket {
+
+          }
+          #number-of-chosen-items {
+            height: 17px;
+            width: 17px;
+            background-color: $green;
+            border: 2px solid $font-white;
+            color: $font-white;
+            border-radius: 50%;
+            line-height: 17px;
+            position: absolute;
+            top: -7px;
+            left: 15px;
+            font-size: 12px;
+          }
+        }
+        &_price {
+          cursor: pointer;
+          padding-left: 10px;
+          #cost{}
+        }
+      }
+
+      &_toggle-menu{
+        @extend %padding-left-in-header;
+        cursor: pointer;
+        //padding-left: 50px;
+        #toggle-menu {
+          height: 23px;
+          width: 23px;
+        }
+      }
+    }
+  }
+
+  &__heading {
+    //padding: 50px;
+    //margin: 18vw auto;
+    padding-top: 100px;
+    &_web-site-heading {
+      font-size: 3rem;
+      height: 50px;
+      line-height: 50px;
+    }
+    &_addition-text{
+      height: 50px;
+      line-height: 50px;
+      text-transform: uppercase;
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+    }
+    &_button-to-start{
+      height: 50px;
+      cursor: pointer;
+      &_gradient {
+        background: linear-gradient(to right bottom, $green, $blue 80%);
+        border-radius: 20px;
+        width: 120px;
+        margin: 20px auto;
+        padding: 4px;
+        #shopping-button {
+          width: 100%;
+          background-color: $font-white;
+          border-radius: 20px;
+          margin: auto;
+          padding: 6px;
+          box-sizing: border-box;
+        }
+        &:hover {
+          filter: drop-shadow(0px 0px 3px $green);
+        }
+      }
+    }
+  }
+
+  &__social-media {
+    position: absolute;
+    top: 22vw;
+    left: 95vw;
+    font-size: 0.7rem;
+    &_each {
+      color:$font-grey;
+      background-color: $font-white;
+      margin: 5px 0;
+      border: {
+        radius: 50px;
+        width: 2px;
+        style: solid;
+        color: $font-grey;
+      }
+      b, i {
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        display: block;
+      }
+      //img {
+      //  height: auto;
+      //  width: auto;
+      //  line-height: 20px;
+      //  display: block;
+      //}
+    }
+  }
+
+}
+@media (max-width: 900px){
+  .page-header {
+    &_image-container {
+      background-position: top center;
+    }
+  }
+}
