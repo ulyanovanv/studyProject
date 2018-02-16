@@ -29395,7 +29395,19 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var products = [{ id: 1, src: "/images/bright-food/products/cherries.png", name: "cherries", category: "fruit", price: "30", previousPrice: "40" }, { id: 2, src: "/images/bright-food/products/cole.png", name: "cole", category: "vegetables", price: "25" }, { id: 3, src: "/images/bright-food/products/ginger.png", name: "ginger", category: "vegetables", price: "20", previousPrice: "23" }, { id: 4, src: "/images/bright-food/products/grapefruit.png", name: "grapefruits", category: "fruit", price: "30" }, { id: 5, src: "/images/bright-food/products/mushrooms.png", name: "mushrooms", category: "vegetables", price: "30", previousPrice: "40" }, { id: 6, src: "/images/bright-food/products/olive.png", name: "olive", category: "vegetables", price: "33" }, { id: 7, src: "/images/bright-food/products/onion.png", name: "onion", category: "vegetables", price: "15", previousPrice: "16" }, { id: 8, src: "/images/bright-food/products/paprika.png", name: "paprika", category: "vegetables", price: "30" }, { id: 9, src: "/images/bright-food/products/peaches.png", name: "peaches", category: "fruit", price: "23", previousPrice: "28" }, { id: 10, src: "/images/bright-food/products/pineapple.png", name: "pineapple", category: "fruit", price: "50", previousPrice: "55" }, { id: 11, src: "/images/bright-food/products/tomatoes.png", name: "tomatoes", category: "vegetables", price: "34" }];
+function shuffle(a) {
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var _ref = [a[j], a[i]];
+    a[i] = _ref[0];
+    a[j] = _ref[1];
+  }
+  return a;
+}
+
+var products = [{ id: 1, src: "/images/bright-food/products/cherries.png", name: "cherries", category: "fruit", price: 30, previousPrice: 40 }, { id: 2, src: "/images/bright-food/products/cole.png", name: "cole", category: "vegetables", price: 25, previousPrice: 0 }, { id: 3, src: "/images/bright-food/products/ginger.png", name: "ginger", category: "vegetables", price: 20, previousPrice: 23 }, { id: 4, src: "/images/bright-food/products/grapefruit.png", name: "grapefruits", category: "fruit", price: 30, previousPrice: 0 }, { id: 5, src: "/images/bright-food/products/mushrooms.png", name: "mushrooms", category: "vegetables", price: 30, previousPrice: 40 }, { id: 6, src: "/images/bright-food/products/olive.png", name: "olive", category: "vegetables", price: 33, previousPrice: 0 }, { id: 7, src: "/images/bright-food/products/onion.png", name: "onion", category: "vegetables", price: 15, previousPrice: 16 }, { id: 8, src: "/images/bright-food/products/paprika.png", name: "paprika", category: "vegetables", price: 30, previousPrice: 0 }, { id: 9, src: "/images/bright-food/products/peaches.png", name: "peaches", category: "fruit", price: 23, previousPrice: 28 }, { id: 10, src: "/images/bright-food/products/pineapple.png", name: "pineapple", category: "fruit", price: 50, previousPrice: 55 }, { id: 11, src: "/images/bright-food/products/tomatoes.png", name: "tomatoes", category: "vegetables", price: 34, previousPrice: 0 }];
+
+products = shuffle(products);
 
 var ProductsRandomized = exports.ProductsRandomized = function (_React$Component) {
   _inherits(ProductsRandomized, _React$Component);
@@ -29412,8 +29424,13 @@ var ProductsRandomized = exports.ProductsRandomized = function (_React$Component
   _createClass(ProductsRandomized, [{
     key: "renderProducts",
     value: function renderProducts() {
+
       return products.map(function (item) {
-        return _react2.default.createElement(_Product.Product, { src: item.src, title: item.name });
+        var price = item.price.toFixed(2);
+        var previousPrice = item.previousPrice.toFixed(2);
+        console.log(previousPrice);
+        // console.log(item)
+        return _react2.default.createElement(_Product.Product, { src: item.src, title: item.name, name: item.name, price: price, previousPrice: previousPrice });
       });
     }
   }, {
@@ -29531,8 +29548,58 @@ var Product = exports.Product = function (_React$Component) {
         { className: "products_background" },
         _react2.default.createElement(
           "div",
-          { className: "products_image" },
-          _react2.default.createElement("img", { src: this.props.src })
+          { className: "products_image", style: { backgroundImage: 'url(' + this.props.src + ')' } },
+          _react2.default.createElement(
+            "div",
+            { className: "products__shop-navigation" },
+            _react2.default.createElement(
+              "div",
+              { className: "products__shop-navigation_png" },
+              _react2.default.createElement("img", { id: "like", src: "/images/bright-food/products/smallPNG/like.png" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "products__shop-navigation_png" },
+              _react2.default.createElement("img", { id: "basket-on-product", src: "/images/bright-food/products/smallPNG/basket.png" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "products__shop-navigation_png" },
+              _react2.default.createElement("img", { id: "zoom", src: "/images/bright-food/products/smallPNG/zoom.png" })
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "products__product-description" },
+            _react2.default.createElement(
+              "p",
+              { className: "products__product-description_name" },
+              "organic\xA0",
+              _react2.default.createElement(
+                "span",
+                null,
+                this.props.name
+              )
+            ),
+            _react2.default.createElement(
+              "p",
+              { className: "products__product-description_price" },
+              _react2.default.createElement(
+                "span",
+                null,
+                " $",
+                this.props.price,
+                "\xA0 "
+              ),
+              _react2.default.createElement(
+                "span",
+                null,
+                " ",
+                this.props.previousPrice != 0 && "$ " + this.props.previousPrice,
+                " "
+              )
+            )
+          )
         )
       );
     }
