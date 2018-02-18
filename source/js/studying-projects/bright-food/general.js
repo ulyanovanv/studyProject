@@ -23,8 +23,8 @@ class GeneralParent extends React.Component{
     </div>)
   }
 }
-let containerForRendering = document.getElementsByClassName("bright-food")[0];
-console.log(containerForRendering);
+let containerForRendering = document.getElementById("application");
+// console.log(containerForRendering);
 
 ReactDOM.render(
   <GeneralParent/>,

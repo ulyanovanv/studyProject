@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {PageHeader} from "./PageInherent/PageHeader";
-import {ProductsRandomized} from "./MainPageComponents/ProductsRandomized";
+import ProductsRandomized from "./MainPageComponents/ProductsRandomized";
 
 
 

@@ -1,4 +1,5 @@
 .products-randomized {
+
   &_padding {
     padding: 20px 40px;
     margin-top: 65px;
@@ -38,5 +39,21 @@
         height: 80px;
       }
     }
+  }
+
+  //styles for carousel classes
+  .slick-dots > li > button:before {
+    height: 7px;
+    width: 30px;
+    background-color: $green;
+    content: ' ';
+  }
+  .slick-prev::before {
+    content: "🡸";
+    color: $font-grey;
+  }
+  .slick-next::before {
+    content: "🡺";
+    color: $font-grey;
   }
 }

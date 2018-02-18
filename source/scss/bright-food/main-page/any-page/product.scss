@@ -1,7 +1,8 @@
 .products {
+  //width: 800px;
 
-  @include flexbox(row, center, center);
-  flex-wrap: wrap;
+  //@include flexbox(row, center, center);
+  //flex-wrap: wrap;
 
   &_background {
     height: 370px;
@@ -50,7 +51,8 @@
     //box-shadow: 0px 5px 5px 0px $font-grey;
     filter: drop-shadow(0px 12px 8px #e4e4e4);
     &_png {
-      width: 33%;
+      //width: 33%;
+      padding: 0 10px;
       &:nth-child(2) {
         border-left: 2px solid $slight-grey;
         border-right: 2px solid $slight-grey;

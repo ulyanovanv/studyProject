@@ -10,7 +10,7 @@ export class Product extends React.Component {
             <div className="products__shop-navigation_png">
               <img id="like" src="/images/bright-food/products/smallPNG/like.png"/>
             </div>
-            <div className="products__shop-navigation_png">
+            <div className="products__shop-navigation_png" onClick={this.props.changeBasketList}>
               <img id="basket-on-product" src="/images/bright-food/products/smallPNG/basket.png"/>
             </div>
             <div className="products__shop-navigation_png">

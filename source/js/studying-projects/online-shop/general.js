@@ -14,6 +14,7 @@
  }
 
  let store = createStore(myreducer);
+ // console.log(this.props.store.basket);
 
  class Parent extends React.Component {
      constructor(props) {

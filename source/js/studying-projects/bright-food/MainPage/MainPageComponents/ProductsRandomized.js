@@ -1,4 +1,9 @@
 import React from "react";
+import Slider from "react-slick";
+import {connect} from "react-redux";
+
+import {Product} from "./reused-elements/Product";
+
 
 function shuffle(a) {
   for (let i = a.length - 1; i > 0; i--) {
@@ -22,38 +27,97 @@ let products = [
   {id: 11, src: "/images/bright-food/products/tomatoes.png", name:"tomatoes", category: "vegetables", price: 34, previousPrice: 0}
 ];
 
-products = shuffle(products);
 
-import {Product} from "./reused-elements/Product";
 
-export class ProductsRandomized extends React.Component {
+
+class ProductsRandomized extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      category: null,
+      selectedItems: []
+    };
     this.renderProducts = this.renderProducts.bind(this);
+    this.changeBasketList = this.changeBasketList.bind(this);
   }
-  renderProducts() {
 
+  changeBasketList(item) {
+    let currentItems = this.state.selectedItems;
+
+    if (!this.isSelected(item)){
+      this.props.dispatch({type: "ADD_ITEM", item});
+    } else {
+      this.props.dispatch({type: "DELETE_ITEM", item});
+    }
+
+    this.setState({selectedItems: currentItems});
+    console.log(this.props.store.basket);
+  }
+  isSelected(item) {
+    for (let key in this.props.store.basket.items) {
+      if (this.props.store.basket.items[key].id === item.id) return true;
+    }
+    return false;
+  }
+
+  renderProducts(category) {
+    products = shuffle(products);
     return products.map((item) => {
-      let price = item.price.toFixed(2);
-      let previousPrice = item.previousPrice.toFixed(2);
-      console.log(previousPrice);
-      // console.log(item)
-      return <Product src={item.src} title={item.name} name={item.name} price={price} previousPrice={previousPrice}/>
+        let price = item.price.toFixed(2);
+        let previousPrice = item.previousPrice.toFixed(2);
+        if ( item.category === category) {
+          return (
+            <div key={item.id}>
+              <Product src={item.src}
+                       title={item.name}
+                       name={item.name}
+                       price={price}
+                       previousPrice={previousPrice}
+                       changeBasketList={() => { return this.changeBasketList(item)}}
+                         />
+            </div>);
+        } else if (this.state.category === null) {
+          return (
+            <div key={item.id}>
+              <Product src={item.src}
+                       title={item.name}
+                       name={item.name}
+                       price={price}
+                       previousPrice={previousPrice}
+                       changeBasketList={() => { return this.changeBasketList(item)}}
+                       />
+            </div>);
+        }
     })
   }
 
-
   render() {
+    let settings = {
+      dots: true,
+      dotsClass: 'slick-dots slick-thumb',
+      infinite: false,
+      speed: 500,
+      customPaging(){return <button>{"hello"}</button>;},
+      responsive: [
+        {breakpoint: 2550, settings: {slidesToShow: 7, slidesToScroll: 7}},
+        {breakpoint: 2350, settings: {slidesToShow: 6, slidesToScroll: 6}},
+        {breakpoint: 1900, settings: {slidesToShow: 5, slidesToScroll: 5}},
+        {breakpoint: 1500, settings: {slidesToShow: 4, slidesToScroll: 4}},
+        {breakpoint: 1250, settings: {slidesToShow: 3, slidesToScroll: 3}},
+        {breakpoint: 850, settings: {slidesToShow: 2, slidesToScroll: 2}}
+      ]
+    };
+
     return (
       <section className="products-randomized">
         <div className='products-randomized_padding'>
 
           <div className="products-randomized__navigation">
-            <div className="products-randomized__navigation_button">
+            <div className="products-randomized__navigation_button" id="vegetables" onClick={() => {this.setState({category: "vegetables"});}}>
               organic &nbsp;
               <span>vegetables</span>
             </div>
-            <div className="products-randomized__navigation_button">
+            <div className="products-randomized__navigation_button" id="fruits" onClick={() => {this.setState({category: "fruit"});}}>
               organic &nbsp;
               <span>fruits</span>
             </div>
@@ -61,18 +125,20 @@ export class ProductsRandomized extends React.Component {
               <img id="fruit" src="/images/bright-food/products/grapefruit.png"/>
               <img id="organic" src="/images/bright-food/products/organic.png"/>
             </div>
-            <div className="products-randomized__navigation_button">
+            <div className="products-randomized__navigation_button" onClick={() => {this.setState({category: null});}}>
               organic &nbsp;
               <span>fruits juices</span>
             </div>
-            <div className="products-randomized__navigation_button">
+            <div className="products-randomized__navigation_button" onClick={() => {this.setState({category: null});}}>
               organic &nbsp;
               <span>dried fruits</span>
             </div>
           </div>
 
           <div className="products">
-            {this.renderProducts()}
+            <Slider {...settings}>
+              {this.renderProducts(this.state.category)}
+            </Slider>
           </div>
 
         </div>
@@ -80,3 +146,4 @@ export class ProductsRandomized extends React.Component {
     )
   }
 }
+export default connect(state => ({store:state}))(ProductsRandomized);

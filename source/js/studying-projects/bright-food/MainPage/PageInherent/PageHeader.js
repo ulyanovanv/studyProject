@@ -11,7 +11,7 @@ export class PageHeader extends React.Component {
   renderNavigation(){
     return NavigationNames.map((item) => {
       return (
-        <div className="page-header__menu_right-side_navigation_name">
+        <div className="page-header__menu_right-side_navigation_name" key={item}>
           <a href="/bright-food">{item}</a>
           <div className="page-header__menu_right-side_navigation_name_green-circle"></div>
         </div>)
