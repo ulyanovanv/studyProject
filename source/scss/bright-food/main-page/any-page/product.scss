@@ -1,14 +1,9 @@
 .products {
-  //width: 800px;
-
-  //@include flexbox(row, center, center);
-  //flex-wrap: wrap;
-
   &_background {
     height: 370px;
     width: 270px;
     border-radius: 10px;
-    margin: 10px;
+    margin: 10px auto 0 auto;
     border: 1px solid $font-white;
     background: {
       image: url("/images/bright-food/products/grey-background.png");
@@ -19,23 +14,17 @@
     &:hover {
       box-shadow: 0px 0px 10px 2px $slight-grey;
       .products__shop-navigation {
-
-        //display: block;
         @include flexbox(row, space-evenly, center);
       }
-      .products_image {
-      }
-    }
 
+    }
   }
   &_image {
     height: 350px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
-    //@include flexbox(column, space-between, center);
     position: relative;
-
   }
   &__shop-navigation {
     position: absolute;
@@ -47,11 +36,11 @@
     height: 35px;
     background-color: $font-white;
     border-radius: 999px;
-    //margin: 40px auto 0 auto;
-    //box-shadow: 0px 5px 5px 0px $font-grey;
     filter: drop-shadow(0px 12px 8px #e4e4e4);
+    &.active {
+      @include flexbox(row, space-evenly, center);
+    }
     &_png {
-      //width: 33%;
       padding: 0 10px;
       &:nth-child(2) {
         border-left: 2px solid $slight-grey;

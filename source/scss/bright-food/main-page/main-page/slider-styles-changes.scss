@@ -1,0 +1,19 @@
+//styles for carousel classes
+.slick-dots > li > button:before {
+  height: 7px;
+  width: 30px;
+  background-color: $green;
+  content: ' ';
+}
+.slick-prev::before {
+  content: "🡸";
+  color: $font-grey;
+}
+.slick-next::before {
+  content: "🡺";
+  color: $font-grey;
+}
+.slick-slide {
+  margin-top: 20px;
+  height: 410px;
+}

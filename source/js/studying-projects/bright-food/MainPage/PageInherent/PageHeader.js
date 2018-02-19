@@ -1,8 +1,10 @@
 import React from "react";
 
+import {connect} from "react-redux";
+
 let NavigationNames = ["home","about us","shop","blog","contact us"];
 
-export class PageHeader extends React.Component {
+class PageHeader extends React.Component {
   constructor(props){
     super(props);
     this.renderNavigation = this.renderNavigation.bind(this);
@@ -36,13 +38,14 @@ export class PageHeader extends React.Component {
               </div>
 
               <div className="page-header__menu_right-side_basket">
-                <div className="page-header__menu_right-side_basket_combine">
+                <div className="page-header__menu_right-side_basket_combine"
+                     onClick={ this.props.basketShow}>
                   <img id="basket" src="/images/bright-food/main-image/basket.png"/>
-                  <div id="number-of-chosen-items">0</div>
+                  <div id="number-of-chosen-items">{this.props.store.basket.basketLength}</div>
                 </div>
                 <div className="page-header__menu_right-side_basket_price">
                   <span>$</span>
-                  <span id="cost">0.00</span>
+                  <span id="cost">{this.props.store.basket.totalPrice}</span>
                 </div>
               </div>
 
@@ -89,3 +92,4 @@ export class PageHeader extends React.Component {
     </section>);
   }
 }
+export default connect(state => ({store:state}))(PageHeader);

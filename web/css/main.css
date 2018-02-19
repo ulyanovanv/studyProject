@@ -2134,8 +2134,12 @@ body.bright-food {
   text-align: center; }
   body.bright-food .page-header__menu_right-side_basket_combine, body.bright-food .page-header__menu_right-side_toggle-menu {
     margin-left: 40px; }
-  body.bright-food .page-header__menu_left-side #logo, body.bright-food .products-randomized__navigation_button span, body.bright-food .products__product-description_name span, body.bright-food .products__product-description_price {
+  body.bright-food .page-header__menu_left-side #logo, body.bright-food .products-randomized__navigation_button span, body.bright-food .products__product-description_name span, body.bright-food .products__product-description_price, body.bright-food .about-us__organic-farm_heading span:last-child, body.bright-food .about-us__qualities_each_heading span:last-child {
     font-weight: bold; }
+  body.bright-food .about-us__organic-farm_heading {
+    background-image: url("/images/bright-food/main-image/small-leaf.png");
+    background-repeat: no-repeat;
+    background-size: 16px; }
   body.bright-food .slick-list, body.bright-food .slick-slider, body.bright-food .slick-track {
     position: relative;
     display: block; }
@@ -2470,7 +2474,9 @@ body.bright-food {
     padding: 20px 40px;
     margin-top: 65px; }
   body.bright-food .products-randomized__navigation {
-    width: 850px;
+    min-width: 850px;
+    width: 90vw;
+    max-width: 850px;
     margin: 0 auto;
     display: -webkit-box;
     display: -moz-box;
@@ -2481,7 +2487,7 @@ body.bright-food {
     justify-content: space-evenly;
     align-items: center; }
     body.bright-food .products-randomized__navigation_button {
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       color: #b5b5b5;
       border: 2px solid #b5b5b5;
       width: 130px;
@@ -2492,7 +2498,7 @@ body.bright-food {
         color: #FFF;
         background-color: #86bf0a;
         border: 2px solid transparent;
-        box-shadow: 0px 0px 10px 1px #b5b5b5; }
+        box-shadow: 0px 0px 3px 0px #b5b5b5; }
     body.bright-food .products-randomized__navigation_organic {
       display: -webkit-box;
       display: -moz-box;
@@ -2509,22 +2515,25 @@ body.bright-food {
         top: -80px; }
       body.bright-food .products-randomized__navigation_organic #organic {
         height: 80px; }
-  body.bright-food .products-randomized .slick-dots > li > button:before {
+  body.bright-food .slick-dots > li > button:before {
     height: 7px;
     width: 30px;
     background-color: #86bf0a;
     content: ' '; }
-  body.bright-food .products-randomized .slick-prev::before {
+  body.bright-food .slick-prev::before {
     content: "🡸";
     color: #b5b5b5; }
-  body.bright-food .products-randomized .slick-next::before {
+  body.bright-food .slick-next::before {
     content: "🡺";
     color: #b5b5b5; }
+  body.bright-food .slick-slide {
+    margin-top: 20px;
+    height: 410px; }
   body.bright-food .products_background {
     height: 370px;
     width: 270px;
     border-radius: 10px;
-    margin: 10px;
+    margin: 10px auto 0 auto;
     border: 1px solid #FFF;
     background-image: url("/images/bright-food/products/grey-background.png");
     background-position: top center;
@@ -2557,6 +2566,15 @@ body.bright-food {
     background-color: #FFF;
     border-radius: 999px;
     filter: drop-shadow(0px 12px 8px #e4e4e4); }
+    body.bright-food .products__shop-navigation.active {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center; }
     body.bright-food .products__shop-navigation_png {
       padding: 0 10px; }
       body.bright-food .products__shop-navigation_png:nth-child(2) {
@@ -2579,6 +2597,164 @@ body.bright-food {
       body.bright-food .products__product-description_price span:last-child {
         color: #b5b5b5;
         text-decoration: line-through; }
+  body.bright-food .chosen-products_padding {
+    padding: 20px 40px;
+    margin-top: 65px; }
+  body.bright-food .chosen-products__products {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap; }
+  body.bright-food .business {
+    margin-top: 20px; }
+    body.bright-food .business_width {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-width: 850px;
+      width: 90vw;
+      margin: 0 auto; }
+  body.bright-food #leaf-left {
+    position: absolute;
+    top: 10%;
+    left: 0; }
+  body.bright-food #leaf-right {
+    position: absolute;
+    top: 70%;
+    right: 0; }
+  body.bright-food .about-us {
+    background-color: #f7f6f2;
+    width: 100%;
+    position: relative; }
+    body.bright-food .about-us__organic-farm {
+      padding-top: 50px;
+      width: 600px;
+      height: 150px;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center; }
+      body.bright-food .about-us__organic-farm_heading {
+        background-position: 191px 0px;
+        padding-top: 20px;
+        font-size: 2rem;
+        line-height: 2rem; }
+      body.bright-food .about-us__organic-farm_inbetween {
+        text-transform: uppercase;
+        font-size: 0.5rem;
+        letter-spacing: 3px; }
+        body.bright-food .about-us__organic-farm_inbetween_lines {
+          width: 50px;
+          height: 0.1rem;
+          display: inline-block;
+          border-top: 1px solid black;
+          margin: 0 10px; }
+      body.bright-food .about-us__organic-farm_text {
+        font-size: 0.75rem;
+        line-height: 1.2rem; }
+    body.bright-food .about-us__qualities {
+      width: 100%;
+      height: 335px;
+      max-width: 850px;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start; }
+      body.bright-food .about-us__qualities_each {
+        width: 200px;
+        height: 300px;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center; }
+        body.bright-food .about-us__qualities_each:first-child, body.bright-food .about-us__qualities_each:last-child {
+          align-self: flex-end; }
+        body.bright-food .about-us__qualities_each_image {
+          height: 180px;
+          width: 150px; }
+        body.bright-food .about-us__qualities_each .green {
+          background-image: url("/images/bright-food/business/green.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: auto auto; }
+        body.bright-food .about-us__qualities_each .red {
+          background-image: url("/images/bright-food/business/red.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: auto auto; }
+        body.bright-food .about-us__qualities_each .yellow {
+          background-image: url("/images/bright-food/business/yellow.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: auto auto; }
+        body.bright-food .about-us__qualities_each .braun {
+          background-image: url("/images/bright-food/business/braun.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: auto auto; }
+        body.bright-food .about-us__qualities_each_heading {
+          font-size: 0.9rem; }
+        body.bright-food .about-us__qualities_each_description {
+          font-size: 0.65rem; }
+        body.bright-food .about-us__qualities_each_button {
+          border: none;
+          background-color: white;
+          border-radius: 999px;
+          padding: 5px 10px;
+          outline: none;
+          text-transform: uppercase;
+          color: #b5b5b5;
+          font-size: 0.7rem; }
+          body.bright-food .about-us__qualities_each_button:hover {
+            box-shadow: 0px 0px 3px 1px #b5b5b5; }
+    body.bright-food .about-us__fruit {
+      height: 300px;
+      width: 100%;
+      margin-top: -30px;
+      position: relative; }
+      body.bright-food .about-us__fruit_first {
+        height: 350px;
+        width: 100%;
+        background-image: url("/images/bright-food/products/grapefruit-big.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 630px auto; }
+      body.bright-food .about-us__fruit_second {
+        position: absolute;
+        top: 0;
+        left: 55%;
+        height: 130px;
+        width: 130px;
+        background-image: url("/images/bright-food/business/label.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 130px auto; }
+  body.bright-food .information {
+    background-color: #FFF;
+    width: 100%;
+    height: 50px; }
   body.bright-food a {
     text-decoration: none; }
   body.bright-food .bold {

@@ -1,16 +1,16 @@
 .products-randomized {
-
   &_padding {
     padding: 20px 40px;
     margin-top: 65px;
   }
   &__navigation {
-    width: 850px;
+    min-width: 850px;
+    width: 90vw;
+    max-width: $max-width;
     margin: 0 auto;
     @include flexbox(row, space-evenly, center);
     &_button {
-      //margin: 0 5px;
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       color: #b5b5b5;
       border: 2px solid #b5b5b5;
       width: 130px;
@@ -24,7 +24,7 @@
         color: $font-white;
         background-color: $green;
         border: 2px solid transparent;
-        box-shadow: 0px 0px 10px 1px $font-grey;
+        box-shadow: 0px 0px 3px 0px $font-grey;
       }
     }
     &_organic {
@@ -39,21 +39,5 @@
         height: 80px;
       }
     }
-  }
-
-  //styles for carousel classes
-  .slick-dots > li > button:before {
-    height: 7px;
-    width: 30px;
-    background-color: $green;
-    content: ' ';
-  }
-  .slick-prev::before {
-    content: "🡸";
-    color: $font-grey;
-  }
-  .slick-next::before {
-    content: "🡺";
-    color: $font-grey;
   }
 }

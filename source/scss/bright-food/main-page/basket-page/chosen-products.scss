@@ -1,0 +1,10 @@
+.chosen-products {
+  &_padding {
+    padding: 20px 40px;
+    margin-top: 65px;
+  }
+  &__products {
+    @include flexbox(row, space-evenly,center);
+    flex-wrap: wrap;
+  }
+}

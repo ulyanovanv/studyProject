@@ -1,9 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import {connect} from "react-redux";
-
-import {Product} from "./reused-elements/Product";
-
+import Product from "./reused-elements/Product";
 
 function shuffle(a) {
   for (let i = a.length - 1; i > 0; i--) {
@@ -27,8 +25,7 @@ let products = [
   {id: 11, src: "/images/bright-food/products/tomatoes.png", name:"tomatoes", category: "vegetables", price: 34, previousPrice: 0}
 ];
 
-
-
+products = shuffle(products);
 
 class ProductsRandomized extends React.Component {
   constructor(props){
@@ -43,15 +40,12 @@ class ProductsRandomized extends React.Component {
 
   changeBasketList(item) {
     let currentItems = this.state.selectedItems;
-
     if (!this.isSelected(item)){
       this.props.dispatch({type: "ADD_ITEM", item});
     } else {
       this.props.dispatch({type: "DELETE_ITEM", item});
     }
-
     this.setState({selectedItems: currentItems});
-    console.log(this.props.store.basket);
   }
   isSelected(item) {
     for (let key in this.props.store.basket.items) {
@@ -59,13 +53,11 @@ class ProductsRandomized extends React.Component {
     }
     return false;
   }
-
   renderProducts(category) {
-    products = shuffle(products);
     return products.map((item) => {
         let price = item.price.toFixed(2);
         let previousPrice = item.previousPrice.toFixed(2);
-        if ( item.category === category) {
+        if (this.state.category === null || item.category === category) {
           return (
             <div key={item.id}>
               <Product src={item.src}
@@ -74,18 +66,8 @@ class ProductsRandomized extends React.Component {
                        price={price}
                        previousPrice={previousPrice}
                        changeBasketList={() => { return this.changeBasketList(item)}}
+                       isSelected = { this.isSelected(item) }
                          />
-            </div>);
-        } else if (this.state.category === null) {
-          return (
-            <div key={item.id}>
-              <Product src={item.src}
-                       title={item.name}
-                       name={item.name}
-                       price={price}
-                       previousPrice={previousPrice}
-                       changeBasketList={() => { return this.changeBasketList(item)}}
-                       />
             </div>);
         }
     })
