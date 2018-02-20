@@ -1,0 +1,77 @@
+.products-vertical {
+  height: 370px;
+  width: 270px;
+  border-radius: 10px;
+  margin: 10px auto 0 auto;
+  border: 1px solid $font-white;
+  background: {
+    image: url("/images/bright-food/products/grey-background.png");
+    position: top center;
+    size: 270px 350px;
+    repeat: no-repeat;
+  }
+  &:hover {
+    box-shadow: 0px 0px 10px 2px $slight-grey;
+    .products__shop-navigation {
+      @include flexbox(row, space-evenly, center);
+    }
+
+  }
+}
+&_image {
+  height: 350px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  position: relative;
+}
+&__shop-navigation {
+  position: absolute;
+  top: 25px;
+  left: 60px;
+
+  display: none;
+  width: 150px;
+  height: 35px;
+  background-color: $font-white;
+  border-radius: 999px;
+  filter: drop-shadow(0px 12px 8px #e4e4e4);
+  &.active {
+    @include flexbox(row, space-evenly, center);
+  }
+  &_png {
+    padding: 0 10px;
+    &:nth-child(2) {
+      border-left: 2px solid $slight-grey;
+      border-right: 2px solid $slight-grey;
+    }
+    img {
+      transition: transform 0.5s;
+    }
+    &:hover img{
+      transform: scale(0.7);
+    }
+  }
+}
+&__product-description {
+  position: absolute;
+  top: 310px;
+  width: 100%;
+  &_name {
+    font-size: 1.2rem;
+    span {
+      @extend %font-bold;
+    }
+  }
+  &_price {
+    @extend %font-bold;
+    padding-top: 10px;
+    span:first-child {
+      color: $green;
+    }
+    span:last-child {
+      color: $font-grey;
+      text-decoration: line-through;
+    }
+  }
+}

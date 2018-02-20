@@ -5827,6 +5827,12 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(5);
 
+var _ProductVertical = __webpack_require__(130);
+
+var _ProductHorizontal = __webpack_require__(131);
+
+var _ProductHorizontal2 = _interopRequireDefault(_ProductHorizontal);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -5852,78 +5858,23 @@ var Product = function (_React$Component) {
     key: "changeZoom",
     value: function changeZoom() {
       this.setState({ isZoomed: !this.state.isZoomed });
-      // console.log(this.state.isZoomed);
     }
   }, {
     key: "render",
     value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "products_background",
-          style: { boxShadow: this.props.isSelected || this.state.isZoomed ? "0px 0px 10px 2px #F7F6F2" : "",
-            transition: "transform 1s",
-            transform: this.state.isZoomed ? "scale(1.1)" : "scale(1.0)"
-          } },
-        _react2.default.createElement(
-          "div",
-          { className: "products_image", style: { backgroundImage: 'url(' + this.props.src + ')' } },
-          _react2.default.createElement(
-            "div",
-            { className: "products__shop-navigation " + (this.props.isSelected ? 'active' : '') },
-            _react2.default.createElement(
-              "div",
-              { className: "products__shop-navigation_png" },
-              _react2.default.createElement("img", { id: "like", src: "/images/bright-food/products/smallPNG/like.png" })
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "products__shop-navigation_png",
-                onClick: this.props.changeBasketList,
-                style: { transform: this.props.isSelected ? "scale(0.7)" : "scale(1.0)" } },
-              _react2.default.createElement("img", { id: "basket-on-product", src: "/images/bright-food/products/smallPNG/basket.png" })
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "products__shop-navigation_png",
-                onClick: this.changeZoom,
-                style: { transform: this.state.isZoomed ? "scale(0.7)" : "scale(1.0)" } },
-              _react2.default.createElement("img", { id: "zoom", src: "/images/bright-food/products/smallPNG/zoom.png" })
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "products__product-description" },
-            _react2.default.createElement(
-              "p",
-              { className: "products__product-description_name" },
-              "organic\xA0",
-              _react2.default.createElement(
-                "span",
-                null,
-                this.props.name
-              )
-            ),
-            _react2.default.createElement(
-              "p",
-              { className: "products__product-description_price" },
-              _react2.default.createElement(
-                "span",
-                null,
-                " $",
-                this.props.price,
-                "\xA0 "
-              ),
-              _react2.default.createElement(
-                "span",
-                null,
-                " ",
-                this.props.previousPrice != 0 && "$ " + this.props.previousPrice,
-                " "
-              )
-            )
-          )
-        )
-      );
+      console.log(this.props.layoutType);
+      var layout = this.props.layoutType;
+      if (layout === "vertical") {
+        return _react2.default.createElement(_ProductVertical.ProductVertical, { src: this.props.src,
+          title: this.props.title,
+          name: this.props.name,
+          price: this.props.price,
+          previousPrice: this.props.previousPrice,
+          changeBasketList: this.props.changeBasketList,
+          isSelected: this.props.isSelected,
+          isZoomed: this.state.isZoomed,
+          changeZoom: this.changeZoom });
+      }
     }
   }]);
 
@@ -30122,7 +30073,7 @@ var _reactRedux = __webpack_require__(5);
 
 var _MainPage = __webpack_require__(111);
 
-var _BasketPage = __webpack_require__(131);
+var _BasketPage = __webpack_require__(133);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30270,7 +30221,7 @@ var _ProductsRandomized = __webpack_require__(112);
 
 var _ProductsRandomized2 = _interopRequireDefault(_ProductsRandomized);
 
-var _Business = __webpack_require__(130);
+var _Business = __webpack_require__(132);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30402,6 +30353,7 @@ var ProductsRandomized = function (_React$Component) {
       return products.map(function (item) {
         var price = item.price.toFixed(2);
         var previousPrice = item.previousPrice.toFixed(2);
+        var layoutType = "vertical";
         if (_this2.state.category === null || item.category === category) {
           return _react2.default.createElement(
             "div",
@@ -30413,8 +30365,9 @@ var ProductsRandomized = function (_React$Component) {
               previousPrice: previousPrice,
               changeBasketList: function changeBasketList() {
                 return _this2.changeBasketList(item);
-              },
-              isSelected: _this2.isSelected(item)
+              } //передача функции
+              , isSelected: _this2.isSelected(item) //результат функции
+              , layoutType: layoutType
             })
           );
         }
@@ -33261,6 +33214,162 @@ module.exports = QueryHandler;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.ProductVertical = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ProductVertical = exports.ProductVertical = function (_React$Component) {
+  _inherits(ProductVertical, _React$Component);
+
+  function ProductVertical() {
+    _classCallCheck(this, ProductVertical);
+
+    return _possibleConstructorReturn(this, (ProductVertical.__proto__ || Object.getPrototypeOf(ProductVertical)).apply(this, arguments));
+  }
+
+  _createClass(ProductVertical, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "products-vertical",
+          style: { boxShadow: this.props.isSelected || this.props.isZoomed ? "0px 0px 10px 2px #F7F6F2" : "",
+            transition: "transform 1s",
+            transform: this.props.isZoomed ? "scale(1.1)" : "scale(1.0)"
+          } },
+        _react2.default.createElement(
+          "div",
+          { className: "products_image", style: { backgroundImage: 'url(' + this.props.src + ')' } },
+          _react2.default.createElement(
+            "div",
+            { className: "products__shop-navigation " + (this.props.isSelected ? 'active' : '') },
+            _react2.default.createElement(
+              "div",
+              { className: "products__shop-navigation_png" },
+              _react2.default.createElement("img", { id: "like", src: "/images/bright-food/products/smallPNG/like.png" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "products__shop-navigation_png",
+                onClick: this.props.changeBasketList,
+                style: { transform: this.props.isSelected ? "scale(0.7)" : "scale(1.0)" } },
+              _react2.default.createElement("img", { id: "basket-on-product", src: "/images/bright-food/products/smallPNG/basket.png" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "products__shop-navigation_png",
+                onClick: this.props.changeZoom,
+                style: { transform: this.props.isZoomed ? "scale(0.7)" : "scale(1.0)" } },
+              _react2.default.createElement("img", { id: "zoom", src: "/images/bright-food/products/smallPNG/zoom.png" })
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "products__product-description" },
+            _react2.default.createElement(
+              "p",
+              { className: "products__product-description_name" },
+              "organic\xA0",
+              _react2.default.createElement(
+                "span",
+                null,
+                this.props.name
+              )
+            ),
+            _react2.default.createElement(
+              "p",
+              { className: "products__product-description_price" },
+              _react2.default.createElement(
+                "span",
+                null,
+                " $",
+                this.props.price,
+                "\xA0 "
+              ),
+              _react2.default.createElement(
+                "span",
+                null,
+                " ",
+                this.props.previousPrice != 0 && "$ " + this.props.previousPrice,
+                " "
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return ProductVertical;
+}(_react2.default.Component);
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ProductHorizontal = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ProductHorizontal = exports.ProductHorizontal = function (_React$Component) {
+  _inherits(ProductHorizontal, _React$Component);
+
+  function ProductHorizontal() {
+    _classCallCheck(this, ProductHorizontal);
+
+    return _possibleConstructorReturn(this, (ProductHorizontal.__proto__ || Object.getPrototypeOf(ProductHorizontal)).apply(this, arguments));
+  }
+
+  _createClass(ProductHorizontal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement("div", null);
+    }
+  }]);
+
+  return ProductHorizontal;
+}(_react2.default.Component);
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.Business = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -33277,6 +33386,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var first = [{ src: "/images/bright-food/business/red.jpg", name: "fruits", itemss: 52 }, { src: "/images/bright-food/business/yellow.jpg", name: "vegetables", itemss: 35 }, { src: "/images/bright-food/business/green.jpg", name: "breads", itemss: 23 }];
+
+var second = [{ src: "/images/bright-food/business/blue.jpg", name: "juices", itemss: 26 }, { src: "/images/bright-food/business/marina.jpg", name: "juices", itemss: 31 }, { src: "/images/bright-food/business/brown.jpg", name: "tea", itemss: 17 }];
+
 var Business = exports.Business = function (_React$Component) {
   _inherits(Business, _React$Component);
 
@@ -33287,6 +33400,40 @@ var Business = exports.Business = function (_React$Component) {
   }
 
   _createClass(Business, [{
+    key: "renderSmallCategories",
+    value: function renderSmallCategories(array) {
+      return array.map(function (item) {
+        var key = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+        return _react2.default.createElement(
+          "div",
+          { className: "information_categories_of-products", key: key + 1 },
+          _react2.default.createElement("img", { src: item.src }),
+          _react2.default.createElement("div", { className: "information_categories_of-products_for-line" }),
+          _react2.default.createElement(
+            "div",
+            { className: "information_categories_of-products_category" },
+            _react2.default.createElement(
+              "span",
+              null,
+              "organic\xA0"
+            ),
+            _react2.default.createElement(
+              "span",
+              null,
+              item.name
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "information_categories_of-products_quantity" },
+            item.itemss,
+            " items"
+          )
+        );
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
@@ -33297,7 +33444,7 @@ var Business = exports.Business = function (_React$Component) {
           { className: "about-us" },
           _react2.default.createElement(
             "div",
-            { className: "business_width" },
+            { className: "about-us_width" },
             _react2.default.createElement(
               "div",
               { className: "about-us__organic-farm" },
@@ -33473,7 +33620,88 @@ var Business = exports.Business = function (_React$Component) {
         _react2.default.createElement(
           "div",
           { className: "information" },
-          _react2.default.createElement("div", { className: "business_width" })
+          _react2.default.createElement(
+            "div",
+            { className: "information_width" },
+            _react2.default.createElement(
+              "div",
+              { className: "information_first-column" },
+              _react2.default.createElement(
+                "div",
+                { className: "information_categories" },
+                this.renderSmallCategories(first)
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "information_text" },
+                _react2.default.createElement(
+                  "p",
+                  { className: "information_text_above" },
+                  "fresh from our farm"
+                ),
+                _react2.default.createElement(
+                  "p",
+                  { className: "information_text_middle" },
+                  "115+ ",
+                  _react2.default.createElement(
+                    "span",
+                    null,
+                    "organic fruits"
+                  ),
+                  " & ",
+                  _react2.default.createElement(
+                    "span",
+                    null,
+                    "organic juices"
+                  )
+                ),
+                _react2.default.createElement(
+                  "p",
+                  { className: "information_text_below" },
+                  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. "
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "information_second-column" },
+              _react2.default.createElement(
+                "div",
+                { className: "information_categories" },
+                this.renderSmallCategories(second)
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "information_text" },
+                _react2.default.createElement(
+                  "p",
+                  { className: "information_text_above" },
+                  "fresh from our farm"
+                ),
+                _react2.default.createElement(
+                  "p",
+                  { className: "information_text_middle" },
+                  "220+ ",
+                  _react2.default.createElement(
+                    "span",
+                    null,
+                    "fruits, vegetables"
+                  ),
+                  " & ",
+                  _react2.default.createElement(
+                    "span",
+                    null,
+                    "lot more"
+                  )
+                ),
+                _react2.default.createElement(
+                  "p",
+                  { className: "information_text_below" },
+                  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. "
+                )
+              )
+            )
+          )
         )
       );
     }
@@ -33483,7 +33711,7 @@ var Business = exports.Business = function (_React$Component) {
 }(_react2.default.Component);
 
 /***/ }),
-/* 131 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33504,7 +33732,7 @@ var _PageHeader = __webpack_require__(38);
 
 var _PageHeader2 = _interopRequireDefault(_PageHeader);
 
-var _ChosenProducts = __webpack_require__(132);
+var _ChosenProducts = __webpack_require__(134);
 
 var _ChosenProducts2 = _interopRequireDefault(_ChosenProducts);
 
@@ -33545,7 +33773,7 @@ var BasketPage = exports.BasketPage = function (_React$Component) {
 }(_react2.default.Component);
 
 /***/ }),
-/* 132 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

@@ -1,12 +1,13 @@
 .business {
   margin-top: 20px;
-  &_width {
-    @include flexbox(column,flex-start,center);
-    min-width: 850px;
-    width: 90vw;
-    margin: 0 auto;
-  }
 }
+
+%width {
+  min-width: 850px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
 #leaf-left {
   position: absolute;
   top: 10%;
@@ -22,6 +23,10 @@
   background-color: $slight-grey;
   width: 100%;
   position: relative;
+  &_width {
+    @include flexbox(column,flex-start,center);
+    @extend %width;
+  }
 
   &__organic-farm {
     padding-top: 50px;
@@ -141,5 +146,89 @@
 .information {
   background-color: $font-white;
   width: 100%;
-  height: 50px;
+  //max-width: $max-width;
+
+  margin: 70px auto 30px auto;
+  &_width {
+    @include flexbox(row,flex-start,center);
+    @extend %width;
+    max-width: $max-width;
+    width: 90vw;
+  }
+  &_first-column {
+    @include flexbox(column,space-evenly,center);
+    padding-right: 5px;
+  }
+  &_second-column {
+    @include flexbox(column-reverse,space-evenly,center);
+    padding-left: 5px;
+  }
+
+  &_categories {
+    @include flexbox(row,space-evenly,center);
+    width: 100%;
+    height: 330px;
+
+    &_of-products {
+      height: 260px;
+      width: 130px;
+      border: 2px solid $slight-grey;
+      border-radius: 10px;
+      @include flexbox(column,space-evenly,center);
+      &:hover {
+        border: 2px solid #c1db83;
+        box-shadow: 0 0 5px 1px #c1db83;
+      }
+      &:hover .information_categories_of-products_for-line {
+        border-bottom: 2px solid #c1db83;
+      }
+
+      img{
+        height: 115px;
+        width: 115px;
+      }
+      &_for-line {
+        height: 5px;
+        width: 40px;
+        margin: -30px 0 50px 0;
+        border-bottom: 2px solid $slight-grey;
+      }
+      &_category {
+        font-size: 0.9rem;
+        span:last-child {
+          @extend %font-bold;
+        }
+      }
+      &_quantity {
+        color: $green;
+        font-size: 0.75rem;
+        font-style: italic;
+        margin-top: -15px;
+      }
+    }
+  }
+  &_text {
+    height: 330px;
+    padding: 20px 30px 0 30px;
+    p {
+      padding-top: 20px;
+    }
+    &_above {
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      //font-weight: bold;
+      letter-spacing: 2px;
+    }
+    &_middle {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      span {
+        @extend %font-bold;
+      }
+    }
+    &_below {
+      font-size: 0.65rem;
+      line-height: 1rem;
+    }
+  }
 }

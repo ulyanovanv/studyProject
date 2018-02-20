@@ -57,6 +57,7 @@ class ProductsRandomized extends React.Component {
     return products.map((item) => {
         let price = item.price.toFixed(2);
         let previousPrice = item.previousPrice.toFixed(2);
+        let layoutType = "vertical";
         if (this.state.category === null || item.category === category) {
           return (
             <div key={item.id}>
@@ -65,8 +66,9 @@ class ProductsRandomized extends React.Component {
                        name={item.name}
                        price={price}
                        previousPrice={previousPrice}
-                       changeBasketList={() => { return this.changeBasketList(item)}}
-                       isSelected = { this.isSelected(item) }
+                       changeBasketList={() => { return this.changeBasketList(item)}} //передача функции
+                       isSelected = { this.isSelected(item) }  //результат функции
+                       layoutType = {layoutType}
                          />
             </div>);
         }
