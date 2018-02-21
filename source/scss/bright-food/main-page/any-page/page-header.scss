@@ -130,7 +130,7 @@
       height: 50px;
       cursor: pointer;
       &_gradient {
-        background: linear-gradient(to right bottom, $green, $blue 80%);
+        background: $background-gradient;
         border-radius: 20px;
         width: 120px;
         margin: 20px auto;

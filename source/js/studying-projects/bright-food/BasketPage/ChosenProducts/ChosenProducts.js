@@ -28,6 +28,7 @@ class ChosenProducts extends React.Component {
                      price={price}
                      previousPrice={previousPrice}
                      changeBasketList={() => { return this.changeBasketList(item)}}
+                     layoutType="vertical"
               // isSelected = { this.isSelected(item) }
             />
           </div>);

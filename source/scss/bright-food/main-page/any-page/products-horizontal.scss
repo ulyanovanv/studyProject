@@ -1,77 +1,130 @@
 .products-horizontal {
-  height: 370px;
-  width: 270px;
+  width: 400px;
+  height: 200px;
   border-radius: 10px;
-  margin: 10px auto 0 auto;
-  border: 1px solid $font-white;
-  background: {
-    image: url("/images/bright-food/products/grey-background.png");
-    position: top center;
-    size: 270px 350px;
-    repeat: no-repeat;
-  }
-  &:hover {
-    box-shadow: 0px 0px 10px 2px $slight-grey;
-    .products__shop-navigation {
-      @include flexbox(row, space-evenly, center);
-    }
+  background: $font-white;
+  @include flexbox(row, space-evenly, stretch);
+  //margin: 10px auto 0 auto;
+  //border: 1px solid $font-white;
 
-  }
-}
-&_image {
-  height: 350px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;
-  position: relative;
-}
-&__shop-navigation {
-  position: absolute;
-  top: 25px;
-  left: 60px;
+  //&:hover {
+  //  box-shadow: 0px 0px 10px 2px $slight-grey;
+  //  .products__shop-navigation {
+  //    @include flexbox(row, space-evenly, center);
+  //  }
+  //
+  //}
 
-  display: none;
-  width: 150px;
-  height: 35px;
-  background-color: $font-white;
-  border-radius: 999px;
-  filter: drop-shadow(0px 12px 8px #e4e4e4);
-  &.active {
-    @include flexbox(row, space-evenly, center);
+  &__shop-navigation {
+    width:12%;
+    @include flexbox(column, space-evenly, center);
+
+    &_png {
+      flex: 1 0;
+      width: 100%;
+      @include flexbox(column, center, center);
+      &:first-child {
+        border-bottom: 1px solid $slight-grey;
+        border-right: 1px solid $slight-grey;
+      }
+      &:nth-child(2) {
+        border-bottom: 1px solid $slight-grey;
+        border-right: 1px solid $slight-grey;
+      }
+      &:last-child {
+        border-right: 1px solid $slight-grey;
+      }
+      img {
+        transition: transform 0.5s;
+      }
+      &:hover img{
+        transform: scale(0.7);
+      }
+      &:hover {
+        box-shadow: inset 0px 0px 20px $slight-grey;
+
+      }
+    }
+    //&_border {
+    //  //border: 1px solid $slight-grey;
+    //}
   }
-  &_png {
-    padding: 0 10px;
-    &:nth-child(2) {
-      border-left: 2px solid $slight-grey;
-      border-right: 2px solid $slight-grey;
-    }
-    img {
-      transition: transform 0.5s;
-    }
-    &:hover img{
-      transform: scale(0.7);
-    }
-  }
-}
-&__product-description {
-  position: absolute;
-  top: 310px;
-  width: 100%;
-  &_name {
-    font-size: 1.2rem;
-    span {
-      @extend %font-bold;
-    }
-  }
-  &_price {
-    @extend %font-bold;
-    padding-top: 10px;
-    span:first-child {
-      color: $green;
-    }
-    span:last-child {
+  &__product-description {
+    width:87%;
+    @include flexbox(column, space-evenly, flex-start);
+    text-align: left;
+    padding-left: 10px;
+    position: relative;
+    &_organic-food {
+      text-transform: uppercase;
+      font-size: 0.5rem;
+      letter-spacing: 2px;
       color: $font-grey;
-      text-decoration: line-through;
+    }
+    &_name {
+      font-size: 1.2rem;
+      span {
+        @extend %font-bold;
+      }
+    }
+    &_some-text {
+      font-size: 0.65rem;
+      line-height: 1rem;
+      width: 170px;
+    }
+    &_price {
+      @extend %font-bold;
+      //padding-top: 10px;
+      span:first-child {
+        color: $green;
+      }
+      span:last-child {
+        color: $font-grey;
+        text-decoration: line-through;
+      }
+    }
+    &_buttons {
+      position: absolute;
+      top: 10px;
+      left: 56%;
+
+      %button-style {
+        width: 60px;
+        border-radius: 99px;
+        border: none;
+        color: white;
+        height: 22px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        outline: none;
+        margin: 0 5px;
+
+      }
+      &_new {
+        @extend %button-style;
+        background-color: $light-green;
+        &:focus{
+          border: 2px inset $light-green;
+        }
+      }
+      &_sale{
+        @extend %button-style;
+        background-color: $blue;
+        &:focus {
+          border: 2px inset $blue;
+        }
+      }
+    }
+    &_src{
+      margin: auto;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      height: 150px;
+      width: 150px;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: contain;
     }
   }
 }

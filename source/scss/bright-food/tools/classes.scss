@@ -14,3 +14,9 @@
   background-repeat: no-repeat;
   background-size: 16px;
 }
+
+%width {
+  min-width: 850px;
+  width: 90vw;
+  margin: 0 auto;
+}

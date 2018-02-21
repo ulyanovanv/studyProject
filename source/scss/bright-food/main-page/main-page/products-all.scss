@@ -1,0 +1,92 @@
+.products-all {
+  background-color: $slight-grey;
+  width: 100%;
+
+  position: relative;
+
+  #leaf-left-second {
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+  }
+  #leaf-right-second {
+    position: absolute;
+    top: -25px;
+    right: 0;
+    img {
+      height: 125px;
+    }
+  }
+  &_width {
+    margin: 0 auto;
+    padding-top: 70px;
+    width: $max-width;
+  }
+  &__header{
+    padding: 20px 0;
+    border-bottom: 2px solid white;
+    @include flexbox(row,center,center);
+    &_left {
+      width:30%;
+      text-align: right;
+      p:first-child {
+        text-transform: uppercase;
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+      }
+      p:last-child {
+        font-size: 1.5rem;
+        padding-top: 15px;
+        span:last-child {
+          @extend %font-bold;
+        }
+      }
+    }
+    &_image{
+      width:25%;
+      img {
+        width: 150px;
+        height: auto;
+      }
+    }
+    &_right{
+      width:30%;
+      text-align: left;
+      font-size: 0.65rem;
+      line-height: 1rem;
+    }
+  }
+  &__time-left{
+    @include flexbox(row,space-evenly,center);
+    padding: 20px 0;
+    width: 300px;
+    margin: auto;
+    &_gradient-container{
+      background: $background-gradient;
+      border-radius: 10px;
+      height: 54px;
+      width: 54px;
+      padding: 5px;
+    }
+    &_text {
+      background-color: $font-white;
+      height: 49px;
+      width: 49px;
+      border-radius: 8px;
+      padding: 2.5px;
+      span:first-child {
+        font-size: 1.7rem;
+        line-height: 1.7rem;
+        font-weight: bold;
+      }
+      span:last-child{
+        color: $blue;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  &__products {
+    height: 480px;
+  }
+  @import "./slider-styles-changes-horizontal";
+}

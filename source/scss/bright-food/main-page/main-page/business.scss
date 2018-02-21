@@ -2,11 +2,6 @@
   margin-top: 20px;
 }
 
-%width {
-  min-width: 850px;
-  width: 90vw;
-  margin: 0 auto;
-}
 
 #leaf-left {
   position: absolute;
@@ -177,7 +172,7 @@
       @include flexbox(column,space-evenly,center);
       &:hover {
         border: 2px solid #c1db83;
-        box-shadow: 0 0 5px 1px #c1db83;
+        box-shadow: 0 0 5px 1px $slight-grey;
       }
       &:hover .information_categories_of-products_for-line {
         border-bottom: 2px solid #c1db83;

@@ -1,0 +1,31 @@
+.slick-dots > li > button {
+  height: 20px;
+  width: 20px;
+  color:  $font-white;
+  font-size: 0.9rem;
+  border-radius: 99px;
+  &::before {
+    //content: " ";
+    background-color: $light-green;
+  }
+  &:hover {
+    background-color: white;
+    color: $font-white;
+  }
+  &:focus {
+    background-color: $light-green;
+    color: $font-white;
+  }
+}
+.slick-prev::before {
+  content: "🡸";
+  color: $font-grey;
+}
+.slick-next::before {
+  content: "🡺";
+  color: $font-grey;
+}
+.slick-slide {
+  margin-top: 20px;
+  height: 230px;
+}
