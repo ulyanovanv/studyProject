@@ -5321,7 +5321,9 @@ var PageHeader = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (PageHeader.__proto__ || Object.getPrototypeOf(PageHeader)).call(this, props));
 
+    _this.state = { isAsideMenuMoved: false };
     _this.renderNavigation = _this.renderNavigation.bind(_this);
+    _this.showAsideMenu = _this.showAsideMenu.bind(_this);
     return _this;
   }
 
@@ -5339,6 +5341,13 @@ var PageHeader = function (_React$Component) {
           ),
           _react2.default.createElement("div", { className: "page-header__menu_right-side_navigation_name_green-circle" })
         );
+      });
+    }
+  }, {
+    key: "showAsideMenu",
+    value: function showAsideMenu() {
+      this.setState({
+        isAsideMenuMoved: !this.state.isAsideMenuMoved
       });
     }
   }, {
@@ -5410,7 +5419,7 @@ var PageHeader = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                   "div",
-                  { className: "page-header__menu_right-side_toggle-menu" },
+                  { className: "page-header__menu_right-side_toggle-menu", onClick: this.showAsideMenu },
                   _react2.default.createElement("img", { id: "toggle-menu", src: "/images/bright-food/main-image/toggle-menu.png" })
                 )
               )
@@ -5485,6 +5494,39 @@ var PageHeader = function (_React$Component) {
                   null,
                   "in"
                 )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            "aside",
+            { className: "page-header_aside-bar", style: { right: this.state.isAsideMenuMoved === true ? 0 : "-10%", transition: "right 1s ease-in-out" } },
+            _react2.default.createElement(
+              "ul",
+              null,
+              _react2.default.createElement(
+                "li",
+                { className: "page-header_aside-bar_name" },
+                "home"
+              ),
+              _react2.default.createElement(
+                "li",
+                { className: "page-header_aside-bar_name" },
+                "about us"
+              ),
+              _react2.default.createElement(
+                "li",
+                { className: "page-header_aside-bar_name" },
+                "shop"
+              ),
+              _react2.default.createElement(
+                "li",
+                { className: "page-header_aside-bar_name" },
+                "blog"
+              ),
+              _react2.default.createElement(
+                "li",
+                { className: "page-header_aside-bar_name" },
+                "contact us"
               )
             )
           )
@@ -30082,7 +30124,7 @@ var _reactRedux = __webpack_require__(5);
 
 var _MainPage = __webpack_require__(111);
 
-var _BasketPage = __webpack_require__(133);
+var _BasketPage = __webpack_require__(134);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30232,6 +30274,8 @@ var _ProductsRandomized2 = _interopRequireDefault(_ProductsRandomized);
 
 var _Business = __webpack_require__(132);
 
+var _PageFooter = __webpack_require__(133);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30239,8 +30283,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// import {ProductsAll} from "./MainPageComponents/ProductsAll";
 
 var products = [{ id: 1, src: "/images/bright-food/products/cherries.png", name: "cherries", category: "fruit", price: 30, previousPrice: 40 }, { id: 2, src: "/images/bright-food/products/cole.png", name: "cole", category: "vegetables", price: 25, previousPrice: 0 }, { id: 3, src: "/images/bright-food/products/ginger.png", name: "ginger", category: "vegetables", price: 20, previousPrice: 23 }, { id: 4, src: "/images/bright-food/products/grapefruit.png", name: "grapefruits", category: "fruit", price: 30, previousPrice: 0 }, { id: 5, src: "/images/bright-food/products/mushrooms.png", name: "mushrooms", category: "vegetables", price: 30, previousPrice: 40 }, { id: 6, src: "/images/bright-food/products/olive.png", name: "olive", category: "vegetables", price: 33, previousPrice: 0 }, { id: 7, src: "/images/bright-food/products/onion.png", name: "onion", category: "vegetables", price: 15, previousPrice: 16 }, { id: 8, src: "/images/bright-food/products/paprika.png", name: "paprika", category: "vegetables", price: 30, previousPrice: 0 }, { id: 9, src: "/images/bright-food/products/peaches.png", name: "peaches", category: "fruit", price: 23, previousPrice: 28 }, { id: 10, src: "/images/bright-food/products/pineapple.png", name: "pineapple", category: "fruit", price: 50, previousPrice: 55 }, { id: 11, src: "/images/bright-food/products/tomatoes.png", name: "tomatoes", category: "vegetables", price: 34, previousPrice: 0 }];
 
@@ -30278,7 +30320,8 @@ var MainPage = exports.MainPage = function (_React$Component) {
           } }),
         _react2.default.createElement(_ProductsRandomized2.default, { classForRender: "products-randomized", products: products }),
         _react2.default.createElement(_Business.Business, null),
-        _react2.default.createElement(_ProductsRandomized2.default, { classForRender: "products-all", products: products })
+        _react2.default.createElement(_ProductsRandomized2.default, { classForRender: "products-all", products: products }),
+        _react2.default.createElement(_PageFooter.PageFooter, null)
       );
     }
   }]);
@@ -30423,7 +30466,6 @@ var ProductsRandomized = function (_React$Component) {
           dotsClass: 'slick-dots',
           infinite: false,
           speed: 500,
-          // customPaging(){return <button>{"hello"}</button>;},
           responsive: [{ breakpoint: 2550, settings: { slidesToShow: 7, slidesToScroll: 7 } }, { breakpoint: 2350, settings: { slidesToShow: 6, slidesToScroll: 6 } }, { breakpoint: 1900, settings: { slidesToShow: 5, slidesToScroll: 5 } }, { breakpoint: 1500, settings: { slidesToShow: 4, slidesToScroll: 4 } }, { breakpoint: 1250, settings: { slidesToShow: 3, slidesToScroll: 3 } }, { breakpoint: 850, settings: { slidesToShow: 2, slidesToScroll: 2 } }]
         };
         return _react2.default.createElement(
@@ -30502,7 +30544,7 @@ var ProductsRandomized = function (_React$Component) {
           )
         );
       } else if (this.props.classForRender === "products-all") {
-        // let counter = 0;
+        var counter = 0;
         var _settings = {
           dots: true,
           dotsClass: 'slick-dots',
@@ -30512,19 +30554,9 @@ var ProductsRandomized = function (_React$Component) {
             counter += 1;
             return _react2.default.createElement(
               "button",
-              { className: 'custom-slick-dot-' + counter },
-              _react2.default.createElement(
-                "style",
-                null,
-                ".custom-slick-dot-",
-                counter,
-                "::before ",
-                '{',
-                "content:\"",
-                counter,
-                "\"",
-                '}'
-              )
+              null,
+              " ",
+              counter
             );
           },
           responsive: [{ breakpoint: 2550, settings: { slidesToShow: 2, slidesToScroll: 2 } }]
@@ -30671,6 +30703,11 @@ var ProductsRandomized = function (_React$Component) {
               "div",
               { id: "leaf-right-second" },
               _react2.default.createElement("img", { src: "/images/bright-food/business/leaf-right-second.png" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { id: "white-path" },
+              _react2.default.createElement("img", { src: "/images/bright-food/business/path.png" })
             )
           )
         );
@@ -33451,7 +33488,7 @@ var ProductVertical = exports.ProductVertical = function (_React$Component) {
       return _react2.default.createElement(
         "div",
         { className: "products-vertical",
-          style: { boxShadow: this.props.isSelected || this.props.isZoomed ? "0px 0px 10px 2px #F7F6F2" : "",
+          style: { boxShadow: this.props.isSelected || this.props.isZoomed ? "0px 0px 10px 2px #86bf0a" : "",
             transition: "transform 1s",
             transform: this.props.isZoomed ? "scale(1.1)" : "scale(1.0)"
           },
@@ -33470,16 +33507,16 @@ var ProductVertical = exports.ProductVertical = function (_React$Component) {
             _react2.default.createElement(
               "div",
               { className: "products-vertical__shop-navigation_png",
-                onClick: this.props.changeBasketList,
-                style: { transform: this.props.isSelected ? "scale(0.7)" : "scale(1.0)" } },
-              _react2.default.createElement("img", { id: "basket-on-product", src: "/images/bright-food/products/smallPNG/basket.png" })
+                onClick: this.props.changeBasketList },
+              _react2.default.createElement("img", { id: "basket-on-product", src: "/images/bright-food/products/smallPNG/basket.png",
+                style: { transform: this.props.isSelected ? "scale(0.7)" : "scale(1.0)" } })
             ),
             _react2.default.createElement(
               "div",
               { className: "products-vertical__shop-navigation_png",
-                onClick: this.props.changeZoom,
-                style: { transform: this.props.isZoomed ? "scale(0.7)" : "scale(1.0)" } },
-              _react2.default.createElement("img", { id: "zoom", src: "/images/bright-food/products/smallPNG/zoom.png" })
+                onClick: this.props.changeZoom },
+              _react2.default.createElement("img", { id: "zoom", src: "/images/bright-food/products/smallPNG/zoom.png",
+                style: { transform: this.props.isZoomed ? "scale(0.7)" : "scale(1.0)" } })
             )
           ),
           _react2.default.createElement(
@@ -33562,7 +33599,10 @@ var ProductHorizontal = exports.ProductHorizontal = function (_React$Component) 
     value: function render() {
       return _react2.default.createElement(
         "div",
-        { className: "products-horizontal" },
+        { className: "products-horizontal",
+          style: { boxShadow: this.props.isSelected || this.props.isZoomed ? "0px 0px 10px 2px #86bf0a" : "",
+            transition: "transform 1s, bozShadow 1s",
+            transform: this.props.isZoomed ? "scale(1.06)" : "scale(1.0)" } },
         _react2.default.createElement(
           "div",
           { className: "products-horizontal__shop-navigation " },
@@ -33575,15 +33615,17 @@ var ProductHorizontal = exports.ProductHorizontal = function (_React$Component) 
             "div",
             { className: "products-horizontal__shop-navigation_png",
               onClick: this.props.changeBasketList,
-              style: { transform: this.props.isSelected ? "scale(0.7)" : "scale(1.0)" } },
-            _react2.default.createElement("img", { id: "basket-on-product", src: "/images/bright-food/products/smallPNG/basket.png" })
+              style: { boxShadow: this.props.isSelected ? "inset 0px 0px 20px #f7f6f2" : "" } },
+            _react2.default.createElement("img", { id: "basket-on-product", src: "/images/bright-food/products/smallPNG/basket.png",
+              style: { transform: this.props.isSelected ? "scale(0.7)" : "scale(1.0)" } })
           ),
           _react2.default.createElement(
             "div",
             { className: "products-horizontal__shop-navigation_png",
               onClick: this.props.changeZoom,
-              style: { transform: this.props.isZoomed ? "scale(0.7)" : "scale(1.0)" } },
-            _react2.default.createElement("img", { id: "zoom", src: "/images/bright-food/products/smallPNG/zoom.png" })
+              style: { boxShadow: this.props.isZoomed ? "inset 0px 0px 20px #f7f6f2" : "" } },
+            _react2.default.createElement("img", { id: "zoom", src: "/images/bright-food/products/smallPNG/zoom.png",
+              style: { transform: this.props.isZoomed ? "scale(0.7)" : "scale(1.0)" } })
           )
         ),
         _react2.default.createElement(
@@ -34012,6 +34054,55 @@ var Business = exports.Business = function (_React$Component) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.PageFooter = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PageFooter = exports.PageFooter = function (_React$Component) {
+  _inherits(PageFooter, _React$Component);
+
+  function PageFooter() {
+    _classCallCheck(this, PageFooter);
+
+    return _possibleConstructorReturn(this, (PageFooter.__proto__ || Object.getPrototypeOf(PageFooter)).apply(this, arguments));
+  }
+
+  _createClass(PageFooter, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "section",
+        { className: "page-footer" },
+        _react2.default.createElement("div", { className: "page-footer_width" })
+      );
+    }
+  }]);
+
+  return PageFooter;
+}(_react2.default.Component);
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.BasketPage = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -34024,7 +34115,7 @@ var _PageHeader = __webpack_require__(38);
 
 var _PageHeader2 = _interopRequireDefault(_PageHeader);
 
-var _ChosenProducts = __webpack_require__(134);
+var _ChosenProducts = __webpack_require__(135);
 
 var _ChosenProducts2 = _interopRequireDefault(_ChosenProducts);
 
@@ -34065,7 +34156,7 @@ var BasketPage = exports.BasketPage = function (_React$Component) {
 }(_react2.default.Component);
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

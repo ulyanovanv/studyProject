@@ -1,8 +1,8 @@
 .products-all {
   background-color: $slight-grey;
   width: 100%;
-
   position: relative;
+  margin-bottom: 50px;
 
   #leaf-left-second {
     position: absolute;
@@ -17,10 +17,18 @@
       height: 125px;
     }
   }
+  #white-path {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+  }
+
   &_width {
     margin: 0 auto;
     padding-top: 70px;
     width: $max-width;
+
   }
   &__header{
     padding: 20px 0;

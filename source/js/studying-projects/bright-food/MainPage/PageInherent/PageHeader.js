@@ -7,7 +7,9 @@ let NavigationNames = ["home","about us","shop","blog","contact us"];
 class PageHeader extends React.Component {
   constructor(props){
     super(props);
+    this.state = {isAsideMenuMoved: false};
     this.renderNavigation = this.renderNavigation.bind(this);
+    this.showAsideMenu = this.showAsideMenu.bind(this);
   }
 
   renderNavigation(){
@@ -19,9 +21,16 @@ class PageHeader extends React.Component {
         </div>)
     })
   }
+  showAsideMenu(){
+    this.setState({
+      isAsideMenuMoved: !this.state.isAsideMenuMoved
+    })
+  }
+
   render(){
     return (<section className="page-header">
       <div className="page-header_image-container">
+
         <div className='page-header_padding'>
           <div className="page-header__menu">
 
@@ -49,7 +58,7 @@ class PageHeader extends React.Component {
                 </div>
               </div>
 
-              <div className="page-header__menu_right-side_toggle-menu">
+              <div className="page-header__menu_right-side_toggle-menu" onClick={this.showAsideMenu}>
                 <img id="toggle-menu" src="/images/bright-food/main-image/toggle-menu.png"/>
               </div>
 
@@ -88,6 +97,16 @@ class PageHeader extends React.Component {
           </aside>
 
         </div>
+
+        <aside className="page-header_aside-bar" style={{right: (this.state.isAsideMenuMoved === true) ? 0 : "-10%", transition: "right 1s ease-in-out"}}>
+          <ul>
+            <li className="page-header_aside-bar_name">home</li>
+            <li className="page-header_aside-bar_name">about us</li>
+            <li className="page-header_aside-bar_name">shop</li>
+            <li className="page-header_aside-bar_name">blog</li>
+            <li className="page-header_aside-bar_name">contact us</li>
+          </ul>
+        </aside>
       </div>
     </section>);
   }

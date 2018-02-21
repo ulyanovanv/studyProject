@@ -1,9 +1,12 @@
 .products-horizontal {
-  width: 400px;
+  width: 380px;
   height: 200px;
   border-radius: 10px;
   background: $font-white;
+  margin: auto;
   @include flexbox(row, space-evenly, stretch);
+
+
   //margin: 10px auto 0 auto;
   //border: 1px solid $font-white;
 
@@ -26,6 +29,7 @@
       &:first-child {
         border-bottom: 1px solid $slight-grey;
         border-right: 1px solid $slight-grey;
+        border-top-left-radius: 10px;
       }
       &:nth-child(2) {
         border-bottom: 1px solid $slight-grey;
@@ -33,6 +37,7 @@
       }
       &:last-child {
         border-right: 1px solid $slight-grey;
+        border-bottom-left-radius: 10px;
       }
       img {
         transition: transform 0.5s;

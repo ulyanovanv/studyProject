@@ -4,7 +4,10 @@ export class ProductHorizontal extends React.Component {
 
   render(){
     return (
-      <div className="products-horizontal">
+      <div className="products-horizontal"
+           style={{boxShadow: ((this.props.isSelected || this.props.isZoomed) ? "0px 0px 10px 2px #86bf0a" : ""),
+                  transition: "transform 1s, bozShadow 1s",
+                  transform: (this.props.isZoomed ? "scale(1.06)" : "scale(1.0)")  }}>
 
         <div className={"products-horizontal__shop-navigation "}>
           <div className="products-horizontal__shop-navigation_png">
@@ -13,14 +16,16 @@ export class ProductHorizontal extends React.Component {
 
           <div className="products-horizontal__shop-navigation_png"
                onClick={this.props.changeBasketList}
-               style={{transform: (this.props.isSelected ? "scale(0.7)" : "scale(1.0)")}}>
-              <img id="basket-on-product" src="/images/bright-food/products/smallPNG/basket.png"/>
+               style={{boxShadow: (this.props.isSelected ? "inset 0px 0px 20px #f7f6f2" : "")}}>
+              <img id="basket-on-product" src="/images/bright-food/products/smallPNG/basket.png"
+                   style={{transform: (this.props.isSelected ? "scale(0.7)" : "scale(1.0)")}}/>
           </div>
 
           <div className="products-horizontal__shop-navigation_png"
                onClick={ this.props.changeZoom}
-               style={{transform: (this.props.isZoomed ? "scale(0.7)" : "scale(1.0)")}}>
-              <img id="zoom" src="/images/bright-food/products/smallPNG/zoom.png" />
+               style={{boxShadow: (this.props.isZoomed ? "inset 0px 0px 20px #f7f6f2" : "")}}>
+              <img id="zoom" src="/images/bright-food/products/smallPNG/zoom.png"
+                   style={{transform: (this.props.isZoomed ? "scale(0.7)" : "scale(1.0)")}} />
           </div>
         </div>
 
@@ -45,8 +50,10 @@ export class ProductHorizontal extends React.Component {
           <div style={{backgroundImage: 'url(' + this.props.src + ')'}}
                className="products-horizontal__product-description_src"
                title={this.props.title}></div>
-
         </div>
+
+
+
       </div>
     );
   }

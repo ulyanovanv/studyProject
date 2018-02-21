@@ -80,7 +80,6 @@ class ProductsRandomized extends React.Component {
         dotsClass: 'slick-dots',
         infinite: false,
         speed: 500,
-        // customPaging(){return <button>{"hello"}</button>;},
         responsive: [
           {breakpoint: 2550, settings: {slidesToShow: 7, slidesToScroll: 7}},
           {breakpoint: 2350, settings: {slidesToShow: 6, slidesToScroll: 6}},
@@ -127,19 +126,16 @@ class ProductsRandomized extends React.Component {
         </section>
       )
     } else if (this.props.classForRender === "products-all") {
-      // let counter = 0;
+      let counter = 0;
       let settings = {
         dots: true,
         dotsClass: 'slick-dots',
         infinite: false,
         speed: 500,
         customPaging: function(counter) {
-          counter += 1;
+          counter +=1;
           return (
-
-            <button className={'custom-slick-dot-' + counter}>
-              <style>.custom-slick-dot-{counter}::before {'{'}content:"{counter}"{'}'}</style>
-            </button>);
+            <button> {counter}</button>);
         },
         responsive: [
           {breakpoint: 2550, settings: {slidesToShow: 2, slidesToScroll: 2}},
@@ -202,6 +198,10 @@ class ProductsRandomized extends React.Component {
 
           <div id="leaf-right-second">
             <img src="/images/bright-food/business/leaf-right-second.png"/>
+          </div>
+
+          <div id="white-path">
+            <img src="/images/bright-food/business/path.png"/>
           </div>
 
         </div>

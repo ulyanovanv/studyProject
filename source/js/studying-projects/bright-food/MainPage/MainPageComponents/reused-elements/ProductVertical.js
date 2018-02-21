@@ -5,7 +5,7 @@ export class ProductVertical extends React.Component {
   render(){
     return (
       <div className="products-vertical"
-           style={{boxShadow: ((this.props.isSelected || this.props.isZoomed) ? "0px 0px 10px 2px #F7F6F2" : ""),
+           style={{boxShadow: ((this.props.isSelected || this.props.isZoomed) ? "0px 0px 10px 2px #86bf0a" : ""),
              transition: "transform 1s",
              transform: (this.props.isZoomed ? "scale(1.1)" : "scale(1.0)")
            }}
@@ -19,15 +19,15 @@ export class ProductVertical extends React.Component {
             </div>
 
             <div className="products-vertical__shop-navigation_png"
-                 onClick={this.props.changeBasketList}
-                 style={{transform: (this.props.isSelected ? "scale(0.7)" : "scale(1.0)")}}>
-              <img id="basket-on-product" src="/images/bright-food/products/smallPNG/basket.png"/>
+                 onClick={this.props.changeBasketList}>
+              <img id="basket-on-product" src="/images/bright-food/products/smallPNG/basket.png"
+                   style={{transform: (this.props.isSelected ? "scale(0.7)" : "scale(1.0)")}}/>
             </div>
 
             <div className="products-vertical__shop-navigation_png"
-                 onClick={ this.props.changeZoom}
-                 style={{transform: (this.props.isZoomed ? "scale(0.7)" : "scale(1.0)")}}>
-              <img id="zoom" src="/images/bright-food/products/smallPNG/zoom.png" />
+                 onClick={ this.props.changeZoom}>
+              <img id="zoom" src="/images/bright-food/products/smallPNG/zoom.png"
+                   style={{transform: (this.props.isZoomed ? "scale(0.7)" : "scale(1.0)")}} />
             </div>
           </div>
 

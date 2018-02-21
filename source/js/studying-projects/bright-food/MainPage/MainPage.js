@@ -3,7 +3,8 @@ import React from 'react';
 import PageHeader from "./PageInherent/PageHeader";
 import ProductsRandomized from "./MainPageComponents/ProductsRandomized";
 import {Business} from "./MainPageComponents/Business";
-// import {ProductsAll} from "./MainPageComponents/ProductsAll";
+
+import {PageFooter} from "./PageInherent/PageFooter";
 
 let products = [
   {id: 1, src: "/images/bright-food/products/cherries.png", name:"cherries", category: "fruit", price: 30, previousPrice: 40},
@@ -38,7 +39,7 @@ export class MainPage extends React.Component {
       <Business/>
       <ProductsRandomized classForRender="products-all" products={products}/>
       {/*<ProductsCategorizedNowelty/>*/}
-      {/*<PageFooter/>*/}
+      <PageFooter/>
     </div>)
 
   }

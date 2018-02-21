@@ -2315,7 +2315,8 @@ body.bright-food {
   body.bright-food .page-header {
     position: relative;
     width: 100%;
-    height: 475px; }
+    height: 475px;
+    overflow: hidden; }
     body.bright-food .page-header_image-container {
       height: 500px;
       width: auto;
@@ -2471,6 +2472,21 @@ body.bright-food {
           width: 20px;
           line-height: 20px;
           display: block; }
+    body.bright-food .page-header_aside-bar {
+      position: absolute;
+      right: -10%;
+      top: 15%; }
+      body.bright-food .page-header_aside-bar_name {
+        text-align: left;
+        text-transform: uppercase;
+        padding: 5px;
+        margin: 5px;
+        background: #FFF;
+        opacity: 0.7;
+        border-radius: 5px;
+        font-size: 0.9rem; }
+        body.bright-food .page-header_aside-bar_name:hover {
+          opacity: 0.9; }
   @media (max-width: 900px) {
     body.bright-food .page-header_image-container {
       background-position: top center; } }
@@ -2602,10 +2618,11 @@ body.bright-food {
           color: #b5b5b5;
           text-decoration: line-through; }
   body.bright-food .products .products-horizontal {
-    width: 400px;
+    width: 380px;
     height: 200px;
     border-radius: 10px;
     background: #FFF;
+    margin: auto;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -2637,12 +2654,14 @@ body.bright-food {
         align-items: center; }
         body.bright-food .products .products-horizontal__shop-navigation_png:first-child {
           border-bottom: 1px solid #f7f6f2;
-          border-right: 1px solid #f7f6f2; }
+          border-right: 1px solid #f7f6f2;
+          border-top-left-radius: 10px; }
         body.bright-food .products .products-horizontal__shop-navigation_png:nth-child(2) {
           border-bottom: 1px solid #f7f6f2;
           border-right: 1px solid #f7f6f2; }
         body.bright-food .products .products-horizontal__shop-navigation_png:last-child {
-          border-right: 1px solid #f7f6f2; }
+          border-right: 1px solid #f7f6f2;
+          border-bottom-left-radius: 10px; }
         body.bright-food .products .products-horizontal__shop-navigation_png img {
           transition: transform 0.5s; }
         body.bright-food .products .products-horizontal__shop-navigation_png:hover img {
@@ -2958,7 +2977,8 @@ body.bright-food {
   body.bright-food .products-all {
     background-color: #f7f6f2;
     width: 100%;
-    position: relative; }
+    position: relative;
+    margin-bottom: 50px; }
     body.bright-food .products-all #leaf-left-second {
       position: absolute;
       bottom: -80px;
@@ -2969,6 +2989,11 @@ body.bright-food {
       right: 0; }
       body.bright-food .products-all #leaf-right-second img {
         height: 125px; }
+    body.bright-food .products-all #white-path {
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0; }
     body.bright-food .products-all_width {
       margin: 0 auto;
       padding-top: 70px;
@@ -3037,20 +3062,19 @@ body.bright-food {
           font-size: 0.8rem; }
     body.bright-food .products-all__products {
       height: 480px; }
-    body.bright-food .products-all .slick-dots > li > button {
+    body.bright-food .products-all .slick-dots li > button {
       height: 20px;
       width: 20px;
-      color: #FFF;
-      font-size: 0.9rem;
-      border-radius: 99px; }
-      body.bright-food .products-all .slick-dots > li > button::before {
+      color: #b5b5b5;
+      font-size: 0.9rem; }
+      body.bright-food .products-all .slick-dots li > button::before {
+        border-radius: 99px;
+        content: " ";
         background-color: #92d2a7; }
-      body.bright-food .products-all .slick-dots > li > button:hover {
-        background-color: white;
+      body.bright-food .products-all .slick-dots li > button:hover {
         color: #FFF; }
-      body.bright-food .products-all .slick-dots > li > button:focus {
-        background-color: #92d2a7;
-        color: #FFF; }
+    body.bright-food .products-all .slick-dots li.slick-active button:before {
+      opacity: 1; }
     body.bright-food .products-all .slick-prev::before {
       content: "🡸";
       color: #b5b5b5; }
@@ -3060,6 +3084,13 @@ body.bright-food {
     body.bright-food .products-all .slick-slide {
       margin-top: 20px;
       height: 230px; }
+  body.bright-food .page-footer {
+    background-color: #f7f6f2;
+    width: 100%; }
+    body.bright-food .page-footer_width {
+      margin: 0 auto;
+      padding-top: 70px;
+      width: 850px; }
   body.bright-food a {
     text-decoration: none; }
   body.bright-food .bold {

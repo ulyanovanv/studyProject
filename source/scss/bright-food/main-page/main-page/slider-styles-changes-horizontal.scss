@@ -1,22 +1,23 @@
-.slick-dots > li > button {
-  height: 20px;
-  width: 20px;
-  color:  $font-white;
-  font-size: 0.9rem;
-  border-radius: 99px;
-  &::before {
-    //content: " ";
-    background-color: $light-green;
+.slick-dots  {
+  li > button {
+    height: 20px;
+    width: 20px;
+    color:  $font-grey;
+    font-size: 0.9rem;
+    &::before {
+      border-radius: 99px;
+      content: " ";
+      background-color: $light-green;
+    }
+    &:hover {
+      color: $font-white;
+    }
   }
-  &:hover {
-    background-color: white;
-    color: $font-white;
-  }
-  &:focus {
-    background-color: $light-green;
-    color: $font-white;
+  li.slick-active button:before {
+    opacity: 1;
   }
 }
+
 .slick-prev::before {
   content: "🡸";
   color: $font-grey;
