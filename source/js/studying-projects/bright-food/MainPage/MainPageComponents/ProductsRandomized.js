@@ -200,7 +200,7 @@ class ProductsRandomized extends React.Component {
             <img src="/images/bright-food/business/leaf-right-second.png"/>
           </div>
 
-          <div id="white-path">
+          <div className="white-path">
             <img src="/images/bright-food/business/path.png"/>
           </div>
 

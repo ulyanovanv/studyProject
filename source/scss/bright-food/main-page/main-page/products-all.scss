@@ -8,6 +8,9 @@
     position: absolute;
     bottom: -80px;
     left: 0;
+    img {
+      width: 200px;
+    }
   }
   #leaf-right-second {
     position: absolute;
@@ -16,12 +19,6 @@
     img {
       height: 125px;
     }
-  }
-  #white-path {
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    right: 0;
   }
 
   &_width {

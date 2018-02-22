@@ -2134,7 +2134,7 @@ body.bright-food {
   text-align: center; }
   body.bright-food .page-header__menu_right-side_basket_combine, body.bright-food .page-header__menu_right-side_toggle-menu {
     margin-left: 40px; }
-  body.bright-food .page-header__menu_left-side #logo, body.bright-food .products-randomized__navigation_button span, body.bright-food .products .products-vertical__product-description_name span, body.bright-food .products .products-vertical__product-description_price, body.bright-food .products .products-horizontal__product-description_name span, body.bright-food .products .products-horizontal__product-description_price, body.bright-food .about-us__organic-farm_heading span:last-child, body.bright-food .about-us__qualities_each_heading span:last-child, body.bright-food .information_categories_of-products_category span:last-child, body.bright-food .information_text_middle span, body.bright-food .products-all__header_left p:last-child span:last-child {
+  body.bright-food .page-header__menu_left-side #logo, body.bright-food .products-randomized__navigation_button span, body.bright-food .products .products-vertical__product-description_name span, body.bright-food .products .products-vertical__product-description_price, body.bright-food .products .products-horizontal__product-description_name span, body.bright-food .products .products-horizontal__product-description_price, body.bright-food .about-us__organic-farm_heading span:last-child, body.bright-food .about-us__qualities_each_heading span:last-child, body.bright-food .information_categories_of-products_category span:last-child, body.bright-food .information_text_middle span, body.bright-food .products-all__header_left p:last-child span:last-child, body.bright-food .page-footer__subscribe_text_sub span:last-child, body.bright-food .page-footer__menu_logo #logo2, body.bright-food .page-footer__menu_header span:last-child {
     font-weight: bold; }
   body.bright-food .about-us__organic-farm_heading {
     background-image: url("/images/bright-food/main-image/small-leaf.png");
@@ -2144,6 +2144,11 @@ body.bright-food {
     min-width: 850px;
     width: 90vw;
     margin: 0 auto; }
+  body.bright-food .white-path {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0; }
   body.bright-food .slick-list, body.bright-food .slick-slider, body.bright-food .slick-track {
     position: relative;
     display: block; }
@@ -2983,17 +2988,14 @@ body.bright-food {
       position: absolute;
       bottom: -80px;
       left: 0; }
+      body.bright-food .products-all #leaf-left-second img {
+        width: 200px; }
     body.bright-food .products-all #leaf-right-second {
       position: absolute;
       top: -25px;
       right: 0; }
       body.bright-food .products-all #leaf-right-second img {
         height: 125px; }
-    body.bright-food .products-all #white-path {
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      right: 0; }
     body.bright-food .products-all_width {
       margin: 0 auto;
       padding-top: 70px;
@@ -3085,12 +3087,188 @@ body.bright-food {
       margin-top: 20px;
       height: 230px; }
   body.bright-food .page-footer {
-    background-color: #f7f6f2;
     width: 100%; }
+    body.bright-food .page-footer_grey {
+      background-color: #f7f6f2;
+      position: relative;
+      height: 520px; }
+      body.bright-food .page-footer_grey #granat {
+        position: absolute;
+        left: 0;
+        bottom: -2px; }
+        body.bright-food .page-footer_grey #granat img {
+          width: 200px; }
+      body.bright-food .page-footer_grey #salat {
+        position: absolute;
+        right: 0;
+        top: -80px; }
+        body.bright-food .page-footer_grey #salat img {
+          width: 150px; }
+    body.bright-food .page-footer_white {
+      padding: 30px;
+      width: 850px;
+      margin: auto; }
     body.bright-food .page-footer_width {
       margin: 0 auto;
       padding-top: 70px;
       width: 850px; }
+    body.bright-food .page-footer__subscribe {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center; }
+      body.bright-food .page-footer__subscribe_text {
+        text-align: left; }
+        body.bright-food .page-footer__subscribe_text_join {
+          text-transform: uppercase;
+          font-size: 0.6rem;
+          letter-spacing: 2px; }
+        body.bright-food .page-footer__subscribe_text_sub {
+          font-size: 1.5rem;
+          line-height: 1.5rem; }
+      body.bright-food .page-footer__subscribe form input[type="email"], body.bright-food .page-footer__subscribe form input[type="submit"] {
+        border: none;
+        outline: none;
+        padding: 12px 30px;
+        border-radius: 999px; }
+      body.bright-food .page-footer__subscribe form input[type="email"] {
+        background-color: #FFF;
+        color: #080808;
+        width: 350px;
+        margin-right: 20px; }
+        body.bright-food .page-footer__subscribe form input[type="email"]::placeholder {
+          color: #b5b5b5; }
+        body.bright-food .page-footer__subscribe form input[type="email"]:focus {
+          box-shadow: 0px 0px 10px 2px #b5b5b5; }
+      body.bright-food .page-footer__subscribe form input[type="submit"] {
+        background-color: #86bf0a;
+        color: #FFF; }
+        body.bright-food .page-footer__subscribe form input[type="submit"]:active {
+          transform: scale(0.95); }
+    body.bright-food .page-footer__menu {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      padding: 50px 0; }
+      body.bright-food .page-footer__menu_map, body.bright-food .page-footer__menu_information, body.bright-food .page-footer__menu_account {
+        padding-left: 15px; }
+      body.bright-food .page-footer__menu_connect, body.bright-food .page-footer__menu_map {
+        flex: 2; }
+      body.bright-food .page-footer__menu_information, body.bright-food .page-footer__menu_account {
+        flex: 1; }
+      body.bright-food .page-footer__menu_text {
+        font-size: 0.65rem;
+        line-height: 1rem; }
+      body.bright-food .page-footer__menu_stay-connected {
+        font-size: 0.9rem; }
+        body.bright-food .page-footer__menu_stay-connected_email a {
+          text-decoration: none; }
+        body.bright-food .page-footer__menu_stay-connected_website a {
+          text-decoration: none;
+          font-weight: bold;
+          color: #86bf0a; }
+        body.bright-food .page-footer__menu_stay-connected .fa-map-marker, body.bright-food .page-footer__menu_stay-connected .fa-envelope, body.bright-food .page-footer__menu_stay-connected .fa-phone-square {
+          padding-right: 10px;
+          color: #2e2e2e; }
+      body.bright-food .page-footer__menu_logo {
+        font-size: 1.2rem;
+        position: relative;
+        font-family: Verdana, serif; }
+        body.bright-food .page-footer__menu_logo #leaf-for-log {
+          width: 14px;
+          position: absolute;
+          top: -19px;
+          left: 40px; }
+      body.bright-food .page-footer__menu_green-line {
+        height: 10px;
+        width: 30px;
+        border-bottom: 3px solid #86bf0a; }
+      body.bright-food .page-footer__menu_list {
+        font-size: 0.9rem; }
+        body.bright-food .page-footer__menu_list .fa-arrow-alt-circle-right {
+          color: #b5b5b5;
+          padding-right: 7px; }
+        body.bright-food .page-footer__menu_list li:hover {
+          font-weight: bold;
+          color: #86bf0a; }
+          body.bright-food .page-footer__menu_list li:hover .fa-arrow-alt-circle-right {
+            color: #080808; }
+      body.bright-food .page-footer__menu_location #map {
+        height: 100%; }
+      body.bright-food .page-footer__menu_logo, body.bright-food .page-footer__menu_header {
+        height: 30px; }
+      body.bright-food .page-footer__menu_stay-connected, body.bright-food .page-footer__menu_list, body.bright-food .page-footer__menu_location {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        height: 200px;
+        padding-top: 15px; }
+    body.bright-food .page-footer__total-footer {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem; }
+      body.bright-food .page-footer__total-footer_year {
+        color: #b5b5b5; }
+      body.bright-food .page-footer__total-footer_last-menu {
+        width: 50%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center; }
+        body.bright-food .page-footer__total-footer_last-menu_item {
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          cursor: pointer;
+          font-weight: bold; }
+          body.bright-food .page-footer__total-footer_last-menu_item a {
+            color: #b5b5b5; }
+            body.bright-food .page-footer__total-footer_last-menu_item a:hover {
+              color: #080808; }
+          body.bright-food .page-footer__total-footer_last-menu_item_green-circle {
+            height: 1px;
+            width: 1px;
+            opacity: 0;
+            background-color: #86bf0a;
+            border-radius: 50%;
+            position: absolute;
+            top: 18px;
+            transition: width 0.3s, height 0.3s; }
+          body.bright-food .page-footer__total-footer_last-menu_item:hover .page-footer__total-footer_last-menu_item_green-circle {
+            opacity: 1;
+            height: 7px;
+            width: 7px; }
   body.bright-food a {
     text-decoration: none; }
   body.bright-food .bold {

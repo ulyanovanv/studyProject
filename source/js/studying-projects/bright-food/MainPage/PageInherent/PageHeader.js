@@ -97,7 +97,6 @@ class PageHeader extends React.Component {
           </aside>
 
         </div>
-
         <aside className="page-header_aside-bar" style={{right: (this.state.isAsideMenuMoved === true) ? 0 : "-10%", transition: "right 1s ease-in-out"}}>
           <ul>
             <li className="page-header_aside-bar_name">home</li>
@@ -107,8 +106,10 @@ class PageHeader extends React.Component {
             <li className="page-header_aside-bar_name">contact us</li>
           </ul>
         </aside>
+
       </div>
     </section>);
   }
 }
 export default connect(state => ({store:state}))(PageHeader);
+

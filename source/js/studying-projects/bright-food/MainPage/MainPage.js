@@ -38,7 +38,6 @@ export class MainPage extends React.Component {
       <ProductsRandomized classForRender="products-randomized" products={products}/>
       <Business/>
       <ProductsRandomized classForRender="products-all" products={products}/>
-      {/*<ProductsCategorizedNowelty/>*/}
       <PageFooter/>
     </div>)
 
