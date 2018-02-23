@@ -1,0 +1,228 @@
+.ads {
+  width: 100%;
+  &_width {
+    margin: 0 auto;
+    //padding-top: 70px;
+    width: 850px;
+  }
+  &__top {
+    &_image-container {
+      margin: auto;
+      img {
+        width: 150px;
+      }
+    }
+    &_header {
+      span:first-child {
+        font-size: 0.95rem;
+        &::before {
+          content: "★★★";
+          color: $light-green;
+          font-size: 0.8rem;
+        }
+      }
+      span:last-child {
+        font-size: 0.95rem;
+        @extend %font-bold;
+        &::after {
+          content: "★★★";
+          color: $light-green;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  &__products {
+    @include flexbox(row,space-evenly, flex-start);
+    &_column {
+      flex:1 0;
+      margin: 0 10px;
+    }
+    &_category {
+      text-transform: uppercase;
+      font-size: 0.5rem;
+      letter-spacing: 2px;
+      text-align: left;
+    }
+    &_header {
+      text-align: left;
+      font-size: 1.1rem;
+      span:last-child {
+        @extend %font-bold;
+      }
+    }
+    .slider-container {
+      width: 100%;
+      .ads__products_product {
+        border: 1px solid $slight-grey;
+        margin: 10px 0;
+        padding: 5px 0;
+        border-radius: 7px;
+        height: 100px;
+        @include  flexbox (row,space-evenly, center);
+        &:hover {
+          box-shadow: 0px 0px 10px 2px #b5b5b5;
+        }
+        &_image {
+          flex: 1 0;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
+          height: 100%;
+          width: 100px;
+        }
+        &_description {
+          flex: 1 0;
+          height: 100%;
+          text-align: left;
+          @include  flexbox (column,space-evenly, flex-start);
+          &_name {
+            font-size: 0.9rem;
+            span:last-child {
+              @extend %font-bold;
+            }
+          }
+          &_grey-line {
+            height: 5px;
+            width: 25px;
+            border-bottom: 1px solid $font-grey;
+          }
+          &_price {
+            font-size: 0.8rem;
+            @extend %font-bold;
+            color: $green;
+          }
+        }
+      }
+    }
+  }
+
+  &__adverts {
+    height: 320px;
+    padding: 30px 0 70px 0;
+    box-sizing: border-box;
+    margin: 0 10px;
+
+    @include flexbox(row,space-between, flex-start);
+
+    %measures {
+      height: 220px;
+      width: 400px;
+      padding: 30px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    %fixed-text {
+      position: absolute;
+      top: 15px;
+      text-transform: uppercase;
+      font-size: 0.6rem;
+      span {
+        @extend %font-bold;
+      }
+    }
+    %inner-div {
+      border: 3px solid $font-white;
+      height: 100%;
+      text-align: left;
+      padding-left: 20px;
+      line-height: 1.9rem;
+      @include flexbox(column, center);
+      .text-curly {
+        font-family: 'Dancing Script', cursive;
+        font-size: 2.2rem;
+      }
+      .text-bigger {
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        span {
+          @extend %font-bold;
+        }
+      }
+      .text-upper {
+        text-transform: uppercase;
+        font-size: 0.5rem;
+        @extend %font-bold;
+      }
+    }
+    %background-image {
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-size: auto 90%;
+      top: 0;
+      right: 5px;
+      height: 100%;
+      width: 100%;
+    }
+    %fixed-button {
+      color: $font-white;
+      border: 3px solid $font-white;
+      position: absolute;
+      bottom: 13px;
+      left: 60px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      height: 25px;
+      line-height: 0.8rem;
+      width: 100px;
+      outline: none;
+      &:hover {
+        border: 3px solid $font-grey;
+      }
+    }
+
+    &_olive {
+      @extend %measures;
+      background-color: #d7edcd;
+      border-radius: 7px;
+      .ads__adverts_fixed-text {
+        @extend  %fixed-text;
+        right: 30px;
+        color: #a7c57f;
+      }
+      &_image {
+        background-image: url("/images/bright-food/products/olive.png");
+        @extend %background-image;
+      }
+      .ads__adverts_inner-div {
+        @extend %inner-div;
+        .text-curly {
+          color: $green;
+        }
+      }
+      .ads__adverts_fixed-button {
+        @extend %fixed-button;
+        background-color:$green;
+      }
+    }
+    &_peach {
+      @extend %measures;
+      background-color: #fbefa1;
+      border-radius: 7px;
+      .ads__adverts_fixed-text {
+        @extend %fixed-text;
+        left: 30px;
+        color: $font-grey;
+      }
+      &_image {
+        background-image: url("/images/bright-food/products/peaches.png");
+        @extend %background-image;
+      }
+      .ads__adverts_inner-div {
+        @extend %inner-div;
+        .text-curly {
+          color: #ffc524;
+        }
+      }
+      .ads__adverts_fixed-button {
+        @extend %fixed-button;
+        background-color:#ffc524;
+      }
+    }
+
+
+  }
+
+}

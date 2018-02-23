@@ -97,7 +97,7 @@ class PageHeader extends React.Component {
           </aside>
 
         </div>
-        <aside className="page-header_aside-bar" style={{right: (this.state.isAsideMenuMoved === true) ? 0 : "-10%", transition: "right 1s ease-in-out"}}>
+        <aside className="page-header_aside-bar" style={{right: (this.state.isAsideMenuMoved === true) ? 0 : "-15%", transition: "right 0.5s ease-in-out"}}>
           <ul>
             <li className="page-header_aside-bar_name">home</li>
             <li className="page-header_aside-bar_name">about us</li>

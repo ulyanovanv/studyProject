@@ -5,16 +5,7 @@ import {connect} from "react-redux";
 import {ProductVertical} from "./ProductVertical";
 import {ProductHorizontal} from "./ProductHorizontal";
 
-
 class Product extends React.Component {
-  constructor(props){
-    super(props);
-    this.state ={isZoomed: false};
-    this.changeZoom = this.changeZoom.bind(this);
-  }
-  changeZoom() {
-    this.setState({isZoomed: !this.state.isZoomed});
-  }
   render() {
     let layout = this.props.layoutType;
     if (layout === "vertical") {
@@ -26,8 +17,11 @@ class Product extends React.Component {
                                previousPrice={this.props.previousPrice}
                                changeBasketList={this.props.changeBasketList}
                                isSelected={this.props.isSelected}
-                               isZoomed={this.state.isZoomed}
-                               changeZoom={this.changeZoom}/>);
+                               // isZoomed={this.state.isZoomed}
+                               // changeZoom={this.changeZoom}
+                               isZoomed={this.props.isZoomed}
+                               changeZoom={this.props.changeZoom}
+      />);
     } else if (layout === "horizontal") {
       console.log(this.props.layoutType);
       return (<ProductHorizontal src={this.props.src}
@@ -37,8 +31,11 @@ class Product extends React.Component {
                                previousPrice={this.props.previousPrice}
                                changeBasketList={this.props.changeBasketList}
                                isSelected={this.props.isSelected}
-                               isZoomed={this.state.isZoomed}
-                               changeZoom={this.changeZoom}/>)
+                               // isZoomed={this.state.isZoomed}
+                               // changeZoom={this.changeZoom}
+                               isZoomed={this.props.isZoomed}
+                               changeZoom={this.props.changeZoom}
+      />)
     }
   }
 }

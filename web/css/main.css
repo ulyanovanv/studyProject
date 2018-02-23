@@ -2134,7 +2134,7 @@ body.bright-food {
   text-align: center; }
   body.bright-food .page-header__menu_right-side_basket_combine, body.bright-food .page-header__menu_right-side_toggle-menu {
     margin-left: 40px; }
-  body.bright-food .page-header__menu_left-side #logo, body.bright-food .products-randomized__navigation_button span, body.bright-food .products .products-vertical__product-description_name span, body.bright-food .products .products-vertical__product-description_price, body.bright-food .products .products-horizontal__product-description_name span, body.bright-food .products .products-horizontal__product-description_price, body.bright-food .about-us__organic-farm_heading span:last-child, body.bright-food .about-us__qualities_each_heading span:last-child, body.bright-food .information_categories_of-products_category span:last-child, body.bright-food .information_text_middle span, body.bright-food .products-all__header_left p:last-child span:last-child, body.bright-food .page-footer__subscribe_text_sub span:last-child, body.bright-food .page-footer__menu_logo #logo2, body.bright-food .page-footer__menu_header span:last-child {
+  body.bright-food .page-header__menu_left-side #logo, body.bright-food .products-randomized__navigation_button span, body.bright-food .products .products-vertical__product-description_name span, body.bright-food .products .products-vertical__product-description_price, body.bright-food .products .products-horizontal__product-description_name span, body.bright-food .products .products-horizontal__product-description_price, body.bright-food .about-us__organic-farm_heading span:last-child, body.bright-food .about-us__qualities_each_heading span:last-child, body.bright-food .information_categories_of-products_category span:last-child, body.bright-food .information_text_middle span, body.bright-food .products-all__header_left p:last-child span:last-child, body.bright-food .ads__top_header span:last-child, body.bright-food .ads__products_header span:last-child, body.bright-food .ads__products .slider-container .ads__products_product_description_name span:last-child, body.bright-food .ads__products .slider-container .ads__products_product_description_price, body.bright-food .ads__adverts .ads__adverts_olive .ads__adverts_fixed-text span, body.bright-food .ads__adverts_olive .ads__adverts .ads__adverts_fixed-text span, body.bright-food .ads__adverts .ads__adverts_peach .ads__adverts_fixed-text span, body.bright-food .ads__adverts_peach .ads__adverts .ads__adverts_fixed-text span, body.bright-food .ads__adverts .ads__adverts_olive .ads__adverts_inner-div .text-bigger span, body.bright-food .ads__adverts_olive .ads__adverts .ads__adverts_inner-div .text-bigger span, body.bright-food .ads__adverts .ads__adverts_peach .ads__adverts_inner-div .text-bigger span, body.bright-food .ads__adverts_peach .ads__adverts .ads__adverts_inner-div .text-bigger span, body.bright-food .ads__adverts .ads__adverts_olive .ads__adverts_inner-div .text-upper, body.bright-food .ads__adverts_olive .ads__adverts .ads__adverts_inner-div .text-upper, body.bright-food .ads__adverts .ads__adverts_peach .ads__adverts_inner-div .text-upper, body.bright-food .ads__adverts_peach .ads__adverts .ads__adverts_inner-div .text-upper, body.bright-food .page-footer__subscribe_text_sub span:last-child, body.bright-food .page-footer__menu_logo #logo2, body.bright-food .page-footer__menu_header span:last-child {
     font-weight: bold; }
   body.bright-food .about-us__organic-farm_heading {
     background-image: url("/images/bright-food/main-image/small-leaf.png");
@@ -2479,7 +2479,7 @@ body.bright-food {
           display: block; }
     body.bright-food .page-header_aside-bar {
       position: absolute;
-      right: -10%;
+      right: -15%;
       top: 15%; }
       body.bright-food .page-header_aside-bar_name {
         text-align: left;
@@ -2558,14 +2558,14 @@ body.bright-food {
     height: 370px;
     width: 270px;
     border-radius: 10px;
-    margin: 10px auto 0 auto;
+    margin: 15px auto;
     border: 1px solid #FFF;
     background-image: url("/images/bright-food/products/grey-background.png");
     background-position: top center;
     background-size: 270px 350px;
     background-repeat: no-repeat; }
     body.bright-food .products .products-vertical:hover {
-      box-shadow: 0px 0px 10px 2px #f7f6f2; }
+      box-shadow: 0px 0px 10px 2px #b5b5b5; }
     body.bright-food .products .products-vertical:hover .products-vertical__shop-navigation {
       display: -webkit-box;
       display: -moz-box;
@@ -2636,6 +2636,8 @@ body.bright-food {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: stretch; }
+    body.bright-food .products .products-horizontal:hover {
+      box-shadow: 0px 0px 10px 2px #b5b5b5; }
     body.bright-food .products .products-horizontal__shop-navigation {
       width: 12%;
       display: -webkit-box;
@@ -2735,7 +2737,7 @@ body.bright-food {
         background-position: center bottom;
         background-size: contain; }
   body.bright-food .chosen-products_padding {
-    padding: 20px 40px;
+    padding: 20px 40px 40px 40px;
     margin-top: 65px; }
   body.bright-food .chosen-products__products {
     display: -webkit-box;
@@ -2746,7 +2748,8 @@ body.bright-food {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    min-height: 100px; }
   body.bright-food .business {
     margin-top: 20px; }
   body.bright-food #leaf-left {
@@ -2874,7 +2877,7 @@ body.bright-food {
         background-image: url("/images/bright-food/products/grapefruit-big.png");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: 630px auto; }
+        background-size: 580px auto; }
       body.bright-food .about-us__fruit_second {
         position: absolute;
         top: 0;
@@ -2982,8 +2985,7 @@ body.bright-food {
   body.bright-food .products-all {
     background-color: #f7f6f2;
     width: 100%;
-    position: relative;
-    margin-bottom: 50px; }
+    position: relative; }
     body.bright-food .products-all #leaf-left-second {
       position: absolute;
       bottom: -80px;
@@ -3063,7 +3065,7 @@ body.bright-food {
           color: #5ec6ce;
           font-size: 0.8rem; }
     body.bright-food .products-all__products {
-      height: 480px; }
+      height: 430px; }
     body.bright-food .products-all .slick-dots li > button {
       height: 20px;
       width: 20px;
@@ -3086,6 +3088,188 @@ body.bright-food {
     body.bright-food .products-all .slick-slide {
       margin-top: 20px;
       height: 230px; }
+  body.bright-food .ads {
+    width: 100%; }
+    body.bright-food .ads_width {
+      margin: 0 auto;
+      width: 850px; }
+    body.bright-food .ads__top_image-container {
+      margin: auto; }
+      body.bright-food .ads__top_image-container img {
+        width: 150px; }
+    body.bright-food .ads__top_header span:first-child {
+      font-size: 0.95rem; }
+      body.bright-food .ads__top_header span:first-child::before {
+        content: "★★★";
+        color: #92d2a7;
+        font-size: 0.8rem; }
+    body.bright-food .ads__top_header span:last-child {
+      font-size: 0.95rem; }
+      body.bright-food .ads__top_header span:last-child::after {
+        content: "★★★";
+        color: #92d2a7;
+        font-size: 0.8rem; }
+    body.bright-food .ads__products {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: flex-start; }
+      body.bright-food .ads__products_column {
+        flex: 1 0;
+        margin: 0 10px; }
+      body.bright-food .ads__products_category {
+        text-transform: uppercase;
+        font-size: 0.5rem;
+        letter-spacing: 2px;
+        text-align: left; }
+      body.bright-food .ads__products_header {
+        text-align: left;
+        font-size: 1.1rem; }
+      body.bright-food .ads__products .slider-container {
+        width: 100%; }
+        body.bright-food .ads__products .slider-container .ads__products_product {
+          border: 1px solid #f7f6f2;
+          margin: 10px 0;
+          padding: 5px 0;
+          border-radius: 7px;
+          height: 100px;
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center; }
+          body.bright-food .ads__products .slider-container .ads__products_product:hover {
+            box-shadow: 0px 0px 10px 2px #b5b5b5; }
+          body.bright-food .ads__products .slider-container .ads__products_product_image {
+            flex: 1 0;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            height: 100%;
+            width: 100px; }
+          body.bright-food .ads__products .slider-container .ads__products_product_description {
+            flex: 1 0;
+            height: 100%;
+            text-align: left;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start; }
+            body.bright-food .ads__products .slider-container .ads__products_product_description_name {
+              font-size: 0.9rem; }
+            body.bright-food .ads__products .slider-container .ads__products_product_description_grey-line {
+              height: 5px;
+              width: 25px;
+              border-bottom: 1px solid #b5b5b5; }
+            body.bright-food .ads__products .slider-container .ads__products_product_description_price {
+              font-size: 0.8rem;
+              color: #86bf0a; }
+    body.bright-food .ads__adverts {
+      height: 320px;
+      padding: 30px 0 70px 0;
+      box-sizing: border-box;
+      margin: 0 10px;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start; }
+      body.bright-food .ads__adverts .ads__adverts_olive, body.bright-food .ads__adverts .ads__adverts_peach {
+        height: 220px;
+        width: 400px;
+        padding: 30px;
+        box-sizing: border-box;
+        position: relative; }
+      body.bright-food .ads__adverts .ads__adverts_olive .ads__adverts_fixed-text, body.bright-food .ads__adverts_olive .ads__adverts .ads__adverts_fixed-text, body.bright-food .ads__adverts .ads__adverts_peach .ads__adverts_fixed-text, body.bright-food .ads__adverts_peach .ads__adverts .ads__adverts_fixed-text {
+        position: absolute;
+        top: 15px;
+        text-transform: uppercase;
+        font-size: 0.6rem; }
+      body.bright-food .ads__adverts .ads__adverts_olive .ads__adverts_inner-div, body.bright-food .ads__adverts_olive .ads__adverts .ads__adverts_inner-div, body.bright-food .ads__adverts .ads__adverts_peach .ads__adverts_inner-div, body.bright-food .ads__adverts_peach .ads__adverts .ads__adverts_inner-div {
+        border: 3px solid #FFF;
+        height: 100%;
+        text-align: left;
+        padding-left: 20px;
+        line-height: 1.9rem;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; }
+        body.bright-food .ads__adverts .ads__adverts_olive .ads__adverts_inner-div .text-curly, body.bright-food .ads__adverts_olive .ads__adverts .ads__adverts_inner-div .text-curly, body.bright-food .ads__adverts .ads__adverts_peach .ads__adverts_inner-div .text-curly, body.bright-food .ads__adverts_peach .ads__adverts .ads__adverts_inner-div .text-curly {
+          font-family: 'Dancing Script', cursive;
+          font-size: 2.2rem; }
+        body.bright-food .ads__adverts .ads__adverts_olive .ads__adverts_inner-div .text-bigger, body.bright-food .ads__adverts_olive .ads__adverts .ads__adverts_inner-div .text-bigger, body.bright-food .ads__adverts .ads__adverts_peach .ads__adverts_inner-div .text-bigger, body.bright-food .ads__adverts_peach .ads__adverts .ads__adverts_inner-div .text-bigger {
+          text-transform: uppercase;
+          font-size: 1.3rem; }
+        body.bright-food .ads__adverts .ads__adverts_olive .ads__adverts_inner-div .text-upper, body.bright-food .ads__adverts_olive .ads__adverts .ads__adverts_inner-div .text-upper, body.bright-food .ads__adverts .ads__adverts_peach .ads__adverts_inner-div .text-upper, body.bright-food .ads__adverts_peach .ads__adverts .ads__adverts_inner-div .text-upper {
+          text-transform: uppercase;
+          font-size: 0.5rem; }
+      body.bright-food .ads__adverts .ads__adverts_olive_image, body.bright-food .ads__adverts .ads__adverts_peach_image {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: auto 90%;
+        top: 0;
+        right: 5px;
+        height: 100%;
+        width: 100%; }
+      body.bright-food .ads__adverts .ads__adverts_olive .ads__adverts_fixed-button, body.bright-food .ads__adverts_olive .ads__adverts .ads__adverts_fixed-button, body.bright-food .ads__adverts .ads__adverts_peach .ads__adverts_fixed-button, body.bright-food .ads__adverts_peach .ads__adverts .ads__adverts_fixed-button {
+        color: #FFF;
+        border: 3px solid #FFF;
+        position: absolute;
+        bottom: 13px;
+        left: 60px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        height: 25px;
+        line-height: 0.8rem;
+        width: 100px;
+        outline: none; }
+        body.bright-food .ads__adverts .ads__adverts_olive .ads__adverts_fixed-button:hover, body.bright-food .ads__adverts_olive .ads__adverts .ads__adverts_fixed-button:hover, body.bright-food .ads__adverts .ads__adverts_peach .ads__adverts_fixed-button:hover, body.bright-food .ads__adverts_peach .ads__adverts .ads__adverts_fixed-button:hover {
+          border: 3px solid #b5b5b5; }
+      body.bright-food .ads__adverts_olive {
+        background-color: #d7edcd;
+        border-radius: 7px; }
+        body.bright-food .ads__adverts_olive .ads__adverts_fixed-text {
+          right: 30px;
+          color: #a7c57f; }
+        body.bright-food .ads__adverts_olive_image {
+          background-image: url("/images/bright-food/products/olive.png"); }
+        body.bright-food .ads__adverts_olive .ads__adverts_inner-div .text-curly {
+          color: #86bf0a; }
+        body.bright-food .ads__adverts_olive .ads__adverts_fixed-button {
+          background-color: #86bf0a; }
+      body.bright-food .ads__adverts_peach {
+        background-color: #fbefa1;
+        border-radius: 7px; }
+        body.bright-food .ads__adverts_peach .ads__adverts_fixed-text {
+          left: 30px;
+          color: #b5b5b5; }
+        body.bright-food .ads__adverts_peach_image {
+          background-image: url("/images/bright-food/products/peaches.png"); }
+        body.bright-food .ads__adverts_peach .ads__adverts_inner-div .text-curly {
+          color: #ffc524; }
+        body.bright-food .ads__adverts_peach .ads__adverts_fixed-button {
+          background-color: #ffc524; }
   body.bright-food .page-footer {
     width: 100%; }
     body.bright-food .page-footer_grey {
@@ -3161,7 +3345,7 @@ body.bright-food {
       text-align: left;
       padding: 50px 0; }
       body.bright-food .page-footer__menu_map, body.bright-food .page-footer__menu_information, body.bright-food .page-footer__menu_account {
-        padding-left: 15px; }
+        padding-left: 12px; }
       body.bright-food .page-footer__menu_connect, body.bright-food .page-footer__menu_map {
         flex: 2; }
       body.bright-food .page-footer__menu_information, body.bright-food .page-footer__menu_account {
@@ -3178,7 +3362,7 @@ body.bright-food {
           font-weight: bold;
           color: #86bf0a; }
         body.bright-food .page-footer__menu_stay-connected .fa-map-marker, body.bright-food .page-footer__menu_stay-connected .fa-envelope, body.bright-food .page-footer__menu_stay-connected .fa-phone-square {
-          padding-right: 10px;
+          padding-right: 8px;
           color: #2e2e2e; }
       body.bright-food .page-footer__menu_logo {
         font-size: 1.2rem;
@@ -3197,7 +3381,7 @@ body.bright-food {
         font-size: 0.9rem; }
         body.bright-food .page-footer__menu_list .fa-arrow-alt-circle-right {
           color: #b5b5b5;
-          padding-right: 7px; }
+          padding-right: 3px; }
         body.bright-food .page-footer__menu_list li:hover {
           font-weight: bold;
           color: #86bf0a; }
@@ -3238,7 +3422,7 @@ body.bright-food {
         display: -webkit-flex;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center; }
         body.bright-food .page-footer__total-footer_last-menu_item {
           display: -webkit-box;

@@ -10,7 +10,7 @@ export class BasketPage extends React.Component {
     return (
       <div className="main-page">
         <PageHeader basketShow={ ()=>this.props.changeOutlook(true)}/>
-        <ChosenProducts/>
+        <ChosenProducts classForRender="chosen-products"/>
         <PageFooter/>
       </div>
     )

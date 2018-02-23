@@ -21,7 +21,7 @@ class ChosenProducts extends React.Component {
         let previousPrice = item.previousPrice.toFixed(2);
 
         return (
-          <div key={item.id}>
+          <div key={item.id} className="products">
             <Product src={item.src}
                      title={item.name}
                      name={item.name}

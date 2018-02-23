@@ -3,18 +3,26 @@ import Slider from "react-slick";
 import {connect} from "react-redux";
 import Product from "./reused-elements/Product";
 
-
-
 class ProductsRandomized extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       category: null,
-      selectedItems: []
+      selectedItems: [],
+      zoomedItemId: false
     };
     this.renderProductsVertical = this.renderProductsVertical.bind(this);
     this.renderProductsHorizontal = this.renderProductsHorizontal.bind(this);
     this.changeBasketList = this.changeBasketList.bind(this);
+    this.changeZoom = this.changeZoom.bind(this);
+    }
+
+  changeZoom(newId) {
+    if (newId === this.state.zoomedItemId){
+      this.setState({zoomedItemId: false})
+    } else {
+      this.setState({zoomedItemId: newId});
+    }
   }
 
   changeBasketList(item) {
@@ -48,6 +56,8 @@ class ProductsRandomized extends React.Component {
                        changeBasketList={() => { return this.changeBasketList(item)}} //передача функции
                        isSelected = { this.isSelected(item) }  //результат функции
                        layoutType = {layoutType}
+                       changeZoom = { () => { return this.changeZoom(item.id)}}
+                       isZoomed = {this.state.zoomedItemId === item.id}
                          />
             </div>);
         }
@@ -68,6 +78,8 @@ class ProductsRandomized extends React.Component {
                    changeBasketList={() => { return this.changeBasketList(item)}} //передача функции
                    isSelected = { this.isSelected(item) }  //результат функции
                    layoutType = {layoutType}
+                   changeZoom = { () => { return this.changeZoom(item.id)}}
+                   isZoomed = {this.state.zoomedItemId === item.id}
           />
         </div>);
     })
@@ -86,7 +98,8 @@ class ProductsRandomized extends React.Component {
           {breakpoint: 1900, settings: {slidesToShow: 5, slidesToScroll: 5}},
           {breakpoint: 1500, settings: {slidesToShow: 4, slidesToScroll: 4}},
           {breakpoint: 1250, settings: {slidesToShow: 3, slidesToScroll: 3}},
-          {breakpoint: 850, settings: {slidesToShow: 2, slidesToScroll: 2}}
+          {breakpoint: 900, settings: {slidesToShow: 2, slidesToScroll: 2}},
+          {breakpoint: 500, settings: {slidesToShow: 1, slidesToScroll: 1}}
         ]
       };
       return (
@@ -117,9 +130,10 @@ class ProductsRandomized extends React.Component {
             </div>
 
             <div className="products">
-              <Slider {...settings}>
-                {this.renderProductsVertical(this.state.category)}
-              </Slider>
+              {this.props.products.length > 0 &&
+                (<Slider {...settings}>
+                  {this.renderProductsVertical(this.state.category)}
+                </Slider>)}
             </div>
 
           </div>
@@ -187,9 +201,10 @@ class ProductsRandomized extends React.Component {
           </div>
 
           <div className="products-all__products products">
-            <Slider {...settings}>
-             {this.renderProductsHorizontal()}
-            </Slider>
+            {this.props.products.length > 0 &&
+              (<Slider {...settings}>
+               {this.renderProductsHorizontal()}
+              </Slider>)}
           </div>
 
           <div id="leaf-left-second">

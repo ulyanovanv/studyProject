@@ -3,9 +3,17 @@ import React from "react";
 export class ProductHorizontal extends React.Component {
 
   render(){
+    let BoxShadow;
+    if (this.props.isSelected) {
+      BoxShadow = "0px 0px 10px 2px #86bf0a";
+    } else if (this.props.isZoomed) {
+      BoxShadow = "0px 0px 10px 2px #B5B5B5";
+    } else {
+      BoxShadow = "";
+    }
     return (
       <div className="products-horizontal"
-           style={{boxShadow: ((this.props.isSelected || this.props.isZoomed) ? "0px 0px 10px 2px #86bf0a" : ""),
+           style={{boxShadow: BoxShadow,
                   transition: "transform 1s, bozShadow 1s",
                   transform: (this.props.isZoomed ? "scale(1.06)" : "scale(1.0)")  }}>
 

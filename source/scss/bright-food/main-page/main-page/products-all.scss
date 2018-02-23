@@ -2,7 +2,7 @@
   background-color: $slight-grey;
   width: 100%;
   position: relative;
-  margin-bottom: 50px;
+  //margin-bottom: 50px;
 
   #leaf-left-second {
     position: absolute;
@@ -91,7 +91,7 @@
     }
   }
   &__products {
-    height: 480px;
+    height: 430px;
   }
   @import "./slider-styles-changes-horizontal";
 }

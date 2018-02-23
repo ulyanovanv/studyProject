@@ -2,7 +2,7 @@
   height: 370px;
   width: 270px;
   border-radius: 10px;
-  margin: 10px auto 0 auto;
+  margin: 15px auto;
   border: 1px solid $font-white;
   background: {
     image: url("/images/bright-food/products/grey-background.png");
@@ -11,7 +11,7 @@
     repeat: no-repeat;
   }
   &:hover {
-    box-shadow: 0px 0px 10px 2px $slight-grey;
+    box-shadow: 0px 0px 10px 2px $font-grey;
 
   }
   &:hover .products-vertical__shop-navigation {

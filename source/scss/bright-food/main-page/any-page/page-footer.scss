@@ -85,7 +85,7 @@
     text-align: left;
     padding: 50px 0;
     &_map,&_information, &_account {
-      padding-left: 15px;
+      padding-left: 12px;
     }
     &_connect, &_map {
       flex: 2;
@@ -114,7 +114,7 @@
         }
       }
       .fa-map-marker, .fa-envelope, .fa-phone-square {
-        padding-right: 10px;
+        padding-right: 8px;
         color: #2e2e2e;
       }
     }
@@ -146,7 +146,7 @@
       font-size: 0.9rem;
       .fa-arrow-alt-circle-right {
         color: $font-grey;
-        padding-right: 7px;
+        padding-right: 3px;
       }
       li:hover {
         font-weight: bold;
@@ -178,7 +178,7 @@
     }
     &_last-menu {
       width: 50%;
-      @include flexbox(row,space-evenly,center);
+      @include flexbox(row,space-between,center);
       &_item {
         @include flexbox(column,center,center);
         //padding: 0 14px;
