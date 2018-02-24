@@ -4,8 +4,7 @@
     margin-top: 65px;
   }
   &__navigation {
-    min-width: 850px;
-    width: 90vw;
+    //width: 90vw;
     max-width: $max-width;
     margin: 0 auto;
     @include flexbox(row, space-evenly, center);

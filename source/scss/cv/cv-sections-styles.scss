@@ -147,7 +147,7 @@ body.my-cv {
     }
   }
 
-  $prj-names : (prj-online-shop,prj-calender,prj-form-c13,prj-mobile,prj-to-do-app,prj-react-ingredients,prj-game);
+  $prj-names : (prj-bright-food,prj-online-shop,prj-calender,prj-form-c13,prj-mobile,prj-to-do-app,prj-game);
   @each $prj-name in $prj-names {
     .#{$prj-name} {
       a {

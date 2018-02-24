@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import {connect} from "react-redux";
 import Product from "./reused-elements/Product";
+import {Timer} from "./Timer";
 
 class ProductsRandomized extends React.Component {
   constructor(props){
@@ -90,15 +91,18 @@ class ProductsRandomized extends React.Component {
       let settings = {
         dots: true,
         dotsClass: 'slick-dots',
-        infinite: false,
-        speed: 500,
+        infinite: true,
+        autoplay: true,
+        pauseOnHover: true,
+        speed: 2000,
+        autoplaySpeed: 6000,
         responsive: [
           {breakpoint: 2550, settings: {slidesToShow: 7, slidesToScroll: 7}},
           {breakpoint: 2350, settings: {slidesToShow: 6, slidesToScroll: 6}},
           {breakpoint: 1900, settings: {slidesToShow: 5, slidesToScroll: 5}},
           {breakpoint: 1500, settings: {slidesToShow: 4, slidesToScroll: 4}},
           {breakpoint: 1250, settings: {slidesToShow: 3, slidesToScroll: 3}},
-          {breakpoint: 900, settings: {slidesToShow: 2, slidesToScroll: 2}},
+          {breakpoint: 1000, settings: {slidesToShow: 2, slidesToScroll: 2}},
           {breakpoint: 500, settings: {slidesToShow: 1, slidesToScroll: 1}}
         ]
       };
@@ -144,8 +148,11 @@ class ProductsRandomized extends React.Component {
       let settings = {
         dots: true,
         dotsClass: 'slick-dots',
-        infinite: false,
-        speed: 500,
+        infinite: true,
+        autoplay: true,
+        pauseOnHover: true,
+        speed: 2000,
+        autoplaySpeed: 6000,
         customPaging: function(counter) {
           counter +=1;
           return (
@@ -173,32 +180,7 @@ class ProductsRandomized extends React.Component {
             </div>
           </header>
 
-          <div className="products-all__time-left">
-            <div className="products-all__time-left_gradient-container">
-              <div className="products-all__time-left_text">
-                <span>28</span><br/>
-                <span>days</span>
-              </div>
-            </div>
-            <div className="products-all__time-left_gradient-container">
-              <div className="products-all__time-left_text">
-                <span>25</span><br/>
-                <span>hours</span>
-              </div>
-            </div>
-            <div className="products-all__time-left_gradient-container">
-              <div className="products-all__time-left_text">
-                <span>57</span><br/>
-                <span>mins</span>
-              </div>
-            </div>
-            <div className="products-all__time-left_gradient-container">
-              <div className="products-all__time-left_text">
-                <span>36</span><br/>
-                <span>secs</span>
-              </div>
-            </div>
-          </div>
+          <Timer/>
 
           <div className="products-all__products products">
             {this.props.products.length > 0 &&

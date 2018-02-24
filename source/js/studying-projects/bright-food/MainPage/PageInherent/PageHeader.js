@@ -34,7 +34,7 @@ class PageHeader extends React.Component {
         <div className='page-header_padding'>
           <div className="page-header__menu">
 
-            <div className="page-header__menu_left-side">
+            <div className="page-header__menu_left-side" onClick={ this.props.basketShow}>
               <span id="logo">Logo</span>
               <img id="leaf" src="/images/bright-food/main-image/small-leaf.png"/>
               <span> Type</span>
@@ -74,7 +74,7 @@ class PageHeader extends React.Component {
             <div className="page-header__heading_addition-text">
               Organic food, vegetables and more to your door
             </div>
-            <div className="page-header__heading_button-to-start">
+            <div className="page-header__heading_button-to-start" onClick={ this.props.basketShow}>
               <div className="page-header__heading_button-to-start_gradient">
                 <div id="shopping-button">Shopping</div>
               </div>

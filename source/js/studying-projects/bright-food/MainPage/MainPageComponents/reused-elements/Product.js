@@ -9,7 +9,7 @@ class Product extends React.Component {
   render() {
     let layout = this.props.layoutType;
     if (layout === "vertical") {
-      console.log(this.props.layoutType);
+      // console.log(this.props.layoutType);
       return (<ProductVertical src={this.props.src}
                                title={this.props.title}
                                name={this.props.name}
@@ -23,7 +23,7 @@ class Product extends React.Component {
                                changeZoom={this.props.changeZoom}
       />);
     } else if (layout === "horizontal") {
-      console.log(this.props.layoutType);
+      // console.log(this.props.layoutType);
       return (<ProductHorizontal src={this.props.src}
                                title={this.props.title}
                                name={this.props.name}

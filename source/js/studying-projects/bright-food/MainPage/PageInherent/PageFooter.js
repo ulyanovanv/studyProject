@@ -1,6 +1,7 @@
 import React from "react";
 import ScrollToTop from 'react-scroll-up';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import axios from "axios";
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
@@ -9,10 +10,20 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     {props.isMarkerShown && <Marker position={{ lat: 52.542, lng: 13.392  }} />}
   </GoogleMap>
 ))
-
 let LastMenu = ["contact us","team of us","site map","privacy policy"];
 
+
+
+
+
 export class PageFooter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+    this.renderNavigation = this.renderNavigation.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+  }
   renderNavigation(){
     return LastMenu.map((item) => {
       return (
@@ -22,6 +33,33 @@ export class PageFooter extends React.Component {
         </div>)
     })
   }
+  postData(email){
+    let promise = axios.post('/email', {
+
+        email
+
+    });
+    promise.then(function (response) {
+      // response.data.assign({},{email: email});
+      console.log(response);
+    })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+  handleChange(event) {
+    this.setState({value: event.target.value}, () => {
+      console.log(this.state.value);
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log("ddd");
+    this.postData(this.state.value);
+  }
+
+
 
   render() {
     return <section className="page-footer">
@@ -67,12 +105,14 @@ export class PageFooter extends React.Component {
                 <span>newsletter</span>
               </div>
             </div>
-            <form method="POST" target="_blank">
+            <form method="POST" name="form-email" action="/email" onSubmit={(event) => this.handleSubmit(event)}>
               <input id="email" name="email" type="email"
                      placeholder="enter your e-mail address"
-                     pattern="/^[a-zA-Z0-9\.\+\-]+@[a-zA-Z]+\.[a-zA-Z]+/"
+                     pattern="^[a-zA-Z0-9\.\+\-]+@[a-zA-Z]+\.[a-zA-Z]+"
                      autoComplete="off"
-                     required/>
+                     required
+                     onChange={(event) => this.handleChange(event)}
+                     value={this.state.value}/>
               <input id="subscribe" name="subscribe" type="submit" value="subscribe	&rarr;"/>
             </form>
 

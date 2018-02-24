@@ -2442,13 +2442,19 @@ body.bright-food {
         font-size: 0.6rem;
         letter-spacing: 2px; }
       body.bright-food .page-header__heading_button-to-start {
-        height: 50px;
-        cursor: pointer; }
+        cursor: pointer;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start; }
         body.bright-food .page-header__heading_button-to-start_gradient {
           background: linear-gradient(160deg, #92d2a7, #5ec6ce 80%);
           border-radius: 20px;
           width: 120px;
-          margin: 20px auto;
           padding: 4px; }
           body.bright-food .page-header__heading_button-to-start_gradient #shopping-button {
             width: 100%;
@@ -2499,8 +2505,6 @@ body.bright-food {
     padding: 20px 40px;
     margin-top: 65px; }
   body.bright-food .products-randomized__navigation {
-    min-width: 850px;
-    width: 90vw;
     max-width: 850px;
     margin: 0 auto;
     display: -webkit-box;
@@ -2746,10 +2750,12 @@ body.bright-food {
     display: -webkit-flex;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     min-height: 100px; }
+    body.bright-food .chosen-products__products .products {
+      margin: 0 20px; }
   body.bright-food .business {
     margin-top: 20px; }
   body.bright-food #leaf-left {
@@ -3625,6 +3631,15 @@ body.my-cv .projects {
     width: 100%;
     transition: background-image 0.5s ease-in; }
 
+body.my-cv .prj-bright-food a {
+  background: url("/images/projects-img/prj-bright-food.jpg") no-repeat -9999px -9999px; }
+
+body.my-cv .prj-bright-food_img {
+  background-image: url("/images/projects-img/prj-bright-food-grey.jpg"); }
+
+body.my-cv .prj-bright-food:hover .prj-bright-food_img {
+  background-image: url("/images/projects-img/prj-bright-food.jpg"); }
+
 body.my-cv .prj-online-shop a {
   background: url("/images/projects-img/prj-online-shop.jpg") no-repeat -9999px -9999px; }
 
@@ -3669,15 +3684,6 @@ body.my-cv .prj-to-do-app_img {
 
 body.my-cv .prj-to-do-app:hover .prj-to-do-app_img {
   background-image: url("/images/projects-img/prj-to-do-app.jpg"); }
-
-body.my-cv .prj-react-ingredients a {
-  background: url("/images/projects-img/prj-react-ingredients.jpg") no-repeat -9999px -9999px; }
-
-body.my-cv .prj-react-ingredients_img {
-  background-image: url("/images/projects-img/prj-react-ingredients-grey.jpg"); }
-
-body.my-cv .prj-react-ingredients:hover .prj-react-ingredients_img {
-  background-image: url("/images/projects-img/prj-react-ingredients.jpg"); }
 
 body.my-cv .prj-game a {
   background: url("/images/projects-img/prj-game.jpg") no-repeat -9999px -9999px; }
@@ -3761,17 +3767,17 @@ body.my-cv .prj-game:hover .prj-game_img {
     grid-area: 12 / 2 / span 2 /span 1; }
   body.my-cv .projects {
     height: 270px; }
+  body.my-cv .prj-bright-food {
+    grid-area: 15 / 1 / span 3/span 1; }
   body.my-cv .prj-calender {
-    grid-area: 15 / 1 / span 3 /span 1; }
-  body.my-cv .prj-mobile {
-    grid-area: 18 / 1 / span 3/span 1; }
+    grid-area: 18 / 1 / span 3 /span 1; }
   body.my-cv .prj-to-do-app {
     grid-area: 21 / 1 / span 3 /span 1; }
   body.my-cv .prj-online-shop {
     grid-area: 14 / 2 / span 3 /span 1; }
-  body.my-cv .prj-form-c13 {
+  body.my-cv .prj-mobile {
     grid-area: 17 / 2 / span 3 /span 1; }
-  body.my-cv .prj-react-ingredients {
+  body.my-cv .prj-form-c13 {
     grid-area: 20 / 2 / span 3 /span 1; }
   body.my-cv .prj-game {
     grid-area: 23 / 2 / span 3 /span 1; } }
@@ -3817,13 +3823,13 @@ body.my-cv .prj-game:hover .prj-game_img {
     grid-area: 10 / 1 / span 3 /span 1; }
   body.my-cv .prj-form-c13 {
     grid-area: 13 / 1 / span 3 /span 1; }
-  body.my-cv .prj-online-shop {
+  body.my-cv .prj-bright-food {
     grid-area: 9 / 2 / span 3 /span 1; }
   body.my-cv .prj-mobile {
     grid-area: 12 / 2 / span 3 /span 1; }
   body.my-cv .prj-game {
     grid-area: 15 / 2 / span 3 /span 1; }
-  body.my-cv .prj-react-ingredients {
+  body.my-cv .prj-online-shop {
     grid-area: 10 / 3 / span 3 /span 1; }
   body.my-cv .prj-to-do-app {
     grid-area: 13 / 3 / span 3 /span 1; } }

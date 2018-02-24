@@ -101,6 +101,13 @@ $app->get('/bright-food-products', function () use ($app) {
         ]]);
 });
 
+$app->post('/email', function () use ($app) {
+    $email = json_decode(file_get_contents('php://input'), true)['email'];
+    $app['session']->set('email', $email);
+
+    return json_encode(['status' => 'ok', 'email' => $email]);
+});
+
 $app->get('/bright-food', function () use ($app) {
     return $app['twig']->render('bright-food/bright-food.html.twig', array());
 });
