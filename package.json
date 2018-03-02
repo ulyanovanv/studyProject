@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass --include-path scss source/scss/main.scss web/css/main.css",
-    "js": "webpack",
-    "all": "npm run sass && npm run js"
+    "js": "webpack --mode development",
+    "all": "npm run sass && npm run js",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -20,15 +21,27 @@
   },
   "homepage": "https://github.com/ulyanovanv/studyProject#readme",
   "devDependencies": {
+    "autoprefixer": "^8.0.0",
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.3",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "es6-promise": "^4.2.4",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4",
     "jquery": "^3.2.1",
     "json-loader": "^0.5.7",
     "modernizr": "^3.5.0",
     "modernizr-loader": "^1.0.1",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.7.2",
     "react-image-gallery": "^0.8.7",
-    "redux-devtools": "^3.4.1"
+    "redux-devtools": "^3.4.1",
+    "sass-loader": "^6.0.6",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.10"
   },
   "dependencies": {
     "axios": "^0.18.0",

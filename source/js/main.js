@@ -1,6 +1,7 @@
 import $ from './vendor/jquery.min.js';
 //import Modernizr from 'modernizr';
 //var $ = require("./vendor/jquery.min.js");
+require('es6-promise').polyfill();
 
 let body = $("body");
 
@@ -34,3 +35,7 @@ if (body.hasClass("shop")){
 if (body.hasClass("bright-food")){
   require("./studying-projects/bright-food/general.js");
 }
+if (body.hasClass("my-cv")){
+  require("./studying-projects/cv/cv-ie.js");
+}
+

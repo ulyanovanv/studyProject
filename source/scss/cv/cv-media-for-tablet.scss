@@ -1,6 +1,65 @@
 body.my-cv {
 
+
+
   @media screen and (min-width:48rem) {
+    //@media screen and (min-width:0\0) {
+    //  .cv_centralization {
+    //    width: 100%
+    //  }
+    //  section {
+    //    width: 45%;
+    //    display:block;
+    //  }
+    //
+    //  .contacts{
+    //    float: right;
+    //  }
+    //  .techniques {
+    //    float: right;
+    //  }
+    //  .education{
+    //    float: right;
+    //  }
+    //  .experience{
+    //    float: right;
+    //  }
+    //  .languages {
+    //    float: right;
+    //  }
+    //  .prj-mobile {
+    //    float: right;
+    //  }
+    //  .prj-form-c13 {
+    //    float: right;
+    //  }
+    //  .prj-game {
+    //    float: right;
+    //  }
+    //  .prj-online-shop {
+    //    float: right;
+    //  }
+    //  .general-info {
+    //    float: left;
+    //  }
+    //  .skills {
+    //    float: left;
+    //  }
+    //  .hobbies {
+    //    float: left;
+    //  }
+    //  .prj-bright-food {
+    //      clear: left;
+    //    float: left;
+    //  }
+    //  .prj-calender {
+    //    float: left;
+    //  }
+    //  .prj-to-do-app {
+    //    float: left;
+    //  }
+    //}
+
     .cv {
       &__parts{
         margin: 0px;
@@ -11,7 +70,7 @@ body.my-cv {
     }
     .cv_cenralization {
       display: grid;
-      grid-template: repeat(26,100px)/repeat(2,2fr);
+      grid-template: repeat(25,100px)/repeat(2,2fr);
       width: 75%;
       margin: 20px auto;
     }
@@ -61,12 +120,9 @@ body.my-cv {
       grid-area: 12 / 2 / span 2 /span 1;
     }
 
-
     .projects {
       height: 270px;
     }
-
-
 
     .prj-bright-food {
       grid-area: 15 / 1 / span 3/span 1;
@@ -90,7 +146,6 @@ body.my-cv {
     .prj-game {
       grid-area: 23 / 2 / span 3 /span 1;
     }
-
 
 
   }

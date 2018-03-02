@@ -3733,7 +3733,7 @@ body.my-cv .prj-game:hover .prj-game_img {
     padding: 18px; }
   body.my-cv .cv_cenralization {
     display: grid;
-    grid-template: repeat(26, 100px)/repeat(2, 2fr);
+    grid-template: repeat(25, 100px)/repeat(2, 2fr);
     width: 75%;
     margin: 20px auto; }
   body.my-cv .cv_headings {
@@ -3781,55 +3781,3 @@ body.my-cv .prj-game:hover .prj-game_img {
     grid-area: 20 / 2 / span 3 /span 1; }
   body.my-cv .prj-game {
     grid-area: 23 / 2 / span 3 /span 1; } }
-
-@media screen and (min-width: 60rem) {
-  body.my-cv .cv__parts {
-    padding: 15px;
-    line-height: 1.2rem; }
-  body.my-cv .cv_cenralization {
-    width: 82%;
-    grid-template: repeat(17, 100px)/repeat(3, 3fr);
-    min-width: 230px;
-    max-width: 1060px; }
-  body.my-cv .desktop-side {
-    background-color: #afe4e4; }
-  body.my-cv .desktop-center {
-    background-color: #f7e7ce; }
-  body.my-cv .general-info {
-    grid-area: 1 / 1 / span 7 /span 1; }
-    body.my-cv .general-info .my-image {
-      padding: 0; }
-  body.my-cv .languages {
-    grid-area: 8 / 1 / span 2 /span 1; }
-  body.my-cv .contacts {
-    grid-area: 1 / 2 / span 2 /span 1; }
-  body.my-cv .techniques {
-    grid-area: 3 / 2 / span 3 /span 1; }
-  body.my-cv .hobbies {
-    grid-area: 6 / 2 / span 3 /span 1; }
-    body.my-cv .hobbies__each {
-      width: 23%;
-      margin: auto; }
-    body.my-cv .hobbies__svg {
-      height: 100%;
-      width: 100%; }
-  body.my-cv .education {
-    grid-area: 1 / 3 / span 2 /span 1; }
-  body.my-cv .experience {
-    grid-area: 3 / 3 / span 4 /span 1; }
-  body.my-cv .skills {
-    grid-area: 7 / 3 / span 3 /span 1; }
-  body.my-cv .prj-calender {
-    grid-area: 10 / 1 / span 3 /span 1; }
-  body.my-cv .prj-form-c13 {
-    grid-area: 13 / 1 / span 3 /span 1; }
-  body.my-cv .prj-bright-food {
-    grid-area: 9 / 2 / span 3 /span 1; }
-  body.my-cv .prj-mobile {
-    grid-area: 12 / 2 / span 3 /span 1; }
-  body.my-cv .prj-game {
-    grid-area: 15 / 2 / span 3 /span 1; }
-  body.my-cv .prj-online-shop {
-    grid-area: 10 / 3 / span 3 /span 1; }
-  body.my-cv .prj-to-do-app {
-    grid-area: 13 / 3 / span 3 /span 1; } }
