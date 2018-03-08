@@ -1,6 +1,20 @@
 body.my-cv{
 
   @media screen and (min-width:60rem) {
+    //for IE
+    .first-column {
+      width: 33%;
+      float: left;
+    }
+    .second-column {
+      width: 33%;
+      float: left;
+    }
+    .third-column {
+      width: 33%;
+      float: left;
+    }
+    //for all other browsers
     .cv {
       &__parts{
         padding: 15px;

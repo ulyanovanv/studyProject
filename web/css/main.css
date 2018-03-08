@@ -34,6 +34,307 @@ a {
 a:hover {
   text-decoration: underline; }
 
+body.lesson-third {
+  margin-top: 8px; }
+  body.lesson-third #game {
+    width: 800px;
+    margin: auto; }
+  body.lesson-third #central {
+    text-align: center;
+    border: 1px dashed black;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box; }
+  body.lesson-third #start #explanation {
+    margin: 5px; }
+  body.lesson-third #follow {
+    display: none; }
+  body.lesson-third #game-table {
+    margin-top: 20px;
+    margin-bottom: 20px; }
+    body.lesson-third #game-table .row {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+      line-height: 60px; }
+      body.lesson-third #game-table .row .element {
+        width: 60px;
+        height: 60px;
+        border: 1px solid Black;
+        font-size: 3em;
+        user-select: none; }
+  body.lesson-third .red {
+    background: red; }
+
+body.oughts-crosses {
+  background: radial-gradient(circle farthest-side at center, #b4ddb4 0%, #83c783 30%, #52b152 80%); }
+  body.oughts-crosses #game-place {
+    width: 600px;
+    border: 2px ridge #0e8a39;
+    box-shadow: 0px 0px 20px 5px #619961;
+    position: absolute;
+    margin-left: -300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    left: 50%;
+    font-size: 18px;
+    background: White; }
+  body.oughts-crosses #game {
+    text-align: center;
+    margin: 40px 0; }
+    body.oughts-crosses #game > div {
+      margin-bottom: 16px; }
+  body.oughts-crosses #game-list {
+    display: flex;
+    flex-flow: column;
+    align-items: center; }
+  body.oughts-crosses .row {
+    display: flex;
+    flex-flow: row; }
+  body.oughts-crosses .cell {
+    height: 40px;
+    width: 40px;
+    border: 2px solid Black;
+    font-size: 2rem;
+    font-family: "Bitter", serif; }
+  body.oughts-crosses #whose-turn {
+    font-size: 0.875rem; }
+  body.oughts-crosses #counter {
+    float: right;
+    position: absolute;
+    left: 75%;
+    top: 15%;
+    border: 1px solid Black;
+    padding: 10px;
+    width: 120px;
+    display: flex;
+    flex-flow: column; }
+  body.oughts-crosses .result {
+    padding: 8px;
+    font-size: 0.95rem; }
+
+body.basics {
+  background-color: burlywood;
+  font-size: 1rem;
+  height: 100%;
+  display: flex; }
+  body.basics #app {
+    width: 100%; }
+  body.basics .img-flex-container {
+    margin: 20px auto 0 auto;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 700px; }
+  body.basics .img-cell {
+    margin: 7px; }
+    body.basics .img-cell img {
+      height: 185px;
+      width: 185px; }
+    body.basics .img-cell:hover {
+      box-shadow: 0px 0px 12px 5px #FFF; }
+  body.basics .func-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  body.basics .span-decor {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'Indie Flower', 'Courgette', 'Pacifico', cursive;
+    font-size: 2rem; }
+  body.basics .menu {
+    color: #ad133f; }
+  body.basics .click-button {
+    background-color: #FFF;
+    width: 30%;
+    border: 2px solid Black;
+    box-shadow: inset 0px 0px 7px;
+    border-radius: 40px;
+    padding: 5px; }
+    body.basics .click-button:hover {
+      box-shadow: inset 0px 0px 7px, 0px 0px 10px 1px;
+      text-shadow: 0px 0px 2px;
+      text-decoration: none; }
+
+body.main-in-numbers {
+  font-size: 16px;
+  height: 100%; }
+  body.main-in-numbers p {
+    margin: 16px 0; }
+  body.main-in-numbers .red {
+    background-color: #ffbfdc; }
+  body.main-in-numbers .button {
+    background-image: linear-gradient(#FFF 0%, #fee7f1 100%);
+    height: 30px;
+    width: 89px;
+    border-radius: 10px;
+    border: 1px #fee7f1 solid;
+    outline: none; }
+    body.main-in-numbers .button:hover {
+      box-shadow: 0 0 3px #FFF; }
+  body.main-in-numbers #main-div {
+    background-color: #faf1e3;
+    padding: 30px;
+    height: 100%; }
+  body.main-in-numbers #centre {
+    text-align: center;
+    box-shadow: 0 0 15px 5px #FFFFFF, inset 0px 0px 30px #FFF;
+    box-sizing: inherit;
+    padding: 20px;
+    background-image: url("/images/sacura.jpg");
+    background-repeat: no-repeat;
+    background-position: 0% 45%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  body.main-in-numbers #first {
+    width: 70%; }
+    body.main-in-numbers #first #instruction {
+      text-align: center; }
+  body.main-in-numbers #second {
+    display: none; }
+    body.main-in-numbers #second #time-left {
+      font-size: 20px; }
+    body.main-in-numbers #second #centralization {
+      display: flex;
+      justify-content: center; }
+    body.main-in-numbers #second #game-board {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: max-content;
+      border-radius: 5px;
+      background-color: transparent; }
+      body.main-in-numbers #second #game-board .row {
+        display: flex;
+        flex-flow: row; }
+      body.main-in-numbers #second #game-board .cell {
+        height: 60px;
+        width: 60px;
+        font-size: 2rem;
+        margin: 3px;
+        text-align: center;
+        border-radius: 5px;
+        line-height: 60px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none; }
+        body.main-in-numbers #second #game-board .cell:hover {
+          box-shadow: inset 0px 0px 30px #FFF; }
+      body.main-in-numbers #second #game-board .initial-color {
+        background-color: #faf1e3; }
+
+body.react-searching-form {
+  height: 100%;
+  width: 75%;
+  margin: 20px auto; }
+  body.react-searching-form input, body.react-searching-form select {
+    padding: 0;
+    margin: 0;
+    outline: none; }
+  body.react-searching-form .first-line {
+    display: flex;
+    flex-direction: column; }
+    body.react-searching-form .first-line input, body.react-searching-form .first-line select {
+      height: 22px; }
+    body.react-searching-form .first-line .category-choose {
+      width: 150px;
+      float: left;
+      line-height: 30px;
+      padding-left: 10px; }
+    body.react-searching-form .first-line #search-start {
+      width: 200px; }
+    body.react-searching-form .first-line .wohnung {
+      height: 50px;
+      background-color: #0077cc; }
+      body.react-searching-form .first-line .wohnung div {
+        line-height: 50px; }
+      body.react-searching-form .first-line .wohnung .wohnung-object {
+        float: left;
+        padding-left: 20px;
+        border-right: 1px solid #0077cc; }
+      body.react-searching-form .first-line .wohnung #wohnung-object {
+        border: none;
+        border-right: 1px solid grey;
+        width: 200px; }
+      body.react-searching-form .first-line .wohnung .wohnung-distance {
+        float: left; }
+      body.react-searching-form .first-line .wohnung .wohnung-category {
+        float: right;
+        padding-right: 20px; }
+  body.react-searching-form .second-line {
+    margin: 10px auto;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end; }
+    body.react-searching-form .second-line .filter {
+      margin: 0 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: left;
+      position: relative;
+      width: 150px; }
+      body.react-searching-form .second-line .filter label {
+        font-weight: bold; }
+        body.react-searching-form .second-line .filter label > input {
+          margin-right: 5px; }
+      body.react-searching-form .second-line .filter > input {
+        width: 100px; }
+      body.react-searching-form .second-line .filter select {
+        height: 30px;
+        width: 150px;
+        border: 1px solid Grey;
+        border-radius: none; }
+    body.react-searching-form .second-line .filter_container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      border: 1px solid grey;
+      position: absolute;
+      top: 38px;
+      left: 0;
+      width: 150px; }
+    body.react-searching-form .second-line .filter_options {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 150px; }
+      body.react-searching-form .second-line .filter_options label {
+        line-height: 20px;
+        height: 20px;
+        padding-left: 10px;
+        font-weight: bold;
+        font-size: 12px; }
+    body.react-searching-form .second-line input[type="number"] {
+      width: 50px;
+      height: 20px; }
+    body.react-searching-form .second-line .filter_selfwriting {
+      display: flex;
+      justify-content: space-around; }
+    body.react-searching-form .second-line .filter_nehmen {
+      margin: 10px; }
+    body.react-searching-form .second-line .suchen {
+      margin-left: auto; }
+      body.react-searching-form .second-line .suchen input {
+        height: 28px;
+        width: 150px;
+        background-color: red;
+        color: white;
+        outline: none;
+        border: none;
+        font-size: 16px; }
+
 body.todo {
   background-color: Black;
   color: White;
@@ -185,239 +486,6 @@ body.todo #total_summa {
 @media screen and (max-width: 250px) {
   body.todo {
     min-width: 250px; } }
-
-body.lesson-third {
-  margin-top: 8px; }
-  body.lesson-third #game {
-    width: 800px;
-    margin: auto; }
-  body.lesson-third #central {
-    text-align: center;
-    border: 1px dashed black;
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box; }
-  body.lesson-third #start #explanation {
-    margin: 5px; }
-  body.lesson-third #follow {
-    display: none; }
-  body.lesson-third #game-table {
-    margin-top: 20px;
-    margin-bottom: 20px; }
-    body.lesson-third #game-table .row {
-      display: flex;
-      flex-flow: row;
-      justify-content: center;
-      align-items: center;
-      line-height: 60px; }
-      body.lesson-third #game-table .row .element {
-        width: 60px;
-        height: 60px;
-        border: 1px solid Black;
-        font-size: 3em;
-        user-select: none; }
-  body.lesson-third .red {
-    background: red; }
-
-body.main-in-numbers {
-  font-size: 16px;
-  height: 100%; }
-  body.main-in-numbers p {
-    margin: 16px 0; }
-  body.main-in-numbers .red {
-    background-color: #ffbfdc; }
-  body.main-in-numbers .button {
-    background-image: linear-gradient(#FFF 0%, #fee7f1 100%);
-    height: 30px;
-    width: 89px;
-    border-radius: 10px;
-    border: 1px #fee7f1 solid;
-    outline: none; }
-    body.main-in-numbers .button:hover {
-      box-shadow: 0 0 3px #FFF; }
-  body.main-in-numbers #main-div {
-    background-color: #faf1e3;
-    padding: 30px;
-    height: 100%; }
-  body.main-in-numbers #centre {
-    text-align: center;
-    box-shadow: 0 0 15px 5px #FFFFFF, inset 0px 0px 30px #FFF;
-    box-sizing: inherit;
-    padding: 20px;
-    background-image: url("/images/sacura.jpg");
-    background-repeat: no-repeat;
-    background-position: 0% 45%;
-    height: 450px;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-  body.main-in-numbers #first {
-    width: 70%; }
-    body.main-in-numbers #first #instruction {
-      text-align: center; }
-  body.main-in-numbers #second {
-    display: none; }
-    body.main-in-numbers #second #time-left {
-      font-size: 20px; }
-    body.main-in-numbers #second #centralization {
-      display: flex;
-      justify-content: center; }
-    body.main-in-numbers #second #game-board {
-      margin-bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: max-content;
-      border-radius: 5px;
-      background-color: transparent; }
-      body.main-in-numbers #second #game-board .row {
-        display: flex;
-        flex-flow: row; }
-      body.main-in-numbers #second #game-board .cell {
-        height: 60px;
-        width: 60px;
-        font-size: 2rem;
-        margin: 3px;
-        text-align: center;
-        border-radius: 5px;
-        line-height: 60px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none; }
-        body.main-in-numbers #second #game-board .cell:hover {
-          box-shadow: inset 0px 0px 30px #FFF; }
-      body.main-in-numbers #second #game-board .initial-color {
-        background-color: #faf1e3; }
-
-body.calender {
-  font-size: 16px;
-  font-family: 'PT Sans', sans-serif;
-  position: relative;
-  height: 100%;
-  width: 100%; }
-  body.calender .grey {
-    color: grey;
-    opacity: 0.7; }
-  body.calender .current-date {
-    border: 2px #46a699 dashed;
-    border-radius: 50px; }
-  body.calender #center {
-    height: 100%;
-    display: flex; }
-  body.calender .calender {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FFF;
-    margin: auto;
-    height: 640px;
-    width: 360px;
-    border: 2px solid #c9c9c9;
-    border-radius: 50px;
-    box-shadow: 0px 0px 60px 20px #e4e4e4; }
-    body.calender .calender__current-date {
-      width: 100%;
-      height: 180px;
-      background: linear-gradient(75deg, #46a699, #99dadc);
-      border-top-left-radius: 50px;
-      border-top-right-radius: 50px;
-      border-bottom-left-radius: 50% 16%;
-      border-bottom-right-radius: 60% 47%;
-      color: #FFF;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      filter: drop-shadow(0px 6px 3px grey); }
-      body.calender .calender__current-date .calender__current-date_day, body.calender .calender__current-date .calender__current-date_global {
-        padding: 0 20px; }
-      body.calender .calender__current-date_day {
-        font-size: 5rem;
-        line-height: 4rem; }
-      body.calender .calender__current-date_global {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-left: 2px solid #FFF;
-        line-height: 2rem; }
-        body.calender .calender__current-date_global_month {
-          font-size: 1.4rem; }
-        body.calender .calender__current-date_global_year {
-          font-size: 2.5rem; }
-    body.calender .calender__month {
-      text-align: center;
-      width: 280px; }
-      body.calender .calender__month #first-line {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        height: 45px;
-        width: 280px; }
-        body.calender .calender__month #first-line #global-date #left-side {
-          font-size: 1.1rem; }
-        body.calender .calender__month #first-line .rifles {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center; }
-          body.calender .calender__month #first-line .rifles #to-left, body.calender .calender__month #first-line .rifles #to-right {
-            font-weight: bold;
-            color: grey;
-            border: 1px solid grey;
-            height: 35px;
-            width: 35px;
-            line-height: 35px;
-            border-radius: 50%; }
-            body.calender .calender__month #first-line .rifles #to-left:hover, body.calender .calender__month #first-line .rifles #to-right:hover {
-              color: #FFF;
-              background: linear-gradient(75deg, #46a699, #99dadc);
-              border: 1px solid #FFF;
-              cursor: pointer; }
-          body.calender .calender__month #first-line .rifles #to-left {
-            margin-left: 10px; }
-          body.calender .calender__month #first-line .rifles #to-right {
-            margin-right: 10px; }
-      body.calender .calender__month #second-line {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        font-weight: bold;
-        line-height: 40px;
-        color: #949ca3; }
-        body.calender .calender__month #second-line .weekday {
-          width: 31px;
-          box-sizing: border-box; }
-          body.calender .calender__month #second-line .weekday:hover {
-            cursor: pointer; }
-      body.calender .calender__month #third-line {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        flex-wrap: wrap; }
-        body.calender .calender__month #third-line .day {
-          width: 40px;
-          height: 40px;
-          box-sizing: border-box;
-          font-size: 1.1rem;
-          line-height: 40px; }
-          body.calender .calender__month #third-line .day:hover {
-            color: #FFF;
-            cursor: pointer;
-            background: linear-gradient(75deg, #46a699, #99dadc);
-            border-radius: 50px; }
-    body.calender .calender__current-meetings {
-      height: 120px;
-      width: 280px;
-      padding-left: 15px; }
-      body.calender .calender__current-meetings_current-date {
-        font-size: 2rem;
-        padding-bottom: 10px;
-        color: grey; }
 
 body.form-nice {
   font-size: 18px;
@@ -595,52 +663,135 @@ body.c13 {
         box-sizing: border-box;
         width: 300px; } }
 
-body.basics {
-  background-color: burlywood;
-  font-size: 1rem;
+body.calender {
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
+  position: relative;
   height: 100%;
-  display: flex; }
-  body.basics #app {
-    width: 100%; }
-  body.basics .img-flex-container {
-    margin: 20px auto 0 auto;
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 700px; }
-  body.basics .img-cell {
-    margin: 7px; }
-    body.basics .img-cell img {
-      height: 185px;
-      width: 185px; }
-    body.basics .img-cell:hover {
-      box-shadow: 0px 0px 12px 5px #FFF; }
-  body.basics .func-center {
+  width: 100%; }
+  body.calender .grey {
+    color: grey;
+    opacity: 0.7; }
+  body.calender .current-date {
+    border: 2px #46a699 dashed;
+    border-radius: 50px; }
+  body.calender #center {
+    height: 100%;
+    display: flex; }
+  body.calender .calender {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-  body.basics .span-decor {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    font-family: 'Indie Flower', 'Courgette', 'Pacifico', cursive;
-    font-size: 2rem; }
-  body.basics .menu {
-    color: #ad133f; }
-  body.basics .click-button {
+    justify-content: space-between;
+    align-items: center;
     background-color: #FFF;
-    width: 30%;
-    border: 2px solid Black;
-    box-shadow: inset 0px 0px 7px;
-    border-radius: 40px;
-    padding: 5px; }
-    body.basics .click-button:hover {
-      box-shadow: inset 0px 0px 7px, 0px 0px 10px 1px;
-      text-shadow: 0px 0px 2px;
-      text-decoration: none; }
+    margin: auto;
+    height: 640px;
+    width: 360px;
+    border: 2px solid #c9c9c9;
+    border-radius: 50px;
+    box-shadow: 0px 0px 60px 20px #e4e4e4; }
+    body.calender .calender__current-date {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(75deg, #46a699, #99dadc);
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      border-bottom-left-radius: 50% 16%;
+      border-bottom-right-radius: 60% 47%;
+      color: #FFF;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      filter: drop-shadow(0px 6px 3px grey); }
+      body.calender .calender__current-date .calender__current-date_day, body.calender .calender__current-date .calender__current-date_global {
+        padding: 0 20px; }
+      body.calender .calender__current-date_day {
+        font-size: 5rem;
+        line-height: 4rem; }
+      body.calender .calender__current-date_global {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-left: 2px solid #FFF;
+        line-height: 2rem; }
+        body.calender .calender__current-date_global_month {
+          font-size: 1.4rem; }
+        body.calender .calender__current-date_global_year {
+          font-size: 2.5rem; }
+    body.calender .calender__month {
+      text-align: center;
+      width: 280px; }
+      body.calender .calender__month #first-line {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 45px;
+        width: 280px; }
+        body.calender .calender__month #first-line #global-date #left-side {
+          font-size: 1.1rem; }
+        body.calender .calender__month #first-line .rifles {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center; }
+          body.calender .calender__month #first-line .rifles #to-left, body.calender .calender__month #first-line .rifles #to-right {
+            font-weight: bold;
+            color: grey;
+            border: 1px solid grey;
+            height: 35px;
+            width: 35px;
+            line-height: 35px;
+            border-radius: 50%; }
+            body.calender .calender__month #first-line .rifles #to-left:hover, body.calender .calender__month #first-line .rifles #to-right:hover {
+              color: #FFF;
+              background: linear-gradient(75deg, #46a699, #99dadc);
+              border: 1px solid #FFF;
+              cursor: pointer; }
+          body.calender .calender__month #first-line .rifles #to-left {
+            margin-left: 10px; }
+          body.calender .calender__month #first-line .rifles #to-right {
+            margin-right: 10px; }
+      body.calender .calender__month #second-line {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-weight: bold;
+        line-height: 40px;
+        color: #949ca3; }
+        body.calender .calender__month #second-line .weekday {
+          width: 31px;
+          box-sizing: border-box; }
+          body.calender .calender__month #second-line .weekday:hover {
+            cursor: pointer; }
+      body.calender .calender__month #third-line {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap; }
+        body.calender .calender__month #third-line .day {
+          width: 40px;
+          height: 40px;
+          box-sizing: border-box;
+          font-size: 1.1rem;
+          line-height: 40px; }
+          body.calender .calender__month #third-line .day:hover {
+            color: #FFF;
+            cursor: pointer;
+            background: linear-gradient(75deg, #46a699, #99dadc);
+            border-radius: 50px; }
+    body.calender .calender__current-meetings {
+      height: 120px;
+      width: 280px;
+      padding-left: 15px; }
+      body.calender .calender__current-meetings_current-date {
+        font-size: 2rem;
+        padding-bottom: 10px;
+        color: grey; }
 
 body.mobile {
   background-color: #FFF;
@@ -994,53 +1145,6 @@ body.calculator {
     body.calculator .elem:hover {
       color: White;
       background-color: Black; }
-
-body.oughts-crosses {
-  background: radial-gradient(circle farthest-side at center, #b4ddb4 0%, #83c783 30%, #52b152 80%); }
-  body.oughts-crosses #game-place {
-    width: 600px;
-    border: 2px ridge #0e8a39;
-    box-shadow: 0px 0px 20px 5px #619961;
-    position: absolute;
-    margin-left: -300px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    left: 50%;
-    font-size: 18px;
-    background: White; }
-  body.oughts-crosses #game {
-    text-align: center;
-    margin: 40px 0; }
-    body.oughts-crosses #game > div {
-      margin-bottom: 16px; }
-  body.oughts-crosses #game-list {
-    display: flex;
-    flex-flow: column;
-    align-items: center; }
-  body.oughts-crosses .row {
-    display: flex;
-    flex-flow: row; }
-  body.oughts-crosses .cell {
-    height: 40px;
-    width: 40px;
-    border: 2px solid Black;
-    font-size: 2rem;
-    font-family: "Bitter", serif; }
-  body.oughts-crosses #whose-turn {
-    font-size: 0.875rem; }
-  body.oughts-crosses #counter {
-    float: right;
-    position: absolute;
-    left: 75%;
-    top: 15%;
-    border: 1px solid Black;
-    padding: 10px;
-    width: 120px;
-    display: flex;
-    flex-flow: column; }
-  body.oughts-crosses .result {
-    padding: 8px;
-    font-size: 0.95rem; }
 
 body.shop {
   height: 100%;
@@ -3726,6 +3830,12 @@ body.my-cv .prj-game:hover .prj-game_img {
     height: 300px; } }
 
 @media screen and (min-width: 48rem) {
+  body.my-cv .first-column {
+    width: 50%;
+    float: left; }
+  body.my-cv .second-column {
+    width: 50%;
+    float: right; }
   body.my-cv .cv__parts {
     margin: 0px;
     line-height: 1.15rem;
@@ -3781,3 +3891,64 @@ body.my-cv .prj-game:hover .prj-game_img {
     grid-area: 20 / 2 / span 3 /span 1; }
   body.my-cv .prj-game {
     grid-area: 23 / 2 / span 3 /span 1; } }
+
+@media screen and (min-width: 60rem) {
+  body.my-cv .first-column {
+    width: 33%;
+    float: left; }
+  body.my-cv .second-column {
+    width: 33%;
+    float: left; }
+  body.my-cv .third-column {
+    width: 33%;
+    float: left; }
+  body.my-cv .cv__parts {
+    padding: 15px;
+    line-height: 1.2rem; }
+  body.my-cv .cv_cenralization {
+    width: 82%;
+    grid-template: repeat(17, 100px)/repeat(3, 3fr);
+    min-width: 230px;
+    max-width: 1060px; }
+  body.my-cv .desktop-side {
+    background-color: #afe4e4; }
+  body.my-cv .desktop-center {
+    background-color: #f7e7ce; }
+  body.my-cv .general-info {
+    grid-area: 1 / 1 / span 7 /span 1; }
+    body.my-cv .general-info .my-image {
+      padding: 0; }
+  body.my-cv .languages {
+    grid-area: 8 / 1 / span 2 /span 1; }
+  body.my-cv .contacts {
+    grid-area: 1 / 2 / span 2 /span 1; }
+  body.my-cv .techniques {
+    grid-area: 3 / 2 / span 3 /span 1; }
+  body.my-cv .hobbies {
+    grid-area: 6 / 2 / span 3 /span 1; }
+    body.my-cv .hobbies__each {
+      width: 23%;
+      margin: auto; }
+    body.my-cv .hobbies__svg {
+      height: 100%;
+      width: 100%; }
+  body.my-cv .education {
+    grid-area: 1 / 3 / span 2 /span 1; }
+  body.my-cv .experience {
+    grid-area: 3 / 3 / span 4 /span 1; }
+  body.my-cv .skills {
+    grid-area: 7 / 3 / span 3 /span 1; }
+  body.my-cv .prj-calender {
+    grid-area: 10 / 1 / span 3 /span 1; }
+  body.my-cv .prj-form-c13 {
+    grid-area: 13 / 1 / span 3 /span 1; }
+  body.my-cv .prj-bright-food {
+    grid-area: 9 / 2 / span 3 /span 1; }
+  body.my-cv .prj-mobile {
+    grid-area: 12 / 2 / span 3 /span 1; }
+  body.my-cv .prj-game {
+    grid-area: 15 / 2 / span 3 /span 1; }
+  body.my-cv .prj-online-shop {
+    grid-area: 10 / 3 / span 3 /span 1; }
+  body.my-cv .prj-to-do-app {
+    grid-area: 13 / 3 / span 3 /span 1; } }

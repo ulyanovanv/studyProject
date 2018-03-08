@@ -81,6 +81,9 @@ $app->get('/oughts-and-crosses', function () use ($app) {
 $app->get('/online-shop', function () use ($app) {
     return $app['twig']->render('online-shop/shop.html.twig', array());
 });
+$app->get('/react-searching-form', function () use ($app) {
+    return $app['twig']->render('react-searching-form/react-searching-form.html.twig', array());
+});
 
 
 

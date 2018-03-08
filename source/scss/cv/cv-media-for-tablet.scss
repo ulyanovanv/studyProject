@@ -1,65 +1,16 @@
 body.my-cv {
 
-
-
   @media screen and (min-width:48rem) {
-    //@media screen and (min-width:0\0) {
-    //  .cv_centralization {
-    //    width: 100%
-    //  }
-    //  section {
-    //    width: 45%;
-    //    display:block;
-    //  }
-    //
-    //  .contacts{
-    //    float: right;
-    //  }
-    //  .techniques {
-    //    float: right;
-    //  }
-    //  .education{
-    //    float: right;
-    //  }
-    //  .experience{
-    //    float: right;
-    //  }
-    //  .languages {
-    //    float: right;
-    //  }
-    //  .prj-mobile {
-    //    float: right;
-    //  }
-    //  .prj-form-c13 {
-    //    float: right;
-    //  }
-    //  .prj-game {
-    //    float: right;
-    //  }
-    //  .prj-online-shop {
-    //    float: right;
-    //  }
-    //  .general-info {
-    //    float: left;
-    //  }
-    //  .skills {
-    //    float: left;
-    //  }
-    //  .hobbies {
-    //    float: left;
-    //  }
-    //  .prj-bright-food {
-    //      clear: left;
-    //    float: left;
-    //  }
-    //  .prj-calender {
-    //    float: left;
-    //  }
-    //  .prj-to-do-app {
-    //    float: left;
-    //  }
-    //}
-
+    //for IE
+    .first-column {
+      width: 50%;
+      float: left;
+    }
+    .second-column {
+      width: 50%;
+      float: right;
+    }
+    //for all other browsers
     .cv {
       &__parts{
         margin: 0px;
