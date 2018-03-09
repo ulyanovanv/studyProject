@@ -510,7 +510,7 @@ body.c13 {
   font-size: 16px;
   color: #FFF;
   line-height: 1.2rem;
-  background-image: url("http://www.parhlo.com/wp-content/uploads/2016/01/1.-Naran-Kaghan-Waterfalls.jpg"), radial-gradient(#78052d, #d7666b);
+  background-image: url("/images/c13/c13.jpg"), radial-gradient(#78052d, #d7666b);
   background-repeat: inherit;
   background-size: 100% 100%;
   background-blend-mode: color-burn;
@@ -518,6 +518,9 @@ body.c13 {
   width: 100%;
   box-shadow: inset 0px 21px 73px black;
   position: fixed; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    body.c13 {
+      background-image: url("/images/c13/c13-red.jpg"); } }
   body.c13 .red {
     color: black;
     font-size: 1.2rem; }
@@ -527,7 +530,8 @@ body.c13 {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    height: 750px; }
+    height: 750px;
+    width: 100%; }
     body.c13 .container .columnn {
       height: 501px;
       width: 250px;
@@ -603,7 +607,7 @@ body.c13 {
     body.c13 #third-colomn #final {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: stretch;
       flex-wrap: wrap;
       margin-top: 15px; }
@@ -809,10 +813,12 @@ body.mobile {
     color: #0fb5c1; }
   body.mobile .first-page {
     display: block;
-    height: 100%; }
+    height: 100%;
+    opacity: 1; }
   body.mobile .second-page {
     display: none;
-    height: 100%; }
+    height: 100%;
+    opacity: 0; }
   body.mobile .background {
     box-sizing: border-box;
     margin: 0 auto;
@@ -1064,25 +1070,20 @@ body.mobile {
     height: 25%;
     width: 45%;
     display: none; }
-    body.mobile .hidden-menu__options {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center; }
-      body.mobile .hidden-menu__options_items {
-        flex: 1;
-        padding: 5%;
-        color: #e4e4e4;
-        font-family: 'Roboto', sans-serif;
-        font-size: 1.4rem;
-        width: 100%;
-        border-radius: 25px;
-        text-align: center;
-        margin-bottom: 1%;
-        background: linear-gradient(10deg, #076bca -30%, #7e5298 48%, #0fb5c1 128%);
-        cursor: pointer; }
-      body.mobile .hidden-menu__options_items:last-child {
-        margin-bottom: 0; }
+    body.mobile .hidden-menu__options_items {
+      flex: 1;
+      padding: 5%;
+      color: #e4e4e4;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.4rem;
+      width: 100%;
+      border-radius: 25px;
+      text-align: center;
+      margin-bottom: 1%;
+      background: linear-gradient(10deg, #076bca -30%, #7e5298 48%, #0fb5c1 128%);
+      cursor: pointer; }
+    body.mobile .hidden-menu__options_items:last-child {
+      margin-bottom: 0; }
   @media only screen and (orientation: landscape) {
     body.mobile .hidden-menu__options_items {
       padding: 3%; } }
@@ -3893,15 +3894,12 @@ body.my-cv .prj-game:hover .prj-game_img {
     grid-area: 23 / 2 / span 3 /span 1; } }
 
 @media screen and (min-width: 60rem) {
-  body.my-cv .first-column {
+  body.my-cv .first-column, body.my-cv .second-column, body.my-cv .third-column {
     width: 33%;
-    float: left; }
-  body.my-cv .second-column {
-    width: 33%;
-    float: left; }
-  body.my-cv .third-column {
-    width: 33%;
-    float: left; }
+    float: left;
+    margin-bottom: 20px; }
+    body.my-cv .first-column .cv_line-indent, body.my-cv .second-column .cv_line-indent, body.my-cv .third-column .cv_line-indent {
+      padding-bottom: 10px; }
   body.my-cv .cv__parts {
     padding: 15px;
     line-height: 1.2rem; }

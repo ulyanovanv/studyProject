@@ -6,7 +6,6 @@ import * as functions from './pure-functions.js';
 
 const {universalRequired, universalTypes, checkingPasswords, checkYoonger, getBirthdayTimestamp, sendForm, transferReceivedData} = functions;
 
-
 (function(){
     var form = document.forms[0];
     var elements = form.elements;

@@ -2,13 +2,18 @@ body.c13 {
   font-size: 16px;
   color: #FFF;
   line-height: 1.2rem;
-  background-image: url("http://www.parhlo.com/wp-content/uploads/2016/01/1.-Naran-Kaghan-Waterfalls.jpg"), radial-gradient(#78052d, #d7666b) ;
+  background-image: url("/images/c13/c13.jpg"), radial-gradient(#78052d, #d7666b) ;
   background-repeat: inherit;
   background-size: 100% 100%;
   background-blend-mode: color-burn;
+
+  //media only for IE for background-blend-mode
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    background-image: url("/images/c13/c13-red.jpg");
+  }
+
   height: 750px;
   width: 100%;
-//  margin: 0;
   box-shadow: inset 0px 21px 73px black;
   position: fixed;
 
@@ -27,15 +32,20 @@ body.c13 {
     @include flex(row, center, center);
     flex-wrap: nowrap;
     height: 750px;
+    width: 100%;
     .columnn {
       height: 501px;
       width: 250px;
       background-blend-mode: color;
       background-image: repeating-linear-gradient(to right, #ff0048 5%, #ff4a4a 7%, #ff0048 10%),repeating-linear-gradient(#ff0048 2%, #ff4a4a 3%, #ff0048 5%);
-//      background: repeating-linear-gradient(#ff0048 2%, #ff4a4a 3%, #ff0048 5%);
       border: 15px solid #FFFFFF;
       padding: 10px;
       margin: 30px;
+      //@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      //  background: repeating-linear-gradient(to right, #ff0048 5%, #ff4a4a 7%, #ff0048 10%);
+      //
+      //
+      //}
       .block {
         @include flex(column, flex-start, stretch);
       }
@@ -122,7 +132,7 @@ body.c13 {
 
     }
     #final {
-      @include flex(row, space-evenly, stretch);
+      @include flex(row, space-around, stretch);
       flex-wrap: wrap;
       margin-top: 15px;
       .final-button {

@@ -18,16 +18,16 @@ import $ from '../../vendor/jquery.min.js';
 
 
 
-    var firstPageContent = firstPage.children(".first-page-first-page-content");
+    var firstPageContent = firstPage.children(".first-page-content");
     var firstPageMenuButton = firstPageContent.find(".first-page-content__menu-button");
-    console.log(firstPageMenuButton);
     var startButton = firstPageContent.find(".first-page-content__start-button");
     var footerLink = firstPageContent.find(".first-page-content__footer");
 
 
-    var secondPageContent = secondPage.children(".second-page-first-page-content");
+    var secondPageContent = secondPage.children(".second-page-content");
     var secondPageMenuButton = secondPageContent.find(".second-page-content__menu-button");
 
+    console.log(firstPageMenuButton);
 
 
     firstPageMenuButton.on("click",function(){
@@ -120,5 +120,5 @@ import $ from '../../vendor/jquery.min.js';
 
 
 
-}())
+}());
 
