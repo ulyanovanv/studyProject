@@ -75,7 +75,7 @@
           flex: 1 0;
           height: 100%;
           text-align: left;
-          @include  flexbox (column,space-evenly, flex-start);
+          @include  flexbox (column,space-around, flex-start);
           &_name {
             font-size: 0.9rem;
             span:last-child {

@@ -7,7 +7,7 @@
     //width: 90vw;
     max-width: $max-width;
     margin: 0 auto;
-    @include flexbox(row, space-evenly, center);
+    @include flexbox(row, space-around, center);
     &_button {
       font-size: 0.7rem;
       color: #b5b5b5;
@@ -33,6 +33,7 @@
         height: 100px;
         position: absolute;
         top: -80px;
+        left: 27px;
       }
       #organic {
         height: 80px;

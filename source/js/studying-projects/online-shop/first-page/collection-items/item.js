@@ -2,13 +2,6 @@ import React from "react";
 
 
 export class Item extends React.Component {
-  constructor(props){
-    super(props);
-    //this.state = {
-    //  color: "black"
-   // }
-  }
-
 
   render() {
 
@@ -18,8 +11,7 @@ export class Item extends React.Component {
              backgroundImage: `url('${this.props.image}')`,
              filter: this.props.filter
            }}
-           onClick={this.props.onClick}
-      >
+           onClick={this.props.onClick}>
 
         {this.props.discount &&
         <div className="first-page-collection__article_reduction">

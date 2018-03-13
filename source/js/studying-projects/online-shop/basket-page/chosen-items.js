@@ -8,9 +8,6 @@ import {connect} from "react-redux";
 class ChosenItems extends React.Component {
   constructor(props){
     super(props);
-    // this.state = {
-    //   selectedItems: []
-    // };
     this.renderFunction = this.renderFunction.bind(this);
     this.deleteFromList = this.deleteFromList.bind(this);
   }

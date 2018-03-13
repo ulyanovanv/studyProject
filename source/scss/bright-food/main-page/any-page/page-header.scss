@@ -10,10 +10,17 @@
     min-width: 850px;
     margin: auto;
     background: url("/images/bright-food/main-image/main-image.jpg");
-    //background-size: cover;
     background-size: 100% auto;
     background-position: bottom center;
     background-repeat: no-repeat;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      background: url("/images/bright-food/main-image/main-image.png");
+      background-size: 100% auto;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+    }
+    //background-size: cover;
+
   }
   &_padding {
     padding: 20px 40px;
@@ -40,6 +47,7 @@
       @include flexbox(row,space-evenly,center);
 
       &_navigation{
+        //display: none;
         @include flexbox(row,space-evenly);
         &_name{
           @include flexbox(column,center,center);

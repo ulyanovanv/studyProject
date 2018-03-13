@@ -34,55 +34,52 @@ $app->post('/to-do-app-save', function () use ($app) {
     return json_encode($_REQUEST);
 });
 
+//CV page contains
 
 $app->get('/cv', function () use ($app) {
     return $app['twig']->render('mobile/index.html.twig', array());
 });
-
-$app->get('/lesson3', function () use ($app) {
-    return $app['twig']->render('lesson3/index.html.twig', array());
+$app->get('/bright-food', function () use ($app) {
+    return $app['twig']->render('bright-food/bright-food.html.twig', array());
 });
-$app->get('/lesson4', function () use ($app) {
-    return $app['twig']->render('lesson4/index.html.twig', array());
+$app->get('/online-shop', function () use ($app) {
+    return $app['twig']->render('online-shop/shop.html.twig', array());
 });
-
+$app->get('/calender', function () use ($app) {
+    return $app['twig']->render('calender/index.html.twig', array());
+});
+$app->get('/mobile', function () use ($app) {
+    return $app['twig']->render('mobile/mobile-version.html.twig', array());
+});
+$app->get('/c13', function () use ($app) {
+    return $app['twig']->render('forms/c13.html.twig', array());
+});
 $app->get('/numbersgame', function () use ($app) {
     return $app['twig']->render('numbersgame/index.html.twig', array());
 });
 
-$app->get('/calender', function () use ($app) {
-    return $app['twig']->render('calender/index.html.twig', array());
-});
 
+
+$app->get('/lesson3', function () use ($app) {
+    return $app['twig']->render('lesson3/index.html.twig', array());
+});
 $app->get('/form-backend', function () use ($app) {
     return $app['twig']->render('forms/form-backend.html.twig', array());
 });
-
-$app->get('/c13', function () use ($app) {
-    return $app['twig']->render('forms/c13.html.twig', array());
-});
-
 $app->get('/ingridients', function () use ($app) {
     return $app['twig']->render('ReactIngredients/ingredients.html.twig', array());
 });
-
-$app->get('/mobile', function () use ($app) {
-    return $app['twig']->render('mobile/mobile-version.html.twig', array());
-});
-
 $app->get('/calculator', function () use ($app) {
     return $app['twig']->render('small-calculator/calculator.html.twig', array());
 });
-
 $app->get('/oughts-and-crosses', function () use ($app) {
     return $app['twig']->render('game-oc/oughts-and-crosses.html.twig', array());
 });
-
-$app->get('/online-shop', function () use ($app) {
-    return $app['twig']->render('online-shop/shop.html.twig', array());
-});
 $app->get('/react-searching-form', function () use ($app) {
     return $app['twig']->render('react-searching-form/react-searching-form.html.twig', array());
+});
+$app->get('/templates-background', function () use ($app) {
+    return $app['twig']->render('lesson3/templates-background.html.twig', array());
 });
 
 
@@ -110,12 +107,6 @@ $app->post('/email', function () use ($app) {
 
     return json_encode(['status' => 'ok', 'email' => $email]);
 });
-
-$app->get('/bright-food', function () use ($app) {
-    return $app['twig']->render('bright-food/bright-food.html.twig', array());
-});
-
-
 
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {

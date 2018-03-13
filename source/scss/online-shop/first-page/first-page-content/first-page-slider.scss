@@ -107,7 +107,7 @@
     }
   }
   &__slider-changer{
-    @include flexbox(row, space-evenly);
+    @include flexbox(row, space-around);
     width: 100px;
 
     &_romb{
@@ -130,7 +130,10 @@
     &__image-container {
       left: $padding-for-centre;
       right: $padding-for-centre;
-
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        left: auto;
+        right: auto;
+      }
     }
     &__slider-changer{
       margin-bottom: 30px;

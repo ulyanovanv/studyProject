@@ -335,6 +335,45 @@ body.react-searching-form {
         border: none;
         font-size: 16px; }
 
+body.templates-background {
+  padding: 10px; }
+  body.templates-background section {
+    display: inline-block; }
+  body.templates-background div {
+    height: 300px;
+    width: 300px;
+    border: 2px solid black;
+    display: inline-block; }
+  body.templates-background .div1 {
+    background-image: repeating-linear-gradient(45deg, transparent 0, transparent 8px, rgba(255, 255, 255, 0.7) 8px, rgba(255, 255, 255, 0.7) 12px, transparent 12px, transparent 20px, rgba(255, 255, 255, 0.7) 20px, rgba(255, 255, 255, 0.7) 32px), repeating-linear-gradient(135deg, transparent 0, transparent 8px, rgba(255, 255, 255, 0.7) 8px, rgba(255, 255, 255, 0.7) 12px, transparent 12px, transparent 20px, rgba(255, 255, 255, 0.7) 20px, rgba(255, 255, 255, 0.7) 32px), linear-gradient(to bottom right, #003580, #0ABFBC); }
+  body.templates-background .div2 {
+    background-image: repeating-linear-gradient(45deg, transparent 0, transparent 10px, rgba(255, 2, 45, 0.5) 10px, rgba(255, 2, 45, 0.5) 20px), repeating-linear-gradient(135deg, transparent 0, transparent 10px, rgba(255, 2, 45, 0.5) 10px, rgba(255, 2, 45, 0.5) 20px), radial-gradient(white 40%, #f8584a); }
+  body.templates-background .div3 {
+    background: repeating-linear-gradient(rgba(255, 255, 255, 0.6) 0, rgba(255, 255, 255, 0.6) 1px, transparent 1px, transparent 16px, rgba(255, 255, 255, 0.6) 16px, rgba(255, 255, 255, 0.6) 17px, transparent 17px, transparent 32px, rgba(255, 255, 255, 0.6) 32px, rgba(255, 255, 255, 0.6) 33px, transparent 33px, transparent 48px, rgba(255, 255, 255, 0.6) 48px, rgba(255, 255, 255, 0.6) 49px, transparent 49px, transparent 64px, rgba(255, 255, 255, 0.6) 64px, rgba(255, 255, 255, 0.6) 65px, transparent 65px, transparent 80px, rgba(255, 255, 255, 0.6) 80px, rgba(255, 255, 255, 0.6) 81px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0, rgba(255, 255, 255, 0.6) 1px, transparent 1px, transparent 16px, rgba(255, 255, 255, 0.6) 16px, rgba(255, 255, 255, 0.6) 17px, transparent 17px, transparent 32px, rgba(255, 255, 255, 0.6) 32px, rgba(255, 255, 255, 0.6) 33px, transparent 33px, transparent 48px, rgba(255, 255, 255, 0.6) 48px, rgba(255, 255, 255, 0.6) 49px, transparent 49px, transparent 64px, rgba(255, 255, 255, 0.6) 64px, rgba(255, 255, 255, 0.6) 65px, transparent 65px, transparent 80px, rgba(255, 255, 255, 0.6) 80px, rgba(255, 255, 255, 0.6) 81px), #0067c2; }
+  body.templates-background .div4 {
+    background: linear-gradient(45deg, #f8584a 15%, transparent 0, transparent 85%, #f8584a 0), linear-gradient(135deg, transparent 33%, #54b254 0, #54b254 66%, transparent 0), linear-gradient(45deg, transparent 33%, #f8584a 0, #f8584a 66%, transparent 0), #fafa76;
+    background-size: 20px 20px; }
+  body.templates-background .div5 {
+    background: repeating-linear-gradient(to bottom, transparent 0, transparent 20px, rgba(0, 0, 0, 0.7) 20px, rgba(0, 0, 0, 0.7) 21px), linear-gradient(to right, transparent 0, transparent 50px, rgba(0, 0, 0, 0.7) 50px, rgba(0, 0, 0, 0.7) 52px, transparent 52px, transparent 100%); }
+  body.templates-background .div6 {
+    background: linear-gradient(245deg, transparent 75%, #8adee8 75%) 0 0, linear-gradient(115deg, transparent 75%, #8adee8 75%) 0 0, linear-gradient(245deg, transparent 75%, #8adee8 75%) 9px -20px, linear-gradient(115deg, transparent 75%, #8adee8 75%) 9px -20px, #57b4cc;
+    background-size: 20px 40px; }
+  body.templates-background .div7 {
+    background: linear-gradient(135deg, #f8584a 0, #f8584a 25%, transparent 25%, transparent 100%) -30px 0, linear-gradient(225deg, #f8584a 0, #f8584a 25%, transparent 25%, transparent 100%) -30px 0, linear-gradient(315deg, #f8584a 0, #f8584a 25%, transparent 25%, transparent 100%), linear-gradient(45deg, #f8584a 0, #f8584a 25%, transparent 25%, transparent 100%) #eceddc;
+    background-size: 60px 60px; }
+  body.templates-background .div8 {
+    background: linear-gradient(135deg, white 0, white 25%, transparent 25%, transparent 100%), linear-gradient(225deg, white 0, white 25%, transparent 25%, transparent 100%), linear-gradient(315deg, white 0, white 25%, transparent 25%, transparent 100%), linear-gradient(45deg, white 0, white 25%, transparent 25%, transparent 100%), black;
+    background-size: 60px 60px; }
+  body.templates-background .div9 {
+    background: linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%) 0 0, linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%) 30px 30px, black;
+    background-size: 60px 60px; }
+  body.templates-background .div10 {
+    background: repeating-linear-gradient(67.5deg, transparent 0, transparent 49.5%, #c8b0b0 49.5%, #c8b0b0 50.5%, transparent 50.5%, transparent 100%) 0 0, repeating-linear-gradient(112.5deg, transparent 0, transparent 49.5%, #c8b0b0 49.5%, #c8b0b0 50.5%, transparent 50.5%, transparent 100%) 0 0, linear-gradient(67.5deg, #a46e7a 0, #a46e7a 25%, transparent 25%, transparent 100%), linear-gradient(112.5deg, #a46e7a 0, #a46e7a 25%, transparent 25%, transparent 100%), linear-gradient(247.5deg, #a46e7a 0, #a46e7a 25%, transparent 25%, transparent 100%), linear-gradient(292.5deg, #a46e7a 0, #a46e7a 25%, transparent 25%, transparent 100%), #482a37;
+    background-size: 40px 95px; }
+  body.templates-background .div11 {
+    background: linear-gradient(135deg, #fabd61 0, #fabd61 25%, transparent 25%, transparent 100%), linear-gradient(225deg, #921f1f 0, #921f1f 25%, transparent 25%, transparent 100%), linear-gradient(315deg, #781818 0, #781818 25%, transparent 25%, transparent 100%), linear-gradient(45deg, #601313 0, #601313 25%, transparent 25%, transparent 100%), linear-gradient(135deg, #fabd61 0, #fabd61 25%, transparent 25%, transparent 100%) -20px -20px, linear-gradient(225deg, #921f1f 0, #921f1f 25%, transparent 25%, transparent 100%) -20px -20px, linear-gradient(315deg, #781818 0, #781818 25%, transparent 25%, transparent 100%) -20px -20px, linear-gradient(45deg, #601313 0, #601313 25%, transparent 25%, transparent 100%) -20px -20px;
+    background-size: 40px 40px; }
+
 body.todo {
   background-color: Black;
   color: White;
@@ -1562,7 +1601,7 @@ body.shop {
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
         height: 30px;
         line-height: 30px; }
@@ -1660,7 +1699,7 @@ body.shop {
     body.shop .first-page-slider__slider-changer {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center;
       width: 100px; }
       body.shop .first-page-slider__slider-changer_romb {
@@ -1675,7 +1714,12 @@ body.shop {
       padding-bottom: 0; }
       body.shop .first-page-slider__image-container {
         left: 20px;
-        right: 20px; }
+        right: 20px; } }
+    @media all and (min-width: 1440px) and (-ms-high-contrast: none), (min-width: 1440px) and (-ms-high-contrast: active) {
+      body.shop .first-page-slider__image-container {
+        left: auto;
+        right: auto; } }
+  @media (min-width: 1440px) {
       body.shop .first-page-slider__slider-changer {
         margin-bottom: 30px; }
       body.shop .first-page-slider__discounts_container .discounts-season {
@@ -1771,6 +1815,9 @@ body.shop {
         align-items: flex-start;
         padding-left: 90px;
         width: 31vw; }
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          body.shop .first-page-support__services_beige {
+            line-height: 30px; } }
       body.shop .first-page-support__services_black {
         display: flex;
         flex-direction: row;
@@ -1786,6 +1833,9 @@ body.shop {
           justify-content: space-evenly;
           align-items: flex-start;
           margin-left: 5px; }
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          body.shop .first-page-support__services_black {
+            line-height: 30px; } }
       body.shop .first-page-support__services_name {
         text-transform: uppercase;
         font-size: 1.2rem; }
@@ -1921,7 +1971,7 @@ body.shop {
   body.shop .first-page-brands_padding {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: #f2f2f2;
     height: 150px;
@@ -1957,7 +2007,7 @@ body.shop {
       justify-content: space-evenly;
       align-items: center;
       flex-wrap: wrap;
-      height: unset; }
+      height: auto; }
       body.shop .first-page-brands_padding a:first-child {
         padding-left: 0; }
       body.shop .first-page-brands_padding a:last-child {
@@ -2049,21 +2099,22 @@ body.shop {
       display: none; } }
   @media (min-width: 1480px) {
     body.shop .first-page-customer-reviews .opinion {
-      font-size: 2rem; }
+      font-size: 1.5rem; }
     body.shop .first-page-customer-reviews .customer-name {
-      font-size: 3rem; }
+      font-size: 2.5rem; }
     body.shop .first-page-customer-reviews .occupation {
-      font-size: 2rem; } }
+      font-size: 1.5rem; } }
   body.shop .page-footer {
     background-color: #000;
     color: #FFF;
     width: 100%;
+    height: auto;
     max-width: none; }
     body.shop .page-footer .to-centre {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: flex-start; }
+      align-items: unset; }
     body.shop .page-footer__upper {
       padding: 10px 20px;
       display: flex;
@@ -2205,7 +2256,13 @@ body.shop {
       body.shop .page-footer__upper_stay-connected {
         width: 100%; }
         body.shop .page-footer__upper_stay-connected_form {
-          padding: 10px 0; }
+          padding: 10px 0; } }
+  @media all and (max-width: 800px) and (-ms-high-contrast: none), (max-width: 800px) and (-ms-high-contrast: active) {
+    body.shop .page-footer__upper_navigation {
+      flex: 6 1 auto; }
+    body.shop .page-footer__upper_stay-connected {
+      flex: 4 1 auto; } }
+  @media (max-width: 800px) {
     body.shop .page-footer__lower {
       padding: 10px 10px; }
     body.shop .page-footer .headings {
@@ -2224,7 +2281,7 @@ body.shop {
 @media (max-width: 800px) {
   body.shop {
     overflow-x: hidden;
-    min-width: unset; } }
+    min-width: 350px; } }
 
 body.bright-food {
   /*# sourceMappingURL=slick.min.css.map */
@@ -2436,6 +2493,12 @@ body.bright-food {
       background-size: 100% auto;
       background-position: bottom center;
       background-repeat: no-repeat; }
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        body.bright-food .page-header_image-container {
+          background: url("/images/bright-food/main-image/main-image.png");
+          background-size: 100% auto;
+          background-position: bottom center;
+          background-repeat: no-repeat; } }
     body.bright-food .page-header_padding {
       padding: 20px 40px; }
     body.bright-food .page-header__menu {
@@ -2618,7 +2681,7 @@ body.bright-food {
     display: -webkit-flex;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center; }
     body.bright-food .products-randomized__navigation_button {
       font-size: 0.7rem;
@@ -2646,7 +2709,8 @@ body.bright-food {
       body.bright-food .products-randomized__navigation_organic #fruit {
         height: 100px;
         position: absolute;
-        top: -80px; }
+        top: -80px;
+        left: 27px; }
       body.bright-food .products-randomized__navigation_organic #organic {
         height: 80px; }
   body.bright-food .products-randomized .slick-dots > li > button:before {
@@ -2663,6 +2727,10 @@ body.bright-food {
   body.bright-food .products-randomized .slick-slide {
     margin-top: 20px;
     height: 410px; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    body.bright-food .products-randomized .slick-prev, body.bright-food .products-randomized .slick-next {
+      background-color: #b5b5b5;
+      border-radius: 50%; } }
   body.bright-food .products .products-vertical {
     height: 370px;
     width: 270px;
@@ -2682,7 +2750,7 @@ body.bright-food {
       display: -webkit-flex;
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center; }
     body.bright-food .products .products-vertical_image {
       height: 350px;
@@ -2694,6 +2762,7 @@ body.bright-food {
       position: absolute;
       top: 25px;
       left: 60px;
+      margin: 0 auto;
       display: none;
       width: 150px;
       height: 35px;
@@ -2707,7 +2776,7 @@ body.bright-food {
         display: -webkit-flex;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center; }
       body.bright-food .products .products-vertical__shop-navigation_png {
         padding: 0 10px; }
@@ -2792,7 +2861,7 @@ body.bright-food {
       display: -webkit-flex;
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: flex-start;
       text-align: left;
       padding-left: 10px;
@@ -2894,7 +2963,7 @@ body.bright-food {
       display: -webkit-flex;
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center; }
       body.bright-food .about-us__organic-farm_heading {
         background-position: 191px 0px;
@@ -2913,7 +2982,8 @@ body.bright-food {
           margin: 0 10px; }
       body.bright-food .about-us__organic-farm_text {
         font-size: 0.75rem;
-        line-height: 1.2rem; }
+        line-height: 1.2rem;
+        max-width: 800px; }
     body.bright-food .about-us__qualities {
       width: 100%;
       height: 335px;
@@ -2965,7 +3035,8 @@ body.bright-food {
         body.bright-food .about-us__qualities_each_heading {
           font-size: 0.9rem; }
         body.bright-food .about-us__qualities_each_description {
-          font-size: 0.65rem; }
+          font-size: 0.65rem;
+          max-width: 200px; }
         body.bright-food .about-us__qualities_each_button {
           border: none;
           background-color: white;
@@ -3023,7 +3094,8 @@ body.bright-food {
       flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
-      padding-right: 5px; }
+      padding-right: 5px;
+      width: 50%; }
     body.bright-food .information_second-column {
       display: -webkit-box;
       display: -moz-box;
@@ -3033,7 +3105,8 @@ body.bright-food {
       flex-direction: column-reverse;
       justify-content: space-evenly;
       align-items: center;
-      padding-left: 5px; }
+      padding-left: 5px;
+      width: 50%; }
     body.bright-food .information_categories {
       display: -webkit-box;
       display: -moz-box;
@@ -3041,7 +3114,7 @@ body.bright-food {
       display: -webkit-flex;
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center;
       width: 100%;
       height: 330px; }
@@ -3056,7 +3129,7 @@ body.bright-food {
         display: -webkit-flex;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center; }
         body.bright-food .information_categories_of-products:hover {
           border: 2px solid #c1db83;
@@ -3092,7 +3165,8 @@ body.bright-food {
         line-height: 1.5rem; }
       body.bright-food .information_text_below {
         font-size: 0.65rem;
-        line-height: 1rem; }
+        line-height: 1rem;
+        max-width: 400px; }
   body.bright-food .products-all {
     background-color: #f7f6f2;
     width: 100%;
@@ -3151,7 +3225,7 @@ body.bright-food {
       display: -webkit-flex;
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center;
       padding: 20px 0;
       width: 300px;
@@ -3199,6 +3273,10 @@ body.bright-food {
     body.bright-food .products-all .slick-slide {
       margin-top: 20px;
       height: 230px; }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      body.bright-food .products-all .slick-prev, body.bright-food .products-all .slick-next {
+        background-color: #b5b5b5;
+        border-radius: 50%; } }
   body.bright-food .ads {
     width: 100%; }
     body.bright-food .ads_width {
@@ -3275,7 +3353,7 @@ body.bright-food {
             display: -webkit-flex;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: space-around;
             align-items: flex-start; }
             body.bright-food .ads__products .slider-container .ads__products_product_description_name {
               font-size: 0.9rem; }
@@ -3462,6 +3540,7 @@ body.bright-food {
       body.bright-food .page-footer__menu_information, body.bright-food .page-footer__menu_account {
         flex: 1; }
       body.bright-food .page-footer__menu_text {
+        max-width: 220px;
         font-size: 0.65rem;
         line-height: 1rem; }
       body.bright-food .page-footer__menu_stay-connected {

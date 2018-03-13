@@ -15,7 +15,7 @@
 
   }
   &:hover .products-vertical__shop-navigation {
-    @include flexbox(row, space-evenly, center);
+    @include flexbox(row, space-around, center);
   }
 
 
@@ -30,7 +30,7 @@
     position: absolute;
     top: 25px;
     left: 60px;
-
+    margin: 0 auto;
     display: none;
     width: 150px;
     height: 35px;
@@ -38,7 +38,7 @@
     border-radius: 999px;
     filter: drop-shadow(0px 12px 8px #e4e4e4);
     &.active {
-      @include flexbox(row, space-evenly, center);
+      @include flexbox(row, space-around, center);
     }
     &_png {
       padding: 0 10px;

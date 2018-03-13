@@ -106,7 +106,7 @@
       padding: 0;
       .categories {
         width: 100%;
-        @include flexbox(row, space-evenly);
+        @include flexbox(row, space-around);
         height: 30px;
         line-height: 30px;
       }

@@ -28,6 +28,9 @@
       @include flexbox(column,space-evenly, flex-start);
       padding-left: 90px;
       width: 31vw;
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        line-height: 30px;
+      }
     }
     &_black {
       @include flexbox(row,space-between);
@@ -38,6 +41,9 @@
         height: 100%;
         @include flexbox(column,space-evenly, flex-start);
         margin-left: 5px;
+      }
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        line-height: 30px;
       }
     }
     &_name {

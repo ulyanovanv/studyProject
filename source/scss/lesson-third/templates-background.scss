@@ -1,0 +1,117 @@
+body.templates-background {
+  padding: 10px;
+
+  section {
+    display: inline-block;
+  }
+  div {
+    height: 300px;
+    width: 300px;
+    border: 2px solid black;
+    display: inline-block;
+  }
+
+  .div1 {
+    background-image:   repeating-linear-gradient(45deg, transparent 0, transparent 8px, rgba(255,255,255,0.7) 8px, rgba(255,255,255,0.7) 12px,transparent 12px, transparent 20px, rgba(255,255,255,0.7) 20px, rgba(255,255,255,0.7) 32px),
+    repeating-linear-gradient(135deg, transparent 0, transparent 8px, rgba(255,255,255,0.7) 8px, rgba(255,255,255,0.7) 12px,transparent 12px, transparent 20px, rgba(255,255,255,0.7) 20px, rgba(255,255,255,0.7) 32px),
+    linear-gradient(to bottom right, #003580, #0ABFBC);
+  }
+
+  .div2 {
+    background-image: repeating-linear-gradient( 45deg, transparent 0, transparent 10px, rgba(255,2,45, 0.5) 10px, rgba(255,2,45, 0.5) 20px),
+    repeating-linear-gradient( 135deg, transparent 0, transparent 10px, rgba(255,2,45, 0.5) 10px, rgba(255,2,45, 0.5) 20px),
+    radial-gradient(white 40%, #f8584a);
+  }
+
+  .div3 {
+    $tr : transparent;
+    $wh-tr : rgba(255,255,255,0.6);
+    background:
+            repeating-linear-gradient($wh-tr  0, $wh-tr  1px, $tr 1px, $tr 16px, $wh-tr  16px, $wh-tr  17px, $tr 17px, $tr 32px, $wh-tr  32px, $wh-tr  33px, $tr 33px, $tr 48px, $wh-tr  48px, $wh-tr  49px, $tr 49px, $tr 64px, $wh-tr  64px, $wh-tr  65px, $tr 65px, $tr 80px, $wh-tr  80px, $wh-tr  81px ),
+            repeating-linear-gradient( 90deg, $wh-tr  0, $wh-tr  1px, $tr 1px, $tr 16px, $wh-tr  16px, $wh-tr  17px, $tr 17px, $tr 32px, $wh-tr  32px, $wh-tr  33px, $tr 33px, $tr 48px, $wh-tr  48px, $wh-tr  49px, $tr 49px, $tr 64px, $wh-tr  64px, $wh-tr  65px, $tr 65px, $tr 80px, $wh-tr  80px, $wh-tr  81px ),
+            #0067c2;
+  }
+  .div4 {
+    $red: #f8584a;
+    $green: #54b254;
+    $tr : transparent;
+    background:
+            linear-gradient(45deg, $red 15%, $tr 0, $tr 85% , $red 0 ),
+            linear-gradient(135deg, $tr 33%, $green 0, $green 66% , $tr 0 ),
+            linear-gradient(45deg, $tr 33%, $red 0, $red 66% , $tr 0 ),
+            #fafa76;
+    background-size: 20px 20px;
+    //here it is important to have background-size, 2 layers as 1 and 3 - red responsible, 2 - green
+  }
+  .div5 {
+    background:
+            repeating-linear-gradient(to bottom, transparent 0, transparent 20px, rgba(0,0,0,0.7) 20px, rgba(0,0,0,0.7) 21px),
+            linear-gradient(to right, transparent 0, transparent 50px, rgba(0,0,0,0.7) 50px, rgba(0,0,0,0.7) 52px, transparent 52px, transparent 100%);
+  }
+  .div6{
+    $greenny:	#8adee8;
+    background:
+            linear-gradient(245deg,transparent 75%, $greenny 75%) 0 0,
+            linear-gradient(115deg,transparent 75%, $greenny 75%) 0 0,
+            linear-gradient(245deg,transparent 75%, $greenny 75%) 9px -20px,
+            linear-gradient(115deg,transparent 75%, $greenny 75%) 9px -20px,
+            #57b4cc;
+    background-size: 20px 40px;
+  }
+  .div7 {
+    $or : #f8584a;
+    $beg : #eceddc;
+    background:  linear-gradient(135deg,$or 0, $or 25%,transparent 25%, transparent 100%) -30px 0,
+                linear-gradient(225deg,$or 0, $or 25%,transparent 25%, transparent 100%) -30px 0,
+                linear-gradient(315deg,$or 0, $or 25%,transparent 25%, transparent 100%),
+                linear-gradient(45deg,$or 0, $or 25%,transparent 25%, transparent 100%)
+                #eceddc;
+    background-size: 60px 60px;
+    // background-size: 60px 60px;
+  }
+  .div8 {
+    $pink : #a46e7a;
+    background:
+            linear-gradient(135deg,white 0, white 25%, transparent 25%, transparent 100%) ,
+            linear-gradient(225deg,white 0, white 25%,transparent 25%, transparent 100%) ,
+            linear-gradient(315deg,white 0, white 25%,transparent 25%, transparent 100%) ,
+            linear-gradient(45deg,white 0, white 25%,transparent 25%, transparent 100%) ,
+            black;
+    background-size: 60px 60px;
+  }
+  .div9 {
+    background:
+            linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%) 0 0,
+            linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%) 30px 30px,
+            black;
+    background-size: 60px 60px;
+  }
+  .div10 {
+    $pink : #a46e7a;
+    $beig :#c8b0b0;
+    background:
+            repeating-linear-gradient(67.5deg,transparent 0,transparent 49.5%,  $beig 49.5%,  $beig 50.5%, transparent 50.5%, transparent 100%)  0 0 ,
+            repeating-linear-gradient(112.5deg,transparent 0,transparent 49.5%,  $beig 49.5%,  $beig 50.5%, transparent 50.5%, transparent 100%)  0 0,
+            linear-gradient(67.5deg,$pink 0, $pink 25%, transparent 25%, transparent 100%) ,
+            linear-gradient(112.5deg,$pink 0, $pink 25%,transparent 25%, transparent 100%) ,
+            linear-gradient(247.5deg,$pink 0, $pink 25%,transparent 25%, transparent 100%) ,
+            linear-gradient(292.5deg,$pink 0, $pink 25%,transparent 25%, transparent 100%) ,
+            #482a37;
+    background-size: 40px 95px;
+  }
+  .div11 {
+    $col1: #fabd61;
+    $col2: 	#921f1f;
+    $col3 : #781818;
+    $col4 : #601313;
+    background:  linear-gradient(135deg,$col1 0, $col1 25%, transparent 25%, transparent 100%) ,
+    linear-gradient(225deg,$col2 0, $col2 25%,transparent 25%, transparent 100%) ,
+    linear-gradient(315deg,$col3 0, $col3 25%,transparent 25%, transparent 100%) ,
+    linear-gradient(45deg,$col4 0, $col4 25%,transparent 25%, transparent 100%) ,
+    linear-gradient(135deg,$col1 0, $col1 25%, transparent 25%, transparent 100%) -20px -20px,
+    linear-gradient(225deg,$col2 0, $col2 25%,transparent 25%, transparent 100%)  -20px -20px ,
+    linear-gradient(315deg,$col3 0, $col3 25%,transparent 25%, transparent 100%)  -20px -20px,
+    linear-gradient(45deg,$col4 0, $col4 25%,transparent 25%, transparent 100%)  -20px -20px;
+    background-size: 40px 40px;
+  }
+}

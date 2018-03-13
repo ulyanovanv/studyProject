@@ -4,7 +4,7 @@
     padding: 10px $padding-for-centre;
   }
   &_padding {
-    @include flexbox(row,space-between);
+    @include flexbox(row,space-around);
     background-color: #f2f2f2;
     height: 150px;
     width: 100%;
@@ -39,7 +39,7 @@
     &_padding {
       @include flexbox(row,space-evenly);
       flex-wrap: wrap;
-      height: unset;
+      height: auto;
       a:first-child {
         padding-left: 0;
       }

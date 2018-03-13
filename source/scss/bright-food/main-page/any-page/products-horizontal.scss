@@ -56,7 +56,7 @@
   }
   &__product-description {
     width:87%;
-    @include flexbox(column, space-evenly, flex-start);
+    @include flexbox(column, space-around, flex-start);
     text-align: left;
     padding-left: 10px;
     position: relative;

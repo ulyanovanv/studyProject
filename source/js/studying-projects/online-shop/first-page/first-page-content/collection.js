@@ -32,14 +32,8 @@ class Collection extends React.Component {
 
     if (!this.isSelected(item)){
       this.props.dispatch({type: "ADD_ITEM", item});
-      // currentItems.push(item);
     } else {
       this.props.dispatch({type: "DELETE_ITEM", item});
-      // for (let i = 0; i < currentItems.length; i++){
-      //   if (item === currentItems[i]){
-      //     currentItems.splice(i,1);
-      //   }
-      // }
     }
 
      this.setState({selectedItems: currentItems});

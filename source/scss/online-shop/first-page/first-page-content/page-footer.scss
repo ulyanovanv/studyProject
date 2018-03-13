@@ -3,11 +3,12 @@
   background-color: $black-fonts;
   color: $white-fonts;
   width: 100%;
+  height: auto;
   max-width: none;
 
   .to-centre {
     @extend %to-centre;
-    @include flexbox(column, flex-start, flex-start);
+    @include flexbox(column, flex-start, unset);
   }
 
   &__upper {
@@ -27,7 +28,7 @@
       }
       &_stay-connected {
         width: 0;
-        flex: 4;
+        flex: 4 ;
         @include flexbox (column,flex-start,flex-start)
         //border: 1px solid white;
         &_sub {
@@ -136,12 +137,19 @@
           }
         }
       }
-
       &_stay-connected {
         width: 100%;
         &_form {
           padding: 10px 0;
           //width: 80%;
+        }
+      }
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &_navigation {
+         flex: 6 1 auto;
+        }
+        &_stay-connected {
+          flex: 4 1 auto;
         }
       }
     }

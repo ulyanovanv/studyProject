@@ -62,7 +62,7 @@
     }
   }
   &__time-left{
-    @include flexbox(row,space-evenly,center);
+    @include flexbox(row,space-around,center);
     padding: 20px 0;
     width: 300px;
     margin: auto;
