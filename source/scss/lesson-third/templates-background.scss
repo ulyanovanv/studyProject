@@ -114,4 +114,27 @@ body.templates-background {
     linear-gradient(45deg,$col4 0, $col4 25%,transparent 25%, transparent 100%)  -20px -20px;
     background-size: 40px 40px;
   }
+  .div12 {
+    $pink : #a64d6e;
+    background:  radial-gradient(circle at center, $pink 5%, transparent 5%) 0 0 ,
+    radial-gradient(circle at center, $pink 5%, transparent 5%) 30px 30px,
+    #41305f;
+    background-size: 60px 60px;
+  }
+  .div13 {
+    background: linear-gradient(135deg, grey 25%, transparent 25%),
+    linear-gradient(225deg, grey 25%, transparent 25%) -30px -30px,
+    linear-gradient(315deg, grey 25%, transparent 25%) 0 0,
+    linear-gradient(45deg, grey 25%, transparent 25%) 0 0,
+    black;
+    background-size: 60px 60px;
+  }
+  .div14 {
+    background: linear-gradient(120deg, #bbdfba 25%, transparent 25%),
+    linear-gradient(240deg, #bbdfba 25%, transparent 25%),
+    linear-gradient(300deg, #bbdfba 25%, transparent 25%),
+    linear-gradient(60deg, #bbdfba 25%, transparent 25%),
+    #e6f0e1;
+    background-size: 35px 60px;
+  }
 }

@@ -373,6 +373,15 @@ body.templates-background {
   body.templates-background .div11 {
     background: linear-gradient(135deg, #fabd61 0, #fabd61 25%, transparent 25%, transparent 100%), linear-gradient(225deg, #921f1f 0, #921f1f 25%, transparent 25%, transparent 100%), linear-gradient(315deg, #781818 0, #781818 25%, transparent 25%, transparent 100%), linear-gradient(45deg, #601313 0, #601313 25%, transparent 25%, transparent 100%), linear-gradient(135deg, #fabd61 0, #fabd61 25%, transparent 25%, transparent 100%) -20px -20px, linear-gradient(225deg, #921f1f 0, #921f1f 25%, transparent 25%, transparent 100%) -20px -20px, linear-gradient(315deg, #781818 0, #781818 25%, transparent 25%, transparent 100%) -20px -20px, linear-gradient(45deg, #601313 0, #601313 25%, transparent 25%, transparent 100%) -20px -20px;
     background-size: 40px 40px; }
+  body.templates-background .div12 {
+    background: radial-gradient(circle at center, #a64d6e 5%, transparent 5%) 0 0, radial-gradient(circle at center, #a64d6e 5%, transparent 5%) 30px 30px, #41305f;
+    background-size: 60px 60px; }
+  body.templates-background .div13 {
+    background: linear-gradient(135deg, grey 25%, transparent 25%), linear-gradient(225deg, grey 25%, transparent 25%) -30px -30px, linear-gradient(315deg, grey 25%, transparent 25%) 0 0, linear-gradient(45deg, grey 25%, transparent 25%) 0 0, black;
+    background-size: 60px 60px; }
+  body.templates-background .div14 {
+    background: linear-gradient(120deg, #bbdfba 25%, transparent 25%), linear-gradient(240deg, #bbdfba 25%, transparent 25%), linear-gradient(300deg, #bbdfba 25%, transparent 25%), linear-gradient(60deg, #bbdfba 25%, transparent 25%), #e6f0e1;
+    background-size: 35px 60px; }
 
 body.todo {
   background-color: Black;
