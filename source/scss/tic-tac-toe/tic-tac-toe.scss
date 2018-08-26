@@ -1,0 +1,38 @@
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
+
+.tic-tac-toe {
+
+  background-color: #f7f7f7;
+  font-size: 18px;
+  font-family: serif;
+
+  &-div {
+    margin: 20px;
+    //padding: 20px;
+    border: 2px solid #d3d3d3;
+    border-radius: 5px;
+    max-width: 500px;
+  }
+
+  &_game {
+    margin: 0;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+  }
+
+  &-game-table {
+    margin: 20px 0;
+
+    .row {
+      margin: 0;
+    }
+
+    .cell {
+      height: 30px;
+      width: 30px;
+      border: 1px solid black;
+    }
+  }
+
+}

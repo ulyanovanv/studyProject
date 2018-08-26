@@ -81,9 +81,12 @@ $app->get('/react-searching-form', function () use ($app) {
 $app->get('/templates-background', function () use ($app) {
     return $app['twig']->render('lesson3/templates-background.html.twig', array());
 });
-
-
-
+$app->get('/templates-background', function () use ($app) {
+    return $app['twig']->render('lesson3/templates-background.html.twig', array());
+});
+$app->get('/tic-tac-toe', function () use ($app) {
+    return $app['twig']->render('tic-tac-toe/index.html.twig', array());
+});
 
 $app->get('/bright-food-products', function () use ($app) {
     return json_encode(['products' => [

@@ -43,4 +43,8 @@ if (body.hasClass("react-searching-form")){
   require("./studying-projects/react-searching-form/index.js");
 }
 
+if (body.hasClass("tic-tac-toe")){
+  require("./studying-projects/tic-tac-toe/main.js");
+}
+
 
