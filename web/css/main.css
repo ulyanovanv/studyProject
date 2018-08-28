@@ -9495,7 +9495,8 @@ button.close {
     .tic-tac-toe-game-table .cell {
       height: 30px;
       width: 30px;
-      border: 1px solid black; }
+      border: 1px solid black;
+      line-height: 30px; }
 
 body.my-cv .education__description_timeline, body.my-cv .experience__description_timeline {
   font-size: 0.8rem;

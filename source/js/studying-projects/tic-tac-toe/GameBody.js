@@ -14,42 +14,74 @@ export default class GameBody extends React.Component {
       winnerO: 0,
       noOne: 0,
       cellsState: [],
-    }
+      isAnyWinner: false,
+    };
     this.restartFunction = this.restartFunction.bind(this);
-  }
-
-  restartFunction(){
-
-    //replace all values with empty string
-
-    // let arrayOfCells = [];
-    // for (let i=0; i<9; i++){
-    //   arrayOfCells.push(' ');
-    // }
+    this.updateCellsValue = this.updateCellsValue.bind(this);
+    this.checkForWin = this.checkForWin.bind(this);
+    this.zeroingOfState = this.zeroingOfState.bind(this);
   }
 
   componentDidMount(){
+    this.zeroingOfState();
+  }
+
+  zeroingOfState(){
     let arrayOfCells = [];
     for (let i=0; i<9; i++){
       arrayOfCells.push(' ');
     }
-    this.setState({cellsState: arrayOfCells})
+    this.setState({cellsState: arrayOfCells});
+  }
+
+  checkForWin() {
+    let cells = this.state.cellsState;
+    for (let i in WinnerCombinations) {
+      let w = WinnerCombinations[i];
+      if (cells[w[0]] === this.state.currentPlayerIs && cells[w[0]] === cells[w[1]] && cells[w[0]] === cells[w[2]]) {
+        let key = 'winner' + this.state.currentPlayerIs;
+        let newState = {};
+        newState[key] = this.state[key] + 1;
+        this.setState(newState);
+        return;
+      }
+    }
+    if (!this.state.cellsState.includes(' ')) {
+      this.setState({noOne: this.state.noOne + 1});
+    }
+  }
+
+  updateCellsValue(number){
+    let cells = this.state.cellsState;
+    if (cells[number] === ' ') {
+      cells.splice(number, 1, this.state.currentPlayerIs);
+      this.setState({cellsState: cells});
+      this.checkForWin();
+      this.setState({ currentPlayerIs: this.state.currentPlayerIs === 'X' ? 'O' : 'X'});
+    }
+  }
+
+  restartFunction(){
+    this.zeroingOfState();
+    this.setState({currentPlayerIs: 'X'});
   }
 
   render() {
     return (
       <div className='row tic-tac-toe_game'>
-
         <div className='col-sm-6'>
-          <span>Next Player is: {this.state.currentPlayerIs === 'X' ? 'O' : 'X'}</span>
-          <GameTable currentPlayerIs={this.state.nextPlayerIs}/>
-          <RestartButton restartFunction={this.restartFunction}/>
+          <span>Next Player is: {this.state.currentPlayerIs}</span>
+          <GameTable
+            updateCellsValue={this.updateCellsValue}
+            currentPlayerIs={this.state.currentPlayerIs}
+            cellsState={this.state.cellsState}
+          />
+          <RestartButton restartFunction={this.restartFunction} />
         </div>
-
         <div className='col-sm-6'>
           <ResultsBoard winnerX={this.state.winnerX} winnerO={this.state.winnerO} noOne={this.state.noOne}/>
         </div>
-
-      </div>);
+      </div>
+    );
   }
 }
