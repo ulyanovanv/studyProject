@@ -24,6 +24,7 @@ export default class GameBody extends React.Component {
       noOne: 0,
       cellsState: [],
       haveAnyWinner: false,
+      winnerCombination: null,
     };
     this.restartFunction = this.restartFunction.bind(this);
     this.updateCellsValue = this.updateCellsValue.bind(this);
@@ -52,7 +53,7 @@ export default class GameBody extends React.Component {
         let newState = {};
         newState[key] = this.state[key] + 1;
         this.setState(newState);
-        this.setState({haveAnyWinner: !this.state.haveAnyWinner});
+        this.setState({haveAnyWinner: !this.state.haveAnyWinner, winnerCombination: WinnerCombinations[i]});
         return;
       }
     }
@@ -76,7 +77,7 @@ export default class GameBody extends React.Component {
 
   restartFunction() {
     this.zeroingOfState();
-    this.setState({currentPlayerIs: 'X', haveAnyWinner: !this.state.haveAnyWinner});
+    this.setState({currentPlayerIs: 'X', haveAnyWinner: !this.state.haveAnyWinner, winnerCombination: null});
   }
 
   render() {
@@ -90,6 +91,7 @@ export default class GameBody extends React.Component {
             updateCellsValue={this.updateCellsValue}
             currentPlayerIs={this.state.currentPlayerIs}
             cellsState={this.state.cellsState}
+            winnerCombination={this.state.haveAnyWinner ? this.state.winnerCombination : ''}
           />
           <RestartButton restartFunction={this.restartFunction} />
         </div>

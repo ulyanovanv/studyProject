@@ -36,6 +36,11 @@
       margin: 0;
     }
 
+    .winnerCell {
+      font-weight: bold;
+      background-color: gainsboro;
+    }
+
     .cell {
       height: 30px;
       width: 30px;
@@ -43,5 +48,18 @@
       line-height: 30px;
       text-align: center;
     }
+
+    .cell:nth-child(3n+1),
+    .cell:nth-child(3n+2) {
+      border-right: none;
+    }
+
+    .cell:nth-child(-n+6) {
+      border-bottom: none;
+    }
+  }
+
+  &_column {
+    width: 160px;
   }
 }

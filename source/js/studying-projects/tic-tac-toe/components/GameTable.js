@@ -3,9 +3,17 @@ import PropTypes from 'prop-types';
 import shortid from 'shortid';
 
 export default function GameTable(props) {
+  let {updateCellsValue, cellsState, winnerCombination} = props;
+
   let renderEachCell = (number) => {
-    return <div className='cell' key={shortid.generate()}
-                id={'cel_' + number} onClick={() => props.updateCellsValue(number)}>{props.cellsState[number]}</div>;
+    let winnerStyling = '';
+    if (winnerCombination !== null){
+      winnerStyling =  (winnerCombination.includes(number) ? 'winnerCell' : '');
+    }
+    return <div className={'cell ' + winnerStyling}
+                key={shortid.generate()}
+                id={'cel_' + number}
+                onClick={() => updateCellsValue(number)}>{cellsState[number]}</div>;
   };
 
   return (<div className='tic-tac-toe-game-table'>
@@ -16,7 +24,10 @@ export default function GameTable(props) {
 }
 
 GameTable.propTypes = {
-  currentPlayerIs: PropTypes.string.isRequired,
   updateCellsValue:PropTypes.func.isRequired,
   cellsState: PropTypes.array.isRequired,
+  winnerCombination: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+  ]),
 };
