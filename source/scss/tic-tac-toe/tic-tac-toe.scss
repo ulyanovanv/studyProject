@@ -1,7 +1,13 @@
-@import "../../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
+//flexbox mixin
+
+@mixin flexbox($flex-direction, $flex-justify-items: flex-start, $flex-wrap: no-wrap) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $flex-justify-items;
+  flex-wrap: $flex-wrap;
+}
 
 .tic-tac-toe {
-
   background-color: #f7f7f7;
   font-size: 18px;
   font-family: serif;
@@ -14,6 +20,7 @@
   }
 
   &_game {
+    @include flexbox(row, space-around);
     margin: 0;
     border-radius: 5px;
     background-color: white;
@@ -21,6 +28,8 @@
   }
 
   &-game-table {
+    @include flexbox(row, flex-start, wrap);
+    width: 100px;
     margin: 20px 0;
 
     .row {
@@ -32,6 +41,7 @@
       width: 30px;
       border: 1px solid black;
       line-height: 30px;
+      text-align: center;
     }
   }
 }

@@ -1,16 +1,17 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import shortid from 'shortid';
 
 export default function GameTable(props) {
   let renderEachCell = (number) => {
-    return <div className='col-sm-4 cell'
+    return <div className='cell' key={shortid.generate()}
                 id={'cel_' + number} onClick={() => props.updateCellsValue(number)}>{props.cellsState[number]}</div>;
   };
 
   return (<div className='tic-tac-toe-game-table'>
-    <div className='row'>{renderEachCell(0)} {renderEachCell(1)} {renderEachCell(2)}</div>
-    <div className='row'>{renderEachCell(3)} {renderEachCell(4)} {renderEachCell(5)}</div>
-    <div className='row'>{renderEachCell(6)} {renderEachCell(7)} {renderEachCell(8)}</div>
+    {renderEachCell(0)} {renderEachCell(1)} {renderEachCell(2)}
+    {renderEachCell(3)} {renderEachCell(4)} {renderEachCell(5)}
+    {renderEachCell(6)} {renderEachCell(7)} {renderEachCell(8)}
   </div>)
 }
 
