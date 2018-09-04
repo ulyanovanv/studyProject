@@ -62,4 +62,14 @@
   &_column {
     width: 160px;
   }
+
+  &_history {
+    margin-top: 20px;
+
+    &_step {
+      width: 180px;
+      margin-top: 5px;
+      text-align: left;
+    }
+  }
 }

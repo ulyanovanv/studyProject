@@ -3702,6 +3702,12 @@ body.bright-food {
       border-bottom: none; }
   .tic-tac-toe_column {
     width: 160px; }
+  .tic-tac-toe_history {
+    margin-top: 20px; }
+    .tic-tac-toe_history_step {
+      width: 180px;
+      margin-top: 5px;
+      text-align: left; }
 
 body.my-cv .education__description_timeline, body.my-cv .experience__description_timeline {
   font-size: 0.8rem;
