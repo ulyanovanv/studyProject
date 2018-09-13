@@ -39,6 +39,9 @@ if (body.hasClass("bright-food")){
 if (body.hasClass("my-cv")){
   require("./studying-projects/cv/cv-ie.js");
 }
+if (body.hasClass("my-cv")){
+  require("./studying-projects/cv/cv-page.js");
+}
 if (body.hasClass("react-searching-form")){
   require("./studying-projects/react-searching-form/index.js");
 }
