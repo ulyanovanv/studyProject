@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function GeneralInfo(props) {
   return (
-    <section className="general-info cv__parts desktop-side tablet-left" id="information">
+    <div className="general-info cv__parts desktop-side tablet-left" id="information">
       <div className="cv_line-indent">
         <div className="my-image">
           <div className="my-image_container"></div>
@@ -22,6 +22,6 @@ export default function GeneralInfo(props) {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

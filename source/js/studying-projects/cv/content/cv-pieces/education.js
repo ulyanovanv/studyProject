@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Education(props) {
   return (
-    <section className="education cv__parts desktop-side" id="education">
+    <div className="education cv__parts desktop-side" id="education">
       <div className="cv_line-indent">
         <p className="cv_headings">
           education
@@ -13,6 +13,6 @@ export default function Education(props) {
           <p className="education__description_place">National Research University - High School of Economics, Moscow, Russia </p>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

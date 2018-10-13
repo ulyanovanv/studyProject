@@ -1,4 +1,6 @@
 @import "cv-var&mixin";
+@import "../../../node_modules/react-grid-layout/css/styles";
+@import "../../../node_modules/react-resizable/css/styles";
 
 body.my-cv{
 
@@ -35,3 +37,5 @@ body.my-cv{
 @import "cv-media-font-sizes-and-my-image";
 @import "cv-media-for-tablet";
 @import "cv-media-for-desktops";
+
+

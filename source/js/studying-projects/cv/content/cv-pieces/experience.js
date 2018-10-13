@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Experience(props) {
   return (
-    <section className="experience cv__parts desktop-side" id="experience">
+    <div className="experience cv__parts desktop-side" id="experience">
       <div className="cv_line-indent">
         <p className="cv_headings">
           professional experience
@@ -20,7 +20,7 @@ export default function Experience(props) {
           <p className="experience__description_duties">Travel tickets consultation, sightseeings advice, office activities</p>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

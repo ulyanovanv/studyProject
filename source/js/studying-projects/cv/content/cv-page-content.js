@@ -1,5 +1,6 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import shortid from 'shortid';
+
 import GeneralInfo from './cv-pieces/general-info';
 import Contacts from './cv-pieces/contacts';
 import Education from './cv-pieces/education';
@@ -9,6 +10,9 @@ import Skills from './cv-pieces/skills';
 import Languages from './cv-pieces/languages';
 import Hobbies from './cv-pieces/hobbies';
 import Project from './cv-pieces/project';
+import Masonry from 'react-masonry-css'
+
+
 
 const myProjects = [
   {projectClass: 'prj-bright-food', text: 'React, Redux, Flexbox, react-slick', link: '/bright-food', temporaryClasses: 'desktop-center tablet-left '},
@@ -20,15 +24,31 @@ const myProjects = [
   {projectClass: 'prj-to-do-app', text: 'JQuery, Ajax', link: '/to-do-app', temporaryClasses: 'desktop-side tablet-left '},
 ];
 
+const arrayOfCvPieces = [
+  <GeneralInfo/>,
+  <Education/>,
+  <Experience/>,
+  <Techniques/>,
+  <Skills/>,
+  <Languages/>,
+  <Hobbies/>,
+  <Contacts/>
+];
+
+
+
+// function genCharArray(charA, charZ) {
+//   let a = [], i = charA.charCodeAt(0), j = charZ.charCodeAt(0);
+//   for (; i <= j; ++i) {
+//     a.push(String.fromCharCode(i));
+//   }
+//   return a;
+// }
 
 
 export default class CvPageContent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  initializeMyProjects(){
-    return myProjects.map(project => {
+  renderCVPieces(){
+    let projects = myProjects.map(project => {
       return <Project
         projectClass={project.projectClass}
         temporaryClasses={project.temporaryClasses}
@@ -36,70 +56,24 @@ export default class CvPageContent extends React.Component {
         link={project.link}
         key={shortid.generate()}
       />
-    })
+    });
+
+    let myCvContent = arrayOfCvPieces.concat(projects);
+
+    // const letters = genCharArray('a', 'z');
+    // let arrayOfCvContent = [];
+    // for (let i = 0; i < myCvContent.length; i++) {
+    //   arrayOfCvContent.push(<div key={letters[i]}>{myCvContent[i]}</div>);
+    // }
+    return myCvContent;
   }
 
   render() {
-    return (<Fragment>
-      <GeneralInfo/>
-      <Education/>
-      <Experience/>
-      <Techniques/>
-      <Skills/>
-      <Languages/>
-      <Hobbies/>
-      <Contacts/>
-      {this.initializeMyProjects()}
-    </Fragment>);
+    return (<Masonry
+      breakpointCols={3}
+      className="my-masonry-grid"
+      columnClassName="my-masonry-grid_column">
+        {this.renderCVPieces()}
+    </Masonry>);
   }
 }
-
-{/*<section class="prj-bright-food cv__parts projects desktop-center tablet-left" id="prj-online-shop">*/}
-  {/*<p class="projects__used-techniques">React, Redux, Flexbox, react-slick</p>*/}
-  {/*<a href="/bright-food" target="_blank">*/}
-    {/*<div class="projects__container prj-bright-food_img" title="Click me"></div>*/}
-  {/*</a>*/}
-{/*</section>*/}
-
-{/*<section class="prj-online-shop cv__parts projects desktop-side" id="prj-online-shop">*/}
-  {/*<p class="projects__used-techniques">React, Flexbox, Responsive design</p>*/}
-{/*<a href="/online-shop" target="_blank">*/}
-  {/*<div class="projects__container prj-online-shop_img" title="Click me"></div>*/}
-{/*</a>*/}
-{/*</section>*/}
-
-{/*<section class="prj-calender cv__parts projects desktop-side tablet-left " id="prj-calender">*/}
-  {/*<p class="projects__used-techniques">JS: Date object, Flexbox</p>*/}
-  {/*<a href="/calender" target="_blank">*/}
-    {/*<div class=" projects__container prj-calender_img" title="Click me"></div>*/}
-  {/*</a>*/}
-{/*</section>*/}
-
-{/*<section class="prj-mobile cv__parts projects desktop-center" id="prj-mobile">*/}
-  {/*<p class="projects__used-techniques">SVG, responsive design</p>*/}
-{/*<a href="/mobile" target="_blank">*/}
-  {/*<div class=" projects__container prj-mobile_img" title="Click me"></div>*/}
-{/*</a>*/}
-{/*</section>*/}
-
-{/*<section class="prj-form-c13 cv__parts projects desktop-side" id="prj-form-c13">*/}
-  {/*<p class="projects__used-techniques">HTML5, Flexbox, JQuery, Ajax</p>*/}
-  {/*<a href="/c13" target="_blank">*/}
-    {/*<div class=" projects__container prj-form-c13_img" title="Click me"></div>*/}
-  {/*</a>*/}
-{/*</section>*/}
-
-{/*<section class="prj-game cv__parts projects desktop-center" id="prj-game">*/}
-  {/*<p class="projects__used-techniques">Simple JS game</p>*/}
-{/*<a href="/numbersgame" target="_blank">*/}
-  {/*<div class=" projects__container prj-game_img" title="Click me"></div>*/}
-{/*</a>*/}
-{/*</section>*/}
-
-
-{/*<section class="prj-to-do-app cv__parts projects desktop-side tablet-left" id="prj-to-do-app">*/}
-  {/*<p class="projects__used-techniques">JQuery, Ajax</p>*/}
-  {/*<a href="/to-do-app" target="_blank">*/}
-    {/*<div class="projects__container prj-to-do-app_img" title="Click me"></div>*/}
-  {/*</a>*/}
-{/*</section>*/}
