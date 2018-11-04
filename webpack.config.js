@@ -16,10 +16,20 @@ module.exports = {
                 test : /\.js$/,
                 exclude: /node_modules/,
                 include : APP_DIR,
-                use: {
+                use:
+                  {
                     loader : 'babel-loader'
-                }
-            }
+                  }
+            },
+            // {
+            //   test : /\.css$/,
+            //   exclude: /node_modules/,
+            //   include : APP_DIR,
+            //   use:
+            //     {
+            //       loader : 'postcss-loader'
+            //     }
+            // }
         ]
 
     },

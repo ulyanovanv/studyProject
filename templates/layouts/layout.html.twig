@@ -3,23 +3,18 @@
     <head>
         <title>{% block title %}{% endblock %}</title>
 
-        {% block metatags %}{% endblock %}
-        {#<link href="{{ asset('css/normalize.css') }}" rel="stylesheet" type="text/css" />#}
-        <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
-
         <meta charset="utf-8">
-        {% block additionalLinks %}{% endblock %}
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        {% block metatags %}{% endblock %}
 
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
+        {% block additionalLinks %}{% endblock %}
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     </head>
     <body class="{% block bodyClass %}{% endblock %}">
         {% block content %}{% endblock %}
 
-        {#<script src="{{ asset('js/vendor/jquery.min.js') }}" ></script>#}
-        {#<script src="{{ asset('js/vendor/modernizr-custom.js') }}"></script>#}
         <script src="{{ asset('js/bundle.js') }}" ></script>
-
         {% block jsDifferent %}{% endblock %}
-
     </body>
 </html>

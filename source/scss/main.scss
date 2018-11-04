@@ -1,7 +1,6 @@
-@import "reset";
-//@import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap"; /TODO: rebase the whole project onto Bootsrap3/4
-//@import "normalize.css";
-
+//@import "reset";
+@import "../../node_modules/normalize.css";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 @import "lesson-third/lesson-third";
 @import "oughts-and-crosses/oughts-and-crosses";

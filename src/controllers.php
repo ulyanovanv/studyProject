@@ -57,9 +57,12 @@ $app->get('/c13', function () use ($app) {
 $app->get('/numbersgame', function () use ($app) {
     return $app['twig']->render('numbersgame/index.html.twig', array());
 });
+$app->get('/tic-tac-toe', function () use ($app) {
+    return $app['twig']->render('tic-tac-toe/index.html.twig', array());
+});
 
 
-
+//not used any more old projects
 $app->get('/lesson3', function () use ($app) {
     return $app['twig']->render('lesson3/index.html.twig', array());
 });
@@ -80,12 +83,6 @@ $app->get('/react-searching-form', function () use ($app) {
 });
 $app->get('/templates-background', function () use ($app) {
     return $app['twig']->render('lesson3/templates-background.html.twig', array());
-});
-$app->get('/templates-background', function () use ($app) {
-    return $app['twig']->render('lesson3/templates-background.html.twig', array());
-});
-$app->get('/tic-tac-toe', function () use ($app) {
-    return $app['twig']->render('tic-tac-toe/index.html.twig', array());
 });
 
 $app->get('/bright-food-products', function () use ($app) {

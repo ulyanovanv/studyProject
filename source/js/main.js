@@ -1,6 +1,5 @@
 import $ from './vendor/jquery.min.js';
-//import Modernizr from 'modernizr';
-//var $ = require("./vendor/jquery.min.js");
+
 require('es6-promise').polyfill();
 require('es6-object-assign').polyfill();
 
