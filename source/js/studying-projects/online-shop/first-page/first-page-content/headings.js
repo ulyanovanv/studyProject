@@ -1,19 +1,18 @@
 import React from "react";
 
-export class Headings extends React.Component {
-  render() {
-    return (
-      <header className="headers">
-        <div className="headers_container">
-          <div className="headers__lines"></div>
-          <div className="headers__rombs"></div>
-          <div className="headers__current-heading">
-            {this.props.headerName}
-          </div>
-          <div className="headers__rombs"></div>
-          <div className="headers__lines"></div>
+export default function Headings(props) {
+  return (
+    <header className="headers">
+      <div className="d-flex flex-row justify-content-between align-items-center py-3">
+        <div className="headers__lines w-25"></div>
+        <div className="headers__rombs d-none d-sm-flex"></div>
+        <div className="headers__current-heading">
+          {props.headerName}
         </div>
-      </header>
-    );
-  }
+        <div className="headers__rombs d-none d-sm-flex"></div>
+        <div className="headers__lines w-25"></div>
+      </div>
+    </header>
+  );
 }
+/*TODO: write a universal styles for rombs, only to pass the color*/

@@ -1,36 +1,34 @@
 import React from "react";
 
 
-export class Item extends React.Component {
+export function Item(props) {
+  return (
+    <div className="first-page-collection__article"
+         style={{
+           backgroundImage: `url('${props.image}')`,
+           filter: props.filter
+         }}
+         onClick={props.onClick}>
 
-  render() {
-
-    return (
-      <div className="first-page-collection__article"
-           style={{
-             backgroundImage: `url('${this.props.image}')`,
-             filter: this.props.filter
-           }}
-           onClick={this.props.onClick}>
-
-        {this.props.discount &&
-        <div className="first-page-collection__article_reduction">
-          <p className="first-page-collection__article_reduction_persentage">
-            {this.props.discount}
-            <span style={{fontSize: "0.5rem"}}>%</span>
-          </p>
-        </div>}
+      {props.discount &&
+      <div className="first-page-collection__article_reduction">
+        <p className="first-page-collection__article_reduction_percentage">
+          {props.discount}
+          <span style={{fontSize: "0.5rem"}}>%</span>
+        </p>
+      </div>}
 
 
-        <div className="first-page-collection__article_for-add-button">
-          <div className="first-page-collection__article_add" style={{color: this.props.color}}>
-            {this.props.isAdded}
-          </div>
-          <div className="first-page-collection__article_trapezium" style={{borderBottom: this.props.borderBottom}} >
-          </div>
+      <div className="first-page-collection__article_for-add-button">
+        <div className="first-page-collection__article_add w-100 text-uppercase"
+             style={{color: props.color, transition: 'color 0.5s'}}
+        >
+          {props.isAdded}
         </div>
+        <div className="first-page-collection__article_trapezium w-75 mx-auto"
+             style={{borderBottom: props.borderBottom}}></div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 

@@ -1,72 +1,37 @@
 .first-page-brands {
-  @extend %to-centre;
   &_container {
-    padding: 10px $padding-for-centre;
-  }
-  &_padding {
-    @include flexbox(row,space-around);
-    background-color: #f2f2f2;
+    background-color: $grey-light;
     height: 150px;
-    width: 100%;
-    a:first-child {
-      padding-left: 2vw;
-    }
-    a:last-child {
-      padding-right: 2vw;
-    }
-  }
-  &__name {
-    background-repeat: no-repeat;
-    height: 10vw;
-    width: 8vw;
-    background-size: 8vw;
-    background-position: center;
 
+    @include media-breakpoint-between(xs, md) {
+      height: auto;
+    }
   }
+
   $brands: bakery, harvest, home-energy, landlock, lavalier, spectrum;
   @each $icon in $brands {
     .#{$icon}{
       background-image: url("/images/online-shop/brands/#{$icon}.png");
     }
   }
-}
 
-@media (max-width: 800px){
-  .first-page-brands {
-    &_container {
-      padding: 0;
-    }
-    &_padding {
-      @include flexbox(row,space-evenly);
-      flex-wrap: wrap;
-      height: auto;
-      a:first-child {
-        padding-left: 0;
-      }
-      a:last-child {
-        padding-right: 0;
-      }
-    }
-    &__name {
-      height: 30vw;
-      width: 45vw;
-      background-size: 130px;
-      max-width: 200px;
+  &__name {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20vw;
+    width: 45vw;
+    background-size: 100px;
+    max-width: 200px;
 
+    @include media-breakpoint-up(sm) {
+      background-size: 125px;
     }
-  }
-}
-@media (max-width: 500px) {
-  .first-page-brands {
-    &__name {
-      background-size: 100px;
-    }
-  }
-}
-@media (min-width: 1480px){
-  .first-page-brands{
-    &_container {
-      padding: 10px $padding-for-centre-big-media;
+
+    @include media-breakpoint-up(lg) {
+      height: 10vw;
+      width: 8vw;
+      background-size: 8vw;
+      max-width: unset;
     }
   }
 }

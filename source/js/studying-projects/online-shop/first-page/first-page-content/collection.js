@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 
-import {Headings} from "./headings";
+import Headings from "./headings";
 import {Item} from "./../collection-items/item";
 
 let products = [
@@ -19,9 +19,11 @@ let products = [
 class Collection extends React.Component {
   constructor(props){
     super(props);
+
     this.state = {
       selectedItems: []
     };
+
     this.addToList = this.addToList.bind(this);
     this.renderFunction = this.renderFunction.bind(this);
     this.isSelected = this.isSelected.bind(this);
@@ -38,32 +40,37 @@ class Collection extends React.Component {
 
      this.setState({selectedItems: currentItems});
   }
+
   isSelected(item) {
     for (let key in this.props.store.basket.items) {
       if (this.props.store.basket.items[key].id === item.id) return true;
     }
+
     return false;
   }
+
   renderFunction(){
     return products.map((item,i) => {
-      return <Item key={"image_"+i}
+
+      return (<div className='flex-grow-1 additional-wrapper-for-image m-1'>
+        <Item key={"image_"+i}
                    image={ item.image }
                    discount={item.discount}
                    onClick={() => { return this.addToList(item) }}
                    color={this.isSelected(item) ? 'white' : 'black'}
                    borderBottom={this.isSelected(item) ? '40px solid black' : '40px solid #f09d66'}
                    filter={this.isSelected(item) ? "drop-shadow(0px 0px 4px #333)" : "none"}
-                   isAdded={this.isSelected(item) ? "added" : "+add to cart"}/>;
+                   isAdded={this.isSelected(item) ? "added" : "+add to cart"}/>
+      </div>);
     });
   }
 
   render() {
-    console.log(this.props.store);
     return (
       <section className="first-page-collection">
-        <Headings headerName="Summer Collection"/>
-        <div className="first-page-collection_container">
-          <div className="first-page-collection_padding">
+        <div className='content-restraint p-2'>
+          <Headings headerName="Summer Collection"/>
+          <div className="first-page-collection_padding d-flex flex-row flex-wrap justify-content-center align-items-center p-0">
             {this.renderFunction()}
           </div>
         </div>

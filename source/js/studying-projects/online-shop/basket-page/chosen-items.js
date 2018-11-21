@@ -1,7 +1,7 @@
 import React from "react";
 
 import {Item} from "./../first-page/collection-items/item";
-import {Headings} from "./../first-page/first-page-content/headings";
+import Headings from "./../first-page/first-page-content/headings";
 import {connect} from "react-redux";
 
 

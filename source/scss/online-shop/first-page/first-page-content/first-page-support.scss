@@ -1,13 +1,8 @@
 .first-page-support {
-  @extend %to-centre;
-  color: $white-fonts;
-  &_container {
-    padding: 10px $padding-for-centre;
-    @include flexbox(row,space-between);
-  }
+  color: $white;
+  $feature-icons: shipping, return, support;
 
-  $services-icons: shipping,return,support;
-  @each $icon-service in $services-icons {
+  @each $icon-service in $feature-icons {
     .#{$icon-service}{
       background-image: url("/images/online-shop/icons/#{$icon-service}.png");
       background-repeat: no-repeat;
@@ -15,82 +10,79 @@
       background-size: 37px 37px;
     }
   }
+
   .return {
-    background-position: 0px;
+    background-position: 0;
   }
 
-  &__services{
-    height: 65px;
-    box-sizing: border-box;
-
+  &__feature{
     &_beige {
-      background-color: $beige-for-support;
+      background-color: $beige;
       @include flexbox(column,space-evenly, flex-start);
       padding-left: 90px;
       width: 31vw;
+
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         line-height: 30px;
       }
     }
+
     &_black {
       @include flexbox(row,space-between);
-      background-color: $black-fonts;
+      background-color: $black;
       width: 37vw;
+
       &_text-container {
         padding-left: 50px;
         height: 100%;
         @include flexbox(column,space-evenly, flex-start);
         margin-left: 5px;
       }
+
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         line-height: 30px;
       }
     }
+
     &_name {
-      text-transform: uppercase;
       font-size: 1.2rem
     }
-    &_undertext{
-      font-size: 0.7rem;
-    }
+  }
+
+  %triangle-beige {
+    width: 0;
+    height: 0;
+    border-style: solid;
   }
 
   //triangles
-  &__services {
-
+  &__feature {
     &_triangle-beige-left {
       @extend %triangle-beige ;
       border-width: 32.5px 0 32.5px 32px;
-      border-color: transparent transparent transparent $beige-for-support;
+      border-color: transparent transparent transparent $beige;
+      margin-left: -1px;
     }
+
     &_triangle-beige-right {
       @extend %triangle-beige ;
       border-width: 32.5px 32px 32.5px 0;
-      border-color: transparent $beige-for-support transparent transparent;
+      border-color: transparent $beige transparent transparent;
+      margin-right: -1px;
     }
+
     &_triangle-white-left {
       @extend %triangle-beige ;
       border-width: 32.5px 0 32.5px 32px;
-      border-color: transparent transparent transparent #FFF;
+      border-color: transparent transparent transparent $white;
+      margin-left: -1px;
     }
+
     &_triangle-white-right {
       @extend %triangle-beige ;
       border-width: 32.5px 32px 32.5px 0;
-      border-color: transparent #FFF transparent transparent ;
-    }
-
-  }
-}
-
-@media (max-width: 800px) {
-  .first-page-support{
-      display: none;
-  }
-}
-@media (min-width: 1480px){
-  .first-page-support{
-    &_container {
-      padding: 10px $padding-for-centre-big-media;
+      border-color: transparent $white transparent transparent ;
+      margin-right: -1px;
     }
   }
 }

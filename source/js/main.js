@@ -1,5 +1,11 @@
 import $ from './vendor/jquery.min.js';
 
+//bootstrap4 plugins
+import 'popper.js';
+import 'bootstrap/js/dist/collapse';
+import 'bootstrap/js/dist/dropdown';
+
+//polifills
 require('es6-promise').polyfill();
 require('es6-object-assign').polyfill();
 

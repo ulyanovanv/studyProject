@@ -1,0 +1,63 @@
+.page-footer {
+  background-color: $black;
+  color: $white;
+
+  //navigation styles
+  &_navigation {
+    font-family: 'Arial', serif;
+  }
+
+  .columns {
+    min-width: 150px;
+  }
+
+  .headings {
+    line-height: 20px;
+    font-size: 0.9rem;
+
+    @include media-breakpoint-up(md) {
+      line-height: 35px;
+      font-size: 1rem;
+    }
+  }
+
+  .items {
+    line-height: 1.3rem;
+    font-size: 0.8rem;
+    color: $grey-for-footer;
+
+    &:hover {
+      color: $white
+    }
+
+    @include media-breakpoint-up(md) {
+      line-height: 2rem;
+    }
+  }
+
+  //stay-connedted styles
+  $icons-media : facebook, twitter, instagram, pinterest, wifi;
+  @each $icon in  $icons-media {
+    .icons_#{$icon} {
+      background-image: url("/images/online-shop/footer/#{$icon}.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 42px;
+      width: 42px;
+    }
+  }
+
+  //requisites
+  .requisites {
+    &_text {
+      color: $grey-for-footer;
+      font-size: 0.7rem;
+      padding: 5px 0;
+      line-height: 0.9rem;
+    }
+
+    &_payments img {
+      height: 20px;
+    }
+  }
+}

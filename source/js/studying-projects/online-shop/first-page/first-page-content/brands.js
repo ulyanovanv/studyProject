@@ -1,36 +1,19 @@
 import React from "react";
+import Headings from "./headings";
 
-import {Headings} from "./headings";
+const brands = ['bakery', 'harvest', 'lavalier', 'landlock', 'spectrum', 'home-energy'];
 
-
-export class Brands extends React.Component {
-    render() {
-    return (
-      <section className="first-page-brands">
+export default function Brands() {
+  return (
+    <section className="first-page-brands">
+      <div className='content-restraint p-0 p-lg-2'>
         <Headings headerName="Brands"/>
-        <div className="first-page-brands_container">
-          <div className="first-page-brands_padding">
-            <a href="/online-shop">
-              <div className="first-page-brands__name bakery"></div>
-            </a>
-            <a href="/online-shop">
-              <div className="first-page-brands__name harvest"></div>
-            </a>
-            <a href="/online-shop">
-              <div className="first-page-brands__name lavalier"></div>
-            </a>
-            <a href="/online-shop">
-              <div className="first-page-brands__name landlock"></div>
-            </a>
-            <a href="/online-shop">
-              <div className="first-page-brands__name spectrum"></div>
-            </a>
-            <a href="/online-shop">
-              <div className="first-page-brands__name home-energy"></div>
-            </a>
-          </div>
+        <div className="first-page-brands_container d-flex flex-row flex-wrap align-items-center">
+          {brands.map(brand => ( <a href="/online-shop" className='flex-grow-1'>
+            <div className={'mx-auto first-page-brands__name ' + brand}></div>
+          </a>))}
         </div>
-      </section>
-    )
-  }
+      </div>
+    </section>
+  )
 }

@@ -1,215 +1,108 @@
 .first-page-slider {
-
-  @extend %to-centre;
-  padding-bottom: 2vw;
-  text-transform: uppercase;
-
-  &__image-container {
-    @extend %to-centre;
-    position: absolute;
-    img {
-      width: 100%;
-      max-width: 1440px;
-      min-width: 800px;
-    }
+  &__image-container img{
+    width: 100%;
   }
 
   &_central-message {
-    height: 46vw;
-    //top: 9vw;
     left: 1vw;
     width: 15vw;
-    position: relative;
     z-index: 1;
-    margin: 0 auto;
-    //height: 35vw;
-    @include flexbox(column, space-around);
     max-height: 700px;
+    height: 40vw;
+    top: 18vw;
+
+    @include media-breakpoint-only(xs) { top: 250px; }
+    @include media-breakpoint-up(md) { height: 36vw; }
+    @include media-breakpoint-up(xl) { height: 26vw; }
   }
+
   &__discounts {
-    border: 2px solid $white-fonts;
+    border: 1px solid $white;
+    box-shadow: 0 0 0 6px #7a7571, 0 0 0 9px $white;
     border-radius: 2px;
-    height: 15vw;
-    width: 15vw;
-    max-width: 13rem;
-    max-height: 13rem;
-    margin-top:10vw;
-    min-width: 110px;
-    min-height: 110px;
+    box-sizing: padding-box;
+    height: 14vw;
+    width: 14vw;
+    max-width: 12rem;
+    max-height: 12rem;
+    min-width: 100px;
+    min-height: 100px;
 
-    @include flexbox(row, center, center);
+    //fonts styles for central &_central-message
+    .discounts-season {
+      margin-top: 1vw;
+      color: $white;
+      letter-spacing: 0.07rem;
+      font-size: 0.6rem;
 
-    &_container {
+      @include media-breakpoint-up(md) { font-size: 1.2vw;}
+      @include media-breakpoint-up(xl) { font-size: 1.2rem;}
+    }
 
-      @include flexbox(column, space-around);
-      border: 1px solid $white-fonts;
-      box-sizing: padding-box;
-      height: 14vw;
-      width: 14vw;
-      max-width: 12rem;
-      max-height: 12rem;
-      min-width: 100px;
-      min-height: 100px;
+    .discounts-sale {
+      font-size: 2rem;
 
-      .discounts-season {
-        margin-top: 1vw;
-        font-size: 1.2vw;
-        color: $white-fonts;
-        letter-spacing: 0.07rem
+      @include media-breakpoint-up(md) { font-size: 4vw;}
+      @include media-breakpoint-up(xl) { font-size: 3rem;}
+    }
+
+    .discounts-third-line {
+      @include flexbox(row, space-evenly);
+
+      p {
+        color: $white;
+
+        font-size: 0.4rem;
+        @include media-breakpoint-up(md) { font-size: 1.2vw;}
+        @include media-breakpoint-up(xl) { font-size: 1rem;}
       }
-      .discounts-sale {
-        font-size: 4vw;
+
+      &_bottom-line {
+        height: 1.2vw;
+        width: 3vw;
+        border-bottom: 1px solid $white;
+        margin-top: -5px;
       }
-      .discounts-third-line {
-        @include flexbox(row, space-evenly);
-        p {
-          color: $white-fonts;
-          font-size: 1.2vw;
-        }
 
-        &_bottom-line {
-          height: 1.2vw;
-          width: 3vw;
-          border-bottom: 1px solid $white-fonts;
-          margin: 0 6px;
-        }
-        &_smaller-container {
-          height: 0.7vw;
-          width: 2vw;
-          border-bottom: 1px solid $white-fonts;
-
-        }
-        &_left  {
-          @extend .discounts-third-line_smaller-container;
-          margin-left: 1vw;
-        }
-
+      &_smaller-container {
+        height: 0.7vw;
+        width: 2vw;
+        border-bottom: 1px solid $white;
       }
-      .discounts-number {
-        margin-bottom: 1vw;
-        font-size: 2vw;
+
+      &_left  {
+        @extend .discounts-third-line_smaller-container;
+        margin-left: 1vw;
       }
     }
 
+    .discounts-number {
+      font-size: 0.6rem;
+
+      @include media-breakpoint-up(md) { font-size: 2vw;}
+      @include media-breakpoint-up(xl) { font-size: 1rem;}
+    }
   }
+
+  //TODO: check onclick styles
   &__shop-button{
-    position: relative;
     background-color: $slight-orange;
-    color: $white-fonts;
-    height: 4vw;
-    width: 15vw;
+    color: $white;
     max-width: 13rem;
-    margin-bottom: 6vw;
-    a {
-      line-height: 4vw;
-      font-size: 2vw;
-      color: $white-fonts;
-    }
   }
+
   &__slider-changer{
-    @include flexbox(row, space-around);
     width: 100px;
 
     &_romb{
       height: 10px;
       width: 10px;
       transform: rotate(45deg);
-      background-color: #949ca3;
-
+      background-color: $grey;
     }
+
     &_black{
-      background-color: $black-fonts;
+      background-color: $black;
     }
   }
 }
-
-
-@media (min-width: 1440px) {
-  .first-page-slider {
-    padding-bottom: 0;
-    &__image-container {
-      left: $padding-for-centre;
-      right: $padding-for-centre;
-      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        left: auto;
-        right: auto;
-      }
-    }
-    &__slider-changer{
-      margin-bottom: 30px;
-    }
-    &__discounts {
-      &_container {
-        .discounts-season {
-          font-size: 1.2rem;
-        }
-        .discounts-sale {
-          font-size: 3rem;
-        }
-        .discounts-third-line > p {
-          font-size: 1rem;
-        }
-        .discounts-number {
-          font-size: 2rem;
-        }
-      }
-    }
-    &__shop-button > a{
-      font-size: 2rem;
-    }
-
-  }
-
-}
-
-@media (max-width: 800px) {
-  .first-page-slider {
-    //padding-bottom: 2vw;
-    &__image-container {
-      img {
-        width: 100%;
-        min-width: 360px;
-      }
-    }
-
-    &__discounts {
-      &_container {
-        .discounts-season {
-          font-size: 0.6rem;
-        }
-        .discounts-sale {
-          font-size: 2rem;
-        }
-        .discounts-third-line > p {
-          font-size: 0.4rem;
-        }
-        .discounts-number {
-          font-size: 0.6rem;
-        }
-      }
-    }
-    &__shop-button {
-      display: none;
-    }
-    &__slider-changer {
-
-      &_romb {
-        height: 1.4vw;
-        width: 1.4vw;
-        min-width: 10px;
-        min-height: 10px;
-      }
-    }
-  }
-}
-@media (max-width: 500px) {
-  .first-page-slider {
-    &__slider-changer {
-      padding-top: 100px;
-    }
-    &_central-message {
-      @include flexbox(column, flex-start);
-    }
-  }
-}
-

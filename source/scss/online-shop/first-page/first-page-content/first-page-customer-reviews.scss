@@ -1,99 +1,53 @@
 .first-page-customer-reviews {
-  //@extend %to-centre;
-  width: 100%;
-  max-width: none;
-
   &_container {
-    padding: 0 $padding-for-centre;
-    background-color: $beige-for-support;
-    //height: 100px;
-    width: 100%;
-    box-sizing: border-box;
+    background-color: $beige;
   }
+
   &_triangle {
-    width: 0;
-    height: 0;
     border-style: solid;
     border-width: 40px 160px 0 160px;
     border-color: #FFF transparent transparent transparent;
     position: absolute;
     left: calc(50% - 160px);
+    margin-top: -1px;
   }
-  &__customers{
-    @include flexbox (row);
-    padding: 22px 1vw;
 
-    @extend %to-centre;
-
-    &_content-picture > img {
-      height: 25vw;
-      width: 21vw;
-      max-width: 312px;
-      max-height: 398px;
-    }
-
-    &_content-left {
-      @include flexbox (row,flex-start,flex-end);
-      flex: 1;
-      &_description{
-        @include flexbox(column,space-evenly, flex-start);
-        height: 18vw;
-        text-align: left;
-      }
-    }
-    &_content-right {
-
-      @include flexbox (row,flex-start,flex-end);
-      flex: 1;
-      flex-direction: row-reverse;
-
-      &_description{
-        @include flexbox(column,space-evenly, flex-end);
-        height: 18vw;
-        text-align: right;
-      }
-    }
-
+  &_description{
+    height: 16vw;
   }
 
   .opinion {
     font-family: $font-for-headings;
-    color: #fffaf0;
-    //line-height: 1.5rem;
+    color: $grey-light;
     letter-spacing: 0.03rem;
     font-size: 1.5vw;
-    flex: 2 0;
-    margin-top: 20px;
+    flex: 3 0;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 1.3rem;
+    }
   }
+
   .customer-name {
     font-family: $font-for-headings;
-    color: $black-fonts;
+    color: $black;
     font-size: 2.8vw;
-    //margin-top: 20px;
     flex: 1 0;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 2.2rem
+    }
   }
+
   .occupation {
     color: $grey;
     text-transform: uppercase;
     font-size: 1.4vw;
-     flex: 1 0;
-  }
-}
-@media (max-width: 800px) {
-  .first-page-customer-reviews{
-    display: none;
-  }
-}
-@media (min-width: 1480px){
-  .first-page-customer-reviews{
-    .opinion {
-      font-size: 1.5rem;
-    }
-    .customer-name {
-      font-size: 2.5rem
-    }
-    .occupation {
-      font-size: 1.5rem;
+    flex: 1 0;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 1.2rem;
     }
   }
 }
+

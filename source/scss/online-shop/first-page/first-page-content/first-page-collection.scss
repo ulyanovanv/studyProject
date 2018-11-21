@@ -1,43 +1,28 @@
 .first-page-collection {
-  @extend %to-centre;
-
-  &_container {
-    padding: 10px $padding-for-centre;
-  }
   &_padding {
-    @include flexbox(row,center);
-    flex-wrap: wrap;
-    border: 1px solid $beige-for-support;
-    padding: 5px;
+    @include media-breakpoint-only(xl) {
+      border: 1px solid $beige;
+    }
   }
 
-  //$start : 1;
-  //$end :8;
-  //@for $i from $start through $end {
-  //  .collection_#{$i} {
-  //    background-image: url("/images/online-shop/collection/collection_#{$i}.jpg");
-  //    background-repeat: no-repeat;
-  //    background-position: center center;
-  //  }
-  //}
+  .additional-wrapper-for-image {
+    width: 250px;
+  }
 
   &__article {
     background-repeat: no-repeat;
     background-position: center center;
-    width: 22%;
-    height: 340px;
-    padding: 2px;
-    box-sizing: border-box;
-    margin: 5px;
-    position: relative;
+    height: 340px;;
     cursor: pointer;
+    position: relative;
+    margin: 0 auto;
+    max-width: 300px;
 
     &_for-add-button {
       opacity: 0;
       transition: opacity 0.5s;
       position: absolute;
-      bottom: 0px;
-      transform: translateX(calc(50%-40px));
+      bottom: 0;
       right: 0;
       left: 0;
     }
@@ -45,81 +30,35 @@
     &:hover .first-page-collection__article_for-add-button{
       opacity: 0.85;
     }
+
     &_reduction {
       position: absolute;
-
       height: 45px;
       width: 45px;
-      background-color: #feab12;
+      background-color: $orange;
       border-radius: 50%;
-      align-self: flex-start;
-      margin: 20px;
-      &_persentage {
+      top: 10px;
+      left: 10px;
+
+      &_percentage {
         line-height: 45px;
-        color: $white-fonts;
+        color: $white;
       }
     }
 
     &_trapezium {
-      margin: 0 auto;
-      width: 10vw;
-      text-transform: uppercase;
       border-left: 40px solid transparent;
       border-right: 40px solid transparent;
-      border-bottom: 40px solid $slight-orange ;
+      border-bottom: 40px solid $slight-orange;
+
+      @include media-breakpoint-up(md) {
+        width: 65% !important;
+      }
     }
+
     &_add {
       position: absolute;
-      text-transform: uppercase;
-      text-align: center;
-      width: 100%;
       line-height: 40px;
-    }
-  }
-}
-
-@media (min-width: 800px) and (max-width:1130px){
-  .first-page-collection {
-    &__article {
-      width: 32%;
-      padding-bottom: 0px;
-      &_add {
-        font-size: 1.5vw;
-      }
-    }
-  }
-}
-
-@media (max-width: 800px){
-  .first-page-collection {
-    //margin-top: 100px;
-    //position: relative;
-    &_container {
-      padding: 10px $padding-for-centre-media;
-    }
-    &_padding {
-      @include flexbox(column,center);
-    }
-    &__article {
-      //width: 85%;
-      width: 300px;
-      &_trapezium {
-        width: 30vw;
-      }
-    }
-  }
-}
-@media (max-width:500px){
-  .first-page-collection {
-    margin-top: 100px;
-    position: relative;
-  }
-}
-
-@media (min-width: 1480px){
-  .first-page-collection {
-    &_container {
-      padding: 10px $padding-for-centre-big-media;
     }
   }
 }

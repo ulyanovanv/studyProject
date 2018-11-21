@@ -9,6 +9,13 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 //Request::setTrustedProxies(array('127.0.0.1'));
 
 $app->get('/', function () use ($app) {
+
+    // $pdo = new PDO('mysql:dbname=apples;host=localhost', 'root', null);
+                //$result = $pdo->query('SELECT * FROM pet');
+                //$pets = $result->fetchAll();
+                //var_dump($pets);
+                //die;
+
     return $app['twig']->render('cv.html.twig', array());
 })
 ->bind('homepage');

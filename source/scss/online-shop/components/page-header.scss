@@ -1,0 +1,59 @@
+.page-header{
+  font-family: "Bitter", serif;
+  width: 100%;
+  max-width: none;
+
+  &__upper-menu{
+    background-color: $grey-light;
+    font-size: $font-size;
+
+    .navbar-toggler {
+      font-size: 1rem;
+    }
+
+    @include media-breakpoint-up(sm) {
+      .navbar-border {
+        border-right: 1px solid $black;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  &__lower-menu{
+    .categories {
+      font-family: $font-for-headings;
+      font-size: 1.2rem;
+
+      @include media-breakpoint-only(sm) {
+        font-size: 1rem;
+      }
+    }
+
+    .page-name {
+      font-family: $font-for-headings;
+      font-size: 2rem;
+      letter-spacing: 2px;
+
+      @include media-breakpoint-up(md) {
+        font-size: 3rem;
+      }
+    }
+
+    .right-side {
+      &__social-nets {
+        background-size: 36px 36px;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 36px;
+        width: 36px;
+      }
+
+      $social-icons: facebook, twitter, pinterest, instagram;
+      @each $icon in $social-icons {
+        .#{$icon}{
+          background-image: url("/images/online-shop/icons/#{$icon}.png");
+        }
+      }
+    }
+  }
+}

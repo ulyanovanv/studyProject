@@ -40,12 +40,12 @@
      }
  }
 
- let main = document.getElementsByClassName("shop")[0];
+ let main = document.getElementById("online-shop");
 
  ReactDOM.render(
      <Parent/>,
      main
- )
+ );
 
 
 
