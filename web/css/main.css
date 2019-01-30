@@ -9609,28 +9609,17 @@ body.bright-food {
       margin-top: 5px;
       text-align: left; }
 
-body.my-cv .education__description_timeline, body.my-cv .experience__description_timeline {
-  font-size: 0.8rem;
-  font-weight: bold; }
-
-body.my-cv .education__description_nomination, body.my-cv .experience__description_nomination {
-  font-size: 1.0rem;
-  font-weight: bold; }
-
 body.my-cv {
-  background-color: #4d4141;
+  background-color: #f3f3f3;
   font-family: 'Source Serif Pro', 'Crimson Text', 'Cormorant Garamond', serif;
   color: #4d4141;
   font-size: 0.9rem; }
-  body.my-cv .cv {
-    height: auto; }
-    body.my-cv .cv__parts {
-      padding: 25px;
-      line-height: 1.3rem;
-      background-color: #f7e7ce;
-      margin: 10px; }
+  body.my-cv section {
+    border-bottom: 2px solid #6f021d; }
+    body.my-cv section:last-child {
+      border-bottom: none; }
   body.my-cv .cv_centralization {
-    margin: 0 auto; }
+    min-width: 300px; }
   body.my-cv .cv_text-indent {
     text-indent: 0.5rem; }
   body.my-cv .cv_headings {
@@ -9638,353 +9627,125 @@ body.my-cv {
     font-weight: bold;
     padding: 5px 0;
     font-size: 1.1rem;
-    color: #4d4141; }
-
-body.my-cv .general-info .my-image_container {
-  text-align: center;
-  padding: 0;
-  width: auto;
-  background-image: url("/images/cv-images/my-picture-grey.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  margin: 0 auto 20px auto;
-  border-radius: 50%; }
-
-body.my-cv .techniques__svg {
-  padding: 1px 1px 1px 16px;
-  background-size: 18px 18px;
-  background-repeat: no-repeat;
-  background-position: left center; }
-
-body.my-cv .techniques .html {
-  background-image: url("/images/svg/techniques/html.svg"); }
-
-body.my-cv .techniques .css33 {
-  background-image: url("/images/svg/techniques/css33.svg"); }
-
-body.my-cv .techniques .sass {
-  background-image: url("/images/svg/techniques/sass.svg"); }
-
-body.my-cv .techniques .layouts {
-  background-image: url("/images/svg/techniques/layouts.svg"); }
-
-body.my-cv .techniques .svg {
-  background-image: url("/images/svg/techniques/svg.svg"); }
-
-body.my-cv .techniques .bootstrap3 {
-  background-image: url("/images/svg/techniques/bootstrap3.svg"); }
-
-body.my-cv .techniques .jss {
-  background-image: url("/images/svg/techniques/jss.svg"); }
-
-body.my-cv .techniques .jquery {
-  background-image: url("/images/svg/techniques/jquery.svg"); }
-
-body.my-cv .techniques .react {
-  background-image: url("/images/svg/techniques/react.svg"); }
-
-body.my-cv .techniques .npm {
-  background-image: url("/images/svg/techniques/npm.svg"); }
-
-body.my-cv .techniques .git {
-  background-image: url("/images/svg/techniques/git.svg"); }
-
-body.my-cv .skills__list {
-  padding-left: 16px;
-  list-style-type: disc; }
-  body.my-cv .skills__list_item {
-    text-indent: 1rem; }
-    body.my-cv .skills__list_item span {
-      left: -10px; }
-
-body.my-cv .languages_container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex: no-wrap;
-  margin-top: 15px; }
-
-body.my-cv .languages__each {
-  padding-left: 10px; }
-
-body.my-cv .languages__svg-container {
-  width: 50px;
-  height: 50px; }
-
-body.my-cv .languages_uppercase {
-  text-transform: uppercase;
-  margin-top: 10px; }
-
-body.my-cv .languages_font-size {
-  font-size: 0.8rem; }
-
-body.my-cv .languages .english .languages__svg-container {
-  background-image: url("/images/svg/languages/english-part-grey.svg"); }
-
-body.my-cv .languages .english:hover .languages__svg-container {
-  background-image: url("/images/svg/languages/english-part.svg"); }
-
-body.my-cv .languages .german .languages__svg-container {
-  background-image: url("/images/svg/languages/german-part-grey.svg"); }
-
-body.my-cv .languages .german:hover .languages__svg-container {
-  background-image: url("/images/svg/languages/german-part.svg"); }
-
-body.my-cv .languages .russian .languages__svg-container {
-  background-image: url("/images/svg/languages/russian-grey.svg"); }
-
-body.my-cv .languages .russian:hover .languages__svg-container {
-  background-image: url("/images/svg/languages/russian.svg"); }
-
-body.my-cv .hobbies_container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 10px; }
-
-body.my-cv .hobbies__each {
-  padding: 5px; }
-
-body.my-cv .hobbies__svg {
-  height: 80px;
-  width: 80px; }
-
-body.my-cv .contacts__details {
-  text-indent: 0; }
-
-body.my-cv .contacts_links {
-  color: #4d4141; }
-
-body.my-cv .contacts_text-bold {
-  font-weight: bold; }
-
-body.my-cv .projects {
-  height: 250px; }
-  body.my-cv .projects__used-techniques {
-    margin-bottom: 4px;
-    text-align: center; }
-  body.my-cv .projects__container {
-    background-size: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 95%;
-    width: 100%;
-    transition: background-image 0.5s ease-in; }
-
-body.my-cv .prj-bright-food a {
-  background: url("/images/projects-img/prj-bright-food.jpg") no-repeat -9999px -9999px; }
-
-body.my-cv .prj-bright-food_img {
-  background-image: url("/images/projects-img/prj-bright-food-grey.jpg"); }
-
-body.my-cv .prj-bright-food:hover .prj-bright-food_img {
-  background-image: url("/images/projects-img/prj-bright-food.jpg"); }
-
-body.my-cv .prj-online-shop a {
-  background: url("/images/projects-img/prj-online-shop.jpg") no-repeat -9999px -9999px; }
-
-body.my-cv .prj-online-shop_img {
-  background-image: url("/images/projects-img/prj-online-shop-grey.jpg"); }
-
-body.my-cv .prj-online-shop:hover .prj-online-shop_img {
-  background-image: url("/images/projects-img/prj-online-shop.jpg"); }
-
-body.my-cv .prj-calender a {
-  background: url("/images/projects-img/prj-calender.jpg") no-repeat -9999px -9999px; }
-
-body.my-cv .prj-calender_img {
-  background-image: url("/images/projects-img/prj-calender-grey.jpg"); }
-
-body.my-cv .prj-calender:hover .prj-calender_img {
-  background-image: url("/images/projects-img/prj-calender.jpg"); }
-
-body.my-cv .prj-form-c13 a {
-  background: url("/images/projects-img/prj-form-c13.jpg") no-repeat -9999px -9999px; }
-
-body.my-cv .prj-form-c13_img {
-  background-image: url("/images/projects-img/prj-form-c13-grey.jpg"); }
-
-body.my-cv .prj-form-c13:hover .prj-form-c13_img {
-  background-image: url("/images/projects-img/prj-form-c13.jpg"); }
-
-body.my-cv .prj-mobile a {
-  background: url("/images/projects-img/prj-mobile.jpg") no-repeat -9999px -9999px; }
-
-body.my-cv .prj-mobile_img {
-  background-image: url("/images/projects-img/prj-mobile-grey.jpg"); }
-
-body.my-cv .prj-mobile:hover .prj-mobile_img {
-  background-image: url("/images/projects-img/prj-mobile.jpg"); }
-
-body.my-cv .prj-to-do-app a {
-  background: url("/images/projects-img/prj-to-do-app.jpg") no-repeat -9999px -9999px; }
-
-body.my-cv .prj-to-do-app_img {
-  background-image: url("/images/projects-img/prj-to-do-app-grey.jpg"); }
-
-body.my-cv .prj-to-do-app:hover .prj-to-do-app_img {
-  background-image: url("/images/projects-img/prj-to-do-app.jpg"); }
-
-body.my-cv .prj-game a {
-  background: url("/images/projects-img/prj-game.jpg") no-repeat -9999px -9999px; }
-
-body.my-cv .prj-game_img {
-  background-image: url("/images/projects-img/prj-game-grey.jpg"); }
-
-body.my-cv .prj-game:hover .prj-game_img {
-  background-image: url("/images/projects-img/prj-game.jpg"); }
-
-@media screen and (min-width: 54rem) and (max-width: 58rem) {
-  body.my-cv {
-    font-size: 1rem; } }
-
-@media screen and (min-width: 58rem) and (max-width: 63rem) {
-  body.my-cv {
-    font-size: 0.8rem; } }
-
-@media screen and (min-width: 63rem) and (max-width: 68rem) {
-  body.my-cv {
-    font-size: 0.9rem; } }
-
-@media screen and (min-width: 68rem) {
-  body.my-cv {
-    font-size: 1rem; } }
-
-@media screen and (max-width: 48rem) {
-  body.my-cv .my-image_container {
-    max-width: 300px;
-    height: 300px; } }
-
-@media screen and (min-width: 48rem) and (max-width: 75rem) {
-  body.my-cv .my-image_container {
-    max-width: 250px;
-    height: 250px; } }
-
-@media screen and (min-width: 75rem) {
-  body.my-cv .my-image_container {
-    max-width: 300px;
-    height: 300px; } }
-
-@media screen and (min-width: 48rem) {
+    color: #ffc1c1; }
+  body.my-cv .img-container {
+    max-height: 225px;
+    max-width: 225px; }
   body.my-cv .first-column {
-    width: 50%;
-    float: left; }
+    background-color: #6f021d;
+    color: #ffc1c1; }
   body.my-cv .second-column {
-    width: 50%;
-    float: right; }
-  body.my-cv .cv__parts {
-    margin: 0px;
-    line-height: 1.15rem;
-    min-width: 230px;
-    padding: 18px; }
-  body.my-cv .cv_cenralization {
-    display: grid;
-    grid-template: repeat(25, 100px)/repeat(2, 2fr);
-    width: 75%;
-    margin: 20px auto; }
-  body.my-cv .cv_headings {
-    font-size: 1rem;
-    padding: 0 0 4px 0; }
-  body.my-cv .cv_line-indent {
-    border-bottom: 1px solid #4d4141;
-    height: 100%; }
-  body.my-cv .tablet-left {
-    background-color: #afe4e4; }
-  body.my-cv .general-info {
-    grid-area: 1 / 1 / span 7 /span 1; }
-    body.my-cv .general-info .my-image_container {
-      margin: 0 auto 5px auto; }
-  body.my-cv .skills {
-    grid-area: 8 / 1 / span 3 /span 1; }
+    background-color: #ffc1c1;
+    color: #6f021d;
+    line-height: 1.4; }
+    body.my-cv .second-column .cv_headings {
+      color: #6f021d; }
+  body.my-cv .contacts_intro {
+    font-size: 25px; }
+  body.my-cv .contacts_intro_second {
+    font-size: 20px; }
+  body.my-cv .contacts_details {
+    line-height: 1; }
+    body.my-cv .contacts_details span {
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: #dd525f; }
+      body.my-cv .contacts_details span a {
+        text-underline: none;
+        color: #dd525f; }
+        body.my-cv .contacts_details span a:hover {
+          color: #dd525f; }
   body.my-cv .hobbies {
-    grid-area: 11 / 1 / span 4 /span 1; }
+    background-color: #6f021d; }
+    body.my-cv .hobbies .cv_headings {
+      color: #ffc1c1; }
     body.my-cv .hobbies__svg {
-      height: 90px;
-      width: 90px; }
-  body.my-cv .contacts {
-    grid-area: 1 / 2 / span 2 /span 1; }
-  body.my-cv .techniques {
-    grid-area: 3 / 2 / span 3 /span 1; }
-  body.my-cv .education {
-    grid-area: 6 / 2 / span 2 /span 1; }
-  body.my-cv .experience {
-    grid-area: 8 / 2 / span 4 /span 1; }
-  body.my-cv .languages {
-    grid-area: 12 / 2 / span 2 /span 1; }
+      height: 70px;
+      width: 70px; }
+      body.my-cv .hobbies__svg path {
+        color: white;
+        background-color: white; }
+  body.my-cv .education__description_timeline,
+  body.my-cv .experience__description_timeline {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #dd525f; }
+  body.my-cv .education__description_nomination,
+  body.my-cv .experience__description_nomination {
+    font-size: 1.0rem; }
+  body.my-cv .techniques__svg {
+    padding: 1px 1px 1px 16px;
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: left center; }
+  body.my-cv .techniques .html {
+    background-image: url("/images/svg/techniques/html.svg"); }
+  body.my-cv .techniques .css33 {
+    background-image: url("/images/svg/techniques/css33.svg"); }
+  body.my-cv .techniques .sass {
+    background-image: url("/images/svg/techniques/sass.svg"); }
+  body.my-cv .techniques .layouts {
+    background-image: url("/images/svg/techniques/layouts.svg"); }
+  body.my-cv .techniques .svg {
+    background-image: url("/images/svg/techniques/svg.svg"); }
+  body.my-cv .techniques .bootstrap3 {
+    background-image: url("/images/svg/techniques/bootstrap3.svg"); }
+  body.my-cv .techniques .jss {
+    background-image: url("/images/svg/techniques/jss.svg"); }
+  body.my-cv .techniques .jquery {
+    background-image: url("/images/svg/techniques/jquery.svg"); }
+  body.my-cv .techniques .react {
+    background-image: url("/images/svg/techniques/react.svg"); }
+  body.my-cv .techniques .npm {
+    background-image: url("/images/svg/techniques/npm.svg"); }
+  body.my-cv .techniques .git {
+    background-image: url("/images/svg/techniques/git.svg"); }
+  body.my-cv .techniques .less {
+    background-image: url("/images/svg/techniques/less.png"); }
+  body.my-cv .techniques .php {
+    background-image: url("/images/svg/techniques/php.png"); }
+  body.my-cv .techniques .symfony {
+    background-image: url("/images/svg/techniques/symfony.png"); }
+  body.my-cv .skills__list {
+    list-style-type: disc; }
   body.my-cv .projects {
-    height: 270px; }
-  body.my-cv .prj-bright-food {
-    grid-area: 15 / 1 / span 3/span 1; }
-  body.my-cv .prj-calender {
-    grid-area: 18 / 1 / span 3 /span 1; }
-  body.my-cv .prj-to-do-app {
-    grid-area: 21 / 1 / span 3 /span 1; }
-  body.my-cv .prj-online-shop {
-    grid-area: 14 / 2 / span 3 /span 1; }
-  body.my-cv .prj-mobile {
-    grid-area: 17 / 2 / span 3 /span 1; }
-  body.my-cv .prj-form-c13 {
-    grid-area: 20 / 2 / span 3 /span 1; }
-  body.my-cv .prj-game {
-    grid-area: 23 / 2 / span 3 /span 1; } }
-
-@media screen and (min-width: 60rem) {
-  body.my-cv .first-column, body.my-cv .second-column, body.my-cv .third-column {
-    width: 33%;
-    float: left;
-    margin-bottom: 20px; }
-    body.my-cv .first-column .cv_line-indent, body.my-cv .second-column .cv_line-indent, body.my-cv .third-column .cv_line-indent {
-      padding-bottom: 10px; }
-  body.my-cv .cv__parts {
-    padding: 15px;
-    line-height: 1.2rem; }
-  body.my-cv .cv_cenralization {
-    width: 82%;
-    grid-template: repeat(17, 100px)/repeat(3, 3fr);
-    min-width: 230px;
-    max-width: 1060px; }
-  body.my-cv .desktop-side {
-    background-color: #afe4e4; }
-  body.my-cv .desktop-center {
-    background-color: #f7e7ce; }
-  body.my-cv .general-info {
-    grid-area: 1 / 1 / span 7 /span 1; }
-    body.my-cv .general-info .my-image {
-      padding: 0; }
-  body.my-cv .languages {
-    grid-area: 8 / 1 / span 2 /span 1; }
-  body.my-cv .contacts {
-    grid-area: 1 / 2 / span 2 /span 1; }
-  body.my-cv .techniques {
-    grid-area: 3 / 2 / span 3 /span 1; }
-  body.my-cv .hobbies {
-    grid-area: 6 / 2 / span 3 /span 1; }
-    body.my-cv .hobbies__each {
-      width: 23%;
-      margin: auto; }
-    body.my-cv .hobbies__svg {
-      height: 100%;
-      width: 100%; }
-  body.my-cv .education {
-    grid-area: 1 / 3 / span 2 /span 1; }
-  body.my-cv .experience {
-    grid-area: 3 / 3 / span 4 /span 1; }
-  body.my-cv .skills {
-    grid-area: 7 / 3 / span 3 /span 1; }
-  body.my-cv .prj-calender {
-    grid-area: 10 / 1 / span 3 /span 1; }
-  body.my-cv .prj-form-c13 {
-    grid-area: 13 / 1 / span 3 /span 1; }
-  body.my-cv .prj-bright-food {
-    grid-area: 9 / 2 / span 3 /span 1; }
-  body.my-cv .prj-mobile {
-    grid-area: 12 / 2 / span 3 /span 1; }
-  body.my-cv .prj-game {
-    grid-area: 15 / 2 / span 3 /span 1; }
-  body.my-cv .prj-online-shop {
-    grid-area: 10 / 3 / span 3 /span 1; }
-  body.my-cv .prj-to-do-app {
-    grid-area: 13 / 3 / span 3 /span 1; } }
+    width: 200px; }
+    body.my-cv .projects__used-techniques {
+      margin-bottom: 4px;
+      text-align: center; }
+    body.my-cv .projects__container {
+      height: 160px;
+      background-size: 120%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 100%;
+      transition: background-image 0.5s ease-in; }
+  body.my-cv .prj-bright-food a {
+    background: url("/images/projects-img/prj-bright-food.jpg") no-repeat -9999px -9999px; }
+  body.my-cv .prj-bright-food_img {
+    background-image: url("/images/projects-img/prj-bright-food-grey.jpg"); }
+  body.my-cv .prj-bright-food:hover .prj-bright-food_img {
+    background-image: url("/images/projects-img/prj-bright-food.jpg"); }
+  body.my-cv .prj-online-shop a {
+    background: url("/images/projects-img/prj-online-shop.jpg") no-repeat -9999px -9999px; }
+  body.my-cv .prj-online-shop_img {
+    background-image: url("/images/projects-img/prj-online-shop-grey.jpg"); }
+  body.my-cv .prj-online-shop:hover .prj-online-shop_img {
+    background-image: url("/images/projects-img/prj-online-shop.jpg"); }
+  body.my-cv .prj-calender a {
+    background: url("/images/projects-img/prj-calender.jpg") no-repeat -9999px -9999px; }
+  body.my-cv .prj-calender_img {
+    background-image: url("/images/projects-img/prj-calender-grey.jpg"); }
+  body.my-cv .prj-calender:hover .prj-calender_img {
+    background-image: url("/images/projects-img/prj-calender.jpg"); }
+  @media screen and (min-width: 48rem) {
+    body.my-cv .cv_centralization {
+      margin: 20px auto; }
+    body.my-cv .cv__parts {
+      line-height: 1.15rem; }
+    body.my-cv .cv_headings {
+      font-size: 1rem;
+      padding: 0 0 4px 0; } }
+  @media (min-width: 992px) {
+    body.my-cv .cv_centralization {
+      max-width: 1000px; } }

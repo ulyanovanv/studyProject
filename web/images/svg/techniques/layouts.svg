@@ -5,16 +5,16 @@
 	 width="35px" height="35px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
 <g>
 	<g>
-		<rect width="16.365" height="7.106"/>
-		<rect y="9.298" width="10.32" height="7.106"/>
-		<rect x="12.515" y="9.298" width="10.135" height="7.106"/>
-		<rect x="24.863" y="9.298" width="10.137" height="7.106"/>
-		<rect x="18.635" width="16.365" height="7.106"/>
-		<rect y="18.596" width="16.365" height="7.106"/>
-		<rect y="27.893" width="10.321" height="7.107"/>
-		<rect x="12.515" y="27.893" width="10.137" height="7.107"/>
-		<rect x="24.863" y="27.893" width="10.137" height="7.107"/>
-		<rect x="18.635" y="18.596" width="16.365" height="7.106"/>
+		<rect fill='#6f021d' width="16.365" height="7.106"/>
+		<rect fill='#6f021d' y="9.298" width="10.32" height="7.106"/>
+		<rect fill='#6f021d' x="12.515" y="9.298" width="10.135" height="7.106"/>
+		<rect fill='#6f021d' x="24.863" y="9.298" width="10.137" height="7.106"/>
+		<rect fill='#6f021d' x="18.635" width="16.365" height="7.106"/>
+		<rect fill='#6f021d'  y="18.596" width="16.365" height="7.106"/>
+		<rect fill='#6f021d' y="27.893" width="10.321" height="7.107"/>
+		<rect fill='#6f021d' x="12.515" y="27.893" width="10.137" height="7.107"/>
+		<rect fill='#6f021d' x="24.863" y="27.893" width="10.137" height="7.107"/>
+		<rect fill='#6f021d' x="18.635" y="18.596" width="16.365" height="7.106"/>
 	</g>
 </g>
 <g>

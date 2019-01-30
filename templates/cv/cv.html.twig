@@ -1,0 +1,345 @@
+{% extends "layouts/layout.html.twig" %}
+
+{% block title %}
+    CV Anastasiia Rubinchik
+{% endblock %}
+
+{% block additionalLinks %}
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Crimson+Text:400,400i|Source+Serif+Pro');
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, minimal-ui">
+{% endblock %}
+
+{% block bodyClass %}
+    my-cv
+{% endblock %}
+
+{% block content %}
+    <div class="cv">
+        <div class="cv_centralization">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 px-0 first-column rounded">
+                        <section class="contacts p-3" id="contacts">
+                            <div class="img-container d-flex justify-content-center mx-auto my-3">
+                                <img class="img-fluid img-rounded rounded-circle p-6" src="/images/cv-images/Photo-for-CV.jpg"/>
+                            </div>
+
+                            <p class="contacts_intro text-center">Anastasiia Rubinchik</p>
+                            <p class="contacts_intro_second text-center">Front End Developer</p>
+
+                            <div class="cv_line-indent mt-4">
+                                <p class="cv_headings">
+                                    personal info
+                                </p>
+
+                                <div class="row">
+                                    <div class="col-sm-6 col-lg-12">
+                                        <p class="contacts_details mb-3">
+                                            Address: <br>
+                                            <span>
+                                                Berlin, Germany
+                                            </span>
+                                        </p>
+
+                                        <p class="contacts_details mb-3">
+                                            Phone number: <br>
+                                            <span>
+                                                <a href="tel:01793182901" target="_blank">0 179 3182901</a>
+                                            </span>
+                                        </p>
+
+                                        <p class="contacts_details mb-3">
+                                            E-Mail: <br>
+                                            <span>
+                                                <a href="mailto:av.ulyanova@gmail.com" target="_blank">av.ulyanova@gmail.com</a>
+                                             </span>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-sm-6 col-lg-12">
+                                        <p class="contacts_details mb-3">
+                                            Web-site: <br>
+                                            <span>
+                                        <a href="http://anastasiia.ilfate.net/" target="_blank">http://anastasiia.ilfate.net/</a>
+                                    </span>
+                                        </p>
+
+                                        <p class="contacts_details mb-3">
+                                            Git repository: <br>
+                                            <span>
+                                        <a href="https://github.com/ulyanovanv/" target="_blank">https://github.com/ulyanovanv</a>
+                                    </span>
+                                        </p>
+
+                                        <p class="contacts_details mb-3">
+                                    <span>
+                                        <a title="my CV" href="/cv_doc/CV.pdf" target="_blank">Download CV</a>
+                                    </span>
+                                        </p>
+
+                                        <p class="contacts_details">
+                                            I have a <span>german work permit.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="languages p-3 d-none d-lg-block" id="languages">
+                            <p class="cv_headings">
+                                languages
+                            </p>
+
+                            <div class="row mt-1">
+                                <div class="col-sm-3">English</div>
+                                <div class="col-sm-9">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-3">German</div>
+                                <div class="col-sm-9">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-3">Russian</div>
+                                <div class="col-sm-9">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="hobbies p-3 d-none d-lg-block" id="hobbies">
+                            <p class="cv_headings">
+                                hobbies
+                            </p>
+                            <div class="d-flex flex-wrap flex-row justify-content-around">
+                                <div class="p-2">
+                                    <img src="/images/svg/hobbies/snowboarding.svg" class="hobbies__svg snowboarding" alt="snowboarding" title="snowboarding"/>
+                                </div>
+                                <div class="p-2">
+                                    <img src="/images/svg/hobbies/travelling.svg" class="hobbies__svg travelling" alt="travelling" title="travelling"/>
+                                </div>
+                                <div class="p-2">
+                                    <img src="/images/svg/hobbies/board-games.svg" class="hobbies__svg board-games" alt="board games" title="board games"/>
+                                </div>
+                                <div class="p-2">
+                                    <img src="/images/svg/hobbies/handiwork.svg" class="hobbies__svg handiwork" alt="handiwork" title="handiwork"/>
+                                </div>
+                                <div class="p-2">
+                                    <img src="/images/svg/hobbies/tv-series.svg" class="hobbies__svg tv-series" alt="TV series" title="TV series"/>
+                                </div>
+                                <div class="p-2">
+                                    <img src="/images/svg/hobbies/coins.svg" class="hobbies__svg coins" alt="eurocoins collection" title="eurocoins collection"/>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col-lg-8 px-0 second-column rounded">
+                        <section class="information mx-3 mt-2 pb-2" id="information">
+                            <p class="cv_headings">
+                                Hello!
+                            </p>
+                            <div class="information__self-description">
+                                <p class="cv_text-indent">
+                                    I’ve been living in Berlin for last 3 years. Into
+                                    programming I was engaged not accidentally - I'm surrounded by people connected with web
+                                    development. I’ve got interested in the process of programming and studying various
+                                    techniques. I learned on my own, namely I take online courses, read articles and books,
+                                    practise writing code, performing various tasks.
+                                </p>
+                                <p class="cv_text-indent">
+                                    Currrently I am working in Classmarkets
+                                    GmbH, performing different tasks in Front End ranging from maintaining the outlook of the
+                                    websites to updating the code.
+                                </p>
+                                <p class="cv_text-indent">My goal is to become a professional front-end developer.</p>
+                            </div>
+                        </section>
+
+                        <section class="row mx-3 mt-2 pb-2">
+                            <div class="col-sm-6">
+                                <div class="techniques" id="techniques">
+                                    <p class="cv_headings">
+                                        techniques
+                                    </p>
+                                    <div class="cv_text-indent">
+                                        <p class="jss techniques__svg">JavaScript, ES6</p>
+                                        <p class="jquery techniques__svg">JQuery</p>
+                                        <p class="react techniques__svg">ReactJS, MobX</p>
+                                        <p class="html techniques__svg">HTML5</p>
+                                        <p class="svg techniques__svg">SVG graphics</p>
+                                        <p class="css33 techniques__svg">CSS3</p>
+                                        <p class="sass techniques__svg">Sass</p>
+                                        <p class="less techniques__svg">Less</p>
+                                        <p class="layouts techniques__svg">Flexbox and Grid Layouts</p>
+                                        <p class="bootstrap3 techniques__svg">Bootstrap 3/4</p>
+                                        <p class="npm techniques__svg">npm</p>
+                                        <p class="git techniques__svg">git</p>
+                                        <p class="php techniques__svg">PHP</p>
+                                        <p class="symfony techniques__svg">Symfony, Twig, yml</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="skills" id="skills">
+                                    <p class="cv_headings">
+                                        skills
+                                    </p>
+                                    <ul class="skills__list pl-4">
+                                        <li class="skills__list_items">IDE: PhpStorm, WebStorm, Sublime</li>
+                                        <li class="skills__list_items">Slack, Hipchat</li>
+                                        <li class="skills__list_items">Agile</li>
+                                        <li class="skills__list_items">Version control: gitlab, github</li>
+                                        <li class="skills__list_items">Photoshop</li>
+                                        <li class="skills__list_items">Eager to learn</li>
+                                        <li class="skills__list_items">Self-motivation and self-organisation</li>
+                                        <li class="skills__list_items">Adaptability</li>
+                                        <li class="skills__list_items">Time-management</li>
+                                        <li class="skills__list_items">Success- and detail-oriented</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="experience mx-3 mt-2 pb-2" id="experience">
+                            <p class="cv_headings">
+                                professional experience
+                            </p>
+
+                            <p class="experience__description_timeline">April 2018 - now</p>
+                            <p class="experience__description_nomination cv_text-indent">Classmarkets GmbH, Berlin</p>
+                            <p class="experience__description_nomination font-italic font-weight-bold cv_text-indent">Junior Front End Developer</p>
+                            <p class="cv_text-indent">
+                                I was hired to extend the team of 10 developers to support and improve the Front End part of the project.
+                                I am responsible for the visual part of the media houses’ websites. My work included Less to Sass
+                                migration, Assetic to Wepback Encore migration, React and React-related libraries updating,
+                                complete redesign of some portals.
+                            </p><br>
+
+                            <p class="experience__description_timeline">November 2016 - January 2018</p>
+                            <p class="experience__description_nomination cv_text-indent">TMB Tourismus-Marketing Brandenburg GmbH, Berlin</p>
+                            <p class="experience__description_nomination font-italic font-weight-bold cv_text-indent">Tourist consultant and saleswoman</p>
+                            <p class="cv_text-indent">
+                                Travel tickets consultation, sightseeings advice, office activities at Schönefeld Airport
+                            </p>
+                        </section>
+
+                        <section class="education mx-3 mt-2 pb-2" id="education">
+                            <p class="cv_headings">
+                                education
+                            </p>
+
+                            <p class="experience__description_timeline">October 2018, Munich</p>
+                            <p class="cv_text-indent">
+                                iJS - International JavaScript Conference
+                            </p><br>
+
+                            <p class="experience__description_timeline">September  2011 - June  2015, Moscow, Russia</p>
+                            <p class="experience__description_nomination font-italic font-weight-bold cv_text-indent">Bachelor degree in International Affairs</p>
+                            <p class="cv_text-indent">
+                                National Research University - High School of Economics, Moscow, Russia
+                            </p>
+                        </section>
+
+                        <section class="my-projects mx-3 mt-2" id="my-projects">
+                            <p class="cv_headings">
+                                my projects
+                            </p>
+
+                            <div class="d-flex flex-wrap flex-row justify-content-around">
+                                <div class="prj-bright-food px-3 projects" id="prj-bright-food">
+                                    <a href="/bright-food" target="_blank">
+                                        <div class="projects__container prj-bright-food_img rounded-circle" title="Click me"></div>
+                                    </a>
+                                    <p class="projects__used-techniques">React, Redux, Flexbox, react-slick</p>
+                                </div>
+
+                                <div class="prj-online-shop px-3 projects" id="prj-online-shop">
+                                    <a href="/online-shop" target="_blank">
+                                        <div class="projects__container prj-online-shop_img rounded-circle" title="Click me"></div>
+                                    </a>
+                                    <p class="projects__used-techniques">React, Flexbox, Responsive design</p>
+                                </div>
+
+                                <div class="prj-calender px-3 projects" id="prj-calender">
+                                    <a href="/calender" target="_blank">
+                                        <div class=" projects__container prj-calender_img rounded-circle" title="Click me"></div>
+                                    </a>
+                                    <p class="projects__used-techniques">JS: Date object, Flexbox</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="languages p-3 d-block d-lg-none" id="languages">
+                            <p class="cv_headings">
+                                languages
+                            </p>
+
+                            <div class="row mt-1">
+                                <div class="col-sm-3">English</div>
+                                <div class="col-sm-9">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-3">German</div>
+                                <div class="col-sm-9">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-3">Russian</div>
+                                <div class="col-sm-9">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="hobbies p-3 d-block d-lg-none" id="hobbies">
+                            <p class="cv_headings">
+                                hobbies
+                            </p>
+                            <div class="d-flex flex-wrap flex-row justify-content-around">
+                                <div class="p-2">
+                                    <img src="/images/svg/hobbies/snowboarding.svg" class="hobbies__svg snowboarding" alt="snowboarding" title="snowboarding"/>
+                                </div>
+                                <div class="p-2">
+                                    <img src="/images/svg/hobbies/travelling.svg" class="hobbies__svg travelling" alt="travelling" title="travelling"/>
+                                </div>
+                                <div class="p-2">
+                                    <img src="/images/svg/hobbies/board-games.svg" class="hobbies__svg board-games" alt="board games" title="board games"/>
+                                </div>
+                                <div class="p-2">
+                                    <img src="/images/svg/hobbies/handiwork.svg" class="hobbies__svg handiwork" alt="handiwork" title="handiwork"/>
+                                </div>
+                                <div class="p-2">
+                                    <img src="/images/svg/hobbies/tv-series.svg" class="hobbies__svg tv-series" alt="TV series" title="TV series"/>
+                                </div>
+                                <div class="p-2">
+                                    <img src="/images/svg/hobbies/coins.svg" class="hobbies__svg coins" alt="eurocoins collection" title="eurocoins collection"/>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

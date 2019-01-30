@@ -1,29 +1,27 @@
-
-
-@import "cv-var&mixin";
-
 body.my-cv{
+  @import "cv-var&mixin";
 
-  background-color: $cv-background;
+  background-color: $page-bg-color;
   font-family: 'Source Serif Pro', 'Crimson Text', 'Cormorant Garamond', serif;
   color: $text-color;
   font-size: 0.9rem;
 
-  .cv {
-    height: auto;
-    &__parts{
-      padding: 25px;
-      line-height: 1.3rem;
-      background-color: #f7e7ce;
-      margin: 10px;
+  section {
+    border-bottom: 2px solid $primary-pink-dark;
+
+    &:last-child {
+      border-bottom: none;
     }
   }
+
   .cv_centralization {
-    margin: 0 auto;
+    min-width: 300px;
   }
+
   .cv_text-indent {
     text-indent: 0.5rem;
   }
+
   .cv_headings {
     text-transform: uppercase;
     font-weight: bold;
@@ -32,8 +30,28 @@ body.my-cv{
     color: $headings-color;
   }
 
+  .img-container {
+    max-height: 225px;
+    max-width: 225px;
+  }
+
+  .first-column {
+    background-color: $primary-pink-dark;
+    color: $primary-pink-light;
+
+  }
+
+  .second-column {
+    background-color: $primary-pink-light;
+    color: $primary-pink-dark;
+    line-height: 1.4;
+
+    .cv_headings {
+      color: $primary-pink-dark;
+    }
+  }
+
+  @import "cv-sections-styles";
+  @import "cv-media-for-tablet";
+  @import "cv-media-for-desktops";
 }
-@import "cv-sections-styles";
-@import "cv-media-font-sizes-and-my-image";
-@import "cv-media-for-tablet";
-@import "cv-media-for-desktops";

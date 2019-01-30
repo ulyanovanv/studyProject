@@ -16,7 +16,7 @@ $app->get('/', function () use ($app) {
                 //var_dump($pets);
                 //die;
 
-    return $app['twig']->render('cv.html.twig', array());
+    return $app['twig']->render('cv/cv.html.twig', array());
 })
 ->bind('homepage');
 

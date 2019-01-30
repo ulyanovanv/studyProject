@@ -1,104 +1,16 @@
-body.my-cv {
-
-  @media screen and (min-width:48rem) {
-    //for IE
-    .first-column {
-      width: 50%;
-      float: left;
-    }
-    .second-column {
-      width: 50%;
-      float: right;
-    }
-    //for all other browsers
-    .cv {
-      &__parts{
-        margin: 0px;
-        line-height: 1.15rem;
-        min-width: 230px;
-        padding: 18px;
-      }
-    }
-    .cv_cenralization {
-      display: grid;
-      grid-template: repeat(25,100px)/repeat(2,2fr);
-      width: 75%;
-      margin: 20px auto;
-    }
-    .cv_headings {
-      font-size: 1rem;
-      padding: 0 0 4px 0;
-    }
-    .cv_line-indent {
-      border-bottom: 1px solid $block-bottom-line;
-      height: 100%;
-    }
-    .tablet-left {
-      background-color: $aside-columns-background;
-    }
-
-    .general-info {
-      grid-area: 1 / 1 / span 7 /span 1;
-      .my-image {
-        &_container {
-          margin: 0 auto 5px auto;
-        }
-      }
-    }
-    .skills {
-      grid-area: 8 / 1 / span 3 /span 1;
-    }
-    .hobbies {
-      grid-area: 11 / 1 / span 4 /span 1;
-      &__svg {
-        height: 90px;
-        width: 90px;
-      }
-    }
-    .contacts{
-      grid-area: 1 / 2 / span 2 /span 1;
-    }
-    .techniques {
-      grid-area: 3 / 2 / span 3 /span 1;
-    }
-    .education{
-      grid-area: 6 / 2 / span 2 /span 1;
-    }
-    .experience{
-      grid-area: 8 / 2 / span 4 /span 1;
-    }
-    .languages {
-      grid-area: 12 / 2 / span 2 /span 1;
-    }
-
-    .projects {
-      height: 270px;
-    }
-
-    .prj-bright-food {
-      grid-area: 15 / 1 / span 3/span 1;
-    }
-    .prj-calender {
-      grid-area: 18 / 1 / span 3 /span 1;
-    }
-    .prj-to-do-app {
-      grid-area: 21 / 1 / span 3 /span 1;
-    }
-
-    .prj-online-shop {
-      grid-area: 14 / 2 / span 3 /span 1;
-    }
-    .prj-mobile {
-      grid-area: 17 / 2 / span 3 /span 1;
-    }
-    .prj-form-c13 {
-      grid-area: 20 / 2 / span 3 /span 1;
-    }
-    .prj-game {
-      grid-area: 23 / 2 / span 3 /span 1;
-    }
-
-
+@media screen and (min-width:48rem) {
+  .cv_centralization {
+    margin: 20px auto;
   }
 
+  .cv {
+    &__parts{
+      line-height: 1.15rem;
+    }
+  }
+
+  .cv_headings {
+    font-size: 1rem;
+    padding: 0 0 4px 0;
+  }
 }
