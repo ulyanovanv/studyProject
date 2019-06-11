@@ -9738,6 +9738,12 @@ body.my-cv {
     background-image: url("/images/projects-img/prj-calender-grey.jpg"); }
   body.my-cv .prj-calender:hover .prj-calender_img {
     background-image: url("/images/projects-img/prj-calender.jpg"); }
+  body.my-cv .prj-messanger a {
+    background: url("/images/projects-img/prj-messanger.jpg") no-repeat -9999px -9999px; }
+  body.my-cv .prj-messanger_img {
+    background-image: url("/images/projects-img/prj-messanger-grey.jpg"); }
+  body.my-cv .prj-messanger:hover .prj-messanger_img {
+    background-image: url("/images/projects-img/prj-messanger.jpg"); }
   @media screen and (min-width: 48rem) {
     body.my-cv .cv_centralization {
       margin: 20px auto; }
