@@ -106,7 +106,7 @@
   }
 }
 
-$prj-names : (prj-bright-food, prj-online-shop, prj-calender, prj-messanger);
+$prj-names : (prj-bright-food, prj-online-shop, prj-calender, prj-messanger, prj-shipments);
 @each $prj-name in $prj-names {
   .#{$prj-name} {
     a {

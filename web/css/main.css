@@ -9744,6 +9744,12 @@ body.my-cv {
     background-image: url("/images/projects-img/prj-messanger-grey.jpg"); }
   body.my-cv .prj-messanger:hover .prj-messanger_img {
     background-image: url("/images/projects-img/prj-messanger.jpg"); }
+  body.my-cv .prj-shipments a {
+    background: url("/images/projects-img/prj-shipments.jpg") no-repeat -9999px -9999px; }
+  body.my-cv .prj-shipments_img {
+    background-image: url("/images/projects-img/prj-shipments-grey.jpg"); }
+  body.my-cv .prj-shipments:hover .prj-shipments_img {
+    background-image: url("/images/projects-img/prj-shipments.jpg"); }
   @media screen and (min-width: 48rem) {
     body.my-cv .cv_centralization {
       margin: 20px auto; }
