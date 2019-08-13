@@ -67,14 +67,14 @@
     background-position: left center;
   }
 
-  $list-of-svgs : (html, css33, sass, layouts, svg, bootstrap3, jss, jquery, react, npm, git);
+  $list-of-svgs : (html, css33, sass, layouts, svg, bootstrap3, jss, jquery, npm, git, mobx);
   @each $name in $list-of-svgs {
     .#{$name} {
       background-image: url('/images/svg/techniques/#{$name}.svg');
     }
   }
 
-  $list-of-pngs : (less, php, symfony);
+  $list-of-pngs : (less, php, symfony, webpack, redux, eslint, react, react-router);
   @each $name in $list-of-pngs {
     .#{$name} {
       background-image: url('/images/svg/techniques/#{$name}.png');
@@ -103,6 +103,20 @@
     background-repeat: no-repeat;
     width: 100%;
     transition: background-image 0.5s ease-in;
+  }
+}
+
+.information {
+  &__self-description {
+    p {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    a {
+      text-underline: none;
+      color: #dd525f;
+    }
   }
 }
 
